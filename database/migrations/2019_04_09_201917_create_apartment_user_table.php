@@ -19,6 +19,8 @@ class CreateApartmentUserTable extends Migration
             $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->dateTime('entry');
+            $table->dateTime('exit');
             $table->timestamps();
         });
     }

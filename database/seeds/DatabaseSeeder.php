@@ -22,6 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ApartmentTableSeeder::class);
         $this->call(PhotoTableSeeder::class);
         $this->call(CommentTableSeeder::class);
-        $this->call(ReservationTableSeeder::class);
+
     }
 }
