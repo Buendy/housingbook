@@ -1,103 +1,109 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app-nav')
 
-        <title>Laravel</title>
+@section('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracassts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            <div id="app">
-                <example-component></example-component>
-            </div>
+    <div class="page-header clear-filter">
+        <div class="rellax-header rellax-header-sky" data-rellax-speed="-4">
+            <div class="page-header-image" style="background-image: url('./img/presentation-page/nuk-pro-back-sky.jpg')">
             </div>
         </div>
-    <script src="/js/app.js"></script>
-    </body>
-</html>
+        <div class="rellax-header rellax-header-buildings" data-rellax-speed="0">
+            <div class="page-header-image page-header-city" style="background-image: url('./img/presentation-page/nuk-pro-buildings.png')">
+            </div>
+        </div>
+        <div class="rellax-text-container rellax-text" style="font-size: 10px">
+            <h1 class="h1-seo rellax-text" data-rellax-speed="-1">HousingBook</h1>
+
+        </div>
+        <h3 class="h3-description rellax-text" data-rellax-speed="-1">Busca y encuentra tu casa de alquiler</h3>
+
+
+    </div>
+
+    <div class="section section-components" data-background-color="dark-red">
+        <div class="container">
+            <div class="row mt-1" >
+                <div class="col-md-8 ml-auto mr-auto">
+                    <h2 class="text-center title">Busca casa en cualquier lugar
+                        <br><br>
+                        <small class="description">Encuentra tú casa en cualquier ciudad... </small>
+
+
+                    </h2>
+                    <form method="" action="">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" value="" placeholder="Introduce una ciudad" class="form-control" autocomplete="family-name" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center"">
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-primary btn-round btn-block">Buscar casas</button>
+                        </div>
+                </div>
+                </form>
+                <h2 class="text-center title">
+
+                    <small class="description">o si lo prefieres, elige tu estilo.</small>
+
+
+                </h2>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card-container first-card">
+                    <div class="card-component">
+                        <a href="index.html#basic-elements" target="_blank">
+                            <div class="front">
+                                <img src="{{ asset('img/presentation-page/basic_thumb.jpg')}}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card-container second-card">
+                    <div class="card-component">
+                        <a href="index.html#cards" target="_blank">
+                            <div class="front">
+                                <img src="{{ asset('img/presentation-page/cards_thumb.jpg')}}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card-container third-card">
+                    <div class="card-component">
+                        <a href="sections.html" target="_blank">
+                            <div class="front">
+                                <img src="{{ asset('img/presentation-page/sections_thumb.jpg')}}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card-container fourth-card">
+                    <div class="card-component">
+                        <a href="examples/product-page.html" target="_blank">
+                            <div class="front">
+                                <img src="{{ asset('img/presentation-page/pages2_thumb.jpg')}}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+@endsection
