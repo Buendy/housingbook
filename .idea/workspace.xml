@@ -3,6 +3,452 @@
   <component name="ChangeListManager">
     <list default="true" id="e7d235a5-769a-4325-acca-bb9e2399142d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/now-ui-kit.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/now-ui-kit.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/now-ui-kit.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/now-ui-kit.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/now-ui-kit.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/now-ui-kit.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/demo/demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/demo/demo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/nucleo-license.md" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/nucleo-license.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/nucleo-outline.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/nucleo-outline.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/nucleo-outline.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/nucleo-outline.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/nucleo-outline.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/nucleo-outline.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/nucleo-outline.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/nucleo-outline.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/apple-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/apple-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/avatar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/avatar.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/balmain.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/balmain.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg15.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg19.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg20.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg21.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg22.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg23.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg24.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg25.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg26.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg27.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg28.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg28.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg29.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg30.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg30.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg31.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg31.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg32.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg35.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg35.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg37.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg37.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg38.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg38.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg39.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg39.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg40.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg40.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg41.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg41.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg43.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg43.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg44.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg44.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg45.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg45.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg51.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg51.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/blog1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/blog1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/blurred-image-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/blurred-image-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/boglioli.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/boglioli.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/card-blog2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/card-blog2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/card-blog3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/card-blog3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contact-us-image.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/contact-us-image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contact1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/contact1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/cov1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/cov1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/creative-tim-white-slim2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/creative-tim-white-slim2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/default-avatar.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/default-avatar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/emily.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/emily.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/emilyz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/emilyz.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-blog10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-blog10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-blog11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-blog11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-blog12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-blog12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-blog13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-blog13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-blog14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-blog14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-blog15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-blog15.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-blog16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-blog16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-blog17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-blog17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-blog18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-blog18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-blog4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-blog4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-blog5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-blog5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-blog6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-blog6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-blog7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-blog7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-blog9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-blog9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-profile1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-profile1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-profile2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-profile2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-profile3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-profile3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/card-project1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/card-project1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/examples/office1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/examples/office1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/AD.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/AD.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/AE.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/AE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/AG.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/AG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/AM.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/AM.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/AR.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/AR.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/AT.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/AT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/AU.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/AU.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/BE.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/BE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/BF.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/BF.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/BG.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/BG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/BO.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/BO.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/BR.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/BR.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/CA.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/CA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/CD.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/CD.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/CG.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/CG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/CH.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/CH.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/CL.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/CL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/CM.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/CM.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/CN.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/CN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/CO.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/CO.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/CZ.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/CZ.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/DE.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/DE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/DJ.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/DJ.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/DK.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/DK.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/DZ.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/DZ.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/EE.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/EE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/EG.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/EG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/ES.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/ES.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/FI.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/FI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/FR.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/FR.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/GA.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/GA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/GB.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/GB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/GM.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/GM.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/GT.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/GT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/HN.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/HN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/HT.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/HT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/HU.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/HU.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/ID.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/ID.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/IE.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/IE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/IL.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/IL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/IN.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/IN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/IQ.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/IQ.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/IR.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/IR.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/IT.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/IT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/JM.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/JM.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/JO.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/JO.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/JP.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/JP.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/KG.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/KG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/KN.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/KN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/KP.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/KP.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/KR.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/KR.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/KW.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/KW.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/KZ.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/KZ.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/LA.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/LA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/LB.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/LB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/LC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/LS.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/LS.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/LU.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/LU.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/LV.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/LV.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/MG.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/MG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/MK.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/MK.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/ML.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/ML.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/MM.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/MM.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/MT.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/MT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/MX.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/MX.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/NA.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/NA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/NE.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/NE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/NG.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/NG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/NI.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/NI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/NL.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/NL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/NO.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/NO.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/OM.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/OM.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/PA.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/PA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/PE.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/PE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/PG.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/PG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/PK.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/PK.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/PL.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/PL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/PT.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/PT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/PY.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/PY.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/QA.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/QA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/RO.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/RO.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/RU.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/RU.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/RW.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/RW.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/SA.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/SA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/SE.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/SE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/SG.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/SG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/SL.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/SL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/SN.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/SN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/SO.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/SO.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/SV.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/SV.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/TD.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/TD.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/TJ.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/TJ.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/TL.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/TL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/TR.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/TR.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/TZ.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/TZ.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/UA.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/UA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/US.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/US.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/VE.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/VE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/VN.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/VN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/flags/YE.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/flags/YE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/github.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/github.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/gucci.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/gucci.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/header.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/header.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/hero-image-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/hero-image-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/hero-image-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/hero-image-2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/hero-image-3.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/hero-image-3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/image_placeholder.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/image_placeholder.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/invision-white-slim.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/invision-white-slim.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/ipad.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/ipad.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/ipad2-inverted.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/ipad2-inverted.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/ipad2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/ipad2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/ipad3.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/ipad3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/iphone2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/iphone2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/james.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/james.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/julie.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/julie.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/kingsman.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/kingsman.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/landing.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/landing.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/login.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/login.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/logo-square.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/logo-square.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/marie.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/marie.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/michael.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/michael.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/mike.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/mike.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/now-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/now-logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/nucleo-logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/nucleo-logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/olivia.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/olivia.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/placeholder.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/placeholder.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/polo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/polo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/pp-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/pp-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/pp-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/pp-2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/pp-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/pp-3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/pp-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/pp-4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/pp-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/pp-5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/pp-cov.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/pp-cov.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/prada.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/prada.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/Pages/about-us.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/Pages/about-us.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/Pages/blog-post.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/Pages/blog-post.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/Pages/blog-posts.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/Pages/blog-posts.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/Pages/contact.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/Pages/contact.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/Pages/ecommerce.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/Pages/ecommerce.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/Pages/landing.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/Pages/landing.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/Pages/login.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/Pages/login.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/Pages/pricing.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/Pages/pricing.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/Pages/product.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/Pages/product.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/Pages/profile.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/Pages/profile.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/Pages/signup.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/Pages/signup.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/basic_thumb.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/basic_thumb.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/bg50.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/bg50.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/blogpost1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/blogpost1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/blogpost2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/blogpost2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/blogpost3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/blogpost3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/blogpost4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/blogpost4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/blogpost5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/blogpost5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/card1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/card1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/card2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/card2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/card3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/card3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/card4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/card4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/card5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/card5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/card6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/card6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/card7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/card7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/cards_thumb.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/cards_thumb.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/coloured-card-with-btn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/coloured-card-with-btn.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/coloured-card.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/coloured-card.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/contact1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/contact1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/contact2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/contact2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/content1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/content1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/content3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/content3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/content3.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/content3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/content4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/content4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/content4.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/content4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/features1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/features1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/features2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/features2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/features3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/features3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/features4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/features4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/features5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/features5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/features6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/features6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/features7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/features7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/features8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/features8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/harvard.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/harvard.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/header1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/header1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/header2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/header2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/header3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/header3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/header4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/header4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/header5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/header5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/linkedin-btn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/linkedin-btn.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/microsoft.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/microsoft.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/nuk-pro-back-sky-black.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/nuk-pro-back-sky-black.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/nuk-pro-back-sky-orange.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/nuk-pro-back-sky-orange.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/nuk-pro-back-sky.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/nuk-pro-back-sky.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/nuk-pro-buildings-black.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/nuk-pro-buildings-black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/nuk-pro-buildings.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/nuk-pro-buildings.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/pages2_thumb.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/pages2_thumb.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/pages_thumb.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/pages_thumb.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/pricing1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/pricing1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/pricing2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/pricing2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/pricing3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/pricing3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/pricing4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/pricing4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/pricing5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/pricing5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/projects1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/projects1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/projects2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/projects2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/projects3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/projects3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/projects4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/projects4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/projects5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/projects5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/sections_thumb.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/sections_thumb.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/share-btn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/share-btn.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/social-row.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/social-row.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/stanford.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/stanford.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/table.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/table.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/team1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/team1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/team2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/team2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/team3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/team3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/team4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/team4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/team5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/team5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/testimonials1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/testimonials1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/testimonials2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/testimonials2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/testimonials3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/testimonials3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/presentation-page/vodafone.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/presentation-page/vodafone.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/pricing1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/pricing1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/pricing2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/pricing2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/pricing3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/pricing3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/pricing4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/pricing4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/product1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/product2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/product3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/profile.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/profile.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project15.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project19.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project20.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project21.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project22.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project23.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project24.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project5 .jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project5 .jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/project9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/project9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/ryan.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/ryan.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/saint-laurent.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/saint-laurent.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/saint-laurent1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/saint-laurent1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/sweeney.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/sweeney.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/tom-ford.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/tom-ford.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/usher.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/usher.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/wooyoungmi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/wooyoungmi.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/core/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/core/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/core/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/core/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/now-ui-kit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/now-ui-kit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/now-ui-kit.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/now-ui-kit.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/now-ui-kit.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/now-ui-kit.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/bootstrap-datetimepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/bootstrap-datetimepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/bootstrap-selectpicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/bootstrap-selectpicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/bootstrap-switch.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/bootstrap-switch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/bootstrap-tagsinput.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/bootstrap-tagsinput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/jasny-bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/jasny-bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/moment.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/moment.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/nouislider.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/nouislider.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/presentation-page/rellax.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/presentation-page/rellax.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_alerts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_alerts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_badges.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_badges.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_cards.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_cards.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_carousel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_checkboxes-radio.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_checkboxes-radio.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_dropdown-extend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_dropdown-extend.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_dropdown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_example-pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_example-pages.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_footers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_footers.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_images.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_images.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_info-areas.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_info-areas.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_inputs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_inputs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_media.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_media.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_misc.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_misc.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_modals-extend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_modals-extend.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_modals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_modals.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_navbar-extend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_navbar-extend.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_nucleo-outline.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_nucleo-outline.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_pagination.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_pills-extend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_pills-extend.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_pills.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_pills.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_popups.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_popups.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_progress.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_progress.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_responsive.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_responsive.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_sections-extend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_sections-extend.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_sections.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_sections.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_social-buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_social-buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_tables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_tables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_tabs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_tabs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-background.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-background.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-blog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-blog.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-contact.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-extend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-extend.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-fashion.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-fashion.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-form-horizontal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-form-horizontal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-no-shadow.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-no-shadow.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-plain.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-plain.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-pricing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-pricing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-product.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-profile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-profile.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-raised.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-raised.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-signup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-signup.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-testimonials.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/cards/_card-testimonials.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_badges.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_badges.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_cards.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_cards.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_datepicker.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_datepicker.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_dropdown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_inputs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_inputs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_modals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_modals.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_pages.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_popovers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_popovers.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_social-buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_social-buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_tags.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_tags.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_transparency.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_transparency.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_vendor-prefixes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/mixins/_vendor-prefixes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-bootstrap-select.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-bootstrap-select.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-bootstrap-switch.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-bootstrap-switch.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-datepicker.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-datepicker.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-datetimepicker.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-datetimepicker.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-fileupload.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-fileupload.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-nouislider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-nouislider.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-perfect-scrollbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-perfect-scrollbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-tagsinput.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/plugins/_plugin-tagsinput.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_blogs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_blogs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_contactus.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_contactus.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_features.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_features.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_headers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_headers.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_pricing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_pricing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_projects.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_projects.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_social-subscribe-lines.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_social-subscribe-lines.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_team.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_team.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_testimonials.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/now-ui-kit/sections/_testimonials.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app-nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,13 +456,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1640453303">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -25,6 +472,7 @@
         <counts>
           <entry key="Blade" value="1" />
           <entry key="JavaScript" value="3" />
+          <entry key="Markdown" value="1" />
           <entry key="PHP" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Vue.js" value="2" />
@@ -39,46 +487,94 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="1757328246">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Blade" value="10" />
+          <entry key="Image" value="2" />
+          <entry key="PHP" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Blade" value="346" />
+          <entry key="PHP" value="185" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="320">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#13011#13017#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+              <folding>
+                <element signature="e#468#546#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="156" column="106" selection-start-line="156" selection-start-column="106" selection-end-line="156" selection-end-column="106" />
+              <folding>
+                <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#15255#15261#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="95" column="25" selection-start-line="95" selection-start-column="25" selection-end-line="95" selection-end-column="25" />
+            <state relative-caret-position="430">
+              <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="22" column="32" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/ExampleComponent.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="67" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
+            <state relative-caret-position="80">
+              <caret line="5" column="19" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>icon</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -88,9 +584,12 @@
       <list>
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
       </list>
     </option>
   </component>
@@ -199,59 +698,55 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="housingbook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="housingbook" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel_housingbook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel_housingbook" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="housingbook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="housingbook" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel_housingbook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel_housingbook" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel_housingbook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel_housingbook" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel_housingbook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel_housingbook" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel_housingbook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel_housingbook" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel_housingbook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel_housingbook" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="housingbook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="housingbook" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel_housingbook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel_housingbook" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
               <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="housingbook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="housingbook" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="housingbook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="housingbook" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="housingbook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="housingbook" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="housingbook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="housingbook" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="housingbook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="housingbook" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -282,25 +777,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1555011566556</updated>
-      <workItem from="1555011569082" duration="1081000" />
+      <workItem from="1555011569082" duration="1999000" />
+      <workItem from="1555151011843" duration="3082000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1081000" />
+    <option name="totallyTimeSpent" value="5081000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2524013" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32903227" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -308,10 +799,15 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32903227" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,20 +820,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -348,24 +830,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/ExampleComponent.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
+        <state>
           <caret line="8" column="67" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/login.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="95" column="25" selection-start-line="95" selection-start-column="25" selection-end-line="95" selection-end-column="25" />
+        <state relative-caret-position="128">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding>
+            <element signature="e#468#546#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#13011#13017#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="156" column="106" selection-start-line="156" selection-start-column="106" selection-end-line="156" selection-end-column="106" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#15255#15261#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
         </state>
       </provider>
     </entry>

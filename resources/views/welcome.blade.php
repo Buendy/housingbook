@@ -38,7 +38,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row justify-content-center"">
+                        <div class="row justify-content-center">
                         <div class="col-md-4">
                             <button type="button" class="btn btn-primary btn-round btn-block">Buscar casas</button>
                         </div>
