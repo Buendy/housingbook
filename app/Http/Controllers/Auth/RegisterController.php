@@ -55,10 +55,7 @@ class RegisterController extends Controller
             'lastname' => ['required','string'],
             'address' => ['required','string'],
             'phone' => ['required','string'],
-<<<<<<< HEAD
             'conditions' => ['required']
-=======
->>>>>>> 5a1714ce773630e362e3e0dfb53039f637d1dc4f
         ]);
     }
 

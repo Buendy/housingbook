@@ -118,18 +118,7 @@
                     <div class="card card-signup">
                         <div class="card-body">
                             <h4 class="card-title text-center">Register</h4>
-                            <div class="social text-center">
-                                <button class="btn btn-icon btn-round btn-twitter">
-                                    <i class="fab fa-twitter"></i>
-                                </button>
-                                <button class="btn btn-icon btn-round btn-dribbble">
-                                    <i class="fab fa-dribbble"></i>
-                                </button>
-                                <button class="btn btn-icon btn-round btn-facebook">
-                                    <i class="fab fa-facebook"> </i>
-                                </button>
-                                <h5 class="card-description"> or be classical </h5>
-                            </div>
+                            
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <div class="input-group">
@@ -177,11 +166,11 @@
                                 <!-- If you want to add a checkbox to this form, uncomment this code -->
                                 <div class="form-check">
                                     <label class="form-check-label">
-<<<<<<< HEAD
+
                                         <input class="form-check-input" type="checkbox" name="conditions">
-=======
+
                                         <input class="form-check-input" type="checkbox">
->>>>>>> 5a1714ce773630e362e3e0dfb53039f637d1dc4f
+
                                         <span class="form-check-sign"></span>
                                         I agree to the terms and
                                         <a href="#something">conditions</a>.
