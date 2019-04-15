@@ -11,6 +11,9 @@ class ApartmentTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Apartment::class,50)->create();
+        factory(\App\Apartment::class,50)->create()->each(function (\App\Apartment $apartment){
+            factory(\App\Photo::class, 5)->create(['apartment_id' => $apartment->id]);
+        });
+        ;
     }
 }

@@ -106,6 +106,12 @@
 
                         </div>
                     </li>
+                    <li>
+                        <a href="{{route('apartments.public')}}" class="nav-link">
+                            <i class="now-ui-icons design_image" aria-hidden="true"></i>
+                            <p>Apartments</p>
+                        </a>
+                    </li>
 
                 @endguest
 

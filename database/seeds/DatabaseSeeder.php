@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CityTableSeeder::class);
         $this->call(ServiceTableSeeder::class);
         $this->call(ApartmentTableSeeder::class);
-        $this->call(PhotoTableSeeder::class);
+        //$this->call(PhotoTableSeeder::class);
         $this->call(CommentTableSeeder::class);
 
     }
