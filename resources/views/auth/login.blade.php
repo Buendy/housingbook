@@ -73,7 +73,11 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="users_circle-08"></i></span>
                                 </div>
+<<<<<<< HEAD
                                 <input type="email" name="email" value="{{ old('email') }}" class="form-control" placeholder="Email..." required>
+=======
+                                <input type="email" name="email" value="{{ old('email') }}" class="form-control" placeholder="Email..." required autofocus>
+>>>>>>> 5a1714ce773630e362e3e0dfb53039f637d1dc4f
                             </div>
                             <div class="input-group no-border input-lg">
                                 <div class="input-group-prepend">

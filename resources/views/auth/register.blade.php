@@ -177,7 +177,11 @@
                                 <!-- If you want to add a checkbox to this form, uncomment this code -->
                                 <div class="form-check">
                                     <label class="form-check-label">
+<<<<<<< HEAD
                                         <input class="form-check-input" type="checkbox" name="conditions">
+=======
+                                        <input class="form-check-input" type="checkbox">
+>>>>>>> 5a1714ce773630e362e3e0dfb53039f637d1dc4f
                                         <span class="form-check-sign"></span>
                                         I agree to the terms and
                                         <a href="#something">conditions</a>.
