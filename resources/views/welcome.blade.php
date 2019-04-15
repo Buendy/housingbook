@@ -5,9 +5,9 @@
         <div class="container">
             <div class="row mt-1" >
                 <div class="col-md-8 ml-auto mr-auto">
-                    <h2 class="text-center title">Busca casa en cualquier lugar
+                    <h2 class="text-center title">{{__('welcome.search')}}
                         <br><br>
-                        <small class="description">Encuentra tú casa en cualquier ciudad... </small>
+                        <small class="description">{{__('welcome.anywhere')}}</small>
 
 
                     </h2>
@@ -15,19 +15,19 @@
                         <div class="row justify-content-center">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" value="" placeholder="Introduce una ciudad" class="form-control" autocomplete="family-name" />
+                                    <input type="text" value="" placeholder="{{__('welcome.input')}}" class="form-control" autocomplete="family-name" />
                                 </div>
                             </div>
                         </div>
                         <div class="row justify-content-center">
                         <div class="col-md-4">
-                            <button type="button" class="btn btn-primary btn-round btn-block">Buscar casas</button>
+                            <button type="button" class="btn btn-primary btn-round btn-block">{{__('welcome.searchs')}}</button>
                         </div>
                 </div>
                 </form>
                 <h2 class="text-center title">
 
-                    <small class="description">o si lo prefieres, elige tu estilo.</small>
+                    <small class="description">{{__('welcome.prefeer')}}</small>
 
 
                 </h2>

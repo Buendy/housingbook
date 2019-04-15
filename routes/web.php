@@ -24,3 +24,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('apartments','PublicController@index')->name('apartments.public');
 Route::get('apartments/{apartment}','PublicController@show')->name('apartments.show');
 
+Route::get('set_language/{lang}', 'Controller@setLanguage')->name('set_language');
+

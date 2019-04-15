@@ -117,11 +117,11 @@
 
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
+                        <a class="nav-link btn btn-primary" href="{{ route('login') }}">{{ __('menu.login') }}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary" href="{{ route('register') }}">{{ __('REGISTRO') }}</a>
+                            <a class="nav-link btn btn-primary" href="{{ route('register') }}">{{ __('menu.register') }}</a>
                         </li>
                     @endif
                 @else
@@ -144,6 +144,24 @@
                     </li>
 
                 @endguest
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{__('menu.language')}}</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right"
+                            aria-labelledby="navbarDropdown" role="menu">
+                            <li>
+                                <a href="{{route('set_language', ['es'])}}" class="dropdown-item">
+                                    {{__('menu.spain')}}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('set_language', ['en'])}}" class="dropdown-item">
+                                    {{__('menu.english')}}
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
             </ul>
         </div>
     </div>

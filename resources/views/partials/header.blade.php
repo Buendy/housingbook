@@ -11,5 +11,5 @@
         <h1 class="h1-seo rellax-text" data-rellax-speed="-1">HousingBook</h1>
 
     </div>
-    <h3 class="h3-description rellax-text" data-rellax-speed="-1">Busca y encuentra tu casa de alquiler</h3>
+    <h3 class="h3-description rellax-text" data-rellax-speed="-1">{{__('welcome.head')}}</h3>
 </div>
