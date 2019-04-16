@@ -40,7 +40,7 @@
                     <div class="card-component">
                         <a href="index.html#basic-elements" target="_blank">
                             <div class="front">
-                                <img src="{{ asset('img/presentation-page/basic_thumb.jpg')}}">
+                                <img src="{{ asset('img/mountain.jpg')}}">
                             </div>
                         </a>
                     </div>
@@ -51,7 +51,7 @@
                     <div class="card-component">
                         <a href="index.html#cards" target="_blank">
                             <div class="front">
-                                <img src="{{ asset('img/presentation-page/cards_thumb.jpg')}}">
+                                <img src="{{ asset('img/city.jpg')}}">
                             </div>
                         </a>
                     </div>
@@ -62,7 +62,7 @@
                     <div class="card-component">
                         <a href="sections.html" target="_blank">
                             <div class="front">
-                                <img src="{{ asset('img/presentation-page/sections_thumb.jpg')}}">
+                                <img src="{{ asset('img/campo.jpg')}}">
                             </div>
                         </a>
                     </div>
@@ -73,7 +73,7 @@
                     <div class="card-component">
                         <a href="examples/product-page.html" target="_blank">
                             <div class="front">
-                                <img src="{{ asset('img/presentation-page/pages2_thumb.jpg')}}">
+                                <img src="{{ asset('img/beach.jpg')}}">
                             </div>
                         </a>
                     </div>

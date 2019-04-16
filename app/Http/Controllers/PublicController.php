@@ -10,8 +10,9 @@ class PublicController extends Controller
     public function index()
     {
         $apartments = Apartment::with('city','user','photos')->paginate(6);
+        $latest_apartment = Apartment::latest()->take(3)->get();
 
-        return view('guest.index',compact('apartments'));
+        return view('guest.index',compact('apartments', 'latest_apartment'));
     }
 
     public function show(Apartment $apartment)

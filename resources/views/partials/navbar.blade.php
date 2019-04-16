@@ -18,55 +18,14 @@
 
 
                 @else
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink1" data-toggle="dropdown">
-                        <i class="now-ui-icons design_app"></i>
-                        <p>Components</p>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink1">
-                        <a class="dropdown-item" href="./index.html">
-                            <i class="now-ui-icons business_chart-pie-36"></i> All components
-                        </a>
-                        <a class="dropdown-item" target="_blank" href="https://demos.creative-tim.com/now-ui-kit-pro/docs/1.0/getting-started/introduction.html">
-                            <i class="now-ui-icons design_bullet-list-67"></i> Documentation
-                        </a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                        <i class="now-ui-icons files_paper" aria-hidden="true"></i>
-                        <p>Sections</p>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="./sections.html#headers">
-                            <i class="now-ui-icons shopping_box"></i> Headers
-                        </a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                        <i class="now-ui-icons design_image" aria-hidden="true"></i>
-                        <p>Examples</p>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="./examples/about-us.html">
-                            <i class="now-ui-icons business_bulb-63"></i> About-us
-                        </a>
 
-                    </div>
-                </li>
                 <li>
                     <a href="{{route('apartments.public')}}" class="nav-link">
                         <i class="now-ui-icons design_image" aria-hidden="true"></i>
                         <p>{{__('menu.apartment')}}</p>
                     </a>
                 </li>
-                <li>
-                    <a href="{{route('profile.index')}}" class="nav-link">
-                        <i class="now-ui-icons design_image" aria-hidden="true"></i>
-                        <p>{{__('menu.profile')}}</p>
-                    </a>
-                </li>
+
 
                 @endguest
 
@@ -89,12 +48,20 @@
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+                            <i class="now-ui-icons arrows-1_share-66" aria-hidden="true"></i>
+                            <p>{{ __('Logout') }}</p>
+
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
+
+                            <a href="{{route('profile.index')}}" class="dropdown-item">
+                                <i class="now-ui-icons users_circle-08" aria-hidden="true"></i>
+                                <p>{{__('menu.profile')}}</p>
+                            </a>
+
                     </div>
                 </li>
 
