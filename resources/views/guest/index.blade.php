@@ -15,7 +15,7 @@
                             <div class="col-md-4">
                                 <div class="card card-blog">
                                     <div class="card-image">
-                                        <a href="#pablo">
+                                        <a href="{{route('apartments.show',$apartment->id)}}">
                                             <img class="img rounded" src="{{$apartment->photo_image}}">
                                         </a>
                                     </div>
@@ -55,7 +55,7 @@
                     <div class="col-md-4">
                         <div class="card card-blog">
                             <div class="card-image">
-                                <a href="#pablo">
+                                <a href="{{route('apartments.show',$apartment->id)}}">
                                     <img class="img rounded" src="{{$apartment->photo_image}}">
                                 </a>
                             </div>
