@@ -96,56 +96,11 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="">
-                            <div class="row pick-size">
-                                <div class="col-lg-6 col-md-8 col-sm-6">
-                                    <label>{{__('guest.checkin')}}</label>
-                                    <input type="date" name="entrada" id="entrada" class="form-control" required>
-                                </div>
-                                <div class="col-lg-6 col-md-8 col-sm-6">
-                                    <label>{{__('guest.checkout')}}</label>
-                                    <input type="date" name="salida" id="salida" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="row justify-content-end">
-                                <button class="btn btn-primary mr-3">{{__('guest.rent')}}&nbsp;<i class="now-ui-icons shopping_cart-simple"></i></button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="section related-products" data-background-color="black">
-                    <div class="container">
-                        <h3 class="title text-center">{{__('guest.related')}}</h3>
-                        <div class="row">
-                            @forelse($randoms_apartments as $random_apartment)
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="card card-product">
-                                        <div class="card-image">
-                                            <a href="{{route('apartments.show',$random_apartment->id)}}">
-                                                <img class="img rounded" src="{{$random_apartment->photos[0]->url}}" />
-                                            </a>
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                <a href="#pablo" class="card-link">{{$random_apartment->name}}</a>
-                                            </h5>
-                                            <div class="card-description">
-                                                {{str_limit($random_apartment->short_description,50)}}
-                                            </div>
-                                            <div class="card-footer">
-                                                <div class="price-container">
-                                                    <span class="price">{{$random_apartment->city->name}}</span>
-                                                </div>
-                                                <button class="btn btn-neutral btn-icon btn-round pull-right" rel="tooltip" title="" data-placement="left" data-original-title="Add to wishlist">
-                                                    <i class="now-ui-icons ui-2_favourite-28"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @empty
-                                <h3>{{__('guest.norelated')}}</h3>
-                            @endforelse
+                        <div class="text-center">
+                            <a href="{{route('profile.editapartment',$apartment->id)}}" class="btn btn-primary mr-3 text-white">{{__('profile.edit')}}&nbsp;<i class="now-ui-icons shopping_cart-simple"></i></a>
+                            {{Form::open(['action' => ['ApartmentController@destroy',$apartment->id], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
+                            <button type="submit" data-toggle="tooltip" title="{{__('profile.delete')}}" class="btn btn-primary mr-3 text-white">{{__('profile.edit')}} <i class="now-ui-icons shopping_cart-simple"></i></button>
+                            {{Form::close()}}
                         </div>
                     </div>
                 </div>

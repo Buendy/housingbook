@@ -3,12 +3,9 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/apple-icon.png')}}">
-    <link rel="icon" type="image/png" href="{{asset('img/favicon.png')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
@@ -48,91 +45,40 @@
     <!-- End Google Tag Manager -->
 </head>
 
-<body class="login-page">
+<body class="profile-page">
 <!-- Google Tag Manager (noscript) -->
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
-<div class="page-header header-filter" filter-color="orange">
-    <div class="page-header-image" style="background-image:url(./img/login.jpg)"></div>
-    <div class="content">
+@include('partials.navbar')
+<div class="wrapper">
+    <div class="page-header page-header-small header-filter" filter-color="orange">
+        <div class="page-header-image" data-parallax="true" style="background-image:url('../img/bg5.jpg');">
+        </div>
         <div class="container">
-            <div class="col-md-5 ml-auto mr-auto">
-                <div class="card card-login card-plain">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-                        <div class="card-header text-center">
-                            <div class="logo-container">
-                                <img src="./img/now-logo.png" alt="">
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="input-group no-border input-lg">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="users_circle-08"></i></span>
-                                </div>
-
-
-                                <input type="email" name="email" value="{{ old('email') }}" class="form-control" placeholder="Email..." required autofocus>
-
-                            </div>
-                            <div class="input-group no-border input-lg">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="text_caps-small"></i></span>
-                                </div>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Password..." required>
-                            </div>
-                        </div>
-                        <div class="card-footer text-center">
-                            <button type="submit" class="btn btn-primary btn-round btn-lg btn-block">Get Started</button>
-                        </div>
-                        <div class="pull-left">
-                            <h6>
-                                <a href="{{route('register')}}" class="link footer-link">Create Account</a>
-                            </h6>
-                        </div>
-                        <div class="pull-right">
-                            <h6>
-                                <a href="#pablo" class="link footer-link">Need Help?</a>
-                            </h6>
-                        </div>
-                    </form>
+            <div class="photo-container">
+                <img src="{{auth()->user()->photo}}" alt="{{auth()->user()->name}}">
+            </div>
+            <h3 class="title">{{auth()->user()->name}}</h3>
+            <p class="category">{{auth()->user()->last_name}}</p>
+            <div class="content">
+                <div class="social-description">
+                    <h5>{{auth()->user()->address}}</h5>
+                    <p>{{auth()->user()->phone}}</p>
                 </div>
             </div>
         </div>
     </div>
-    <footer class="footer">
+    <div class="section">
         <div class="container">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="https://www.creative-tim.com">
-                            Creative Tim
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://presentation.creative-tim.com">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://blog.creative-tim.com">
-                            Blog
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="copyright" id="copyright">
-                &copy;
-                <script>
-                    document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-                </script>, Designed by
-                <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
-                <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            <div class="button-container">
+                <a href="{{route('profile.manage')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.manage')}}</a>
+                <a href="{{route('profile.add')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.add')}}</a>
+                <a href="{{route('profile.edit')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.editprofile')}}</a>
             </div>
         </div>
-    </footer>
+    </div>
 </div>
 <!--   Core JS Files   -->
 <script src="{{ asset('js/core/jquery.min.js')}}" type="text/javascript"></script>

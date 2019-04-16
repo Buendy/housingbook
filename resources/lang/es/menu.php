@@ -5,5 +5,7 @@ return [
     'spain' => 'Español',
     'english' => 'Inglés',
     'login' => 'LOGIN',
-    'register' => 'REGISTRATE'
+    'register' => 'REGISTRATE',
+    'apartment' => 'Apartamentos',
+    'profile' => 'Perfil'
 ];

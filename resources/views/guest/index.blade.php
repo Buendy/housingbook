@@ -3,7 +3,7 @@
 @section('content')
     <div class="section">
         <div class="container">
-            <h2 class="section-title">Latest Offers</h2>
+            <h2 class="section-title">{{__('guest.apartments')}}</h2>
             <div class="row">
                 @forelse($apartments as $apartment)
                     <div class="col-md-4">
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                 @empty
-                    <h3>No hay apartamentos en estos momentos</h3>
+                    <h3>{{__('guest.noapartments')}}</h3>
                 @endforelse
                 <div class="mx-auto d-block">
                     {{$apartments->links()}}
