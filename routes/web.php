@@ -28,7 +28,6 @@ Route::prefix('profile')->group(function () {
     //Rutas para botones del perfil de usuario
     Route::get('','ProfileController@index')->name('profile.index');
     Route::get('apartments','ProfileController@apartments')->name('profile.manage');
-    Route::get('add','ProfileController@create')->name('profile.add');
     Route::get('edit','ProfileController@editProfile')->name('profile.edit');
 
     //CRUD APARTAMENTOS

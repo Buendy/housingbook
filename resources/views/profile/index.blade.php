@@ -74,7 +74,7 @@
         <div class="container">
             <div class="button-container">
                 <a href="{{route('profile.manage')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.manage')}}</a>
-                <a href="{{route('profile.add')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.add')}}</a>
+                <a href="{{route('profile.createapartment')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.createapartment')}}</a>
                 <a href="{{route('profile.edit')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.editprofile')}}</a>
             </div>
         </div>

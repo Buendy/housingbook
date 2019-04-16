@@ -64,7 +64,7 @@
                         @csrf
                         <div class="card-header text-center">
                             <div class="logo-container">
-                                <img src="./img/now-logo.png" alt="">
+                                <img src="../img/now-logo.png" alt="">
                             </div>
                         </div>
                         <div class="card-body">
@@ -74,7 +74,7 @@
                                 </div>
 
 
-                                <input type="email" name="email" value="{{ old('email') }}" class="form-control" placeholder="Email..." required autofocus>
+                                <input type="email" name="email" value="{{ old('email') }}" class="form-control" placeholder="Email..." required>
 
                             </div>
                             <div class="input-group no-border input-lg">

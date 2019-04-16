@@ -20,7 +20,7 @@ class ProfileController extends Controller
     public function apartments()
     {
         $apartments = Apartment::where('user_id',auth()->user()->id)->paginate(6);
-        return view('profile.apartments',compact('apartments'));
+        return view('profile.apartments.index',compact('apartments'));
     }
 
     public function editProfile()
