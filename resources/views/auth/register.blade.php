@@ -54,25 +54,7 @@
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
-@if(count($errors) > 0)
-    @foreach($errors->all() as $error)
-        <div class="callout alert">
-            {{$error}}
-        </div>
-    @endforeach
-@endif
 
-@if(session('success'))
-    <div class="alert alert-info">
-        {{session('success')}}
-    </div>
-@endif
-
-@if(session('error'))
-    <div class="alert alert-info">
-        {{session('error')}}
-    </div>
-@endif
 
 <div class="page-header header-filter" filter-color="black">
     <div class="page-header-image" style="background-image:url(./img/bg18.jpg)"></div>
@@ -80,39 +62,30 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 ml-auto mr-auto">
-                    <div class="info info-horizontal">
-                        <div class="icon icon-primary">
-                            <i class="now-ui-icons media-2_sound-wave"></i>
-                        </div>
-                        <div class="description">
-                            <h5 class="info-title">Marketing</h5>
-                            <p class="description">
-                                We've created the marketing campaign of the website. It was a very interesting collaboration.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="info info-horizontal">
-                        <div class="icon icon-primary">
-                            <i class="now-ui-icons media-1_button-pause"></i>
-                        </div>
-                        <div class="description">
-                            <h5 class="info-title">Fully Coded in HTML5</h5>
-                            <p class="description">
-                                We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="info info-horizontal">
-                        <div class="icon icon-info">
-                            <i class="now-ui-icons users_single-02"></i>
-                        </div>
-                        <div class="description">
-                            <h5 class="info-title">Built Audience</h5>
-                            <p class="description">
-                                There is also a Fully Customizable CMS Admin Dashboard for this product.
-                            </p>
-                        </div>
-                    </div>
+
+                        @if ($errors->any())
+
+
+
+                                <div class="alert alert-danger rounded"  id="alert" role="alert">
+                                    <div class="container">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">
+                      <i class="now-ui-icons ui-1_simple-remove"></i>
+                    </span>
+                                        </button>
+                                        <p><strong>Ups!</strong> Ocurrión algún error.</p>
+                                        @foreach ($errors->all() as $error)
+                                            <p>{{ $error }}</p>
+                                        @endforeach
+
+                                    </div>
+                                </div>
+
+
+
+
+                        @endif
                 </div>
                 <div class="col-md-4 mr-auto">
                     <div class="card card-signup">
@@ -242,6 +215,13 @@
 <script src="{{ asset('js/plugins/presentation-page/rellax.min.js')}}" type="text/javascript"></script>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+<script>
+    $(function() {
+        $('#alert').ready(function(){
+            $('#alert').effect( "shake" );
+        });
+    });
+</script>
 </body>
 
 </html>

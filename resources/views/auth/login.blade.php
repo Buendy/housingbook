@@ -195,12 +195,10 @@
 <script src="{{ asset('js/plugins/presentation-page/rellax.min.js')}}" type="text/javascript"></script>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
-<script src="//code.jquery.com/jquery-1.12.4.js"></script>
-<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
     $(function() {
-        $('#alert').ready(function(){
-            $('#alert').effect( "shake" );
+        $('#alert').click(function(){
+            $('#box-two').css("transform","translate(250px,0)");
         });
     });
 </script>
