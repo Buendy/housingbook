@@ -58,27 +58,108 @@
         </div>
         <div class="container">
             <div class="photo-container">
-                <img src="{{auth()->user()->photo}}" alt="{{auth()->user()->name}}" style="width: 100px; height: 100px;">
+                <img src="{{$user->photo}}" alt="{{$user->name}}" style="width: 100px; height: 100px;">
             </div>
-            <h3 class="title">{{auth()->user()->name}}</h3>
-            <p class="category">{{auth()->user()->last_name}}</p>
+            <h3 class="title">{{$user->name}}</h3>
+            <p class="category">{{$user->last_name}}</p>
             <div class="content">
                 <div class="social-description">
-                    <h5>{{auth()->user()->address}}</h5>
-                    <p>{{auth()->user()->phone}}</p>
+                    <div class="social-description">
+                        <h2>{{count($user->apartments)}}</h2>
+                        <p>{{__('menu.apartment')}}</p>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
     <div class="section">
         <div class="container">
-            <div class="button-container">
-                <a href="{{route('profile.manage')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.manage')}}</a>
-                <a href="{{route('profile.createapartment')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.createapartment')}}</a>
-                <a href="{{route('profile.edit')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.editprofile')}}</a>
-            </div>
+            @if($user->id == Auth::user()->id)
+                <div class="button-container">
+                    <a href="{{route('profile.manage')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.manage')}}</a>
+                    <a href="{{route('profile.createapartment')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.createapartment')}}</a>
+                    <a href="{{route('profile.edit')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.editprofile')}}</a>
+                </div>
+            @endif
         </div>
     </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+        @foreach($user->apartments as $apartment)
+                <div class="col-md-8 mb-5 shadow rounded p-3">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+
+                            <ul class="nav nav-pills nav-pills-primary nav-pills-icons flex-column" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#link{{$nums}}" role="tablist">
+                                        <i class="now-ui-icons text_align-left"></i> {{__('apartments.details')}}
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#link{{$nums + 1}}" role="tablist">
+                                        <i class="now-ui-icons media-1_camera-compact"></i> {{__('apartments.photos')}}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="link{{$nums}}">
+                                    <h6 class="text-primary">
+                                        {{$apartment->name}}
+                                    </h6>
+
+                                        {{$apartment->short_description}}
+
+                                </div>
+                                <div class="tab-pane ml-5" id="link{{$nums + 1}}">
+                                    <div id="productCarousel{{$nums + 1}}" class="carousel slide" data-ride="carousel" data-interval="8000" style="width: 80%; height: 80%;">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#productCarousel" data-slide-to="0" class="active"></li>
+                                            <li data-target="#productCarousel" data-slide-to="1"></li>
+                                            <li data-target="#productCarousel" data-slide-to="2"></li>
+                                            <li data-target="#productCarousel" data-slide-to="3"></li>
+                                        </ol>
+                                        <div class="carousel-inner" role="listbox">
+
+                                            <div class="carousel-item active">
+                                                <img class="d-block img-raised" src="{{$apartment->photos[0]->url}}" alt="{{$apartment->name}}">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block img-raised" src="{{$apartment->photos[1]->url}}" alt="{{$apartment->name}}">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block img-raised" src="{{$apartment->photos[2]->url}}" alt="{{$apartment->name}}">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block img-raised" src="{{$apartment->photos[3]->url}}" alt="{{$apartment->name}}">
+                                            </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#productCarousel{{$nums - 1}}" role="button" data-slide="prev">
+                                            <button type="button" class="btn btn-primary btn-icon btn-round btn-sm" name="button">
+                                                <i class="now-ui-icons arrows-1_minimal-left"></i>
+                                            </button>
+                                        </a>
+                                        <a class="carousel-control-next" href="#productCarousel{{$nums + 1}}" role="button" data-slide="next">
+                                            <button type="button" class="btn btn-primary btn-icon btn-round btn-sm" name="button">
+                                                <i class="now-ui-icons arrows-1_minimal-right"></i>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        <?php $nums = $nums + 2;?>
+        @endforeach
+
+    </div>
+
 </div>
 <!--   Core JS Files   -->
 <script src="{{ asset('js/core/jquery.min.js')}}" type="text/javascript"></script>

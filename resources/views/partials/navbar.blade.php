@@ -53,7 +53,7 @@
                         </a>
 
 
-                            <a href="{{route('profile.index')}}" class="dropdown-item">
+                            <a href="{{url('profile/'. Auth::user()->name)}}" class="dropdown-item">
                                 <i class="now-ui-icons users_circle-08" aria-hidden="true"></i>
                                 <p>{{__('menu.profile')}}</p>
                             </a>

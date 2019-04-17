@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Apartment;
+use App\User;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -12,9 +13,14 @@ class ProfileController extends Controller
         return $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return view('profile.index');
+
+        $user = User::where('name', '=', $request->name)->firstOrFail();
+
+        $nums = 1;
+        $nums2 = 0;
+        return view('profile.index', compact('user', 'nums', 'nums2'));
     }
 
     public function apartments()

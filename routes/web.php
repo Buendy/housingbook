@@ -26,7 +26,7 @@ Route::get('apartments/{apartment}','PublicController@show')->name('apartments.s
 
 Route::prefix('profile')->group(function () {
     //Rutas para botones del perfil de usuario
-    Route::get('','ProfileController@index')->name('profile.index');
+    Route::get('/{name}','ProfileController@index')->name('profile.index');
     Route::get('apartments','ProfileController@apartments')->name('profile.manage');
     Route::get('edit','ProfileController@editProfile')->name('profile.edit');
 
