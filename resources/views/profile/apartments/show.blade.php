@@ -99,7 +99,7 @@
                         <div class="text-center">
                             <a href="{{route('profile.editapartment',$apartment->id)}}" class="btn btn-primary mr-3 text-white">{{__('profile.edit')}}&nbsp;<i class="now-ui-icons shopping_cart-simple"></i></a>
                             {{Form::open(['action' => ['ApartmentController@destroy',$apartment->id], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
-                            <button type="submit" data-toggle="tooltip" title="{{__('profile.delete')}}" class="btn btn-primary mr-3 text-white">{{__('profile.edit')}} <i class="now-ui-icons shopping_cart-simple"></i></button>
+                            <button type="submit" class="btn btn-primary mr-3 text-white">{{__('profile.delete')}} <i class="now-ui-icons shopping_cart-simple"></i></button>
                             {{Form::close()}}
                         </div>
                     </div>

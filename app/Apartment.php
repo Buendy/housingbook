@@ -6,6 +6,35 @@ use Illuminate\Database\Eloquent\Model;
 
 class Apartment extends Model
 {
+    protected $fillable = ['name','description','address','short_description','city_id','user_id'];
+
+    public static $rules = [
+        'name' => 'required | min:3 | unique:apartments,name',
+        'description' => 'required | min:3 | max:300',
+        'address' => 'required | min:10 | max:100',
+        'short_description' => 'required | min:3 | max: 100',
+        'city' => 'required | exists:cities,id',
+        'services' => 'required',
+        'categories' => 'required',
+    ];
+
+    /*public static $messages = [
+        'name.required' => 'El nombre es obligatorio',
+        'name.min' => 'El campo nombre es demasiado corto',
+        'name.unique' => 'El nombre del curso ya está en uso',
+        'description.required' => 'El campo descripción es obligatorio',
+        'description.min' => 'El campo descripción es demasiado corto',
+        'description.max' => 'El campo descripción es demasiado largo',
+        'address.required' => 'El campo descripción es obligatorio',
+        'address.min' => 'El campo descripción es demasiado corto',
+        'address.max' => 'El campo descripción es demasiado largo',
+        'short_description.required' => 'El campo descripción es obligatorio',
+        'short_description.min' => 'El campo descripción es demasiado corto',
+        'short_description.max' => 'El campo descripción es demasiado largo',
+        'city_id.required' => 'El campo descripción es obligatorio',
+        'city_id.exists' => 'El campo descripción es demasiado corto',
+    ];*/
+
     public function city()
     {
         return $this->belongsTo(City::class);
@@ -24,6 +53,16 @@ class Apartment extends Model
     public function services()
     {
         return $this->belongsToMany(Service::class);
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
     }
 
     public function getPhotoImageAttribute()

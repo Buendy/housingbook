@@ -18,4 +18,5 @@ return [
     'deletesuccess' => 'Apartment deleted successfully',
     'editapartment' => 'Edit apartment',
     'createapartment' => 'Add apartment',
+    'updateapartment' => 'Update apartment',
 ];

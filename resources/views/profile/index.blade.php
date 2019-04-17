@@ -58,7 +58,7 @@
         </div>
         <div class="container">
             <div class="photo-container">
-                <img src="{{auth()->user()->photo}}" alt="{{auth()->user()->name}}">
+                <img src="{{auth()->user()->photo}}" alt="{{auth()->user()->name}}" style="width: 100px; height: 100px;">
             </div>
             <h3 class="title">{{auth()->user()->name}}</h3>
             <p class="category">{{auth()->user()->last_name}}</p>

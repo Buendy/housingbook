@@ -34,9 +34,9 @@ Route::prefix('profile')->group(function () {
     Route::get('show/{apartment}','ApartmentController@show')->name('profile.showapartment');
     Route::get('create','ApartmentController@create')->name('profile.createapartment');
     Route::post('store','ApartmentController@store')->name('profile.storeapartment');
+    Route::delete('delete/{apartment}','ApartmentController@destroy')->name('profile.deleteapartment');
     Route::get('{apartment}/edit','ApartmentController@edit')->name('profile.editapartment');
     Route::put('{apartment}/update','ApartmentController@update')->name('profile.updateapartment');
-    Route::delete('delete/{apartment}','ApartmentController@destroy')->name('profile.deleteapartment');
 });
 
 

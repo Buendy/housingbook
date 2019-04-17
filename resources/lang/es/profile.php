@@ -18,4 +18,5 @@ return [
     'deletesuccess' => 'Apartamento borrado correctamente',
     'editapartment' => 'Editar apartamento',
     'createapartment' => 'Añadir apartamento',
+    'updateapartment' => 'Actualizar apartamento',
 ];

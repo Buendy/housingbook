@@ -100,11 +100,11 @@
                             <div class="row pick-size">
                                 <div class="col-lg-6 col-md-8 col-sm-6">
                                     <label>{{__('guest.checkin')}}</label>
-                                    <input type="date" name="entrada" id="entrada" class="form-control" required>
+                                    <input type="text" name="entrada" class="form-control datetimepicker" value="{{\Carbon\Carbon::today()}}" required>
                                 </div>
                                 <div class="col-lg-6 col-md-8 col-sm-6">
                                     <label>{{__('guest.checkout')}}</label>
-                                    <input type="date" name="salida" id="salida" class="form-control" required>
+                                    <input type="text" name="salida" class="form-control datetimepicker" value="{{\Carbon\Carbon::today()}}" required>
                                 </div>
                             </div>
                             <div class="row justify-content-end">
