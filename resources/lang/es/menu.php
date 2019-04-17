@@ -7,5 +7,7 @@ return [
     'login' => 'LOGIN',
     'register' => 'REGISTRATE',
     'apartment' => 'Apartamentos',
-    'profile' => 'Perfil'
+    'profile' => 'Perfil',
+    'dashboard' => 'dashboard',
+    'return' => 'volver'
 ];

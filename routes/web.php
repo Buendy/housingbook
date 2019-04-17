@@ -40,5 +40,10 @@ Route::prefix('profile')->group(function () {
 });
 
 
+Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
+
+
+
 Route::get('set_language/{lang}', 'Controller@setLanguage')->name('set_language');
 

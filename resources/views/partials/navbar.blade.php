@@ -45,6 +45,21 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+
+                        <a href="{{route('dashboard')}}" class="dropdown-item">
+                            <i class="now-ui-icons design_bullet-list-67" aria-hidden="true"></i>
+                            <p>{{__('menu.dashboard')}}</p>
+                        </a>
+
+
+                            <a href="{{route('profile.index')}}" class="dropdown-item">
+                                <i class="now-ui-icons users_circle-08" aria-hidden="true"></i>
+                                <p>{{__('menu.profile')}}</p>
+                            </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -52,15 +67,6 @@
                             <p>{{ __('Logout') }}</p>
 
                         </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-
-                            <a href="{{route('profile.index')}}" class="dropdown-item">
-                                <i class="now-ui-icons users_circle-08" aria-hidden="true"></i>
-                                <p>{{__('menu.profile')}}</p>
-                            </a>
 
                     </div>
                 </li>
