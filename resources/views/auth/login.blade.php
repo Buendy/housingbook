@@ -55,11 +55,47 @@
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="page-header header-filter" filter-color="orange">
-    <div class="page-header-image" style="background-image:url(./img/login.jpg)"></div>
+    <div class="page-header-image" style="background-image:url('./img/login.jpg')"></div>
     <div class="content">
         <div class="container">
+            <div class="row justify-content-center">
+
+                @if ($errors->any())
+
+
+                        <div class="col-md-6" id="alert">
+                            <div class="alert alert-danger rounded"  role="alert">
+                                <div class="container">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">
+                      <i class="now-ui-icons ui-1_simple-remove"></i>
+                    </span>
+                                    </button>
+                                    <p><strong>Ups!</strong> Ocurrión algún error.</p>
+                                    @foreach ($errors->all() as $error)
+                                        <p>{{ $error }}</p>
+                                    @endforeach
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                @endif
+
+
+
+            </div>
+
             <div class="col-md-5 ml-auto mr-auto">
+
                 <div class="card card-login card-plain">
+
+
+
+
+
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="card-header text-center">
@@ -134,6 +170,7 @@
         </div>
     </footer>
 </div>
+
 <!--   Core JS Files   -->
 <script src="{{ asset('js/core/jquery.min.js')}}" type="text/javascript"></script>
 <script src="{{ asset('js/core/popper.min.js')}}" type="text/javascript"></script>
@@ -158,6 +195,15 @@
 <script src="{{ asset('js/plugins/presentation-page/rellax.min.js')}}" type="text/javascript"></script>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(function() {
+        $('#alert').ready(function(){
+            $('#alert').effect( "shake" );
+        });
+    });
+</script>
 </body>
 
 </html>
