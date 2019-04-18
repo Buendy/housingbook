@@ -96,21 +96,21 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="">
+                        {{Form::open(['method' => 'POST', 'action' => ['RentController@store',$apartment->id]])}}
                             <div class="row pick-size">
                                 <div class="col-lg-6 col-md-8 col-sm-6">
                                     <label>{{__('guest.checkin')}}</label>
-                                    <input type="text" name="entrada" class="form-control datetimepicker" value="{{\Carbon\Carbon::today()}}" required>
+                                    <input type="text" name="entrada" class="form-control datepicker" required>
                                 </div>
                                 <div class="col-lg-6 col-md-8 col-sm-6">
                                     <label>{{__('guest.checkout')}}</label>
-                                    <input type="text" name="salida" class="form-control datetimepicker" value="{{\Carbon\Carbon::today()}}" required>
+                                    <input type="text" name="salida" class="form-control datepicker" required>
                                 </div>
                             </div>
                             <div class="row justify-content-end">
                                 <button class="btn btn-primary mr-3">{{__('guest.rent')}}&nbsp;<i class="now-ui-icons shopping_cart-simple"></i></button>
                             </div>
-                        </form>
+                        {{Form::close()}}
                     </div>
                 </div>
                 <div class="section related-products" data-background-color="black">

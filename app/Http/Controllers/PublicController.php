@@ -18,7 +18,7 @@ class PublicController extends Controller
     public function show(Apartment $apartment)
     {
         $apartment->load('city','user','photos','services');
-        $randoms_apartments = Apartment::where('id','!=',$apartment->id)->paginate(4);
+        $randoms_apartments = Apartment::where('id','!=',$apartment->id)->where('city_id',$apartment->city_id)->paginate(4);
         return view('guest.show',compact('apartment','randoms_apartments'));
     }
 }

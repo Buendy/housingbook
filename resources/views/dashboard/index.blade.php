@@ -64,13 +64,13 @@
                         <div class="collapse " id="mapsExamples">
                             <ul class="nav">
                                 <li>
-                                    <a href="../examples/maps/google.html">
+                                    <a href="{{route('apartment.createapartment')}}">
                                         <span class="sidebar-mini-icon">AA</span>
                                         <span class="sidebar-normal">{{__('profile.createapartment')}}</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="../examples/maps/fullscreen.html">
+                                    <a href="{{route('profile.manage')}}">
                                         <span class="sidebar-mini-icon">EA</span>
                                         <span class="sidebar-normal">{{__('profile.manage')}}</span>
                                     </a>

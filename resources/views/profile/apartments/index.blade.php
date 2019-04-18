@@ -19,7 +19,7 @@
 
                 <div class="fresh-table full-color-orange justify-content-center mx-auto d-block text-center" style="width: 1000px">
                     <div class="toolbar">
-                        <a href="{{route('profile.createapartment')}}"><button class="btn btn-warning">{{__('profile.create')}}</button></a>
+                        <a href="{{route('apartment.createapartment')}}"><button class="btn btn-warning">{{__('profile.create')}}</button></a>
                     </div>
 
                     <table id="fresh-table" class="table">
@@ -41,8 +41,8 @@
                                 <td>{{$apartment->id}}</td>
                                 <td colspan="2" width="500">
                                     <div class="d-inline-block">
-                                        <a href="{{route('profile.showapartment',$apartment->id)}}" data-toggle="tooltip" title="{{__('profile.show')}}" class="btn-primary btn-round btn-sm"><i class="now-ui-icons design_app"></i></a>
-                                        <a href="{{route('profile.editapartment',$apartment->id)}}" data-toggle="tooltip" title="{{__('profile.edit')}}" class="btn-primary btn-round btn-sm"><i class="now-ui-icons design_app"></i></a>
+                                        <a href="{{route('apartment.showapartment',$apartment->id)}}" data-toggle="tooltip" title="{{__('profile.show')}}" class="btn-primary btn-round btn-sm"><i class="now-ui-icons design_app"></i></a>
+                                        <a href="{{route('apartment.editapartment',$apartment->id)}}" data-toggle="tooltip" title="{{__('profile.edit')}}" class="btn-primary btn-round btn-sm"><i class="now-ui-icons design_app"></i></a>
                                         {{Form::open(['action' => ['ApartmentController@destroy',$apartment->id], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
                                             <button type="submit" data-toggle="tooltip" title="{{__('profile.delete')}}" class="btn-primary btn-round btn-sm"><i class="now-ui-icons design_app"></i></button>
                                         {{Form::close()}}

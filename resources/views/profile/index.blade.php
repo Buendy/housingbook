@@ -78,7 +78,7 @@
             @if($user->id == Auth::user()->id)
                 <div class="button-container">
                     <a href="{{route('profile.manage')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.manage')}}</a>
-                    <a href="{{route('profile.createapartment')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.createapartment')}}</a>
+                    <a href="{{route('apartment.createapartment')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.createapartment')}}</a>
                     <a href="{{route('profile.edit')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.editprofile')}}</a>
                 </div>
             @endif
@@ -135,7 +135,7 @@
                                                 <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[2]->local_url)}}" alt="{{$apartment->name}}">
                                             </div>
                                             <div class="carousel-item">
-                                                <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[4]->local_url)}}" alt="{{$apartment->name}}">
+                                                <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[3]->local_url)}}" alt="{{$apartment->name}}">
                                             </div>
                                         </div>
                                         <a class="carousel-control-prev" href="#productCarousel{{$nums - 1}}" role="button" data-slide="prev">

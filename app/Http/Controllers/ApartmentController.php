@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Apartment;
 use App\Category;
 use App\City;
+use App\Helpers\Helper;
 use App\Photo;
 use App\Service;
 use Illuminate\Http\Request;
@@ -47,28 +48,17 @@ class ApartmentController extends Controller
 
         foreach($request->file('photos') as $photo)
         {
-            $filenameWithExt = $photo->getClientOriginalName();
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            $extension = $photo->getClientOriginalExtension();
-            $filenameToStore = $filename.'_'.time().'.'.$extension;
-            $path = $photo->storeAs('public/photos/', $filenameToStore);
+            $picture = Helper::uploadFile($photo);
 
             $photo = new Photo();
-            $photo->url = $filenameToStore;
-            $photo->local_url = $filenameToStore;
+            $photo->url = $picture;
+            $photo->local_url = $picture;
             $photo->apartment_id = $apartment->id;
             $photo->save();
         }
 
-        foreach ($request->services as $service)
-        {
-            $apartment->services()->attach($service);
-        }
-
-        foreach($request->categories as $category)
-        {
-            $apartment->categories()->attach($category);
-        }
+        Helper::servicesTableFill($apartment,$request->services);
+        Helper::categoriesTableFill($apartment,$request->categories);
 
         return back();
     }
@@ -97,28 +87,17 @@ class ApartmentController extends Controller
 
         foreach($request->file('photos') as $photo)
         {
-            $filenameWithExt = $photo->getClientOriginalName();
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            $extension = $photo->getClientOriginalExtension();
-            $filenameToStore = $filename.'_'.time().'.'.$extension;
-            $path = $photo->storeAs('public/photos/', $filenameToStore);
+            $picture = Helper::uploadFile($photo);
 
             $photo = new Photo();
-            $photo->url = $filenameToStore;
-            $photo->local_url = $filenameToStore;
+            $photo->url = $picture;
+            $photo->local_url = $picture;
             $photo->apartment_id = $apartment->id;
             $photo->save();
         }
 
-        foreach ($request->services as $service)
-        {
-            $apartment->services()->attach($service);
-        }
-
-        foreach($request->categories as $category)
-        {
-            $apartment->categories()->attach($category);
-        }
+        Helper::servicesTableFill($apartment,$request->services);
+        Helper::categoriesTableFill($apartment,$request->categories);
 
         return back();
     }
