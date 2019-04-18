@@ -16,7 +16,7 @@
                                 <div class="card card-blog">
                                     <div class="card-image">
                                         <a href="{{route('apartments.show',$apartment->id)}}">
-                                            <img class="img rounded" src="{{$apartment->photo_image}}">
+                                            <img class="img rounded" src="{{url('/storage/photos/'.$apartment->photos[0]->local_url)}}">
                                         </a>
                                     </div>
                                     <div class="card-body">
@@ -56,7 +56,7 @@
                         <div class="card card-blog">
                             <div class="card-image">
                                 <a href="{{route('apartments.show',$apartment->id)}}">
-                                    <img class="img rounded" src="{{$apartment->photo_image}}">
+                                    <img class="img rounded" src="{{url('/storage/photos/'.$apartment->photos[0]->local_url)}}">
                                 </a>
                             </div>
                             <div class="card-body">
