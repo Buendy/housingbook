@@ -85,7 +85,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('profile.manage')}}">
+                                <a href="{{route('apartment.index')}}">
                                     <span class="sidebar-mini-icon">EA</span>
                                     <span class="sidebar-normal">{{__('profile.manage')}}</span>
                                 </a>

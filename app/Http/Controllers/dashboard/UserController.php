@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\dashboard;
+use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 
