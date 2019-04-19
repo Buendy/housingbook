@@ -31,7 +31,7 @@
         <div class="sidebar-wrapper">
             <div class="user">
                 <div class="photo">
-                    <img src="{{asset('assets/img/faces/ayo-ogunseinde-2.jpg')}}" />
+                    <img src="{{Auth::user()->photo}}"  style="width: 100px; height: 100px"/>
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" class="collapsed">
@@ -44,23 +44,18 @@
                     <div class="collapse" id="collapseExample">
                         <ul class="nav">
                             <li>
-                                <a href="#">
+                                <a href="{{url('dashboard/'.Auth::user()->id.'/show')}}">
                                     <span class="sidebar-mini-icon">MP</span>
                                     <span class="sidebar-normal">My Profile</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{url('dashboard/'.Auth::user()->id.'/edit')}}">
                                     <span class="sidebar-mini-icon">EP</span>
                                     <span class="sidebar-normal">Edit Profile</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <span class="sidebar-mini-icon">S</span>
-                                    <span class="sidebar-normal">Settings</span>
-                                </a>
-                            </li>
+
 
                         </ul>
                     </div>

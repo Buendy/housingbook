@@ -7,6 +7,7 @@ return [
     'apartmenthello' => 'Your apartments',
     'apartmentname' => 'Name',
     'apartmentaddress' => 'Address',
+    'secondaddress' => 'Second address',
     'apartmentdescription' => 'Description',
     'apartmentcity' => 'City',
     'apartmentactions' => 'Actions',
@@ -19,4 +20,11 @@ return [
     'editapartment' => 'Edit apartment',
     'createapartment' => 'Add apartment',
     'updateapartment' => 'Update apartment',
+    'email' => 'Email address',
+    'name' => 'Name',
+    'last_name' => 'Last Name',
+    'phone' => 'Phone',
+    'profile' => 'Profile',
+    'update' => 'Update',
+    'edit_profile' => 'Edit your profile'
 ];

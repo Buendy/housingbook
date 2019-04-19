@@ -45,7 +45,9 @@ Route::prefix('apartments')->group(function() {
 
 
 Route::prefix('dashboard')->group(function(){
-   Route::get('{user}/edit', 'UserController@edit')->name('user.edit');
+    Route::get('{user}/show', 'UserController@show')->name('user.show');
+    Route::get('{user}/edit', 'UserController@edit')->name('user.edit');
+    Route::put('{user}/update', 'UserController@update')->name('user.update');
 });
 
 //Rutas para alquilar apartamento
