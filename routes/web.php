@@ -43,6 +43,11 @@ Route::prefix('apartments')->group(function() {
     Route::put('{apartment}/update','ApartmentController@update')->name('apartment.updateapartment');
 });
 
+
+Route::prefix('dashboard')->group(function(){
+   Route::get('{user}/edit', 'UserController@edit')->name('user.edit');
+});
+
 //Rutas para alquilar apartamento
 Route::prefix('rent')->group(function(){
    Route::post('store/{apartment}','RentController@store')->name('rent.apartment');

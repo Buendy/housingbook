@@ -79,7 +79,7 @@
                 <div class="button-container">
                     <a href="{{route('profile.manage')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.manage')}}</a>
                     <a href="{{route('apartment.createapartment')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.createapartment')}}</a>
-                    <a href="{{route('profile.edit')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.editprofile')}}</a>
+                    <a href="{{url('dashboard/'.Auth::user()->id.'/edit')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.editprofile')}}</a>
                 </div>
             @endif
         </div>
