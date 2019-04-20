@@ -12,89 +12,84 @@
                     </div>
                     <hr>
                     <div class="card-body ">
-                        <form class="form-horizontal" action="{{url('dashboard/'.Auth::user()->id.'/update')}}" method="post">
-                            @csrf
-                            @method('PUT')
-                            <div class="row">
-                                <label class="col-md-3 col-form-label">{{__('profile.name')}}</label>
+                        {{Form::open(['method' => 'PUT','action' => ['dashboard\UserController@update',auth()->user()->id]])}}
+                        <div class="row">
+                            <label class="col-md-3 col-form-label">{{__('profile.name')}}</label>
 
-                                <div class="col-md-8">
-                                    <div class="form-group">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    {{Form::text('name',old('name',$user->name), ['id' => 'name','class' => 'form-control'])}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-md-3 col-form-label">{{__('profile.last_name')}}</label>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    {{Form::text('last_name',old('last_name',$user->last_name), ['id' => 'last_name','class' => 'form-control'])}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-md-3 col-form-label">{{__('profile.email')}}</label>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    {{Form::text('email',old('email',$user->email), ['id' => 'email','class' => 'form-control'])}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-md-3 col-form-label">{{__('profile.apartmentaddress')}}</label>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    {{Form::text('address',old('address',$user->address), ['id' => 'address','class' => 'form-control'])}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-md-3 col-form-label">{{__('profile.secondaddress')}}</label>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    {{Form::text('second_address',old('second_address',$user->second_address), ['id' => 'second_address','class' => 'form-control'])}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-md-3 col-form-label">{{__('profile.phone')}}</label>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" value="{{ old('phone') ?: $user->phone }}" name="phone" id="phone">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
 
-                                        <input type="text" class="form-control" value="{{ old('name') ?: $user->name }}" name="name" id="name">
+                            <div class="col-md-3 col-sm-4">
 
+                                <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                    <div class="fileinput-new thumbnail img-circle">
+                                        <img src="{{asset('assets/img/placeholder.jpg')}}" alt="...">
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-md-3 col-form-label">{{__('profile.last_name')}}</label>
-                                <div class="col-md-8">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" value="{{ old('last_name') ?: $user->last_name }}" name="last_name" id="last_name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-md-3 col-form-label">{{__('profile.email')}}</label>
-                                <div class="col-md-8">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" value="{{ old('email') ?: $user->email }}" name="email" id="email">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-md-3 col-form-label">{{__('profile.apartmentaddress')}}</label>
-                                <div class="col-md-8">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" value="{{ old('address') ?: $user->address }}" name="address" id="address">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-md-3 col-form-label">{{__('profile.secondaddress')}}</label>
-                                <div class="col-md-8">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" value="{{ old('second_address') ?: $user->second_address }}" name="second_address" id="second_address">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-md-3 col-form-label">{{__('profile.phone')}}</label>
-                                <div class="col-md-8">
-                                    <div class="form-group">
-                                        <input type="tel" class="form-control" value="{{ old('phone') ?: $user->phone }}" name="phone" id="phone">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row justify-content-center">
-
-                                <div class="col-md-3 col-sm-4">
-
-                                    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                                        <div class="fileinput-new thumbnail img-circle">
-                                            <img src="{{asset('assets/img/placeholder.jpg')}}" alt="...">
-                                        </div>
-                                        <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
-                                        <div>
+                                    <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
+                                    <div>
                         <span class="btn btn-round btn-rose btn-file">
                           <span class="fileinput-new">Add Photo</span>
                           <span class="fileinput-exists">Change</span>
                           <input type="file" name="..." />
                         </span>
-                                            <br />
-                                            <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
-                                        </div>
+                                        <br />
+                                        <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
                                     </div>
                                 </div>
                             </div>
-                            <hr>
-                            <div class="row justify-content-center">
-                                <div class="col-md-3 col-sm-4">
-
-                                    <button class="btn btn-info" type="submit" >{{__('profile.update')}}</button>
-                                </div>
+                        </div>
+                        <hr>
+                        <div class="row justify-content-center">
+                            <div class="col-md-3 col-sm-4">
+                                {{Form::submit(__('profile.update'))}}
                             </div>
-                        </form>
+                        </div>
+                        {{Form::close()}}
                     </div>
                 </div>
             </div>

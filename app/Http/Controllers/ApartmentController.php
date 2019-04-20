@@ -108,4 +108,12 @@ class ApartmentController extends Controller
 
         return back()->with('success', __('profile.deletesuccess'));
     }
+
+    public function search(Request $request)
+    {
+        $apartments = Apartment::with('city','user','photos','services')->where('name','LIKE',$request->search)->paginate(6);
+
+        $latest_apartment = Apartment::latest()->take(3)->get();
+        return view('guest.index',compact('apartments','latest_apartment'));
+    }
 }

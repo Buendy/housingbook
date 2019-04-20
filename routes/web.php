@@ -20,6 +20,7 @@ Route::get('/home', 'HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/apartments','ApartmentController@search')->name('search');
 
 Route::prefix('public')->group(function(){
     Route::get('apartments','PublicController@index')->name('apartments.public');
@@ -60,4 +61,7 @@ Route::prefix('rent')->group(function(){
 Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('set_language/{lang}', 'Controller@setLanguage')->name('set_language');
+
+Route::get('/activity', 'TelegramController@updatedActivity');
+
 
