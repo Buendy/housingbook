@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->boolean('rol')->default(0);
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('telegram')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

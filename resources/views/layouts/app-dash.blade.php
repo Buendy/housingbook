@@ -46,16 +46,27 @@
                             <li>
                                 <a href="{{url('dashboard/'.Auth::user()->id.'/show')}}">
                                     <span class="sidebar-mini-icon">MP</span>
-                                    <span class="sidebar-normal">My Profile</span>
+                                    <span class="sidebar-normal">{{__('dashboard.profile')}}</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{url('dashboard/'.Auth::user()->id.'/edit')}}">
                                     <span class="sidebar-mini-icon">EP</span>
-                                    <span class="sidebar-normal">Edit Profile</span>
+                                    <span class="sidebar-normal">{{__('dashboard.edit')}}</span>
                                 </a>
                             </li>
-
+                            <li>
+                                <a href="{{url('dashboard/'.Auth::user()->id.'/password')}}">
+                                    <span class="sidebar-mini-icon">PC</span>
+                                    <span class="sidebar-normal">{{__('dashboard.password')}}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url('dashboard/'.Auth::user()->id.'/telegram')}}">
+                                    <span class="sidebar-mini-icon">TI</span>
+                                    <span class="sidebar-normal">{{__('dashboard.telegram')}}</span>
+                                </a>
+                            </li>
 
                         </ul>
                     </div>

@@ -17,6 +17,7 @@ class UserTableSeeder extends Seeder
             'address' => 'C/ Esperanza',
             'phone' => '677055293',
             'rol' => 1,
+            'telegram' => '444388371',
             'password' => bcrypt('123123Aa-')]);
 
         factory(\App\User::class,10)->create();

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\dashboard;
+use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
@@ -19,6 +20,13 @@ class UserController extends Controller
 
     public function update(User $user, Request $request)
     {
-        dd($request);
+        $this->validate($request,User::$rules);
+
+        $photo = Helper::uploadFile($request->file('photo'));
+        $user->fill($request->all());
+        $user->photo = $photo;
+        $user->save();
+
+        return back();
     }
 }

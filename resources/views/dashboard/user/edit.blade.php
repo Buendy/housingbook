@@ -12,7 +12,7 @@
                     </div>
                     <hr>
                     <div class="card-body ">
-                        {{Form::open(['method' => 'PUT','action' => ['dashboard\UserController@update',auth()->user()->id]])}}
+                        {{Form::open(['method' => 'PUT','action' => ['dashboard\UserController@update',auth()->user()->id],'files' => true])}}
                         <div class="row">
                             <label class="col-md-3 col-form-label">{{__('profile.name')}}</label>
 
@@ -75,7 +75,7 @@
                         <span class="btn btn-round btn-rose btn-file">
                           <span class="fileinput-new">Add Photo</span>
                           <span class="fileinput-exists">Change</span>
-                          <input type="file" name="..." />
+                            {{Form::file('photo')}}
                         </span>
                                         <br />
                                         <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
