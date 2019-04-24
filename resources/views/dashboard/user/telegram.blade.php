@@ -9,6 +9,11 @@
                 <div class="card card-user">
                     <div class="card-header">
                         <h5 class="title text-center">{{__('profile.edit_telegram')}}</h5>
+                        <div class="row">
+                            <a href="http://jejo.pw/post/2018/03/17/Obtener-nuestro-ID-de-telegram" class="text-center justify-content-center mx-auto d-block" target="_blank">{{__('profile.obtain_telegram')}}</a>
+                        </div>
+                        <!-- hay que hablar primero al bot y en la DB tener el ID del usuario al que se espera enviar el mensaje por telegram!
+                        El bot se llama housingbook_bot -->
                     </div>
                     <hr>
                     <div class="card-body ">

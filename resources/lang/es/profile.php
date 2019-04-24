@@ -38,4 +38,5 @@ return [
     'passwordupdatedfailed' => 'Lo sentimos! Ha ocurrido un problema al actualizar su contraseña, inténtelo de nuevo',
     'profileupdatedocorrectly' => 'Tu perfil ha sido actualizado',
     'profileupdatedfailed' => 'Lo sentimos! Ha ocurrido un problema al actualizar su perfil, inténtelo de nuevo',
+    'obtain_telegram' => '¿Cómo obtengo mi ID de Telegram?',
 ];
