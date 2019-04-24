@@ -46,6 +46,7 @@ class ApartmentController extends Controller
         $apartment->user_id = auth()->user()->id;
         $apartment->save();
 
+
         foreach($request->file('photos') as $photo)
         {
             $picture = Helper::uploadFile($photo);

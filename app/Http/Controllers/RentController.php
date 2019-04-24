@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Apartment;
 use App\Mail\NewRent;
+use App\Mail\SuccessfullyRent;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -32,7 +33,7 @@ class RentController extends Controller
 
         //Email para persona que alquila
         $user = auth()->user();
-        Mail::to($user)->send(new NewRent(auth()->user(), $apartment));
+        Mail::to($user)->send(new SuccessfullyRent(auth()->user(), $apartment));
 
         //Telegram para dueño y persona que alquila
         TelegramController::sendTelegrams(auth()->user()->telegram,$owner->telegram,$apartment);

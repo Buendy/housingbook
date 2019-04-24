@@ -1,24 +1,7 @@
 @extends('layouts.app-dash')
 @section('content')
-        @if(count($errors) > 0)
-            @foreach($errors->all() as $error)
-                <div class="callout alert">
-                    {{$error}}
-                </div>
-            @endforeach
-        @endif
 
-        @if(session('success'))
-            <div class="alert alert-info">
-                {{session('success')}}
-            </div>
-        @endif
 
-        @if(session('error'))
-            <div class="alert alert-info">
-                {{session('error')}}
-            </div>
-        @endif
 
         <div class="content">
             <h3 class="text-center">{{__('profile.createapartment')}}</h3>
@@ -116,4 +99,35 @@
                     {{Form::close()}}
                 </div>
             </div>
+
+            @if(session('success'))
+                <div class="col-md-5">
+                    <div class="alert alert-info alert-dismissible fade show">
+                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="nc-icon nc-simple-remove"></i>
+                        </button>
+                        <span>
+                            {{__('profile.profileupdatedocorrectly')}}
+                    </span>
+                    </div>
+                </div>
+            @endif
+            @if(count($errors) > 0)
+                <div class="col-md-5">
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="nc-icon nc-simple-remove"></i>
+                        </button>
+                        <span>
+                            {{__('profile.profileupdatedfailed')}}
+                    </span>
+                    </div>
+                    @foreach($errors->all() as $error)
+                        <div class="callout alert alert-danger">
+                            {{$error}}
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+        </div>
 @endsection
