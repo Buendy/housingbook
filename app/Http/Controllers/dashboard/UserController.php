@@ -5,6 +5,7 @@ use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -20,13 +21,66 @@ class UserController extends Controller
 
     public function update(User $user, Request $request)
     {
-        $this->validate($request,User::$rules);
+        if($user->id == auth()->user()->id) {
+            $this->validate($request,
+                ['name' => 'required | min:3 | unique:apartments,name',
+                    'last_name' => 'required | min:3 | max:300',
+                    'email' => ['required', 'min:10', 'max:100', Rule::unique('users','email')->ignore($user->id)],
+                    'address' => 'required',
+                    'phone' => 'required']);
 
-        $photo = Helper::uploadFile($request->file('photo'));
-        $user->fill($request->all());
-        $user->photo = $photo;
-        $user->save();
+            if($request->file('photo'))
+            {
+                $photo = Helper::uploadFile($request->file('photo'));
+                $user->photo = $photo;
+            }
 
-        return back();
+            $user->fill($request->all());
+            $user->save();
+
+            return back()->with('success',__('profile.profileupdatedocorrectly'));
+        } else {
+            return redirect('/dashboard/'. auth()->user()->id . '/edit');
+        }
+    }
+
+    public function telegram(User $user)
+    {
+        return view('dashboard.user.telegram',compact('user'));
+    }
+
+    public function telegramUpdate(User $user, Request $request)
+    {
+        if($user->id == auth()->user()->id)
+        {
+            $this->validate($request,User::$rulesTelegram);
+
+            $user->fill($request->all());
+            $user->save();
+
+            return back()->with('success',__('profile.telegramupdatedcorrectly'));
+        } else {
+            return redirect('/dashboard/'. auth()->user()->id . '/telegram');
+        }
+    }
+
+    public function password(User $user)
+    {
+        return view('dashboard.user.password',compact('user'));
+    }
+
+    public function passwordUpdate(User $user, Request $request)
+    {
+        if($user->id == auth()->user()->id)
+        {
+            $this->validate($request,User::$rulesPassword);
+
+            $user->password = bcrypt($request->password);
+            $user->save();
+
+            return back()->with('success',__('profile.passwordupdatedcorrectly'));
+        } else {
+            return redirect('/dashboard/'. auth()->user()->id . '/password');
+        }
     }
 }

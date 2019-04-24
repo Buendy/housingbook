@@ -23,11 +23,11 @@ class ProfileController extends Controller
         return view('profile.index', compact('user', 'nums', 'nums2'));
     }
 
-    public function apartments()
+    /*public function apartments()
     {
         $apartments = Apartment::where('user_id',auth()->user()->id)->paginate(6);
         return view('profile.apartments.index',compact('apartments'));
-    }
+    }*/
 
     public function editProfile()
     {

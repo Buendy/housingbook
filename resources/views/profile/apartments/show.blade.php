@@ -1,5 +1,4 @@
-@extends('layouts.app-nav')
-@include('partials.header')
+@extends('layouts.app-dash')
 @section('content')
     <div class="wrapper">
         <div class="section">
@@ -97,7 +96,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <a href="{{route('profile.editapartment',$apartment->id)}}" class="btn btn-primary mr-3 text-white">{{__('profile.edit')}}&nbsp;<i class="now-ui-icons shopping_cart-simple"></i></a>
+                            <a href="{{route('apartment.editapartment',$apartment->id)}}" class="btn btn-primary mr-3 text-white">{{__('profile.edit')}}&nbsp;<i class="now-ui-icons shopping_cart-simple"></i></a>
                             {{Form::open(['action' => ['ApartmentController@destroy',$apartment->id], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
                             <button type="submit" class="btn btn-primary mr-3 text-white">{{__('profile.delete')}} <i class="now-ui-icons shopping_cart-simple"></i></button>
                             {{Form::close()}}

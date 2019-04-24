@@ -86,22 +86,42 @@
                         <hr>
                         <div class="row justify-content-center">
                             <div class="col-md-3 col-sm-4">
-                                {{Form::submit(__('profile.update'))}}
+                                {{Form::submit(__('profile.update'),['class' => 'btn btn-primary'])}}
                             </div>
                         </div>
                         {{Form::close()}}
                     </div>
                 </div>
             </div>
-            <div class="col-md-5">
-                <div class="alert alert-danger alert-dismissible fade show">
-                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                        <i class="nc-icon nc-simple-remove"></i>
-                    </button>
-                    <span>
-                            <b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
+            @if(session('success'))
+                <div class="col-md-5">
+                    <div class="alert alert-info alert-dismissible fade show">
+                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="nc-icon nc-simple-remove"></i>
+                        </button>
+                        <span>
+                            {{__('profile.profileupdatedocorrectly')}}
+                    </span>
+                    </div>
                 </div>
-            </div>
+            @endif
+            @if(count($errors) > 0)
+                <div class="col-md-5">
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="nc-icon nc-simple-remove"></i>
+                        </button>
+                        <span>
+                            {{__('profile.profileupdatedfailed')}}
+                    </span>
+                    </div>
+                    @foreach($errors->all() as $error)
+                        <div class="callout alert alert-danger">
+                            {{$error}}
+                        </div>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </div>
 

@@ -41,6 +41,14 @@ class User extends Authenticatable
         'phone' => 'required',
     ];
 
+    public static $rulesTelegram = [
+      'telegram' => 'required | numeric'
+    ];
+
+    public static $rulesPassword = [
+        'password' => ['required', 'string', 'min:8', 'confirmed'],
+    ];
+
     //Link de una guía para obtener nuestro ID de telegram
     //http://jejo.pw/post/2018/03/17/Obtener-nuestro-ID-de-telegram
     //hay que hablar primero al bot y en la DB tener el ID del usuario al que se espera enviar el mensaje por telegram!

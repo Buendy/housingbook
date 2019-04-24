@@ -29,8 +29,8 @@ Route::prefix('public')->group(function(){
 
 Route::prefix('profile')->group(function () {
     //Rutas para botones del perfil de usuario
-    Route::get('apartments','ProfileController@apartments')->name('profile.manage');
-    Route::get('edit','ProfileController@editProfile')->name('profile.edit');
+    //Route::get('apartments','ProfileController@apartments')->name('profile.manage');
+    //Route::get('edit','ProfileController@editProfile')->name('profile.edit');
     Route::get('{name}','ProfileController@index')->name('profile.index');
 });
 
@@ -46,9 +46,14 @@ Route::prefix('apartments')->group(function() {
 
 
 Route::prefix('dashboard')->group(function(){
+    Route::get('', 'DashboardController@index')->name('dashboard');
     Route::get('{user}/show', 'dashboard\UserController@show')->name('user.show');
     Route::get('{user}/edit', 'dashboard\UserController@edit')->name('user.edit');
     Route::put('{user}/update', 'dashboard\UserController@update')->name('user.update');
+    Route::get('{user}/telegram','dashboard\UserController@telegram')->name('user.telegram');
+    Route::get('{user}/password','dashboard\UserController@password')->name('user.password');
+    Route::put('{user}/telegram/update','dashboard\UserController@telegramUpdate')->name('user.telegramupdate');
+    Route::put('{user}/password/update','dashboard\UserController@passwordUpdate')->name('user.passwordupdate');
 
     Route::get('apartment/index', 'dashboard\ApartmentController@index')->name('apartment.index');
 });
@@ -58,7 +63,6 @@ Route::prefix('rent')->group(function(){
    Route::post('store/{apartment}','RentController@store')->name('rent.apartment');
 });
 
-Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('set_language/{lang}', 'Controller@setLanguage')->name('set_language');
 

@@ -28,15 +28,21 @@ class TelegramController extends Controller
         dd($activity);*/
 
         try {
-            /*Telegram::sendMessage([
-           'chat_id' => $ownerTelegram,
-           'text' => 'Hello world, hay que hablar primero al bot y en la DB tener el ID del usuario al que se espera enviar el mensaje por telegram!'
-            ]);*/
 
-            Telegram::sendMessage([
-                'chat_id' => $userTelegram,
-                'text' => 'Hello world, hay que hablar primero al bot y en la DB tener el ID del usuario al que se espera enviar el mensaje por telegram!'
-            ]);
+            if($ownerTelegram != null){
+                Telegram::sendMessage([
+                    'chat_id' => $ownerTelegram,
+                    'text' => 'Hello world, hay que hablar primero al bot y en la DB tener el ID del usuario al que se espera enviar el mensaje por telegram!'
+                ]);
+            }
+
+            if($userTelegram != null)
+            {
+                Telegram::sendMessage([
+                    'chat_id' => $userTelegram,
+                    'text' => 'Hello world, hay que hablar primero al bot y en la DB tener el ID del usuario al que se espera enviar el mensaje por telegram!'
+                ]);
+            }
 
         } catch (\Exception $exception){
 

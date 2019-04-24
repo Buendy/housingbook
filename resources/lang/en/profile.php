@@ -26,5 +26,16 @@ return [
     'phone' => 'Phone',
     'profile' => 'Profile',
     'update' => 'Update',
-    'edit_profile' => 'Edit your profile'
+    'edit_profile' => 'Edit your profile',
+    'edit_password' => 'Edit your password',
+    'edit_telegram' => 'Edit your Telegram ID',
+    'password' => 'Password',
+    'password_confirm' => 'Confirm your password',
+    'telegram' => 'Telegram ID',
+    'telegramupdatedcorrectly' => 'Telegram ID correctly updated',
+    'telegramupdatedfailed' => 'Sorry! Seems like something happen while updating your telegram ID, try again',
+    'passwordupdatedcorrectly' => 'Password correctly updated',
+    'passwordupdatedfailed' => 'Sorry! Seems like something happen while updating your password, try again',
+    'profileupdatedocorrectly' => 'Your profile has been updated',
+    'profileupdatedfailed' => 'Sorry! Seems like something happen while updating your profile, try again',
 ];

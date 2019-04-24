@@ -26,6 +26,16 @@ return [
     'phone' => 'Teléfono',
     'profile' => 'Perfil',
     'update' => 'Actualizar',
-    'edit_profile' => 'Edita tu perfil'
-
+    'edit_profile' => 'Edita tu perfil',
+    'edit_password' => 'Edita tu contraseña',
+    'edit_telegram' => 'Edita tu ID de Telegram',
+    'password' => 'Contraseña',
+    'password_confirm' => 'Confirma tu contraseña',
+    'telegram' => 'ID de Telegram',
+    'telegramupdatedcorrectly' => 'ID de Telegram se ha actualizado correctamente',
+    'telegramupdatedfailed' => 'Lo sentimos! Ha ocurrido un problema al actualizar su ID de telegram, inténtelo de nuevo',
+    'passwordupdatedcorrectly' => 'La contraseña se ha actualizado correctamente',
+    'passwordupdatedfailed' => 'Lo sentimos! Ha ocurrido un problema al actualizar su contraseña, inténtelo de nuevo',
+    'profileupdatedocorrectly' => 'Tu perfil ha sido actualizado',
+    'profileupdatedfailed' => 'Lo sentimos! Ha ocurrido un problema al actualizar su perfil, inténtelo de nuevo',
 ];

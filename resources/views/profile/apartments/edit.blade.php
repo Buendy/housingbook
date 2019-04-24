@@ -1,8 +1,5 @@
-@extends('layouts.app-nav')
-@include('partials.header')
+@extends('layouts.app-dash')
 @section('content')
-    <div class="container">
-        <h3 class="text-center">{{__('profile.updateapartment')}}</h3>
         @if(count($errors) > 0)
             @foreach($errors->all() as $error)
                 <div class="callout alert">
@@ -24,6 +21,7 @@
         @endif
 
         <div class="content">
+            <h3 class="text-center">{{__('profile.updateapartment')}}</h3>
             <div class="row">
                 <div class="col-md-12">
                     {{Form::open(['method' => 'PUT', 'action' => ['ApartmentController@update',$apartment->id], 'files' => true])}}
@@ -118,5 +116,4 @@
                     {{Form::close()}}
                 </div>
             </div>
-        </div>
 @endsection
