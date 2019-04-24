@@ -39,4 +39,5 @@ return [
     'profileupdatedocorrectly' => 'Your profile has been updated',
     'profileupdatedfailed' => 'Sorry! Seems like something happen while updating your profile, try again',
     'obtain_telegram' => 'How do I obtain my Telegram ID?',
+    'address' => 'Address',
 ];

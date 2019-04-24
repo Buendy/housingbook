@@ -95,8 +95,8 @@
 
 
 
+                    {{Form::open(['method' => 'POST', 'url'=>'login'])}}
 
-                    <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="card-header text-center">
                             <div class="logo-container">
@@ -133,7 +133,8 @@
                                 <a href="#pablo" class="link footer-link">Need Help?</a>
                             </h6>
                         </div>
-                    </form>
+
+                    {{Form::close()}}
                 </div>
             </div>
         </div>

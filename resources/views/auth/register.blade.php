@@ -91,50 +91,50 @@
                     <div class="card card-signup">
                         <div class="card-body">
                             <h4 class="card-title text-center">Register</h4>
-                            
-                            <form method="POST" action="{{ route('register') }}">
+                            {!! Form::open(['route'=>'register' , 'method'=>'post']) !!}
+
                                 @csrf
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="users_circle-08"></i></span>
                                     </div>
-                                    <input type="text" name="name" class="form-control" placeholder="First Name..." value="{{ old('name') }}">
+                                    {{ Form::text('name', old('name'), ['placeholder' => __('profile.name'), 'class' => 'form-control']) }}
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="text_caps-small"></i></span>
                                     </div>
-                                    <input type="text" name="lastname" class="form-control" placeholder="Last Name..." value="{{ old('lastname') }}">
+                                    {{ Form::text('lastname', old('lastname'), ['placeholder' => __('profile.last_name'), 'class' => 'form-control']) }}
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="text_caps-small"></i></span>
                                     </div>
-                                    <input type="text" name="address" class="form-control" placeholder="Address..." value="{{ old('address') }}">
+                                    {{ Form::text('address', old('address'), ['placeholder' => __('profile.address'), 'class' => 'form-control']) }}
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="text_caps-small"></i></span>
                                     </div>
-                                    <input type="tel" name="phone" class="form-control" placeholder="Phone..." value="{{ old('phone') }}">
+                                    {{ Form::text('phone', old('phone'), ['placeholder' => __('profile.phone'), 'class' => 'form-control']) }}
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ui-1_email-85"></i></span>
                                     </div>
-                                    <input type="email" name="email" class="form-control" placeholder="Your Email..." autocomplete="email" value="{{ old('email') }}">
+                                    {{ Form::email('email', old('email'), ['placeholder' => __('profile.email'), 'class' => 'form-control']) }}
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ui-1_email-85"></i></span>
                                     </div>
-                                    <input type="password" name="password" class="form-control" placeholder="Password...">
+                                    {{ Form::password('password', ['placeholder' => __('profile.password'), 'class' => 'form-control']) }}
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ui-1_email-85"></i></span>
                                     </div>
-                                    <input type="password" name="password_confirmation" class="form-control" placeholder="Repeat password...">
+                                    {{ Form::password('password_confirmation', ['placeholder' => __('profile.password_confirm'), 'class' => 'form-control']) }}
                                 </div>
                                 <!-- If you want to add a checkbox to this form, uncomment this code -->
                                 <div class="form-check">
@@ -152,7 +152,8 @@
                                 <div class="card-footer text-center">
                                     <button class="btn btn-primary btn-round btn-lg">Get Started</button>
                                 </div>
-                            </form>
+
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
