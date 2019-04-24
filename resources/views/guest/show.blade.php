@@ -1,6 +1,18 @@
 @extends('layouts.app-nav')
-@include('partials.header')
 @section('content')
+    <div class="blogs-5" data-parallax="true" style="background-image: url('{{asset('/img/bg32.jpg')}}');">
+        <div class="container text-light mb-5">
+            <div class="content-center mb-5">
+                <div class="row mb-5">
+                    <div class="col-md-8 ml-auto mr-auto mb-5">
+                        <h1 class="title">{{$apartment->name}}</h1>
+                        <h5>{{$apartment->short_description}}</h5>
+                        <br><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="wrapper">
         <div class="section">
             <div class="container">
@@ -38,8 +50,9 @@
                                 </button>
                             </a>
                         </div>
-                        <p class="blockquote blockquote-primary">
-                            "And thank you for turning my personal jean jacket into a couture piece. Wear yours with mirrored sunglasses on vacation."
+                        <br>
+                        <p class="blockquote blockquote-primary rounded">
+                            {{$apartment->short_description}}
                             <br>
                             <br>
                             <small>Kanye West</small>
@@ -72,45 +85,66 @@
                                 </div>
                                 <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
                                     <div class="card-body">
-                                        <p>{{$apartment->user->name}}</p>
+                                        <p><span class="text-left">{{$apartment->user->name}} </span><span class="text-right"><a href="" class="btn btn-sm btn-primary text-light">Ver perfil</a></span></p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card card-plain">
-                                <div class="card-header" role="tab" id="headingThree">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        {{__('guest.services')}}
-                                        <i class="now-ui-icons arrows-1_minimal-down"></i>
-                                    </a>
-                                </div>
-                                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                                    <div class="card-body">
-                                        <ul>
-                                            @forelse($apartment->services as $service)
-                                                <li>{{$service->name}}</li>
-                                            @empty
-                                                <p>{{__('guest.noservices')}}</p>
-                                            @endforelse
-                                        </ul>
-                                    </div>
+
+                        </div>
+
+                    </div>
+                    <div class="container mb-5 mt-5 bg-primary text-light rounded pb-2 pt-4">
+                        {{Form::open(['method' => 'POST', 'action' => ['RentController@store',$apartment->id]])}}
+                        <div class="row align-middle">
+                            <div class="col-md-1 mt-3">
+                                <label>{{__('guest.checkin')}}</label>
+                            </div>
+                            <div class="col-md-4 mt-2">
+
+
+                                <input type="text" name="entrada" class="form-control datepicker bg-light text-black" required>
+
+                            </div>
+                            <div class="col-md-1 mt-3">
+                                <label>{{__('guest.checkout')}}</label>
+                            </div>
+                            <div class="col-md-4 mt-2">
+
+                                <input type="text" name="salida" class="form-control datepicker bg-light text-black" required>
+
+                            </div>
+                            <div class="col-md-2">
+
+                                    <button class="btn btn-primary mr-3">{{__('guest.rent')}}&nbsp;<i class="now-ui-icons shopping_cart-simple"></i></button>
+
+                            </div>
+
+                        </div>
+                        {{Form::close()}}
+                    </div>
+
+                    <div class="container mb-5">
+                        <div class="card card-plain">
+                            <div class="card-header" role="tab" id="headingThree">
+                                <a class="collapsed text-black" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    {{__('guest.services')}}
+                                    <i class="now-ui-icons arrows-1_minimal-down"></i>
+                                </a>
+                                <hr>
+                            </div>
+                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="card-body">
+                                    <ul>
+                                        @forelse($apartment->services as $service)
+                                            <li>{{$service->name}}</li>
+                                        @empty
+                                            <p>{{__('guest.noservices')}}</p>
+                                        @endforelse
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        {{Form::open(['method' => 'POST', 'action' => ['RentController@store',$apartment->id]])}}
-                            <div class="row pick-size">
-                                <div class="col-lg-6 col-md-8 col-sm-6">
-                                    <label>{{__('guest.checkin')}}</label>
-                                    <input type="text" name="entrada" class="form-control datepicker" required>
-                                </div>
-                                <div class="col-lg-6 col-md-8 col-sm-6">
-                                    <label>{{__('guest.checkout')}}</label>
-                                    <input type="text" name="salida" class="form-control datepicker" required>
-                                </div>
-                            </div>
-                            <div class="row justify-content-end">
-                                <button class="btn btn-primary mr-3">{{__('guest.rent')}}&nbsp;<i class="now-ui-icons shopping_cart-simple"></i></button>
-                            </div>
-                        {{Form::close()}}
+
                     </div>
                 </div>
                 <div class="section related-products" data-background-color="black">
@@ -120,7 +154,7 @@
                             @forelse($randoms_apartments as $random_apartment)
                                 <div class="col-sm-6 col-md-3">
                                     <div class="card card-product">
-                                        <div class="card-image">
+                                        <div class="card-image justify-content-center">
                                             <a href="{{route('apartments.show',$random_apartment->id)}}">
                                                 <img class="img rounded" src="{{$random_apartment->photos[0]->url}}" />
                                             </a>

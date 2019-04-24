@@ -71,7 +71,7 @@
                       <i class="now-ui-icons ui-1_simple-remove"></i>
                     </span>
                                     </button>
-                                    <p><strong>Ups!</strong> Ocurrión algún error.</p>
+                                    <p><strong>{{__('profile.ups')}}</strong></p>
                                     @foreach ($errors->all() as $error)
                                         <p>{{ $error }}</p>
                                     @endforeach
@@ -108,16 +108,13 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="users_circle-08"></i></span>
                                 </div>
-
-
-                                <input type="email" name="email" value="{{ old('email') }}" class="form-control" placeholder="Email..." required>
-
+                                {{ Form::email('email', old('email'), ['placeholder' => __('profile.email'), 'class' => 'form-control']) }}
                             </div>
                             <div class="input-group no-border input-lg">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="text_caps-small"></i></span>
                                 </div>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Password..." required>
+                                {{ Form::password('password', ['placeholder' => __('profile.password'), 'class' => 'form-control']) }}
                             </div>
                         </div>
                         <div class="card-footer text-center">
