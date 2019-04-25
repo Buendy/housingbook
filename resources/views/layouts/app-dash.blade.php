@@ -31,7 +31,7 @@
         <div class="sidebar-wrapper">
             <div class="user">
                 <div class="photo">
-                    <img src="{{Auth::user()->photo}}"  style="width: 100px; height: 100px"/>
+                    <img src="{{Auth::user()->photo}}"  />
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" class="collapsed">
