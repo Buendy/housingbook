@@ -23,11 +23,11 @@ class UserController extends Controller
     {
         if($user->id == auth()->user()->id) {
             $this->validate($request,
-                ['name' => 'required | min:3 | unique:apartments,name | regex:/^[a-zA-Z ]*$/' ,
+                ['name' => 'required | min:3 | regex:/^[a-zA-Z ]*$/ | unique:apartments,name' ,
                     'last_name' => 'required | min:3 | max:300 | regex:/^[a-zA-Z ]*$/',
                     'email' => ['required', 'min:10', 'max:100', Rule::unique('users','email')->ignore($user->id)],
                     'address' => 'required',
-                    'phone' => 'required', 'regex:/^[9|6|7|8][0-9]{8}$/']);
+                    'phone' => ['required', 'regex:/^[9|6|7|8][0-9]{8}$/']]);
 
             if($request->file('photo'))
             {
