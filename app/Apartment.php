@@ -65,6 +65,11 @@ class Apartment extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function checkDisponibility($entrada,$salida)
+    {
+        return $this->belongsToMany(User::class)->withPivot('entry', 'exit')->whereBetween('entry',[$entrada,$salida])->orWhereBetween('exit',[$entrada,$salida]);
+    }
+
     public function getPhotoImageAttribute()
     {
         return 'storage/photos/' . $this->photos()->first()->local_url;

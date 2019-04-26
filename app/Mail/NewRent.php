@@ -33,6 +33,6 @@ class NewRent extends Mailable
     public function build()
     {
         return $this->view('emails.new_rent')->with('user', $this->user)
-            ->with('apartment', $this->apartment)->subject(__('mail'));
+            ->with('apartment', $this->apartment)->subject(__('mail.newrentsubject'));
     }
 }

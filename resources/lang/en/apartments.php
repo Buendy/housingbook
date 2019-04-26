@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest' => 'Last added housesgit',
+    'latest' => 'Last apartments added',
     'chosecity' => 'Choose city',
     'choseservices' => 'Choose services',
     'photos' => 'Photos',

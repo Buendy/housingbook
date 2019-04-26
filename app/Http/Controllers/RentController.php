@@ -25,6 +25,17 @@ class RentController extends Controller
         $entrada = $date->format('Y-m-d');
         $salida = $date2->format('Y-m-d');
 
+        $entradaCheck = Carbon::parse($entrada);
+        $salidaCheck = Carbon::parse($salida);
+
+        if($entradaCheck > $salidaCheck)
+            return back()->with('error','test');
+
+        $checkDisponibility = $apartment->checkDisponibility($entrada,$salida);
+
+        if($checkDisponibility->count())
+            return back()->with('error','test');
+
         $apartment->users()->attach(auth()->user()->id, ['entry' => $entrada, 'exit' => $salida]);
 
         //Email para dueño

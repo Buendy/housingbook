@@ -33,6 +33,6 @@ class SuccessfullyRent extends Mailable
     public function build()
     {
         return $this->view('emails.successfully_rent')->with('user', $this->user)
-            ->with('apartment', $this->apartment)->subject(__('mail'));
+            ->with('apartment', $this->apartment)->subject(__('mail.succesfullyrentsubject'));
     }
 }

@@ -78,51 +78,45 @@
 <body>
 <div class="card">
     <div class="card-header">
-        <h3>Reserva realizada con exito</h3>
+        <h3>{{__('mail.rentsuccess')}}</h3>
         <div class="line-header"></div>
         <img src="www.housingbook.es/img/mail-template.jpg"></img>
-
     </div>
     <div class="card-body">
-        <h4>Datos del cliente</h4>
+        <h4>{{__('mail.customerdata')}}</h4>
         <ul>
-            <li><strong>Nombre:</strong> Daniel</li>
-            <li><strong>Apellidos:</strong> Buendia Valverde</li>
-            <li><strong>Dirección:</strong> C/ Sin número</li>
+            <li><strong>{{__('mail.customername')}}:</strong> {{$user->name}}</li>
+            <li><strong>{{__('mail.customerlast_name')}}:</strong> {{$user->last_name}}</li>
+            <li><strong>{{__('mail.customeraddress')}}:</strong> {{$user->address}}</li>
             <li></li>
-            <li><strong>Email:</strong> buendy@gmail.com</li>
-            <li><strong>Teléfono:</strong> 12345678</li>
+            <li><strong>{{__('mail.customeremail')}}:</strong> {{$user->email}}</li>
+            <li><strong>{{__('mail.customerphone')}}:</strong> {{$user->phone}}</li>
         </ul>
-        <h4>Datos del dueño:</h4>
+        <h4>{{__('mail.ownerdata')}}:</h4>
         <ul>
-            <li><strong>Nombre:</strong> Joss</li>
-            <li><strong>Apellidos:</strong> Tomas smith</li>
-            <li><strong>Dirección:</strong> C/ Ande sea nº 5</li>
+            <li><strong>{{__('mail.ownername')}}:</strong> {{$aparment->user()->name}}</li>
+            <li><strong>{{__('mail.ownerlast_name')}}:</strong> {{$aparment->user()->last_name}}</li>
+            <li><strong>{{__('mail.owneraddress')}}:</strong> {{$aparment->user()->address}}</li>
             <li></li>
-            <li><strong>Email:</strong> jossmith@hmail.com</li>
-            <li><strong>Teléfono:</strong> 12345678</li>
+            <li><strong>{{__('mail.owneremail')}}:</strong> {{$aparment->user()->email}}</li>
+            <li><strong>{{__('mail.ownerphone')}}:</strong> {{$aparment->user()->phone}}</li>
         </ul>
         <div class="line-header"></div>
-        <h4>Información sobre la reserva</h4>
+        <h4>{{__('mail.rentdata')}}</h4>
         <ul>
-            <li><strong>Establecimiento:</strong> La casika</li>
-            <li><strong>Dirección:</strong> C/ en un lugar perdido</li>
-            <li><strong>Teléfono de contacto:</strong> 12345678</li>
+            <li><strong>{{__('mail.apartmentname')}}:</strong> {{$aparment->name}}</li>
+            <li><strong>{{__('mail.apartmentaddress')}}:</strong> {{$aparment->address}}</li>
+            <li><strong>{{__('mail.apartmentphone')}}:</strong> {{$aparment->phone}}</li>
 
         </ul>
         <div class="total">
-            <p><strong>Duración de la reserva:</strong> 5 días</p>
-            <p><strong>Precio total de la reserva:</strong><span> 230€</span></p>
+            <p><strong>{{__('mail.apartmentduration')}}:</strong> {{$aparment->name}}</p>
+            <p><strong>{{__('mail.apartmentprice')}}:</strong><span> {{$aparment->name}}€</span></p>
         </div>
         <div class="line-header"></div>
-        <p class="centrado"> Para cualquier consulta escribanos a:</p>
+        <p class="centrado"> {{__('mail.generaldoubts')}}:</p>
         <p class="centrado"><a href="#">admin@housingbook.es</a></p>
-
-
     </div>
-
 </div>
-
-
 </body>
 </html>
