@@ -14,16 +14,16 @@
                             </ol>
                             <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active">
-                                    <img class="d-block img-raised" src="{{$apartment->photos[0]->url}}" alt="{{$apartment->name}}">
+                                    <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[0]->local_url)}}" alt="{{$apartment->name}}">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block img-raised" src="{{$apartment->photos[1]->url}}" alt="{{$apartment->name}}">
+                                    <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[1]->local_url)}}" alt="{{$apartment->name}}">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block img-raised" src="{{$apartment->photos[2]->url}}" alt="{{$apartment->name}}">
+                                    <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[2]->local_url)}}" alt="{{$apartment->name}}">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block img-raised" src="{{$apartment->photos[3]->url}}" alt="{{$apartment->name}}">
+                                    <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[3]->local_url)}}" alt="{{$apartment->name}}">
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
