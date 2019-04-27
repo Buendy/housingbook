@@ -15,4 +15,8 @@ return [
     'city' => 'Ciudad',
     'submit' => 'Crear',
     'update' => 'Actualizar',
+    'price' => 'Precio',
+    'general' => 'Datos generales'
+
+
 ];

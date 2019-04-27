@@ -33,6 +33,7 @@ class ApartmentController extends Controller
 
     public function store(Request $request)
     {
+
         $this->validate($request,Apartment::$rules);
 
         if(count($request->file('photos')) < 4)
@@ -41,6 +42,7 @@ class ApartmentController extends Controller
         }
 
         $apartment = new Apartment();
+
         $request->merge(['city_id' => $request->city]);
         $apartment->fill($request->all());
         $apartment->user_id = auth()->user()->id;

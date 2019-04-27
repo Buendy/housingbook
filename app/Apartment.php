@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Apartment extends Model
 {
-    protected $fillable = ['name','description','address','short_description','city_id','user_id'];
+    protected $fillable = ['name','description','address','short_description','city_id','user_id', 'price'];
 
     public static $rules = [
         'name' => 'required | min:3 | unique:apartments,name',

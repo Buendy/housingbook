@@ -11,6 +11,19 @@ class ServiceTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Service::class,30)->create();;
+        $icons = [
+            'fa fa-car',
+            'fa fa-wifi',
+            'fa fa-swimming-pool',
+            'fas fa-smoking',
+            'fas fa-snowflake',
+            'fas fa-hamburger',
+        ];
+        foreach($icons as $value){
+            factory(\App\Service::class,1)->create([
+                'icon' => $value,
+            ]);
+        }
+
     }
 }

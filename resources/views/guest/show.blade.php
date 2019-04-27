@@ -118,6 +118,37 @@
                         </div>
 
                     </div>
+                    <br>
+
+                    <div class="container mt-5">
+                        <div class="card card-plain">
+                            <div class="card-header" role="tab" id="headingThree">
+                                <a class="collapsed text-black" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    {{__('guest.services')}}
+                                    <i class="now-ui-icons arrows-1_minimal-down"></i>
+                                </a>
+                                <hr>
+                            </div>
+                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="card-body text-center">
+
+                                    @forelse($apartment->services as $service)
+                                        <div class="d-inline p-5">
+                                            <div class="d-inline-block">
+                                                <p>{{$service->name}}</p>
+                                                <i class="{{$service->icon}} border border-info rounded-circle p-4 text-info" style="font-size:30px;"></i>
+                                            </div>
+                                        </div>
+
+                                    @empty
+                                        <p>{{__('guest.noservices')}}</p>
+                                    @endforelse
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                     <div class="container mb-5 mt-5 bg-primary text-light rounded pb-2 pt-4">
                         {{Form::open(['method' => 'POST', 'action' => ['RentController@store',$apartment->id]])}}
                         <div class="row align-middle">
@@ -148,29 +179,7 @@
                         {{Form::close()}}
                     </div>
 
-                    <div class="container mb-5">
-                        <div class="card card-plain">
-                            <div class="card-header" role="tab" id="headingThree">
-                                <a class="collapsed text-black" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    {{__('guest.services')}}
-                                    <i class="now-ui-icons arrows-1_minimal-down"></i>
-                                </a>
-                                <hr>
-                            </div>
-                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="card-body">
-                                    <ul>
-                                        @forelse($apartment->services as $service)
-                                            <li>{{$service->name}}</li>
-                                        @empty
-                                            <p>{{__('guest.noservices')}}</p>
-                                        @endforelse
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
                 </div>
                 <div class="section related-products" data-background-color="black">
                     <div class="container">

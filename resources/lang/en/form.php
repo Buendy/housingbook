@@ -15,4 +15,6 @@ return [
     'city' => 'City',
     'submit' => 'Submit',
     'update' => 'Update',
+    'price' => 'Price',
+    'general' => 'General data'
 ];
