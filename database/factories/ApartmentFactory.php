@@ -8,7 +8,7 @@ $factory->define(App\Apartment::class, function (Faker $faker) {
         'description' => $faker->realText(),
         'short_description' => $faker->text,
         'address' => $faker->address,
-        'price' => $faker->numberBetween(),
+        'price' => $faker->numberBetween(1, 500),
         'user_id' => \App\User::all()->random()->id,
         'city_id' => \App\City::all()->random()->id,
     ];

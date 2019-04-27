@@ -28,13 +28,17 @@ class RentController extends Controller
         $entradaCheck = Carbon::parse($entrada);
         $salidaCheck = Carbon::parse($salida);
 
-        if($entradaCheck > $salidaCheck)
-            return back()->with('error','test');
+        if($entradaCheck > $salidaCheck){
+            return back()->with('error', __('apartments.rent_error'));
+        }
+
 
         $checkDisponibility = $apartment->checkDisponibility($entrada,$salida);
 
-        if($checkDisponibility->count())
-            return back()->with('error','test');
+        if($checkDisponibility->count()){
+            return back()->with('error', __('apartments.rent_error_disponibility'));
+        }
+
 
         $apartment->users()->attach(auth()->user()->id, ['entry' => $entrada, 'exit' => $salida]);
 
@@ -50,6 +54,6 @@ class RentController extends Controller
         TelegramController::sendTelegrams(auth()->user()->telegram,$owner->telegram,$apartment);
 
 
-        return back();
+        return back()->with('success', __('apartments.rent_success'));;
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Apartment;
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 use Telegram\Bot\Laravel\Facades\Telegram;
 use Telegram\Bot\Methods\Chat;
@@ -16,7 +17,7 @@ class TelegramController extends Controller
         dd($activity);*/
 
         Telegram::sendMessage([
-            'chat_id' => '444388371',
+            'chat_id' => Auth::user()->telegram,
             'text' => 'Hello world, hay que hablar primero al bot y en la DB tener el ID del usuario al que se espera enviar el mensaje por telegram!'
         ]);
         return;

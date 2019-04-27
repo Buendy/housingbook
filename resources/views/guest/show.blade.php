@@ -16,6 +16,31 @@
     <div class="wrapper">
         <div class="section">
             <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-7 text-center">
+                        @if(session('success'))
+
+                                <div class="alert alert-info alert-dismissible fade show">
+                                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                        <i class="nc-icon nc-simple-remove"></i>
+                                    </button>
+                                    <span>{{__('profile.profileupdatedocorrectly')}}</span>
+                                </div>
+
+                        @endif
+                        @if(session('error'))
+
+                                <div class="alert alert-danger alert-dismissible fade show">
+                                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                        <i class="nc-icon nc-simple-remove"></i>
+                                    </button>
+                                    <span><h6>{{session('error')}}</h6></span>
+                                </div>
+
+                        @endif
+
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-5">
                         <div id="productCarousel" class="carousel slide" data-ride="carousel" data-interval="8000">
