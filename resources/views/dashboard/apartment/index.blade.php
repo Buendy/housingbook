@@ -4,54 +4,63 @@
 @section('content')
 
     <div class="content">
-        <div class="container">
-            <div class="row ">
-                <div class="col-md-8 col-md-offset-4 mx-auto d-block text-center justify-content-center">
-                    <div class="description">
-                        <h2>{{__('profile.apartmenthello')}}</h2>
+        <div class="row justify-content-center">
+            <div class="toolbar text-center">
+                <a href="{{route('apartment.createapartment')}}"><i class="fa fa-plus border bg-warning rounded-circle p-4 text-light" style="font-size:30px;"></i></a>
+                <p><a href="{{route('apartment.createapartment')}}"><button class="btn btn-warning">{{__('profile.create')}}</button></a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">{{__('profile.apartmenthello')}}</h2>
                     </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="text-primary">
+                                <th>{{__('profile.apartmentname')}}</th>
+                                <th>{{__('profile.apartmentcity')}}</th>
+                                <th>{{__('form.price')}}</th>
+                                <th>{{__('profile.apartmentaddress')}}</th>
 
-                    <div class="fresh-table full-color-orange justify-content-center mx-auto d-block text-center" style="width: 1000px">
-                        <div class="toolbar">
-                            <a href="{{route('apartment.createapartment')}}"><button class="btn btn-warning">{{__('profile.create')}}</button></a>
-                        </div>
-
-                        <table id="fresh-table" class="table">
-                            <thead>
-                            <th data-field="id">ID</th>
-                            <th data-field="name" data-sortable="true">{{__('profile.apartmentname')}}</th>
-                            <th data-field="salary" data-sortable="true">{{__('profile.apartmentaddress')}}</th>
-                            <th data-field="country" data-sortable="true">{{__('profile.apartmentdescription')}}</th>
-                            <th data-field="city">{{__('profile.apartmentcity')}}</th>
-                            <th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents" colspan="2">{{__('profile.apartmentactions')}}</th>
-                            </thead>
-                            <tbody>
-                            @forelse($apartments as $apartment)
+                                <th class="text-center">Actions</th>
+                                </thead>
+                                <tbody>
+                                @forelse($apartments as $apartment)
                                 <tr>
-                                    <td>{{$apartment->id}}</td>
                                     <td>{{$apartment->name}}</td>
-                                    <td>{{$apartment->short_description}}</td>
                                     <td>{{$apartment->city->name}}</td>
-                                    <td>{{$apartment->id}}</td>
-                                    <td colspan="2" width="500">
-                                        <div class="d-inline-block">
-                                            <a href="{{route('apartment.showapartment',$apartment->id)}}" data-toggle="tooltip" title="{{__('profile.show')}}" class="btn-primary btn-round btn-sm"><i class="now-ui-icons design_app"></i></a>
-                                            <a href="{{route('apartment.editapartment',$apartment->id)}}" data-toggle="tooltip" title="{{__('profile.edit')}}" class="btn-primary btn-round btn-sm"><i class="now-ui-icons design_app"></i></a>
-                                            {{Form::open(['action' => ['ApartmentController@destroy',$apartment->id], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
-                                            <button type="submit" data-toggle="tooltip" title="{{__('profile.delete')}}" class="btn-primary btn-round btn-sm"><i class="now-ui-icons design_app"></i></button>
-                                            {{Form::close()}}
-                                        </div>
+                                    <td>{{$apartment->price}}€</td>
+                                    <td>{{$apartment->address}}€</td>
+                                    <td class="text-center text-light">
+                                        <a href="{{route('apartment.showapartment',$apartment->id)}}"
+                                           data-toggle="tooltip" title="{{__('profile.show')}}"
+                                           class="btn btn-info btn-icon btn-sm ">
+                                            <i class="fa fa-user"></i>
+                                        </a>
+                                        <a href="{{route('apartment.editapartment',$apartment->id)}}"
+                                           class="btn btn-success btn-icon btn-sm "
+                                           data-toggle="tooltip" title="{{__('profile.edit')}}">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                        {{Form::open(['action' => ['ApartmentController@destroy',$apartment->id], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
+                                        <button type="submit" data-toggle="tooltip" title="{{__('profile.delete')}}" class="btn btn-danger btn-icon btn-sm"><i class="fa fa-times"></i></button>
+                                        {{Form::close()}}
                                     </td>
                                 </tr>
-                            @empty
-                                <h3>{{__('profile.apartmentempty')}}</h3>
-                            @endforelse
-                            </tbody>
-                        </table>
+                                @empty
+                                    <h3>{{__('profile.apartmentempty')}}</h3>
+                                @endforelse
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
 

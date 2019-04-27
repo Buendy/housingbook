@@ -125,7 +125,7 @@
                             </div>
                         </div>
                         <div class="card-footer ">
-                            <button type="submit" class="btn btn-info btn-round">{{__('form.update')}}</button>
+                            <button type="submit" class="btn btn-info" style="width: 100%">{{__('form.update')}}</button>
                         </div>
                     </div>
                     {{Form::close()}}

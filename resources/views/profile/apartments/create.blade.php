@@ -109,7 +109,7 @@
                         </div>
                     </div>
                     <div class="card-footer ">
-                        <button type="submit" class="btn btn-info btn-round">{{__('form.submit')}}</button>
+                        <button type="submit" class="btn btn-info" style="width: 100%">{{__('form.submit')}}</button>
                     </div>
                 </div>
                 {{Form::close()}}
