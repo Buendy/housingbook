@@ -102,7 +102,7 @@ class ApartmentController extends Controller
         Helper::servicesTableFill($apartment,$request->services);
         Helper::categoriesTableFill($apartment,$request->categories);
 
-        return back();
+        return back('success', 'Apartamento creado con exitogi');
     }
 
     public function destroy(Apartment $apartment)

@@ -6,7 +6,7 @@
     <div class="content">
         <h3 class="text-center">{{__('profile.createapartment')}}</h3>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 {{Form::open(['method' => 'POST', 'action' => 'ApartmentController@store', 'files' => true])}}
                 <div class="card ">
                     <div class="card-body ">
@@ -88,7 +88,6 @@
                             </div>
 
                         </div>
-
                         <br>
                         <div class="row">
                             <div class="col-md-12">
@@ -115,36 +114,50 @@
                 </div>
                 {{Form::close()}}
             </div>
+            <div class="col-md-6">
+                @if(session('success'))
+
+                    <div class="alert alert-info alert-dismissible fade show">
+                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="nc-icon nc-simple-remove"></i>
+                        </button>
+                        <span>{{__('profile.profileupdatedocorrectly')}}</span>
+                    </div>
+
+                @endif
+                @if(session('error'))
+
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="nc-icon nc-simple-remove"></i>
+                        </button>
+                        <span><h6>{{session('error')}}</h6></span>
+                    </div>
+
+                @endif
+                @if(count($errors) > 0)
+
+                            <div class="alert alert-danger rounded"  role="alert">
+                                <div class="container">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">
+                      <i class="now-ui-icons ui-1_simple-remove"></i>
+                    </span>
+                                    </button>
+                                    <p><strong>{{__('profile.ups')}}</strong></p>
+                                    @foreach ($errors->all() as $error)
+                                        <p>{{ $error }}</p>
+                                    @endforeach
+
+                                </div>
+                            </div>
+
+
+
+                @endif
+
+            </div>
         </div>
 
-        @if(session('success'))
-            <div class="col-md-5">
-                <div class="alert alert-info alert-dismissible fade show">
-                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                        <i class="nc-icon nc-simple-remove"></i>
-                    </button>
-                    <span>
-                            {{__('profile.profileupdatedocorrectly')}}
-                    </span>
-                </div>
-            </div>
-        @endif
-        @if(count($errors) > 0)
-            <div class="col-md-5">
-                <div class="alert alert-danger alert-dismissible fade show">
-                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                        <i class="nc-icon nc-simple-remove"></i>
-                    </button>
-                    <span>
-                            {{__('profile.profileupdatedfailed')}}
-                    </span>
-                </div>
-                @foreach($errors->all() as $error)
-                    <div class="callout alert alert-danger">
-                        {{$error}}
-                    </div>
-                @endforeach
-            </div>
-        @endif
     </div>
 @endsection
