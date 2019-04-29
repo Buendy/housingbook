@@ -56,4 +56,9 @@ class RentController extends Controller
 
         return back()->with('success', __('apartments.rent_success'));;
     }
+
+    public function confirm()
+    {
+        return view('paypal.demo');
+    }
 }

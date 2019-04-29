@@ -36,6 +36,8 @@
                                 </div>
                             </div>
                             @endforeach
+
+
                     </div>
                 </div>
             </div>
@@ -48,6 +50,36 @@
 
     <div class="section">
         <div class="container">
+            <div class="flash-message">
+                @if(session('success'))
+                    <div class="col-md-5">
+                        <div class="alert alert-info alert-dismissible fade show">
+                            <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="nc-icon nc-simple-remove"></i>
+                            </button>
+                            <span>
+                            {{session('success')}}
+                    </span>
+                        </div>
+                    </div>
+                @endif
+                @if(count($errors) > 0)
+                    <div class="col-md-5">
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="nc-icon nc-simple-remove"></i>
+                            </button>
+
+                        </div>
+                        @foreach($errors->all() as $error)
+                            <div class="callout alert alert-danger">
+                                {{$error}}
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
+
+            </div>
             <h2 class="section-title">{{__('guest.apartments')}}</h2>
             <div class="row">
                 @forelse($apartments as $apartment)

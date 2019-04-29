@@ -68,4 +68,7 @@ Route::get('set_language/{lang}', 'Controller@setLanguage')->name('set_language'
 
 Route::get('/activity', 'TelegramController@updatedActivity');
 
-
+// RUTAS PARA PAYPAL
+Route::post('paypal/confirm', 'RentController@confirm')->name('paypal-confirm');
+Route::post('paypal/pay', 'PaymentController@payPaypal')->name('paypal-pay');
+Route::get('paypal/status', 'PaymentController@getStatus')->name('paypal-status');
