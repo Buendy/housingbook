@@ -60,7 +60,8 @@ Route::prefix('dashboard')->group(function(){
 
 //Rutas para alquilar apartamento
 Route::prefix('rent')->group(function(){
-   Route::post('store/{apartment}','RentController@store')->name('rent.apartment');
+   Route::get('store/{apartment}','RentController@store')->name('rent.apartment');
+   Route::post('confirm/{apartment}','RentController@validation')->name('apartment.validate');
 });
 
 

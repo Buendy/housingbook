@@ -16,7 +16,12 @@ return [
     'submit' => 'Crear',
     'update' => 'Actualizar',
     'price' => 'Precio',
-    'general' => 'Datos generales'
+    'general' => 'Datos generales',
+    'confirm' => 'Confirmar',
+    'confirm_text' => 'Confirmación de pago',
+    'confirm_par' => 'Necesita confirmar el pago para solicitar el servicio',
+    'total_price' => 'Precio total',
+    'stay' => 'Estancia'
 
 
 ];

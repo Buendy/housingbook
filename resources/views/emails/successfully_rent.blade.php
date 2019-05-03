@@ -94,12 +94,12 @@
         </ul>
         <h4>{{__('mail.ownerdata')}}:</h4>
         <ul>
-            <li><strong>{{__('mail.ownername')}}:</strong> {{$apartment->user()->name}}</li>
-            <li><strong>{{__('mail.ownerlast_name')}}:</strong> {{$apartment->user()->last_name}}</li>
-            <li><strong>{{__('mail.owneraddress')}}:</strong> {{$apartment->user()->address}}</li>
+            <li><strong>{{__('mail.ownername')}}:</strong> {{$apartment->user->name}}</li>
+            <li><strong>{{__('mail.ownerlast_name')}}:</strong> {{$apartment->user->last_name}}</li>
+            <li><strong>{{__('mail.owneraddress')}}:</strong> {{$apartment->user->address}}</li>
             <li></li>
-            <li><strong>{{__('mail.owneremail')}}:</strong> {{$apartment->user()->email}}</li>
-            <li><strong>{{__('mail.ownerphone')}}:</strong> {{$apartment->user()->phone}}</li>
+            <li><strong>{{__('mail.owneremail')}}:</strong> {{$apartment->user->email}}</li>
+            <li><strong>{{__('mail.ownerphone')}}:</strong> {{$apartment->user->phone}}</li>
         </ul>
         <div class="line-header"></div>
         <h4>{{__('mail.rentdata')}}</h4>
@@ -110,8 +110,8 @@
 
         </ul>
         <div class="total">
-            <p><strong>{{__('mail.apartmentduration')}}:</strong> {{$apartment->name}}</p>
-            <p><strong>{{__('mail.apartmentprice')}}:</strong><span> {{$apartment->name}}€</span></p>
+            <p><strong>{{__('mail.apartmentduration')}}:</strong> {{session('entradaEstancia') . " -- " . session('salidaEstancia')}}</p>
+            <p><strong>{{__('mail.apartmentprice')}}:</strong><span> {{$apartment->price * session('days')}} &euro;</span></p>
         </div>
         <div class="line-header"></div>
         <p class="centrado"> {{__('mail.generaldoubts')}}:</p>

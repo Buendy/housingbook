@@ -119,7 +119,7 @@
 
                     </div>
                     <div class="container mb-5 mt-5 bg-primary text-light rounded pb-2 pt-4">
-                        {{Form::open(['method' => 'POST', 'action' => ['RentController@confirm']])}}
+                        {{Form::open(['method' => 'POST', 'action' => ['RentController@validation', $apartment->id]])}}
                         <div class="row align-middle">
                             <div class="col-md-1 mt-3">
                                 <label>{{__('guest.checkin')}}</label>

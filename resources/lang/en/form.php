@@ -16,5 +16,10 @@ return [
     'submit' => 'Submit',
     'update' => 'Update',
     'price' => 'Price',
-    'general' => 'General data'
+    'general' => 'General data',
+    'confirm' => 'Confirm',
+    'confirm_text' => 'Payment confirmation',
+    'confirm_par' => 'You need to confirm the payment to request the service',
+    'total_price' => 'Total Price',
+    'stay' => 'Stay'
 ];

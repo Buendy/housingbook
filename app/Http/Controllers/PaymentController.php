@@ -41,7 +41,7 @@ class PaymentController extends Controller
             ->setCurrency('USD')
             ->setQuantity(1)
             ->setSku("123123") // Similar to `item_number` in Classic API
-            ->setPrice($request->amount);
+            ->setPrice($request->amount * session('days'));
 
 
         $itemList = new ItemList();
@@ -49,7 +49,7 @@ class PaymentController extends Controller
 
         $amount = new Amount();
         $amount->setCurrency("USD")
-            ->setTotal($request->amount);
+            ->setTotal($request->amount * session('days'));
 
         $transaction = new Transaction();
         $transaction->setAmount($amount)
@@ -71,10 +71,10 @@ class PaymentController extends Controller
         } catch (\PayPal\Exception\PPConnectionException $ex) {
             if (\Config::get('app.debug')) {
                 \Session::put('error', 'Connection timeout');
-                return redirect('paypal/pay');
+                return redirect('public/apartments');
             } else {
                 \Session::put('error', 'Some error occur, sorry for inconvenient');
-                return redirect('paypal/pay');
+                return redirect('public/apartments');
             }
         }
         foreach ($payment->getLinks() as $link) {
@@ -84,13 +84,13 @@ class PaymentController extends Controller
             }
         }
         /** add payment ID to session **/
-        Session::put('paypal_payment_id', $payment->getId());
+        session(['paypal_payment_id' => $payment->getId()]);
         if (isset($redirect_url)) {
             /** redirect to paypal **/
             return redirect($redirect_url);
         }
         \Session::put('error', 'Unknown error occurred');
-        return redirect('paypal/confirm');
+        return redirect('public/apartments');
 
 
     }
@@ -98,24 +98,40 @@ class PaymentController extends Controller
 
     public function getStatus(Request $request)
     {
+
+        $apartment = session('apartmentReservado');
+
         /** Get the payment ID before session clear **/
-        $payment_id = Session::get('paypal_payment_id');
+        $pay_id = session('paypal_payment_id');
+
+
         /** clear the session payment ID **/
-        Session::forget('paypal_payment_id');
+
+
         if (empty($request->PayerID) || empty($request->token)) {
             \Session::put('error', 'Payment failed');
             return redirect('public/apartments');
         }
-        $payment = Payment::get($payment_id, $this->_api_context);
+
+        $payment = Payment::get($pay_id, $this->_api_context);
+
         $execution = new PaymentExecution();
+
+
         $execution->setPayerId($request->PayerID);
+
         /**Execute the payment **/
         $result = $payment->execute($execution, $this->_api_context);
+
+
+
         if ($result->getState() == 'approved') {
-            \Session::put('success', 'Payment success');
-            return redirect('public/apartments');
+            return redirect('rent/store/' . $apartment->id);
         }
+
+
         \Session::put('error', 'Payment failed');
+        Session::forget('paypal_payment_id');
         return redirect('public/apartments');
     }
 }
