@@ -164,7 +164,7 @@
                                             <div class="d-inline p-5">
                                                         <div class="d-inline-block">
                                                             <p>{{$service->name}}</p>
-                                                            <i class="fas fa-swimming-pool border border-info rounded-circle p-4 text-info" style="font-size:30px;"></i>
+                                                            <i class="fas {{$service->icon}} border border-info rounded-circle p-4 text-info" style="font-size:30px;"></i>
                                                         </div>
                                             </div>
                                     @empty
