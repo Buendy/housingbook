@@ -74,4 +74,9 @@ class Apartment extends Model
     {
         return 'storage/photos/' . $this->photos()->first()->local_url;
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

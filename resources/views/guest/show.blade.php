@@ -87,6 +87,7 @@
                         <h2 class="title"> {{$apartment->name}} </h2>
                         <h5 class="category">{{$apartment->address}}</h5>
                         <h5 class="main-price">{{$apartment->city->name}}</h5>
+                        <h6>{{__('guest.priceper')}}: <span class="text-warning">{{$apartment->price}} &euro;</span></h6>
                         <div id="accordion" role="tablist" aria-multiselectable="true" class="card-collapse">
                             <div class="card card-plain">
                                 <div class="card-header" role="tab" id="headingOne">
@@ -177,6 +178,41 @@
 
                     </div>
                 </div>
+
+                <div class="rounded border shadow container mb-5">
+                    <div class="title">
+                        <h2>
+                            <small>Comments</small>
+                        </h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 ml-auto mr-auto">
+                            <div class="media-area">
+                                <h3 class="title text-center">
+                                    <small>{{count($apartment->comments)}} Comments</small>
+                                </h3>
+                                @foreach($apartment->comments as $comment)
+                                <div class="media">
+                                    <a class="pull-left" href="#pablo">
+                                        <div class="avatar">
+                                            <img class="media-object img-raised" src="{{$comment->user->photo}}" alt="..." />
+                                        </div>
+                                    </a>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">{{$comment->user->name}}
+                                            <small class="text-muted">&middot; {{$comment->created_at}}</small>
+                                        </h5>
+                                        <p>{{$comment->text}}</p>
+
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
                 <div class="section related-products" data-background-color="black">
                     <div class="container">
                         <h3 class="title text-center">{{__('guest.related')}}</h3>

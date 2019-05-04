@@ -23,4 +23,5 @@ return [
     'apartmentduration' => "Duración del alquiler",
     'apartmentprice' => "Precio del alquiler",
     'generaldoubts' => "Se tienes alguna duda, contáctanos a...",
+    'apartmenttotal' => "Precio total"
 ];

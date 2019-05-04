@@ -70,10 +70,10 @@ class PaymentController extends Controller
             $payment->create($this->_api_context);
         } catch (\PayPal\Exception\PPConnectionException $ex) {
             if (\Config::get('app.debug')) {
-                \Session::put('error', 'Connection timeout');
+                session()->put('error', 'Connection timeout');
                 return redirect('public/apartments');
             } else {
-                \Session::put('error', 'Some error occur, sorry for inconvenient');
+                session()->put('error', 'Some error occur, sorry for inconvenient');
                 return redirect('public/apartments');
             }
         }
@@ -84,12 +84,12 @@ class PaymentController extends Controller
             }
         }
         /** add payment ID to session **/
-        session(['paypal_payment_id' => $payment->getId()]);
+        session()->put('paypal_payment_id', $payment->getId());
         if (isset($redirect_url)) {
             /** redirect to paypal **/
             return redirect($redirect_url);
         }
-        \Session::put('error', 'Unknown error occurred');
+        session()->put('error', 'Unknown error occurred');
         return redirect('public/apartments');
 
 
@@ -109,7 +109,7 @@ class PaymentController extends Controller
 
 
         if (empty($request->PayerID) || empty($request->token)) {
-            \Session::put('error', 'Payment failed');
+            session()->put('error', 'Payment failed');
             return redirect('public/apartments');
         }
 
@@ -124,14 +124,16 @@ class PaymentController extends Controller
         $result = $payment->execute($execution, $this->_api_context);
 
 
-
+        session()->forget('paypal_payment_id');
         if ($result->getState() == 'approved') {
             return redirect('rent/store/' . $apartment->id);
+        }else{
+            session()->put('error', 'Payment failed');
+
+            return redirect('public/apartments');
         }
 
 
-        \Session::put('error', 'Payment failed');
-        Session::forget('paypal_payment_id');
-        return redirect('public/apartments');
+
     }
 }

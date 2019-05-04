@@ -111,7 +111,8 @@
         </ul>
         <div class="total">
             <p><strong>{{__('mail.apartmentduration')}}:</strong> {{session('entradaEstancia') . " -- " . session('salidaEstancia')}}</p>
-            <p><strong>{{__('mail.apartmentprice')}}:</strong><span> {{$apartment->price * session('days')}} &euro;</span></p>
+            <p><strong>{{__('mail.apartmentprice')}}:</strong><span> {{$apartment->price}} &euro;</span></p>
+            <p><strong>{{__('mail.apartmenttotal')}}:</strong><span> {{$apartment->price * session('days')}} &euro;</span></p>
         </div>
         <div class="line-header"></div>
         <p class="centrado"> {{__('mail.generaldoubts')}}:</p>

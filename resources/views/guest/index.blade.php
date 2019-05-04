@@ -52,7 +52,7 @@
         <div class="container">
             <div class="flash-message">
                 @if(session('success'))
-                    <div class="col-md-5">
+                    <div class="col-md-5 ">
                         <div class="alert alert-info alert-dismissible fade show">
                             <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
                                 <i class="nc-icon nc-simple-remove"></i>
@@ -85,7 +85,7 @@
                 @forelse($apartments as $apartment)
 
                     <div class="col-md-4">
-                        <div class="card card-blog">
+                        <div class="card card-blog ">
                             <div class="card-image">
                                 <a href="{{route('apartments.show',$apartment->id)}}">
                                     <img class="img rounded" src="{{url('/storage/photos/'.$apartment->photos[0]->local_url)}}">

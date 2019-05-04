@@ -66,6 +66,7 @@ class RentController extends Controller
         $apartmentSession = session('apartmentReservado');
         $entrada = session('entradaEstancia');
         $salida = session('salidaEstancia');
+        $price = session('days') * $apartment->price;
 
 
         if($apartment->id != $apartmentSession->id)
@@ -76,7 +77,7 @@ class RentController extends Controller
         }else{
 
 
-            $apartment->users()->attach(auth()->user()->id, ['entry' => $entrada, 'exit' => $salida]);
+            $apartment->users()->attach(auth()->user()->id, ['entry' => $entrada, 'exit' => $salida, 'total' => $price], "asdada");
 
             //Email para dueño
             $owner = User::where('id', $apartment->user_id)->first();
@@ -91,6 +92,8 @@ class RentController extends Controller
 
             //Telegram para dueño y persona que alquila
             TelegramController::sendTelegrams(auth()->user()->telegram,$owner->telegram,$apartment);
+
+            session()->forget('apartmentReservado');
 
 
             return redirect('public/apartments')->with('success', __('apartments.rent_success'));

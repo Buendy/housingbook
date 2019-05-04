@@ -30,7 +30,7 @@ class ApartmentTableSeeder extends Seeder
 
             foreach ($users as $user)
             {
-                $apartment->users()->attach($user->id);
+                $apartment->users()->attach($user->id, ['total' => rand(20, 600)]);
             }
         });
         ;

@@ -12,4 +12,5 @@ return [
     'rent' => 'Rent',
     'related' => 'You may be interested in...',
     'norelated' => 'We have not related apartments',
+    'priceper' => 'Price per day'
 ];
