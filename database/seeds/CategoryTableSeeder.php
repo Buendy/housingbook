@@ -11,6 +11,29 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Category::class,30)->create();;
+        $names = [
+          'Montaña',
+            'Ciudad',
+            'Campo',
+            'Playa'
+        ];
+
+        $colors = [
+          '#877b5a',
+          '#ff7575',
+          '#94dd89',
+          '#70d8d3'
+
+        ];
+
+        foreach ($names as $key => $value){
+            factory(\App\Category::class,1)->create([
+                'name' => $value,
+                'color' => $colors[$key],
+            ]);
+
+        }
+
+
     }
 }

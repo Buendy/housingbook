@@ -21,7 +21,8 @@ return [
     'confirm_text' => 'Confirmación de pago',
     'confirm_par' => 'Necesita confirmar el pago para solicitar el servicio',
     'total_price' => 'Precio total',
-    'stay' => 'Estancia'
+    'stay' => 'Estancia',
+    'filter' => 'Filtros de búsqueda'
 
 
 ];

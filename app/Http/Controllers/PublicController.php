@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Apartment;
+use App\Category;
 use Illuminate\Http\Request;
 
 class PublicController extends Controller
@@ -11,8 +12,11 @@ class PublicController extends Controller
     {
         $apartments = Apartment::with('city','user','photos')->paginate(6);
         $latest_apartment = Apartment::orderBy('id', 'DESC')->take(3)->get();
+        $categories = Category::all();
+        $max = Apartment::max('price');
+        $min = Apartment::min('price');
 
-        return view('guest.index',compact('apartments', 'latest_apartment'));
+        return view('guest.index',compact('apartments', 'latest_apartment', 'categories', 'min', 'max'));
     }
 
     public function show(Apartment $apartment)

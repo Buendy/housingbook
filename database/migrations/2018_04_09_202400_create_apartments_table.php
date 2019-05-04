@@ -19,7 +19,7 @@ class CreateApartmentsTable extends Migration
             $table->text('description');
             $table->text('short_description');
             $table->text('address');
-            $table->string('price');
+            $table->float('price');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedInteger('city_id');
