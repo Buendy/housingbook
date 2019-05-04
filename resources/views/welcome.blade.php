@@ -38,7 +38,7 @@
                 <div class="col-md-3">
                     <div class="card-container first-card">
                         <div class="card-component">
-                            <a href="index.html#basic-elements" target="_blank">
+                            <a href="{{route('searchCategory',  1)}}">
                                 <div class="front">
                                     <img src="{{ asset('img/mountain.jpg')}}">
                                 </div>
@@ -49,7 +49,7 @@
                 <div class="col-md-3">
                     <div class="card-container second-card">
                         <div class="card-component">
-                            <a href="index.html#cards" target="_blank">
+                            <a href="{{route('searchCategory',  2)}}">
                                 <div class="front">
                                     <img src="{{ asset('img/city.jpg')}}">
                                 </div>
@@ -60,7 +60,7 @@
                 <div class="col-md-3">
                     <div class="card-container third-card">
                         <div class="card-component">
-                            <a href="sections.html" target="_blank">
+                            <a href="{{route('searchCategory',  3)}}">
                                 <div class="front">
                                     <img src="{{ asset('img/campo.jpg')}}">
                                 </div>
@@ -71,7 +71,7 @@
                 <div class="col-md-3">
                     <div class="card-container fourth-card">
                         <div class="card-component">
-                            <a href="examples/product-page.html" target="_blank">
+                            <a href="{{route('searchCategory',  4)}}">
                                 <div class="front">
                                     <img src="{{ asset('img/beach.jpg')}}">
                                 </div>

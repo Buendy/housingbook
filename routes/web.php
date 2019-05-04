@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PublicController@welcome');
 
 Route::get('/home', 'HomeController@index');
 
@@ -21,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/apartments','ApartmentController@search')->name('search');
+Route::get('/apartments/category/{Category}','ApartmentController@searchCategory')->name('searchCategory');
 
 Route::prefix('public')->group(function(){
     Route::get('apartments','PublicController@index')->name('apartments.public');

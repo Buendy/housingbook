@@ -25,4 +25,10 @@ class PublicController extends Controller
         $randoms_apartments = Apartment::where('id','!=',$apartment->id)->where('city_id',$apartment->city_id)->paginate(4);
         return view('guest.show',compact('apartment','randoms_apartments'));
     }
+
+    public function welcome()
+    {
+        $categories = Category::all();
+        return view('welcome', compact('categories'));
+    }
 }
