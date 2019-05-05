@@ -106,6 +106,32 @@
                         </ul>
                     </div>
                 </li>
+                <li>
+                    <a data-toggle="collapse" href="#History">
+                        <i class="fa fa-history"></i>
+                        <p>
+                            {{__('menu.history')}}
+                            <b class="caret"></b>
+                        </p>
+                    </a>
+                    <div class="collapse " id="History">
+                        <ul class="nav">
+                            <li>
+                                <a href="{{route('invoice.history')}}">
+                                    <span class="sidebar-mini-icon">H</span>
+                                    <span class="sidebar-normal">{{__('menu.history')}}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('invoice.index')}}">
+                                    <span class="sidebar-mini-icon">I</span>
+                                    <span class="sidebar-normal">{{__('menu.invoices')}}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
             </ul>
         </div>
     </div>

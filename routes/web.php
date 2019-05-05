@@ -50,11 +50,14 @@ Route::prefix('dashboard')->group(function(){
     Route::get('{user}/edit', 'dashboard\UserController@edit')->name('user.edit');
     Route::put('{user}/update', 'dashboard\UserController@update')->name('user.update');
     Route::get('{user}/telegram','dashboard\UserController@telegram')->name('user.telegram');
+    Route::get('{user}/telegram/tutorial','dashboard\UserController@tutorial')->name('user.tutorial');
     Route::get('{user}/password','dashboard\UserController@password')->name('user.password');
     Route::put('{user}/telegram/update','dashboard\UserController@telegramUpdate')->name('user.telegramupdate');
     Route::put('{user}/password/update','dashboard\UserController@passwordUpdate')->name('user.passwordupdate');
 
     Route::get('apartment/index', 'dashboard\ApartmentController@index')->name('apartment.index');
+    Route::get('invoices/index', 'dashboard\InvoiceController@index')->name('invoice.index');
+    Route::get('invoices/history', 'dashboard\InvoiceController@history')->name('invoice.history');
 });
 
 //Rutas para alquilar apartamento

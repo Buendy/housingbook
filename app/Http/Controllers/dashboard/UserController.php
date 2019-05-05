@@ -4,8 +4,12 @@ namespace App\Http\Controllers\dashboard;
 use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\User;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Validation\Rule;
+use Dompdf\Dompdf;
+use Barryvdh\DomPDF\Facade;
 
 class UserController extends Controller
 {
@@ -82,5 +86,12 @@ class UserController extends Controller
         } else {
             return redirect('/dashboard/'. auth()->user()->id . '/password');
         }
+    }
+
+    public function tutorial()
+    {
+        $pdf = App::make('dompdf.wrapper');
+        $pdf = Facade::loadView('pdf.tutorial');
+        return $pdf->stream();
     }
 }

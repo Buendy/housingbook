@@ -9,5 +9,7 @@ return [
     'apartment' => 'Apartamentos',
     'profile' => 'Perfil',
     'dashboard' => 'dashboard',
-    'return' => 'volver'
+    'return' => 'volver',
+    'invoices' => 'Facturas',
+    'history' => 'Historial',
 ];

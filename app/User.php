@@ -33,6 +33,11 @@ class User extends Authenticatable
         return $this->hasMany(Apartment::class);
     }
 
+    public function invoices()
+    {
+        return $this->belongsToMany(Apartment::class)->withPivot('entry', 'exit');
+    }
+
     public static $rules = [
         'name' => 'required | min:3 | unique:apartments,name',
         'last_name' => 'required | min:3 | max:300',
