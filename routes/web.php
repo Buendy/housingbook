@@ -57,7 +57,9 @@ Route::prefix('dashboard')->group(function(){
 
     Route::get('apartment/index', 'dashboard\ApartmentController@index')->name('apartment.index');
     Route::get('invoices/index', 'dashboard\InvoiceController@index')->name('invoice.index');
-    Route::get('invoices/history', 'dashboard\InvoiceController@history')->name('invoice.history');
+    Route::get('invoices/invoices', 'dashboard\InvoiceController@invoices')->name('invoice.invoices');
+    Route::post('invoices/download', 'dashboard\InvoiceController@download')->name('invoice.download');
+
 });
 
 //Rutas para alquilar apartamento

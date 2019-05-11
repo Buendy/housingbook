@@ -20,6 +20,9 @@
     <link href="{{asset('assets/css/paper-dashboard.css?v=2.0.1')}}" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('assets/demo/demo.css')}}" rel="stylesheet" />
+    <style>
+        .red-tooltip + .tooltip > .tooltip-inner {background-color: #f00;}
+    </style>
 </head>
 
 <body class="">
@@ -117,13 +120,13 @@
                     <div class="collapse " id="History">
                         <ul class="nav">
                             <li>
-                                <a href="{{route('invoice.history')}}">
+                                <a href="{{route('invoice.index')}}">
                                     <span class="sidebar-mini-icon">H</span>
                                     <span class="sidebar-normal">{{__('menu.history')}}</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('invoice.index')}}">
+                                <a href="{{route('invoice.invoices')}}">
                                     <span class="sidebar-mini-icon">I</span>
                                     <span class="sidebar-normal">{{__('menu.invoices')}}</span>
                                 </a>

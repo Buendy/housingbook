@@ -35,7 +35,12 @@ class User extends Authenticatable
 
     public function invoices()
     {
-        return $this->belongsToMany(Apartment::class)->withPivot('entry', 'exit');
+        return $this->belongsToMany(Apartment::class)->withPivot('id', 'entry', 'exit', 'total');
+    }
+
+    public function invoice($id, $user_id)
+    {
+        return $this->belongsToMany(Apartment::class)->withPivot('id', 'entry', 'exit', 'total', 'created_at')->wherePivot('id', $id)->wherePivot('user_id', $user_id);
     }
 
     public static $rules = [

@@ -34,8 +34,10 @@
 <p>Para obtener el id entramos en ajustes => cuentas => telegram:</p>
 <br>
 <p class="fotos"><img src="http://jejo.pw/public/.IMG_20180317_182535_203_m.jpg"  width="300" height="300" alt="">
-<img src="http://jejo.pw/public/.IMG_20180317_182550_131_m.jpg" width="300" height="300" alt=""></p>
-<p>En el apartado de telegram podemos ver nuestra id:</p>
+    <img src="http://jejo.pw/public/.IMG_20180317_182550_131_m.jpg" width="300" height="300" alt=""></p>
+<p>
+    En el apartado de telegram podemos ver nuestra id:
+</p>
 <p class="fotos"><img src="http://jejo.pw/public/.IMG_20180317_182641_984_m.jpg" width="300" height="300" alt=""></p>
 
 </body>

@@ -6,6 +6,7 @@ return [
     'editprofile' => 'Edit profile',
     'apartmenthello' => 'Your apartments',
     'apartmentname' => 'Name',
+    'apartmentowner' => 'Owner',
     'apartmentaddress' => 'Address',
     'secondaddress' => 'Second address',
     'apartmentdescription' => 'Description',
@@ -40,5 +41,8 @@ return [
     'profileupdatedfailed' => 'Sorry! Seems like something happen while updating your profile, try again',
     'obtain_telegram' => 'How do I obtain my Telegram ID?',
     'address' => 'Address',
-    'ups' => 'Ups! Something wrong happened.'
+    'ups' => 'Ups! Something wrong happened.',
+    'entry' => 'Entry',
+    'exit' => 'Exit',
+    'down' => 'Download invoice'
 ];

@@ -6,6 +6,7 @@ return [
     'editprofile' => 'Modificar perfil',
     'apartmenthello' => 'Sus apartamentos',
     'apartmentname' => 'Nombre',
+    'apartmentowner' => 'Propietario',
     'apartmentaddress' => 'Dirección',
     'secondaddress' => 'Segunda dirección',
     'apartmentdescription' => 'Descripción',
@@ -39,5 +40,8 @@ return [
     'profileupdatedocorrectly' => 'Tu perfil ha sido actualizado',
     'profileupdatedfailed' => 'Lo sentimos! Ha ocurrido un problema al actualizar su perfil, inténtelo de nuevo',
     'obtain_telegram' => '¿Cómo obtengo mi ID de Telegram?',
-    'ups' => 'Ups! Ocurrión algún error.'
+    'ups' => 'Ups! Ocurrión algún error.',
+    'entry' => 'Entrada',
+    'exit' => 'Salida',
+    'down' => 'Descargar factura'
 ];
