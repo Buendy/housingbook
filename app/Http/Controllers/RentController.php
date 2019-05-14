@@ -31,10 +31,9 @@ class RentController extends Controller
         $entradaCheck = Carbon::parse($entrada);
         $salidaCheck = Carbon::parse($salida);
 
-        if($entradaCheck > $salidaCheck){
+        if($entradaCheck > $salidaCheck || $days == 0){
             return back()->with('error', __('apartments.rent_error'));
         }
-
 
         $checkDisponibility = $apartment->checkDisponibility($entrada,$salida);
 

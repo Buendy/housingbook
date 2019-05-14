@@ -44,5 +44,6 @@ return [
     'ups' => 'Ups! Something wrong happened.',
     'entry' => 'Entry',
     'exit' => 'Exit',
-    'down' => 'Download invoice'
+    'down' => 'Download invoice',
+    'history' => 'Your visited apartments',
 ];

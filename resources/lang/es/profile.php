@@ -43,5 +43,6 @@ return [
     'ups' => 'Ups! Ocurrión algún error.',
     'entry' => 'Entrada',
     'exit' => 'Salida',
-    'down' => 'Descargar factura'
+    'down' => 'Descargar factura',
+    'history' => 'Tus apartamentos visitados',
 ];

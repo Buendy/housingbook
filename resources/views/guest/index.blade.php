@@ -57,7 +57,7 @@
                  <div class="container border shadow">
                      <h4 class="card-title">
                          Refine
-                         <button class="btn btn-default btn-icon btn-neutral pull-right" rel="tooltip" title="Reset Filter">
+                         <button class="btn btn-default btn-icon btn-neutral pull-right" rel="tooltip" title="Reset Filter" type="reset">
                              <i class="arrows-1_refresh-69 now-ui-icons"></i>
                          </button>
                      </h4>
@@ -78,10 +78,11 @@
                      <hr>
                          <p>
                              <span id="price-left" class="price-left pull-left" data-currency="&euro;">{{$min}} &euro;</span>
+                             <span class="rangePrice text-center justify-content-center" style="margin-left: 160px">0€</span>
                              <span id="price-right" class="price-right pull-right" data-currency="&euro;">{{$max}} &euro;</span>
                          </p>
                          <br>
-                         <p><input type="range" class="form-control custom-range text-primary"></p>
+                         <p><input type="range" class="form-control custom-range text-primary" max="{{$max}}" min="{{$min}}" id="slider"></p>
               
 
 
@@ -170,6 +171,11 @@
 
         </div>
     </div>
-
-
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+    <script>
+        let rango = $(".rangePrice");
+        $('#slider').change(function(event){
+           rango.text(event.currentTarget.value + "€");
+        });
+    </script>
 @endsection
