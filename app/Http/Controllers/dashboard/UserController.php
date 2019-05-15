@@ -18,9 +18,9 @@ class UserController extends Controller
         return view('dashboard.user.show', compact('user'));
     }
 
-    public function edit(User $user)
+    public function edit()
     {
-        return view('dashboard.user.edit', compact('user'));
+        return view('dashboard.user.edit');
     }
 
     public function update(User $user, Request $request)
@@ -28,7 +28,7 @@ class UserController extends Controller
         if($user->id == auth()->user()->id) {
             $this->validate($request,
                 ['name' => 'required | min:3 | regex:/^[a-zA-Z ]*$/ | unique:apartments,name' ,
-                    'last_name' => 'required | min:3 | max:300 | regex:/^[a-zA-Z ]*$/',
+                    'last_name' => 'required | min:3 | max:300 | regex:/^[a-zA-Záéíóú ]*$/',
                     'email' => ['required', 'min:10', 'max:100', Rule::unique('users','email')->ignore($user->id)],
                     'address' => 'required',
                     'phone' => ['required', 'regex:/^[9|6|7|8][0-9]{8}$/']]);
@@ -48,9 +48,9 @@ class UserController extends Controller
         }
     }
 
-    public function telegram(User $user)
+    public function telegram()
     {
-        return view('dashboard.user.telegram',compact('user'));
+        return view('dashboard.user.telegram');
     }
 
     public function telegramUpdate(User $user, Request $request)
@@ -68,9 +68,9 @@ class UserController extends Controller
         }
     }
 
-    public function password(User $user)
+    public function password()
     {
-        return view('dashboard.user.password',compact('user'));
+        return view('dashboard.user.password');
     }
 
     public function passwordUpdate(User $user, Request $request)

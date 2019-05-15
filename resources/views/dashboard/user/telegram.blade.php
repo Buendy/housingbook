@@ -10,28 +10,29 @@
                     <div class="card-header">
                         <h5 class="title text-center">{{__('profile.edit_telegram')}}</h5>
                         <div class="row">
-                            <a href="{{url('dashboard/'. auth()->user()->id.'/telegram/tutorial')}}" class="text-center justify-content-center mx-auto d-block" target="_blank">{{__('profile.obtain_telegram')}}</a>
-                        <!-- hay que hablar primero al bot y en la DB tener el ID del usuario al que se espera enviar el mensaje por telegram!
-                        El bot se llama housingbook_bot -->
-                    </div>
-                    <hr>
-                    <div class="card-body ">
-                        {{Form::open(['method' => 'PUT','action' => ['dashboard\UserController@telegramUpdate',auth()->user()->id]])}}
-                        <div class="row">
-                            <label class="col-md-3 col-form-label">{{__('profile.telegram')}}</label>
+                            <a href="{{url('dashboard/user/telegram/tutorial')}}" class="text-center justify-content-center mx-auto d-block" target="_blank">{{__('profile.obtain_telegram')}}</a>
+                            <!-- hay que hablar primero al bot y en la DB tener el ID del usuario al que se espera enviar el mensaje por telegram!
+                            El bot se llama housingbook_bot -->
+                        </div>
+                        <hr>
+                        <div class="card-body ">
+                            {{Form::open(['method' => 'PUT','action' => ['dashboard\UserController@telegramUpdate', auth()->user()->id]])}}
+                            <div class="row">
+                                <label class="col-md-3 col-form-label">{{__('profile.telegram')}}</label>
 
-                            <div class="col-md-8">
-                                <div class="form-group">
-                                    {{Form::text('telegram',old('name',$user->telegram), ['id' => 'name','class' => 'form-control'])}}
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        {{Form::text('telegram',old('name',Auth()->user()->telegram), ['id' => 'name','class' => 'form-control'])}}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-3 col-sm-4">
-                                {{Form::submit(__('profile.update'),['class' => 'btn btn-primary'])}}
+                            <div class="row justify-content-center">
+                                <div class="col-md-3 col-sm-4">
+                                    {{Form::submit(__('profile.update'),['class' => 'btn btn-primary'])}}
+                                </div>
                             </div>
+                            {{Form::close()}}
                         </div>
-                        {{Form::close()}}
                     </div>
                 </div>
             </div>

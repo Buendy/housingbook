@@ -11,11 +11,11 @@
                     <div class="card-body">
                         <div class="author">
                             <a href="#">
-                                <img class="avatar border-gray" src="{{$user->photo}}" alt="...">
-                                <h5 class="title">{{$user->name}}</h5>
+                                <img class="avatar border-gray" src="{{Auth()->user()->photo}}" alt="...">
+                                <h5 class="title">{{Auth()->user()->name}}</h5>
                             </a>
                             <p class="description">
-                                {{$user->last_name}}
+                                {{Auth()->user()->last_name}}
                             </p>
                         </div>
 
@@ -28,7 +28,7 @@
 
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
-                                    <h5>{{count($user->apartments)}}
+                                    <h5>{{count(Auth()->user()->apartments)}}
                                         <br>
                                         <small>{{__('menu.apartment')}}</small>
                                     </h5>
@@ -53,19 +53,19 @@
                                 <div class="col-md-5 pr-1">
                                     <div class="form-group">
                                         <label>{{__('profile.email')}}</label>
-                                        <input type="text" class="form-control" disabled="" value="{{$user->email}}">
+                                        <input type="text" class="form-control" disabled="" value="{{Auth()->user()->email}}">
                                     </div>
                                 </div>
                                 <div class="col-md-3 px-1">
                                     <div class="form-group">
                                         <label>{{__('profile.name')}}</label>
-                                        <input type="text" class="form-control" disabled=""  value="{{$user->name}}">
+                                        <input type="text" class="form-control" disabled=""  value="{{Auth()->user()->name}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4 pl-1">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">{{__('profile.last_name')}}</label>
-                                        <input type="email" class="form-control" disabled="" value="{{$user->last_name}}">
+                                        <input type="email" class="form-control" disabled="" value="{{Auth()->user()->last_name}}">
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>{{__('profile.apartmentaddress')}}</label>
-                                        <input type="text" class="form-control" disabled="" value="{{$user->address}}">
+                                        <input type="text" class="form-control" disabled="" value="{{Auth()->user()->address}}">
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>{{__('profile.secondaddress')}}</label>
-                                        <input type="text" class="form-control" disabled="" value="{{$user->second_address}}">
+                                        <input type="text" class="form-control" disabled="" value="{{Auth()->user()->second_address}}">
                                     </div>
                                 </div>
                             </div>
@@ -90,12 +90,12 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>{{__('profile.phone')}}</label>
-                                        <input type="text" class="form-control" disabled=""  value="{{$user->phone}}">
+                                        <input type="text" class="form-control" disabled=""  value="{{Auth()->user()->phone}}">
                                     </div>
                                 </div>
                                 <div class="col-md-7"></div>
                                 <div class="col-md-1">
-                                    <a class="btn btn-round btn-outline-info" href="{{url('dashboard/'.Auth::user()->id.'/edit')}}">Editar</a>
+                                    <a class="btn btn-round btn-outline-info" href="{{url('dashboard/user/edit')}}">Editar</a>
                                 </div>
                             </div>
 

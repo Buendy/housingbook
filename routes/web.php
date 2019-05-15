@@ -46,12 +46,12 @@ Route::prefix('apartments')->group(function() {
 
 Route::prefix('dashboard')->group(function(){
     Route::get('', 'DashboardController@index')->name('dashboard');
-    Route::get('{user}/show', 'dashboard\UserController@show')->name('user.show');
-    Route::get('{user}/edit', 'dashboard\UserController@edit')->name('user.edit');
+    Route::get('user/show', 'dashboard\UserController@show')->name('user.show');
+    Route::get('user/edit', 'dashboard\UserController@edit')->name('user.edit');
     Route::put('{user}/update', 'dashboard\UserController@update')->name('user.update');
-    Route::get('{user}/telegram','dashboard\UserController@telegram')->name('user.telegram');
-    Route::get('{user}/telegram/tutorial','dashboard\UserController@tutorial')->name('user.tutorial');
-    Route::get('{user}/password','dashboard\UserController@password')->name('user.password');
+    Route::get('user/telegram','dashboard\UserController@telegram')->name('user.telegram');
+    Route::get('user/telegram/tutorial','dashboard\UserController@tutorial')->name('user.tutorial');
+    Route::get('user/password','dashboard\UserController@password')->name('user.password');
     Route::put('{user}/telegram/update','dashboard\UserController@telegramUpdate')->name('user.telegramupdate');
     Route::put('{user}/password/update','dashboard\UserController@passwordUpdate')->name('user.passwordupdate');
 

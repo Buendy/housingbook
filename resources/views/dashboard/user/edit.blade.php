@@ -18,7 +18,7 @@
 
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    {{Form::text('name',old('name',$user->name), ['id' => 'name','class' => 'form-control'])}}
+                                    {{Form::text('name',old('name',Auth()->user()->name), ['id' => 'name','class' => 'form-control'])}}
                                 </div>
                             </div>
                         </div>
@@ -26,7 +26,7 @@
                             <label class="col-md-3 col-form-label">{{__('profile.last_name')}}</label>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    {{Form::text('last_name',old('last_name',$user->last_name), ['id' => 'last_name','class' => 'form-control'])}}
+                                    {{Form::text('last_name',old('last_name',Auth()->user()->last_name), ['id' => 'last_name','class' => 'form-control'])}}
                                 </div>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                             <label class="col-md-3 col-form-label">{{__('profile.email')}}</label>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    {{Form::text('email',old('email',$user->email), ['id' => 'email','class' => 'form-control'])}}
+                                    {{Form::text('email',old('email', Auth()->user()->email), ['id' => 'email','class' => 'form-control'])}}
                                 </div>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                             <label class="col-md-3 col-form-label">{{__('profile.apartmentaddress')}}</label>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    {{Form::text('address',old('address',$user->address), ['id' => 'address','class' => 'form-control'])}}
+                                    {{Form::text('address',old('address',Auth()->user()->address), ['id' => 'address','class' => 'form-control'])}}
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                             <label class="col-md-3 col-form-label">{{__('profile.secondaddress')}}</label>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    {{Form::text('second_address',old('second_address',$user->second_address), ['id' => 'second_address','class' => 'form-control'])}}
+                                    {{Form::text('second_address',old('second_address',Auth()->user()->second_address), ['id' => 'second_address','class' => 'form-control'])}}
                                 </div>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                             <label class="col-md-3 col-form-label">{{__('profile.phone')}}</label>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" value="{{ old('phone') ?: $user->phone }}" name="phone" id="phone">
+                                    <input type="tel" class="form-control" value="{{ old('phone') ?: Auth()->user()->phone }}" name="phone" id="phone">
                                 </div>
                             </div>
                         </div>

@@ -49,25 +49,25 @@
                     <div class="collapse" id="collapseExample">
                         <ul class="nav">
                             <li>
-                                <a href="{{url('dashboard/'.Auth::user()->id.'/show')}}">
+                                <a href="{{url('dashboard/user/show')}}">
                                     <span class="sidebar-mini-icon">MP</span>
                                     <span class="sidebar-normal">{{__('dashboard.profile')}}</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{url('dashboard/'.Auth::user()->id.'/edit')}}">
+                                <a href="{{url('dashboard/user/edit')}}">
                                     <span class="sidebar-mini-icon">EP</span>
                                     <span class="sidebar-normal">{{__('dashboard.edit')}}</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{url('dashboard/'.Auth::user()->id.'/password')}}">
+                                <a href="{{url('dashboard/user/password')}}">
                                     <span class="sidebar-mini-icon">PC</span>
                                     <span class="sidebar-normal">{{__('dashboard.password')}}</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{url('dashboard/'.Auth::user()->id.'/telegram')}}">
+                                <a href="{{url('dashboard/user/telegram')}}">
                                     <span class="sidebar-mini-icon">TI</span>
                                     <span class="sidebar-normal">{{__('dashboard.telegram')}}</span>
                                 </a>
