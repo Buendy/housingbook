@@ -45,7 +45,7 @@
                                            data-toggle="tooltip" title="{{__('profile.edit')}}">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        {{Form::open(['action' => ['ApartmentController@destroy',$apartment->id], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
+                                        {{Form::open(['action' => ['dashboard\ApartmentController@destroy',$apartment->id], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
                                         <button type="submit" data-toggle="tooltip" title="{{__('profile.delete')}}" class="btn btn-danger btn-icon btn-sm"><i class="fa fa-times"></i></button>
                                         {{Form::close()}}
                                     </td>

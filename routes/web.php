@@ -33,14 +33,13 @@ Route::prefix('profile')->group(function () {
     Route::get('{name}','ProfileController@index')->name('profile.index');
 });
 
-//CRUD APARTAMENTOS
+
 Route::prefix('apartments')->group(function() {
-    Route::get('show/{apartment}','ApartmentController@show')->name('apartment.showapartment');
-    Route::get('create','ApartmentController@create')->name('apartment.createapartment');
-    Route::post('store','ApartmentController@store')->name('apartment.storeapartment');
-    Route::delete('delete/{apartment}','ApartmentController@destroy')->name('apartment.deleteapartment');
-    Route::get('{apartment}/edit','ApartmentController@edit')->name('apartment.editapartment');
-    Route::put('{apartment}/update','ApartmentController@update')->name('apartment.updateapartment');
+//    Route::get('show/{apartment}','ApartmentController@show')->name('apartment.showapartment');
+    //Route::post('store','ApartmentController@store')->name('apartment.storeapartment');
+    //Route::delete('delete/{apartment}','ApartmentController@destroy')->name('apartment.deleteapartment');
+//    Route::get('{apartment}/edit','ApartmentController@edit')->name('apartment.editapartment');
+//    Route::put('{apartment}/update','ApartmentController@update')->name('apartment.updateapartment');
 });
 
 
@@ -55,7 +54,14 @@ Route::prefix('dashboard')->group(function(){
     Route::put('{user}/telegram/update','dashboard\UserController@telegramUpdate')->name('user.telegramupdate');
     Route::put('{user}/password/update','dashboard\UserController@passwordUpdate')->name('user.passwordupdate');
 
+    Route::get('apartment/show/{apartment}','dashboard\ApartmentController@show')->name('apartment.showapartment');
     Route::get('apartment/index', 'dashboard\ApartmentController@index')->name('apartment.index');
+    Route::get('apartment/create','dashboard\ApartmentController@create')->name('apartment.createapartment');
+    Route::post('apartment/store','dashboard\ApartmentController@store')->name('apartment.storeapartment');
+    Route::delete('apartment/delete/{apartment}','dashboard\ApartmentController@destroy')->name('apartment.deleteapartment');
+    Route::get('apartment/{apartment}/edit','dashboard\ApartmentController@edit')->name('apartment.editapartment');
+    Route::put('apartment/{apartment}/update','dashboard\ApartmentController@update')->name('apartment.updateapartment');
+
     Route::get('invoices/index', 'dashboard\InvoiceController@index')->name('invoice.index');
     Route::get('invoices/invoices', 'dashboard\InvoiceController@invoices')->name('invoice.invoices');
     Route::post('invoices/download', 'dashboard\InvoiceController@download')->name('invoice.download');

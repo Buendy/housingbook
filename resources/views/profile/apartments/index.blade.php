@@ -34,7 +34,7 @@
                         <tbody>
                         @forelse($apartments as $apartment)
                             <tr>
-                                <td>{{$apartment->id}}</td>
+                                <td>{{$apartment->id}}asdadasdasd</td>
                                 <td>{{$apartment->name}}</td>
                                 <td>{{$apartment->short_description}}</td>
                                 <td>{{$apartment->city->name}}</td>
