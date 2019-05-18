@@ -23,7 +23,22 @@ class PublicController extends Controller
     {
         $apartment->load('city','user','photos','services');
         $randoms_apartments = Apartment::where('id','!=',$apartment->id)->where('city_id',$apartment->city_id)->paginate(4);
-        return view('guest.show',compact('apartment','randoms_apartments'));
+
+        $dates = $apartment->noAvailableDates();
+
+        $allDates = [];
+
+        foreach ($dates as $date)
+        {
+            $date_from = strtotime($date->entry);
+            $date_to = strtotime($date->exit);
+
+            for ($i=$date_from; $i<=$date_to; $i+=86400) {
+                $allDates[] = date("d-m-Y", $i);
+            }
+        }
+
+        return view('guest.show',compact('apartment','randoms_apartments','allDates'));
     }
 
     public function welcome()

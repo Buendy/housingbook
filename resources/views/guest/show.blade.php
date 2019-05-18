@@ -128,7 +128,7 @@
                             <div class="col-md-4 mt-2">
 
 
-                                <input type="text" name="entrada" class="form-control datepicker bg-light text-black" required>
+                                <input type="text" name="entrada" id="datepicker" class="form-control bg-light text-black" required>
 
                             </div>
                             <div class="col-md-1 mt-3">
@@ -136,7 +136,7 @@
                             </div>
                             <div class="col-md-4 mt-2">
 
-                                <input type="text" name="salida" class="form-control datepicker bg-light text-black" required>
+                                <input type="text" name="salida" id="datepicker2" class="form-control bg-light text-black" required>
 
                             </div>
                             <div class="col-md-2">
@@ -252,4 +252,50 @@
             </div>
         </div>
     </div>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.css"/>
+    <script type="text/javascript">
+
+        var array = {!! json_encode($allDates) !!};
+        var language = "{!! config('app.locale'); !!}";
+
+        ;(function($){
+            $.fn.datepicker.dates['es'] = {
+                days: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+                daysShort: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+                daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+                months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+                monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+                today: "Hoy",
+                monthsTitle: "Meses",
+                clear: "Borrar",
+                weekStart: 1,
+            };
+        }(jQuery));
+
+        $('#datepicker').datepicker({
+            format: 'dd-mm-yyyy',
+            language: language,
+            todayBtn: "linked",
+            clearBtn: true,
+            todayHighlight: true,
+            autoclose: true,
+            datesDisabled: array
+        });
+
+        $('#datepicker2').datepicker({
+            format: 'dd-mm-yyyy',
+            language: language,
+            clearBtn: true,
+            todayBtn: "linked",
+            todayHighlight: true,
+            autoclose: true,
+            datesDisabled: array
+        });
+
+    </script>
+
 @endsection

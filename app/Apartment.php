@@ -70,6 +70,11 @@ class Apartment extends Model
         return $this->belongsToMany(User::class)->withPivot('entry', 'exit')->whereBetween('entry',[$entrada,$salida])->orWhereBetween('exit',[$entrada,$salida]);
     }
 
+    public function noAvailableDates()
+    {
+        return $this->belongsToMany(User::class)->withPivot('entry','exit')->get(['entry','exit']);
+    }
+
     public function getPhotoImageAttribute()
     {
         return 'storage/photos/' . $this->photos()->first()->local_url;

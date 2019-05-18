@@ -35,7 +35,7 @@
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
+                        @endforeach
 
 
                     </div>
@@ -51,45 +51,44 @@
     <div class="section">
         <div class="row">
             <div class="col-md-3">
-               <div class="container p-2">
-                   <h3>{{__('form.filter')}}</h3>
-                   <hr>
-                 <div class="container border shadow">
-                     <h4 class="card-title">
-                         Refine
-                         <button class="btn btn-default btn-icon btn-neutral pull-right" rel="tooltip" title="Reset Filter" type="reset">
-                             <i class="arrows-1_refresh-69 now-ui-icons"></i>
-                         </button>
-                     </h4>
-                     <h4 class="text-primary">{{__('form.categories')}}</h4>
-                     <hr>
-                     @foreach($categories as $category)
-                         <div class="form-check">
+                <div class="container p-2">
+                    <h3>{{__('form.filter')}}</h3>
+                    <hr>
+                    <div class="container border shadow">
+                        <form action="">
+                            <h4 class="card-title">
+                                Refine
+                                <button class="btn btn-default btn-icon btn-neutral pull-right" rel="tooltip" title="Reset Filter" type="reset">
+                                    <i class="arrows-1_refresh-69 now-ui-icons"></i>
+                                </button>
+                            </h4>
+                            <h4 class="text-primary">{{__('form.categories')}}</h4>
+                            <hr>
+                            @foreach($categories as $category)
+                                <div class="form-check">
 
-                             <label class="form-check-label">
-                                 <input class="form-check-input" type="checkbox">
-                                 <span class="form-check-sign bg-primary text-light"></span>
-                                 {{$category->name}}
-                             </label>
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox">
+                                        <span class="form-check-sign bg-primary text-light"></span>
+                                        {{$category->name}}
+                                    </label>
 
-                         </div>
-                     @endforeach
-                     <h4 class="text-primary">{{__('form.price')}}</h4>
-                     <hr>
-                         <p>
-                             <span id="price-left" class="price-left pull-left" data-currency="&euro;">{{$min}} &euro;</span>
-                             <span class="rangePrice text-center justify-content-center" style="margin-left: 160px">0€</span>
-                             <span id="price-right" class="price-right pull-right" data-currency="&euro;">{{$max}} &euro;</span>
-                         </p>
-                         <br>
-                         <p><input type="range" class="form-control custom-range text-primary" max="{{$max}}" min="{{$min}}" id="slider"></p>
-              
-
-
-                 </div>
-
-                 </div>
-               </div>
+                                </div>
+                            @endforeach
+                            <h4 class="text-primary">{{__('form.price')}}</h4>
+                            <hr>
+                            <p>
+                                <span id="price-left" class="price-left pull-left" data-currency="&euro;">{{$min}} &euro;</span>
+                                <span class="rangePrice text-center justify-content-center" style="margin-left: 160px">0€</span>
+                                <span id="price-right" class="price-right pull-right" data-currency="&euro;">{{$max}} &euro;</span>
+                            </p>
+                            <br>
+                            <p><input type="range" class="form-control custom-range text-primary" max="{{$max}}" min="{{$min}}" id="slider"></p>
+                            <input type="submit" value="{{__('form.filtersend')}}">
+                        </form>
+                    </div>
+                </div>
+            </div>
 
             <div class="col-md-7">
                 <div class="flash-message">
@@ -175,7 +174,7 @@
     <script>
         let rango = $(".rangePrice");
         $('#slider').change(function(event){
-           rango.text(event.currentTarget.value + "€");
+            rango.text(event.currentTarget.value + "€");
         });
     </script>
 @endsection

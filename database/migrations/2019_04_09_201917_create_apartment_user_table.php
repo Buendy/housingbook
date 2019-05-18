@@ -20,7 +20,7 @@ class CreateApartmentUserTable extends Migration
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->date('entry')->default(\Carbon\Carbon::now());
-            $table->date('exit')->default(\Carbon\Carbon::now()->addDays(6));
+            $table->date('exit')->default(\Carbon\Carbon::now()->addDays(rand(2,20)));
             $table->float('total');
             $table->timestamps();
         });

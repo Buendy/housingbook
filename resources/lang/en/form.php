@@ -22,5 +22,6 @@ return [
     'confirm_par' => 'You need to confirm the payment to request the service',
     'total_price' => 'Total Price',
     'stay' => 'Stay',
-    'filter' => 'Search filters'
+    'filter' => 'Search filters',
+    'filtersend' => 'Filter'
 ];

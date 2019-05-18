@@ -17,9 +17,6 @@ class ApartmentController extends Controller
         return $this->middleware('auth');
     }
 
-
-
-
     public function search(Request $request)
     {
         $categories = Category::all();
