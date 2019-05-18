@@ -49,6 +49,7 @@ class ApartmentController extends Controller
 
         $request->merge(['city_id' => $request->city]);
         $apartment->fill($request->all());
+        $apartment->category_id = $request->category;
         $apartment->user_id = auth()->user()->id;
         $apartment->save();
 
@@ -65,9 +66,8 @@ class ApartmentController extends Controller
         }
 
         Helper::servicesTableFill($apartment,$request->services);
-        Helper::categoriesTableFill($apartment,$request->categories);
 
-        return back();
+        return back()->with('success', __('apartments.create'));
     }
 
 
@@ -110,11 +110,8 @@ class ApartmentController extends Controller
             $photo->save();
         }
 
-       // dd($apartment);
-
         Helper::servicesTableFill($apartment, $request->services);
 
-        Helper::categoriesTableFill($apartment, $request->categories);
         $apartments = Apartment::where('user_id',auth()->user()->id)->paginate(6);
         return view('dashboard.apartment.index', compact('apartments'))->with('success', 'Apartamento creado con exitogi');
     }

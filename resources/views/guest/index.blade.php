@@ -148,11 +148,9 @@
 
                                     </div>
                                     <div class="mt-2">
-                                        @foreach($apartment->categories as $category)
-                                            <div class="text-light rounded" style="background-color: {{$category->color}};">
-                                                <p  class="text-center">{{$category->name}}</p>
-                                            </div>
-                                        @endforeach
+                                        <div class="text-light rounded" style="background-color: {{$apartment->category->color}};">
+                                            <p  class="text-center">{{$apartment->category->name}}</p>
+                                        </div>
                                     </div>
 
                                 </div>

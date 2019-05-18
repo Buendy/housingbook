@@ -15,7 +15,8 @@ class Apartment extends Model
         'short_description' => 'required | min:3 | max: 100',
         'city' => 'required | exists:cities,id',
         'services' => 'required',
-        'categories' => 'required',
+        'category' => 'required',
+        'price' => 'required',
     ];
 
     /*public static $messages = [
@@ -55,9 +56,9 @@ class Apartment extends Model
         return $this->belongsToMany(Service::class);
     }
 
-    public function categories()
+    public function category()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function users()

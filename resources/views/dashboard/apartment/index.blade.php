@@ -29,35 +29,39 @@
                                 </thead>
                                 <tbody>
                                 @forelse($apartments as $apartment)
-                                <tr>
-                                    <td>{{$apartment->name}}</td>
-                                    <td>{{$apartment->city->name}}</td>
-                                    <td>{{$apartment->price}}€</td>
-                                    <td>{{$apartment->address}}€</td>
-                                    <td class="text-center text-light">
-                                        <a href="{{route('apartment.showapartment',$apartment->id)}}"
-                                           data-toggle="tooltip" title="{{__('profile.show')}}"
-                                           class="btn btn-info btn-icon btn-sm ">
-                                            <i class="fa fa-user"></i>
-                                        </a>
-                                        <a href="{{route('apartment.editapartment',$apartment->id)}}"
-                                           class="btn btn-success btn-icon btn-sm "
-                                           data-toggle="tooltip" title="{{__('profile.edit')}}">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                        {{Form::open(['action' => ['dashboard\ApartmentController@destroy',$apartment->id], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
-                                        <button type="submit" data-toggle="tooltip" title="{{__('profile.delete')}}" class="btn btn-danger btn-icon btn-sm"><i class="fa fa-times"></i></button>
-                                        {{Form::close()}}
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>{{$apartment->name}}</td>
+                                        <td>{{$apartment->city->name}}</td>
+                                        <td>{{$apartment->price}}€</td>
+                                        <td>{{$apartment->address}}€</td>
+                                        <td class="text-center text-light">
+                                            <a href="{{route('apartment.showapartment',$apartment->id)}}"
+                                               data-toggle="tooltip" title="{{__('profile.show')}}"
+                                               class="btn btn-info btn-icon btn-sm ">
+                                                <i class="fa fa-user"></i>
+                                            </a>
+                                            <a href="{{route('apartment.editapartment',$apartment->id)}}"
+                                               class="btn btn-success btn-icon btn-sm "
+                                               data-toggle="tooltip" title="{{__('profile.edit')}}">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            {{Form::open(['action' => ['dashboard\ApartmentController@destroy',$apartment->id], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
+                                            <button type="submit" data-toggle="tooltip" title="{{__('profile.delete')}}" class="btn btn-danger btn-icon btn-sm"><i class="fa fa-times"></i></button>
+                                            {{Form::close()}}
+                                        </td>
+                                    </tr>
                                 @empty
                                     <h3>{{__('profile.apartmentempty')}}</h3>
                                 @endforelse
                                 </tbody>
                             </table>
                         </div>
+
                     </div>
                 </div>
+            </div>
+            <div class="mx-auto d-block">
+                {{$apartments->links()}}
             </div>
         </div>
 

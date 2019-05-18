@@ -11,5 +11,6 @@ $factory->define(App\Apartment::class, function (Faker $faker) {
         'price' => $faker->numberBetween(1, 500),
         'user_id' => \App\User::all()->random()->id,
         'city_id' => \App\City::all()->random()->id,
+        'category_id' =>  \App\Category::all()->random()->id,
     ];
 });

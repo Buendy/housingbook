@@ -128,7 +128,7 @@
                             <div class="col-md-4 mt-2">
 
 
-                                <input type="text" name="entrada" id="datepicker" class="form-control bg-light text-black" required>
+                                <input type="text" name="entrada" id="datepicker" class="form-control bg-light text-black" autocomplete="off" required>
 
                             </div>
                             <div class="col-md-1 mt-3">
@@ -136,7 +136,7 @@
                             </div>
                             <div class="col-md-4 mt-2">
 
-                                <input type="text" name="salida" id="datepicker2" class="form-control bg-light text-black" required>
+                                <input type="text" name="salida" id="datepicker2" class="form-control bg-light text-black" autocomplete="off" required>
 
                             </div>
                             <div class="col-md-2">

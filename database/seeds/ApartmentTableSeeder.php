@@ -15,17 +15,12 @@ class ApartmentTableSeeder extends Seeder
             factory(\App\Photo::class, 5)->create(['apartment_id' => $apartment->id]);
 
             $services = \App\Service::all()->random(rand(1,6));
-            $categories = \App\Category::all()->random(rand(1,4));
+
             $users = \App\User::all()->random(2);
 
             foreach ($services as $service)
             {
                 $apartment->services()->attach($service->id);
-            }
-
-            foreach ($categories as $category)
-            {
-                $apartment->categories()->attach($category->id);
             }
 
             foreach ($users as $user)

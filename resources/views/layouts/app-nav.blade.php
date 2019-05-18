@@ -30,6 +30,7 @@
     <link href="{{asset('css/now-ui-kit.css?v=1.2.2')}}" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('demo/demo.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('dat/bootstrap-datepicker3.min.css')}}">
 
     @stack('style')
 

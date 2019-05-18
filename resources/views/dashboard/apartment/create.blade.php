@@ -79,7 +79,7 @@
                             </div>
                             <div class="col-md-4">
                                 <h4 class="card-title">{{__('form.categories')}}</h4>
-                                <select class="selectpicker" name="categories[]" data-style="btn btn-info btn-round" multiple data-size="7" required>
+                                <select class="selectpicker" name="category" data-style="btn btn-info btn-round" data-size="7" required>
                                     <option disabled>{{__('form.categories')}}</option>
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
@@ -115,14 +115,14 @@
                 {{Form::close()}}
             </div>
             <div class="col-md-6">
-                @if(session('success'))
+                @if(isset($success))
 
                         <div class="alert alert-info alert-dismissible fade show">
                             <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
                                 <i class="nc-icon nc-simple-remove"></i>
                             </button>
                             <span>
-                            {{__('profile.profileupdatedocorrectly')}}
+                            {{$success}}
                     </span>
                         </div>
 
