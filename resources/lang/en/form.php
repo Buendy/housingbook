@@ -23,5 +23,8 @@ return [
     'total_price' => 'Total Price',
     'stay' => 'Stay',
     'filter' => 'Search filters',
-    'filtersend' => 'Filter'
+    'filtersend' => 'Filter',
+    'comment' => 'Comment',
+    'shareyouropinion' => 'Share your opinion',
+    'commentposted' => 'Thanks for sharing your opinion',
 ];

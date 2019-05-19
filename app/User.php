@@ -33,6 +33,16 @@ class User extends Authenticatable
         return $this->hasMany(Apartment::class);
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function apartmentsUser()
+    {
+        return $this->belongsToMany(Apartment::class);
+    }
+
     public function invoices()
     {
         return $this->belongsToMany(Apartment::class)->withPivot('id', 'entry', 'exit', 'total');

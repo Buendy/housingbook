@@ -24,6 +24,7 @@ return [
     'stay' => 'Estancia',
     'filter' => 'Filtros de búsqueda',
     'filtersend' => 'Filtrar',
-
-
+    'comment' => 'Comentar',
+    'shareyouropinion' => 'Comparte tu opnión',
+    'commentposted' => 'Gracias por compartir tu opinión',
 ];

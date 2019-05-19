@@ -22,6 +22,8 @@ Route::get('/apartments','ApartmentController@search')->name('search');
 Route::get('/apartments/category/{Category}','ApartmentController@searchCategory')->name('searchCategory');
 Route::post('/apartments/filter','ApartmentController@filter')->name('filterApartments');
 
+Route::post('/apartments/{apartment}/comment','CommentController@store')->name('postComment');
+
 Route::prefix('public')->group(function(){
     Route::get('apartments','PublicController@index')->name('apartments.public');
     Route::get('apartments/{apartment}','PublicController@show')->name('apartments.show');

@@ -20,22 +20,22 @@
                     <div class="col-md-7 text-center">
                         @if(session('success'))
 
-                                <div class="alert alert-info alert-dismissible fade show">
-                                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                                        <i class="nc-icon nc-simple-remove"></i>
-                                    </button>
-                                    <span>{{__('profile.profileupdatedocorrectly')}}</span>
-                                </div>
+                            <div class="alert alert-info alert-dismissible fade show">
+                                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                    <i class="nc-icon nc-simple-remove"></i>
+                                </button>
+                                <span>{{__('form.commentposted')}}</span>
+                            </div>
 
                         @endif
                         @if(session('error'))
 
-                                <div class="alert alert-danger alert-dismissible fade show">
-                                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                                        <i class="nc-icon nc-simple-remove"></i>
-                                    </button>
-                                    <span><h6>{{session('error')}}</h6></span>
-                                </div>
+                            <div class="alert alert-danger alert-dismissible fade show">
+                                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                    <i class="nc-icon nc-simple-remove"></i>
+                                </button>
+                                <span><h6>{{session('error')}}</h6></span>
+                            </div>
 
                         @endif
 
@@ -141,7 +141,7 @@
                             </div>
                             <div class="col-md-2">
 
-                                    <button class="btn btn-primary mr-3">{{__('guest.rent')}}&nbsp;<i class="now-ui-icons shopping_cart-simple"></i></button>
+                                <button class="btn btn-primary mr-3">{{__('guest.rent')}}&nbsp;<i class="now-ui-icons shopping_cart-simple"></i></button>
 
                             </div>
 
@@ -161,16 +161,16 @@
                             <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
                                 <div class="card-body text-center">
 
-                                        @forelse($apartment->services as $service)
-                                            <div class="d-inline p-5">
-                                                        <div class="d-inline-block">
-                                                            <p>{{$service->name}}</p>
-                                                            <i class="fas {{$service->icon}} border border-info rounded-circle p-4 text-info" style="font-size:30px;"></i>
-                                                        </div>
+                                    @forelse($apartment->services as $service)
+                                        <div class="d-inline p-5">
+                                            <div class="d-inline-block">
+                                                <p>{{$service->name}}</p>
+                                                <i class="fas {{$service->icon}} border border-info rounded-circle p-4 text-info" style="font-size:30px;"></i>
                                             </div>
+                                        </div>
                                     @empty
                                         <p>{{__('guest.noservices')}}</p>
-                                        @endforelse
+                                    @endforelse
 
                                 </div>
                             </div>
@@ -178,6 +178,15 @@
 
                     </div>
                 </div>
+
+                @if(auth()->user()->apartmentsUser()->where('apartment_user.id', $apartment->id)->where('exit', '<' , \Carbon\Carbon::now())->exists()
+                && auth()->user()->comments()->where('apartment_id',$apartment->id)->doesntExist())
+                    {{Form::open(['method' => 'POST','action' => ['CommentController@store',$apartment->id]])}}
+                    <label for="">{{__('form.shareyouropinion')}}</label>
+                    {{Form::textarea('comment',old('comment'))}}
+                    {{Form::submit(__('form.comment'))}}
+                    {{Form::close()}}
+                @endif
 
                 <div class="rounded border shadow container mb-5">
                     <div class="title">
@@ -192,20 +201,20 @@
                                     <small>{{count($apartment->comments)}} Comments</small>
                                 </h3>
                                 @foreach($apartment->comments as $comment)
-                                <div class="media">
-                                    <a class="pull-left" href="#pablo">
-                                        <div class="avatar">
-                                            <img class="media-object img-raised" src="{{$comment->user->photo}}" alt="..." />
-                                        </div>
-                                    </a>
-                                    <div class="media-body">
-                                        <h5 class="media-heading">{{$comment->user->name}}
-                                            <small class="text-muted">&middot; {{$comment->created_at}}</small>
-                                        </h5>
-                                        <p>{{$comment->text}}</p>
+                                    <div class="media">
+                                        <a class="pull-left" href="#pablo">
+                                            <div class="avatar">
+                                                <img class="media-object img-raised" src="{{$comment->user->photo}}" alt="..." />
+                                            </div>
+                                        </a>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">{{$comment->user->name}}
+                                                <small class="text-muted">&middot; {{$comment->created_at}}</small>
+                                            </h5>
+                                            <p>{{$comment->text}}</p>
 
+                                        </div>
                                     </div>
-                                </div>
                                 @endforeach
                             </div>
 
