@@ -19,8 +19,8 @@ class CreateApartmentUserTable extends Migration
             $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->date('entry')->default(\Carbon\Carbon::now());
-            $table->date('exit')->default(\Carbon\Carbon::now()->addDays(rand(2,20)));
+            $table->date('entry');
+            $table->date('exit');
             $table->float('total');
             $table->timestamps();
         });
