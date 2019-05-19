@@ -44,10 +44,6 @@
         </div>
     </div>
 
-
-
-
-
     <div class="section">
         <div class="row">
             <div class="col-md-3">
@@ -55,37 +51,35 @@
                     <h3>{{__('form.filter')}}</h3>
                     <hr>
                     <div class="container border shadow">
-                        <form action="">
-                            <h4 class="card-title">
-                                Refine
-                                <button class="btn btn-default btn-icon btn-neutral pull-right" rel="tooltip" title="Reset Filter" type="reset">
-                                    <i class="arrows-1_refresh-69 now-ui-icons"></i>
-                                </button>
-                            </h4>
-                            <h4 class="text-primary">{{__('form.categories')}}</h4>
-                            <hr>
-                            @foreach($categories as $category)
-                                <div class="form-check">
+                        {{Form::open(['method' => 'POST', 'action'=>'ApartmentController@filter'])}}
+                        <h4 class="card-title">
+                            <button class="btn btn-default btn-icon btn-neutral pull-right" rel="tooltip" title="Reset Filter" type="reset">
+                                <i class="arrows-1_refresh-69 now-ui-icons"></i>
+                            </button>
+                        </h4>
+                        <h4 class="text-primary">{{__('form.categories')}}</h4>
+                        <hr>
+                        @foreach($categories as $category)
+                            <div class="form-check">
 
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox">
-                                        <span class="form-check-sign bg-primary text-light"></span>
-                                        {{$category->name}}
-                                    </label>
-
-                                </div>
-                            @endforeach
-                            <h4 class="text-primary">{{__('form.price')}}</h4>
-                            <hr>
-                            <p>
-                                <span id="price-left" class="price-left pull-left" data-currency="&euro;">{{$min}} &euro;</span>
-                                <span class="rangePrice text-center justify-content-center" style="margin-left: 160px">0€</span>
-                                <span id="price-right" class="price-right pull-right" data-currency="&euro;">{{$max}} &euro;</span>
-                            </p>
-                            <br>
-                            <p><input type="range" class="form-control custom-range text-primary" max="{{$max}}" min="{{$min}}" id="slider"></p>
-                            <input type="submit" value="{{__('form.filtersend')}}">
-                        </form>
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="category[]" value="{{$category->id}}">
+                                    <span class="form-check-sign bg-primary text-light"></span>
+                                    {{$category->name}}
+                                </label>
+                            </div>
+                        @endforeach
+                        <h4 class="text-primary">{{__('form.price')}}</h4>
+                        <hr>
+                        <p>
+                            <span id="price-left" class="price-left pull-left" data-currency="&euro;">{{$min}} &euro;</span>
+                            <span class="rangePrice text-center justify-content-center" style="margin-left: 160px">{{$max/2}}</span>
+                            <span id="price-right" class="price-right pull-right" data-currency="&euro;">{{$max}} &euro;</span>
+                        </p>
+                        <br>
+                        <p><input type="range" name="range" class="form-control custom-range text-primary" max="{{$max}}" min="{{$min}}" id="slider"></p>
+                        <button type="submit" class="btn btn-info" style="width: 100%">{{__('form.filtersend')}}</button>
+                        {{Form::close()}}
                     </div>
                 </div>
             </div>
@@ -125,7 +119,6 @@
                 <hr>
                 <div class="row">
                     @forelse($apartments as $apartment)
-
                         <div class="col-md-4 ">
                             <div class="card card-blog ">
                                 <div class="card-image">
@@ -155,17 +148,19 @@
 
                                 </div>
                             </div>
-
                         </div>
                     @empty
                         <h3>{{__('guest.noapartments')}}</h3>
                     @endforelse
                     <div class="mx-auto d-block">
-                        {{$apartments->links()}}
+                        @if($apartments instanceof \Illuminate\Pagination\LengthAwarePaginator )
+
+                            {{$apartments->links()}}
+
+                        @endif
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>

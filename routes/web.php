@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/apartments','ApartmentController@search')->name('search');
 Route::get('/apartments/category/{Category}','ApartmentController@searchCategory')->name('searchCategory');
+Route::post('/apartments/filter','ApartmentController@filter')->name('filterApartments');
 
 Route::prefix('public')->group(function(){
     Route::get('apartments','PublicController@index')->name('apartments.public');
@@ -28,20 +29,8 @@ Route::prefix('public')->group(function(){
 
 Route::prefix('profile')->group(function () {
     //Rutas para botones del perfil de usuario
-    //Route::get('apartments','ProfileController@apartments')->name('profile.manage');
-    //Route::get('edit','ProfileController@editProfile')->name('profile.edit');
     Route::get('{name}','ProfileController@index')->name('profile.index');
 });
-
-
-Route::prefix('apartments')->group(function() {
-//    Route::get('show/{apartment}','ApartmentController@show')->name('apartment.showapartment');
-    //Route::post('store','ApartmentController@store')->name('apartment.storeapartment');
-    //Route::delete('delete/{apartment}','ApartmentController@destroy')->name('apartment.deleteapartment');
-//    Route::get('{apartment}/edit','ApartmentController@edit')->name('apartment.editapartment');
-//    Route::put('{apartment}/update','ApartmentController@update')->name('apartment.updateapartment');
-});
-
 
 Route::prefix('dashboard')->group(function(){
     Route::get('', 'DashboardController@index')->name('dashboard');
@@ -54,13 +43,15 @@ Route::prefix('dashboard')->group(function(){
     Route::put('{user}/telegram/update','dashboard\UserController@telegramUpdate')->name('user.telegramupdate');
     Route::put('{user}/password/update','dashboard\UserController@passwordUpdate')->name('user.passwordupdate');
 
-    Route::get('apartment/show/{apartment}','dashboard\ApartmentController@show')->name('apartment.showapartment');
-    Route::get('apartment/index', 'dashboard\ApartmentController@index')->name('apartment.index');
-    Route::get('apartment/create','dashboard\ApartmentController@create')->name('apartment.createapartment');
-    Route::post('apartment/store','dashboard\ApartmentController@store')->name('apartment.storeapartment');
-    Route::delete('apartment/delete/{apartment}','dashboard\ApartmentController@destroy')->name('apartment.deleteapartment');
-    Route::get('apartment/{apartment}/edit','dashboard\ApartmentController@edit')->name('apartment.editapartment');
-    Route::put('apartment/{apartment}/update','dashboard\ApartmentController@update')->name('apartment.updateapartment');
+    Route::prefix('apartment')->group(function() {
+        Route::get('show/{apartment}','dashboard\ApartmentController@show')->name('apartment.showapartment');
+        Route::get('index', 'dashboard\ApartmentController@index')->name('apartment.index');
+        Route::get('create','dashboard\ApartmentController@create')->name('apartment.createapartment');
+        Route::post('store','dashboard\ApartmentController@store')->name('apartment.storeapartment');
+        Route::delete('delete/{apartment}','dashboard\ApartmentController@destroy')->name('apartment.deleteapartment');
+        Route::get('{apartment}/edit','dashboard\ApartmentController@edit')->name('apartment.editapartment');
+        Route::put('{apartment}/update','dashboard\ApartmentController@update')->name('apartment.updateapartment');
+    });
 
     Route::get('invoices/index', 'dashboard\InvoiceController@index')->name('invoice.index');
     Route::get('invoices/invoices', 'dashboard\InvoiceController@invoices')->name('invoice.invoices');
@@ -70,8 +61,8 @@ Route::prefix('dashboard')->group(function(){
 
 //Rutas para alquilar apartamento
 Route::prefix('rent')->group(function(){
-   Route::get('store/{apartment}','RentController@store')->name('rent.apartment');
-   Route::post('confirm/{apartment}','RentController@validation')->name('apartment.validate');
+    Route::get('store/{apartment}','RentController@store')->name('rent.apartment');
+    Route::post('confirm/{apartment}','RentController@validation')->name('apartment.validate');
 });
 
 

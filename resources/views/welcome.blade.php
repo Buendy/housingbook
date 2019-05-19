@@ -15,7 +15,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-6">
                             <div class="form-group">
-                                {{Form::text('search','',['placerholder' => __('welcome.input'), 'class' => 'form-control','autocomplete' => 'family-name'])}}
+                                {{Form::text('search','',['placeholder' => __('welcome.input'), 'class' => 'form-control','autocomplete' => 'family-name', 'required'])}}
                             </div>
                         </div>
                     </div>
