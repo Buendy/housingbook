@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function apartmentsUser()
     {
-        return $this->belongsToMany(Apartment::class);
+        return $this->belongsToMany(Apartment::class)->withPivot('apartment_id','user_id','exit');
     }
 
     public function invoices()

@@ -179,7 +179,7 @@
                     </div>
                 </div>
 
-                @if(auth()->user()->apartmentsUser()->where('apartment_user.id', $apartment->id)->where('exit', '<' , \Carbon\Carbon::now())->exists()
+                @if(auth()->user()->apartmentsUser()->where('apartment_id', $apartment->id)->where('exit', '<' , \Carbon\Carbon::now())->exists()
                 && auth()->user()->comments()->where('apartment_id',$apartment->id)->doesntExist())
                     {{Form::open(['method' => 'POST','action' => ['CommentController@store',$apartment->id]])}}
                     <label for="">{{__('form.shareyouropinion')}}</label>
