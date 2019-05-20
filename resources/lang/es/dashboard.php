@@ -6,5 +6,8 @@ return [
     'password' => 'Cambiar Contraseña',
     'telegram' => 'Cambiar ID de Telegram',
     'apartments' => 'Tus apartamentos',
-    'noapartments' => 'No dispone de ningún apartamento'
+    'noapartments' => 'No dispone de ningún apartamento',
+    'apartment' => 'Apartamentos',
+    'totals' => 'Ganancias totales',
+    'resume' => 'Resumen de reservas'
 ];

@@ -8,6 +8,13 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard.index');
+        $invoices = Auth()->user()->invoices;
+        $totalEarnings = 0;
+
+        foreach ($invoices as $value){
+            $totalEarnings += $value->pivot->total;
+        }
+
+        return view('dashboard.index', compact('invoices', 'totalEarnings'));
     }
 }

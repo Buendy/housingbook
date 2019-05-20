@@ -22,6 +22,15 @@
     <link href="{{asset('assets/demo/demo.css')}}" rel="stylesheet" />
     <style>
         .red-tooltip + .tooltip > .tooltip-inner {background-color: #f00;}
+        .btns-calendar button{
+            background-color: #f48942;
+        }
+        .btns-calendar button:hover{
+            background-color: #c46e35;
+        }
+        .fondo{
+            background-color: #e2e0dc;
+        }
     </style>
 </head>
 

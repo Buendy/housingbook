@@ -179,14 +179,8 @@
                     </div>
                 </div>
 
-                @if(auth()->user()->apartmentsUser()->where('apartment_id', $apartment->id)->where('exit', '<' , \Carbon\Carbon::now())->exists()
-                && auth()->user()->comments()->where('apartment_id',$apartment->id)->doesntExist())
-                    {{Form::open(['method' => 'POST','action' => ['CommentController@store',$apartment->id]])}}
-                    <label for="">{{__('form.shareyouropinion')}}</label>
-                    {{Form::textarea('comment',old('comment'))}}
-                    {{Form::submit(__('form.comment'))}}
-                    {{Form::close()}}
-                @endif
+
+
 
                 <div class="rounded border shadow container mb-5">
                     <div class="title">
@@ -194,6 +188,17 @@
                             <small>Comments</small>
                         </h2>
                     </div>
+                    @if(auth()->user()->apartmentsUser()->where('apartment_id', $apartment->id)->where('exit', '<' , \Carbon\Carbon::now())->exists()
+                    && auth()->user()->comments()->where('apartment_id',$apartment->id)->doesntExist())
+                        <div class="form-group shadow rounded pt-4 pr-4 pl-4">
+                            {{Form::open(['method' => 'POST','action' => ['CommentController@store',$apartment->id]])}}
+                            <label for="">{{__('form.shareyouropinion')}}</label>
+                            {{Form::textarea('comment',old('comment'), ['class' => 'form-control'])}}
+                            <p class="text-right">{{Form::submit(__('form.comment'), ['class' => 'btn btn-primary'])}}</p>
+                            {{Form::close()}}
+                        </div>
+                    @endif
+                    <hr>
                     <div class="row">
                         <div class="col-md-8 ml-auto mr-auto">
                             <div class="media-area">

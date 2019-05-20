@@ -6,5 +6,8 @@ return [
     'password' => 'Change Password',
     'telegram' => 'Change Telegram ID',
     'apartments' => 'Your apartments',
-    'noapartments' => 'You have not apartments'
+    'noapartments' => 'You have not apartments',
+    'apartment' => 'Apartments',
+    'totals' => 'Total earnings',
+    'resume' => 'Booking summary'
 ];
