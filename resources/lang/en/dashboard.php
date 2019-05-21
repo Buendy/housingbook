@@ -9,5 +9,7 @@ return [
     'noapartments' => 'You have not apartments',
     'apartment' => 'Apartments',
     'totals' => 'Total earnings',
-    'resume' => 'Booking summary'
+    'resume' => 'Booking summary',
+    'rented' => 'Apartment',
+    'rentedTo' => 'User',
 ];

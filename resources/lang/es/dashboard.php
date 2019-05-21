@@ -9,5 +9,7 @@ return [
     'noapartments' => 'No dispone de ningún apartamento',
     'apartment' => 'Apartamentos',
     'totals' => 'Ganancias totales',
-    'resume' => 'Resumen de reservas'
+    'resume' => 'Resumen de reservas',
+    'rented' => 'Apartamento',
+    'rentedTo' => 'Usuario',
 ];

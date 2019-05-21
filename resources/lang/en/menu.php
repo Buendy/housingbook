@@ -8,8 +8,8 @@ return [
     'register' => 'SIGN UP',
     'apartment' => 'Apartments',
     'profile' => 'Profile',
-    'dashboard' => 'dashboard',
-    'return' => 'return',
+    'dashboard' => 'Dashboard',
+    'return' => 'Return',
     'invoices' => 'Invoices',
     'history' => 'History',
 ];

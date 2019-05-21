@@ -118,10 +118,52 @@
     <script>
         $(document).ready(function() {
 
-            demo.initFullCalendar();
+            let colours = ['#093145','#107896','#829356','#BCA136','#C2571A','#9A2617'];
 
-            var calendar = new Calendar(calendarEl, {
+            let array = {!! json_encode($allDates) !!};
 
+            let getEvent = [];
+            for(let i = 0, j = 0;i < array.length;i++,j++)
+            {
+                let title = "{!! __('dashboard.rentedTo') !!}: " + array[i].name.toString() + ", {!! __('dashboard.rented') !!}: " + array[i].last_name.toString();
+                let start = array[i].entry;
+                let end = array[i].exit;
+                let color;
+
+                if(j == 6)
+                {
+                    j=0;
+                }
+                color = colours[j];
+
+                let insertEvents = {};
+                insertEvents =
+                    {
+                        title: title,
+                        start: start,
+                        end: end,
+                        color: color,
+                        textColor: 'white',
+                    },
+                getEvent.push(insertEvents);
+            }
+
+
+            $('#fullCalendar').fullCalendar({
+                editable: false,
+                weekMode: 'liquid',
+                weekends: true,
+                events: getEvent,
+                eventRender: function(event, element) {
+                    let title = event.title.split(",");
+                    $(element).tooltip({
+                        title: title[0] + "<br>" + title[1],
+                        content: title[1],
+                        trigger: 'hover',
+                        html: true,
+                        placement: 'top',
+                        });
+                },
             });
         });
     </script>

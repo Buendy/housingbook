@@ -17,7 +17,7 @@ class ApartmentTableSeeder extends Seeder
 
             $services = \App\Service::all()->random(rand(1,6));
 
-            $users = \App\User::all()->random(2);
+            $users = \App\User::all()->random(1);
 
             foreach ($services as $service)
             {

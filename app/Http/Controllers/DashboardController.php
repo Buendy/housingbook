@@ -15,6 +15,21 @@ class DashboardController extends Controller
             $totalEarnings += $value->pivot->total;
         }
 
-        return view('dashboard.index', compact('invoices', 'totalEarnings'));
+        $user = auth()->user();
+
+        $allDates = [];
+
+        foreach($user->apartments as $apartment)
+        {
+            $dates = $apartment->getReservedDates();
+
+            foreach ($dates as $date)
+            {
+                $date->last_name = $apartment->name;
+                $allDates[] = $date;
+            }
+        }
+
+        return view('dashboard.index', compact('invoices', 'totalEarnings','allDates'));
     }
 }

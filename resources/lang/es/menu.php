@@ -8,8 +8,8 @@ return [
     'register' => 'REGISTRATE',
     'apartment' => 'Apartamentos',
     'profile' => 'Perfil',
-    'dashboard' => 'dashboard',
-    'return' => 'volver',
+    'dashboard' => 'Dashboard',
+    'return' => 'Volver',
     'invoices' => 'Facturas',
     'history' => 'Historial',
 ];

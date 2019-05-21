@@ -76,6 +76,11 @@ class Apartment extends Model
         return $this->belongsToMany(User::class)->withPivot('entry','exit')->get(['entry','exit']);
     }
 
+    public function getReservedDates()
+    {
+        return $this->belongsToMany(User::class)->withPivot('entry','exit')->get(['entry','exit','name']);
+    }
+
     public function getPhotoImageAttribute()
     {
         return 'storage/photos/' . $this->photos()->first()->local_url;
