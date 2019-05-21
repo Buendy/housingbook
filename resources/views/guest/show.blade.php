@@ -80,7 +80,7 @@
                             {{$apartment->short_description}}
                             <br>
                             <br>
-                            <small>Kanye Wessadsadsadt</small>
+                            <small>{{$apartment->user->name}}</small>
                         </p>
                     </div>
                     <div class="col-md-6 ml-auto mr-auto">
@@ -111,7 +111,7 @@
                                 </div>
                                 <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
                                     <div class="card-body">
-                                        <p><span class="text-left">{{$apartment->user->name}} </span><span class="text-right"><a href="" class="btn btn-sm btn-primary text-light">Ver perfil</a></span></p>
+                                        <p><span class="text-left">{{$apartment->user->name}} </span><span class="text-right"><a href="{{route('profile.index',$apartment->user->name)}}" class="btn btn-sm btn-primary text-light">{{__('apartments.profile')}}</a></span></p>
                                     </div>
                                 </div>
                             </div>

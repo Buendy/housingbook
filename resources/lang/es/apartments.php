@@ -9,5 +9,12 @@ return [
     'rent_error' => 'No has seleccionado una fecha válida',
     'rent_error_disponibility' => 'El apartamento no está disponible en la fechas indicadas',
     'rent_succes' => 'La reserva se ha realizado con éxito',
-    'create' => 'Apartamento creado con éxito'
+    'create' => 'Apartamento creado con éxito',
+    'your' => ' Tu ',
+    'rented' => ' apartamento ha sido alquilado. El periodo del alquiler es: Desde ',
+    'to' => ' hasta ',
+    'useryour' => 'Has alquilado el apartamento ',
+    'userrented' => '. El periodo del alquiler es: Desde ',
+    'userto' => ' hasta ',
+    'profile' => 'Ver perfil',
 ];

@@ -27,6 +27,7 @@
 <body>
 
 <h3 class="fotos">¿Cómo obtengo la ID de telegram?</h3>
+<p><b>!Debes hablar al bot con nombre @housingbook_bot para poder recibir mensajes de él!</b></p>
 <hr>
 <p>El id de telegram es un numero que nos "identifica" a la hora de comunicarnos.</p>
 <p>Nos sera util cuando queramos configurar mensajes automaticos a traves de un bot.</p>

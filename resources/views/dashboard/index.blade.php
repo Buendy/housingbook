@@ -118,6 +118,7 @@
     <script>
         $(document).ready(function() {
 
+            let language = "{!! config('app.locale'); !!}";
             let colours = ['#093145','#107896','#829356','#BCA136','#C2571A','#9A2617'];
 
             let array = {!! json_encode($allDates) !!};
@@ -154,6 +155,7 @@
                 weekMode: 'liquid',
                 weekends: true,
                 events: getEvent,
+                locale: language,
                 eventRender: function(event, element) {
                     let title = event.title.split(",");
                     $(element).tooltip({

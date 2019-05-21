@@ -90,7 +90,7 @@ class RentController extends Controller
 
 
             //Telegram para dueño y persona que alquila
-            TelegramController::sendTelegrams(auth()->user()->telegram,$owner->telegram,$apartment);
+            TelegramController::sendTelegrams(auth()->user(),$owner->telegram,$apartment);
 
             session()->forget('apartmentReservado');
 

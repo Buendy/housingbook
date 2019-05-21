@@ -14,34 +14,33 @@ class TelegramController extends Controller
     public function updatedActivity()
     {
         /*$activity = Telegram::getUpdates();
-        dd($activity);*/
+        dd($activity);
 
         Telegram::sendMessage([
             'chat_id' => Auth::user()->telegram,
             'text' => 'Hello world, hay que hablar primero al bot y en la DB tener el ID del usuario al que se espera enviar el mensaje por telegram!'
         ]);
-        return;
+        return;*/
     }
 
-    public static function sendTelegrams($userTelegram,$ownerTelegram,Apartment $apartment)
+    public static function sendTelegrams($user,$ownerTelegram,Apartment $apartment)
     {
-        /*$activity = Telegram::getUpdates();
-        dd($activity);*/
-
         try {
+
+            $dates = $apartment->getDatesRented($user->id);
 
             if($ownerTelegram != null){
                 Telegram::sendMessage([
                     'chat_id' => $ownerTelegram,
-                    'text' => 'Hello world, hay que hablar primero al bot y en la DB tener el ID del usuario al que se espera enviar el mensaje por telegram!'
+                    'text' => __('apartments.your') . $apartment->name . __('apartments.rented') . $dates->entry . __('apartments.to') . $dates->pivot->exit
                 ]);
             }
 
-            if($userTelegram != null)
+            if($user->telegram != null)
             {
                 Telegram::sendMessage([
-                    'chat_id' => $userTelegram,
-                    'text' => 'Hello world, hay que hablar primero al bot y en la DB tener el ID del usuario al que se espera enviar el mensaje por telegram!'
+                    'chat_id' => $user->telegram,
+                    'text' => __('apartments.useryour') . $apartment->name . __('apartments.userrented') . $dates->entry . __('apartments.userto') . $dates->pivot->exit
                 ]);
             }
 
