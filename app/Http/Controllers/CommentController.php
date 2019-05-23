@@ -10,7 +10,7 @@ class CommentController extends Controller
 {
     public function __call($method, $parameters)
     {
-        return $this->middleware('auth');
+        return $this->middleware(['auth','verified']);
     }
 
     public function store(Request $request,Apartment $apartment)

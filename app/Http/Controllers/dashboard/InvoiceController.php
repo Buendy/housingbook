@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Date;
 
 class InvoiceController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware(['auth','verified']);
+    }
+
     public function index()
     {
         $apartments = Auth()->user()->invoices;

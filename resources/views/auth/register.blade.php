@@ -74,7 +74,7 @@
                       <i class="now-ui-icons ui-1_simple-remove"></i>
                     </span>
                                         </button>
-                                        <p><strong>Ups!</strong> Ocurrión algún error.</p>
+                                        <p><strong>Ups!</strong> {{__('auth.error')}}</p>
                                         @foreach ($errors->all() as $error)
                                             <p>{{ $error }}</p>
                                         @endforeach
@@ -90,7 +90,7 @@
                 <div class="col-md-4 mr-auto">
                     <div class="card card-signup">
                         <div class="card-body">
-                            <h4 class="card-title text-center">Register</h4>
+                            <h4 class="card-title text-center">{{__('auth.register')}}</h4>
                             {!! Form::open(['route'=>'register' , 'method'=>'post']) !!}
 
                                 @csrf
@@ -142,15 +142,13 @@
 
                                         <input class="form-check-input" type="checkbox" name="conditions">
 
-                                        <input class="form-check-input" type="checkbox">
-
                                         <span class="form-check-sign"></span>
-                                        I agree to the terms and
-                                        <a href="#something">conditions</a>.
+                                        {{__('auth.conditions')}}
+                                        <a href="#something">{{__('auth.conditions2')}}</a>.
                                     </label>
                                 </div>
                                 <div class="card-footer text-center">
-                                    <button class="btn btn-primary btn-round btn-lg">Get Started</button>
+                                    <button class="btn btn-primary btn-round btn-lg">{{__('auth.started')}}</button>
                                 </div>
 
                             {!! Form::close() !!}
@@ -161,35 +159,7 @@
         </div>
     </div>
     <footer class="footer">
-        <div class="container">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="https://www.creative-tim.com">
-                            Creative Tim
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://presentation.creative-tim.com">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://blog.creative-tim.com">
-                            Blog
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="copyright" id="copyright">
-                &copy;
-                <script>
-                    document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-                </script>, Designed by
-                <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
-                <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
-            </div>
-        </div>
+
     </footer>
 </div>
 <!--   Core JS Files   -->

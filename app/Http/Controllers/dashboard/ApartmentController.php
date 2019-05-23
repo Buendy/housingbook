@@ -13,6 +13,11 @@ use App\Http\Controllers\Controller;
 
 class ApartmentController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware(['auth','verified']);
+    }
+
     public function index()
     {
         $apartments = Apartment::where('user_id',auth()->user()->id)->paginate(6);
@@ -37,6 +42,7 @@ class ApartmentController extends Controller
 
     public function store(Request $request)
     {
+        return $this->middleware(['auth','verified']);
 
         $this->validate($request,Apartment::$rules);
 

@@ -13,6 +13,11 @@ use Barryvdh\DomPDF\Facade;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware(['auth','verified']);
+    }
+
     public function show(User $user)
     {
         return view('dashboard.user.show', compact('user'));

@@ -14,7 +14,7 @@ class RentController extends Controller
 {
     public function __construct()
     {
-        return $this->middleware('auth');
+        return $this->middleware(['auth','verified']);
     }
 
     public function validation(Request $request, Apartment $apartment)
