@@ -13,21 +13,12 @@
         <div class="collapse navbar-collapse" data-nav-image="./assets/img//blurred-image-1.jpg" data-color="orange">
             <ul class="navbar-nav ml-auto">
 
-
-                @guest
-
-
-                @else
-
                 <li>
                     <a href="{{route('apartments.public')}}" class="nav-link">
                         <i class="now-ui-icons design_image" aria-hidden="true"></i>
                         <p>{{__('menu.apartment')}}</p>
                     </a>
                 </li>
-
-
-                @endguest
 
                 @guest
                 <li class="nav-item">

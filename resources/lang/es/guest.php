@@ -12,5 +12,7 @@ return [
     'rent' => 'Alquilar',
     'related' => 'También puedes estar interesado en...',
     'norelated' => 'No podemos ofrecerte ningun apartamento relacionado',
-    'priceper' => 'Precio por día'
+    'priceper' => 'Precio por día',
+    'comments' => 'Comentarios',
+    'apartmentcomments' => 'Opiniones sobre este apartamento'
 ];

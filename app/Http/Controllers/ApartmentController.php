@@ -14,7 +14,7 @@ class ApartmentController extends Controller
 {
     public function __construct()
     {
-        return $this->middleware('auth');
+        return $this->middleware('auth')->except(['search','searchCategory','filter']);
     }
 
     public function search(Request $request)

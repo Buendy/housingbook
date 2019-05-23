@@ -18,6 +18,7 @@ return [
     'delete' => 'Borrar apartamento',
     'create' => 'Añadir nuevo apartamento',
     'deletesuccess' => 'Apartamento borrado correctamente',
+    'updatesuccess' => 'Apartamento actualizado correctamente',
     'editapartment' => 'Editar apartamento',
     'createapartment' => 'Añadir apartamento',
     'updateapartment' => 'Actualizar apartamento',
@@ -45,4 +46,5 @@ return [
     'exit' => 'Salida',
     'down' => 'Descargar factura',
     'history' => 'Tus apartamentos visitados',
+    'actions' => 'Acciones'
 ];

@@ -18,6 +18,7 @@ return [
     'delete' => 'Delete apartment',
     'create' => 'Add new apartment',
     'deletesuccess' => 'Apartment deleted successfully',
+    'updatesuccess' => 'Apartment updated successfully',
     'editapartment' => 'Edit apartment',
     'createapartment' => 'Add apartment',
     'updateapartment' => 'Update apartment',
@@ -46,4 +47,5 @@ return [
     'exit' => 'Exit',
     'down' => 'Download invoice',
     'history' => 'Your visited apartments',
+    'actions' => 'Actions',
 ];

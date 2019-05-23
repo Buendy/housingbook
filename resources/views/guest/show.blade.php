@@ -19,14 +19,12 @@
                 <div class="row justify-content-center">
                     <div class="col-md-7 text-center">
                         @if(session('success'))
-
                             <div class="alert alert-info alert-dismissible fade show">
                                 <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
                                     <i class="nc-icon nc-simple-remove"></i>
                                 </button>
                                 <span>{{__('form.commentposted')}}</span>
                             </div>
-
                         @endif
                         @if(session('error'))
 
@@ -36,9 +34,7 @@
                                 </button>
                                 <span><h6>{{session('error')}}</h6></span>
                             </div>
-
                         @endif
-
                     </div>
                 </div>
                 <div class="row">
@@ -185,25 +181,27 @@
                 <div class="rounded border shadow container mb-5">
                     <div class="title">
                         <h2>
-                            <small>Comments</small>
+                            <small>{{__('guest.apartmentcomments')}}</small>
                         </h2>
                     </div>
-                    @if(auth()->user()->apartmentsUser()->where('apartment_id', $apartment->id)->where('exit', '<' , \Carbon\Carbon::now())->exists()
-                    && auth()->user()->comments()->where('apartment_id',$apartment->id)->doesntExist())
-                        <div class="form-group shadow rounded pt-4 pr-4 pl-4">
-                            {{Form::open(['method' => 'POST','action' => ['CommentController@store',$apartment->id]])}}
-                            <label for="">{{__('form.shareyouropinion')}}</label>
-                            {{Form::textarea('comment',old('comment'), ['class' => 'form-control'])}}
-                            <p class="text-right">{{Form::submit(__('form.comment'), ['class' => 'btn btn-primary'])}}</p>
-                            {{Form::close()}}
-                        </div>
-                    @endif
+                    @auth
+                        @if(auth()->user()->apartmentsUser()->where('apartment_id', $apartment->id)->where('exit', '<' , \Carbon\Carbon::now())->exists()
+                        && auth()->user()->comments()->where('apartment_id',$apartment->id)->doesntExist())
+                            <div class="form-group shadow rounded pt-4 pr-4 pl-4">
+                                {{Form::open(['method' => 'POST','action' => ['CommentController@store',$apartment->id]])}}
+                                <label for="">{{__('form.shareyouropinion')}}</label>
+                                {{Form::textarea('comment',old('comment'), ['class' => 'form-control'])}}
+                                <p class="text-right">{{Form::submit(__('form.comment'), ['class' => 'btn btn-primary'])}}</p>
+                                {{Form::close()}}
+                            </div>
+                        @endif
+                    @endauth
                     <hr>
                     <div class="row">
                         <div class="col-md-8 ml-auto mr-auto">
                             <div class="media-area">
                                 <h3 class="title text-center">
-                                    <small>{{count($apartment->comments)}} Comments</small>
+                                    <small>{{count($apartment->comments)}} {{__('guest.comments')}}</small>
                                 </h3>
                                 @foreach($apartment->comments as $comment)
                                     <div class="media">
@@ -241,24 +239,26 @@
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title">
-                                                <a href="#pablo" class="card-link">{{$random_apartment->name}}</a>
+                                                <span class="card-link">{{$random_apartment->name}}</span>
                                             </h5>
                                             <div class="card-description">
                                                 {{str_limit($random_apartment->short_description,50)}}
                                             </div>
-                                            <div class="card-footer">
-                                                <div class="price-container">
-                                                    <span class="price">{{$random_apartment->city->name}}</span>
+                                            <div class="">
+                                                <div class="text-center justify-content-center">
+                                                    <span class="text-black">{{$random_apartment->city->name}}</span>
                                                 </div>
-                                                <button class="btn btn-neutral btn-icon btn-round pull-right" rel="tooltip" title="" data-placement="left" data-original-title="Add to wishlist">
+                                                <!--<button class="btn btn-neutral btn-icon btn-round pull-right" rel="tooltip" title="" data-placement="left" data-original-title="Add to wishlist">
                                                     <i class="now-ui-icons ui-2_favourite-28"></i>
-                                                </button>
+                                                </button>-->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             @empty
-                                <h3>{{__('guest.norelated')}}</h3>
+                                <div class="text-center justify-content-center mx-auto d-block">
+                                    <h3>{{__('guest.norelated')}}</h3>
+                                </div>
                             @endforelse
                         </div>
                     </div>

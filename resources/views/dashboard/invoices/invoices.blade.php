@@ -1,13 +1,16 @@
 @extends('layouts.app-dash')
 
-
 @section('content')
 
     <div class="content">
-
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
+                    @if(session('success'))
+                        <div class="alert alert-info">
+                            {{session('success')}}
+                        </div>
+                    @endif
                     <div class="card-header">
                         <h2 class="card-title">{{__('profile.history')}}</h2>
                     </div>
@@ -20,7 +23,7 @@
                                 <th>{{__('profile.entry')}}</th>
                                 <th>{{__('profile.exit')}}</th>
                                 <th class="text-center">Total</th>
-                                <th class="text-center">Actions</th>
+                                <th class="text-center">{{__('profile.actions')}}</th>
                                 </thead>
                                 <tbody>
                                 @forelse($apartments as $apartment)
@@ -57,8 +60,6 @@
                 </div>
             </div>
         </div>
-
     </div>
-
 
 @endsection

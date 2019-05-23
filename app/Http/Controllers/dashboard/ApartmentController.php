@@ -74,53 +74,68 @@ class ApartmentController extends Controller
 
     public function edit(Apartment $apartment)
     {
-        $cities = City::all();
-        $services = Service::all();
-        $categories = Category::all();
-        return view('dashboard.apartment.edit',compact('apartment','cities','services','categories'));
+        if($apartment->user->id == auth()->user()->id) {
+
+            $cities = City::all();
+            $services = Service::all();
+            $categories = Category::all();
+            return view('dashboard.apartment.edit', compact('apartment', 'cities', 'services', 'categories'));
+        } else {
+            return back();
+        }
     }
 
     public function update(Request $request, Apartment $apartment)
     {
+        if($apartment->user->id == auth()->user()->id){
 
-        $this->validate($request,Apartment::$rules);
+
+            $this->validate($request,Apartment::$rules);
 
 
-        if(count($request->file('photos')) < 4)
-        {
+            if(count($request->file('photos')) < 4)
+            {
+                return back();
+            }
+
+
+            $request->merge(['city_id' => $request->city]);
+            $apartment->fill($request->all());
+            $apartment->user_id = auth()->user()->id;
+            $apartment->save();
+
+
+
+            foreach($request->file('photos') as $photo)
+            {
+                $picture = Helper::uploadFile($photo);
+
+                $photo = new Photo();
+                $photo->url = $picture;
+                $photo->local_url = $picture;
+                $photo->apartment_id = $apartment->id;
+                $photo->save();
+            }
+
+            Helper::servicesTableFill($apartment, $request->services);
+
+            $apartments = Apartment::where('user_id',auth()->user()->id)->paginate(6);
+            return view('dashboard.apartment.index', compact('apartments'))->with('success', __('profile.updatesuccess'));
+        } else {
             return back();
         }
-
-
-        $request->merge(['city_id' => $request->city]);
-        $apartment->fill($request->all());
-        $apartment->user_id = auth()->user()->id;
-        $apartment->save();
-
-
-
-        foreach($request->file('photos') as $photo)
-        {
-            $picture = Helper::uploadFile($photo);
-
-            $photo = new Photo();
-            $photo->url = $picture;
-            $photo->local_url = $picture;
-            $photo->apartment_id = $apartment->id;
-            $photo->save();
-        }
-
-        Helper::servicesTableFill($apartment, $request->services);
-
-        $apartments = Apartment::where('user_id',auth()->user()->id)->paginate(6);
-        return view('dashboard.apartment.index', compact('apartments'))->with('success', 'Apartamento creado con exitogi');
     }
 
     public function destroy(Apartment $apartment)
     {
-        $apartment->delete();
+        if($apartment->user->id == auth()->user()->id) {
 
-        return back()->with('success', __('profile.deletesuccess'));
+            $apartment->delete();
+
+            return redirect(route('invoice.invoices'))->with('success', __('profile.deletesuccess'));
+        } else {
+            return back();
+        }
     }
 
 }

@@ -8,12 +8,25 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $invoices = Auth()->user()->invoices;
         $totalEarnings = 0;
+
+        $apartments = auth()->user()->apartments;
+
+        foreach($apartments as $apartment)
+        {
+            $rents = $apartment->getMoneyGained();
+
+            foreach ($rents as $rent){
+                $totalEarnings += $rent->total;
+            }
+        }
+
+        //Esto sería para sacar los gastos, no las ganancias
+        /*$invoices = Auth()->user()->invoices;
 
         foreach ($invoices as $value){
             $totalEarnings += $value->pivot->total;
-        }
+        }*/
 
         $user = auth()->user();
 
