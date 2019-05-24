@@ -118,16 +118,16 @@
                             </div>
                         </div>
                         <div class="card-footer text-center">
-                            <button type="submit" class="btn btn-primary btn-round btn-lg btn-block">Get Started</button>
+                            <button type="submit" class="btn btn-primary btn-round btn-lg btn-block">{{__('auth.started')}}</button>
                         </div>
                         <div class="pull-left">
                             <h6>
-                                <a href="{{route('register')}}" class="link footer-link">Create Account</a>
+                                <a href="{{route('register')}}" class="link footer-link">{{__('auth.account')}}</a>
                             </h6>
                         </div>
                         <div class="pull-right">
                             <h6>
-                                <a href="#pablo" class="link footer-link">Need Help?</a>
+                                <a href="{{url('password/reset')}}" class="link footer-link">{{__('auth.help')}}</a>
                             </h6>
                         </div>
 

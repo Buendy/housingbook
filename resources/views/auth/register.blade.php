@@ -148,7 +148,7 @@
                                     </label>
                                 </div>
                                 <div class="card-footer text-center">
-                                    <button class="btn btn-primary btn-round btn-lg">{{__('auth.started')}}</button>
+                                    <button class="btn btn-primary btn-round btn-lg">{{__('auth.started2')}}</button>
                                 </div>
 
                             {!! Form::close() !!}

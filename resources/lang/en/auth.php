@@ -18,7 +18,9 @@ return [
     'register' => 'Register',
     'error' => 'Something went wrong',
     'started' => 'Log-in',
+    'started2' => 'Send',
     'conditions' => 'I agree to the terms and',
     'conditions2' => 'conditions',
-
+    'account' => 'Create Account',
+    'help' => 'Reset your password',
 ];

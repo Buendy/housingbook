@@ -17,6 +17,9 @@ return [
     'register' => 'Registrate',
     'error' => 'Ocurrión algún error',
     'started' => 'Entrar',
+    'started2' => 'Enviar',
     'conditions' => 'Acepto los terminos y',
     'conditions2' => 'condiciones',
+    'account' => 'Crear cuenta',
+    'help' => 'Resetea tu contraseña',
 ];
