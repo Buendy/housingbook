@@ -10,10 +10,8 @@
                     </div>
                     <div class="card-body">
                         <div class="author">
-                            <a href="#">
-                                <img class="avatar border-gray" src="{{Auth()->user()->photo}}" alt="...">
-                                <h5 class="title">{{Auth()->user()->name}}</h5>
-                            </a>
+                            <img class="avatar border-gray" src="{{Auth()->user()->photo}}" alt="...">
+                            <h5 class="title">{{Auth()->user()->name}}</h5>
                             <p class="description">
                                 {{Auth()->user()->last_name}}
                             </p>
@@ -107,4 +105,4 @@
     </div>
 
 
-    @endsection
+@endsection

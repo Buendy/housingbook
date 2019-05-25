@@ -107,7 +107,7 @@
                                 </div>
                                 <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
                                     <div class="card-body">
-                                        <p><span class="text-left">{{$apartment->user->name}} </span><span class="text-right"><a href="{{route('profile.index',$apartment->user->name)}}" class="btn btn-sm btn-primary text-light">{{__('apartments.profile')}}</a></span></p>
+                                        <p><span class="text-left">{{$apartment->user->name}} </span><span class="text-right"><a href="{{route('profile.index',$apartment->user->name)}}" class="btn btn-sm btn-primary text-light" target="_blank">{{__('apartments.profile')}}</a></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +160,7 @@
                                     @forelse($apartment->services as $service)
                                         <div class="d-inline p-5">
                                             <div class="d-inline-block">
-                                                <p>{{$service->name}}</p>
+                                                <p>{{__('form.' . $service->name)}}</p>
                                                 <i class="fas {{$service->icon}} border border-info rounded-circle p-4 text-info" style="font-size:30px;"></i>
                                             </div>
                                         </div>

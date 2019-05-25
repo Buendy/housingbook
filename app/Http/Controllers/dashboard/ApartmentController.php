@@ -42,8 +42,6 @@ class ApartmentController extends Controller
 
     public function store(Request $request)
     {
-        return $this->middleware(['auth','verified']);
-
         $this->validate($request,Apartment::$rules);
 
         if(count($request->file('photos')) < 4)
@@ -85,7 +83,10 @@ class ApartmentController extends Controller
             $cities = City::all();
             $services = Service::all();
             $categories = Category::all();
-            return view('dashboard.apartment.edit', compact('apartment', 'cities', 'services', 'categories'));
+
+            $apartmentServices = $apartment->services()->get();
+
+            return view('dashboard.apartment.edit', compact('apartment', 'cities', 'services', 'categories','apartmentServices'));
         } else {
             return back();
         }

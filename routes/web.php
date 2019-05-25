@@ -55,10 +55,11 @@ Route::prefix('dashboard')->group(function(){
         Route::put('{apartment}/update','dashboard\ApartmentController@update')->name('apartment.updateapartment');
     });
 
-    Route::get('invoices/index', 'dashboard\InvoiceController@index')->name('invoice.index');
-    Route::get('invoices/invoices', 'dashboard\InvoiceController@invoices')->name('invoice.invoices');
-    Route::post('invoices/download', 'dashboard\InvoiceController@download')->name('invoice.download');
-
+    Route::prefix('invoices')->group(function(){
+        Route::get('index', 'dashboard\InvoiceController@index')->name('invoice.index');
+        Route::get('invoices', 'dashboard\InvoiceController@invoices')->name('invoice.invoices');
+        Route::post('download', 'dashboard\InvoiceController@download')->name('invoice.download');
+    });
 });
 
 //Rutas para alquilar apartamento

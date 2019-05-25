@@ -26,7 +26,7 @@ class ServiceTableSeeder extends Seeder
             'Piscina',
             'Permitido Fumar',
             'Aire acondicionado',
-            'cocina'
+            'Cocina'
         ];
 
 

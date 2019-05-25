@@ -38,10 +38,10 @@
                             </a>
                         </div>
                         <p class="blockquote blockquote-primary">
-                            "And thank you for turning my personal jean jacket into a couture piece. Wear yours with mirrored sunglasses on vacation."
+                            {{$apartment->short_description}}
                             <br>
                             <br>
-                            <small>Kanye West</small>
+                            <small>{{$apartment->user->name}}</small>
                         </p>
                     </div>
                     <div class="col-md-6 ml-auto mr-auto">
@@ -86,7 +86,7 @@
                                     <div class="card-body">
                                         <ul>
                                             @forelse($apartment->services as $service)
-                                                <li>{{$service->name}}</li>
+                                                <li>{{__('form.' . $service->name)}}</li>
                                             @empty
                                                 <p>{{__('guest.noservices')}}</p>
                                             @endforelse

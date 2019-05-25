@@ -22,17 +22,22 @@ class ApartmentController extends Controller
         $categories = Category::all();
         $max = Apartment::max('price');
         $min = Apartment::min('price');
-        $city = City::where('name', 'LIKE', $request->search)->get();
+        $apartments = [];
+        $cities = City::where('name', 'LIKE', '%'.$request->search . '%')->get();
         $latest_apartment = Apartment::orderBy('id', 'DESC')->take(3)->get();
 
+        $ids = [];
 
-        if($city->count()){
-            $apartments = Apartment::with('city','user','photos','services')->where('city_id','=',$city[0]->id)->get();
-            return view('guest.index',compact('apartments','latest_apartment', 'categories', 'min', 'max'));
-        }else{
-            $apartments = Apartment::with('city','user','photos','services')->get();
-            return view('guest.index',compact('apartments','latest_apartment', 'categories', 'min', 'max'))->with('error', __('apartments.rent_error_disponibility'));
+        if(count($cities))
+        {
+            foreach($cities as $city)
+            {
+                $ids[] = $city->id;
+            }
         }
+            $apartments = Apartment::with('city','user','photos','services')->whereIn('city_id',$ids)->get();
+
+        return view('guest.index',compact('apartments','latest_apartment', 'categories', 'min', 'max'))->with('error', __('apartments.rent_error_disponibility'));
     }
 
     public function searchCategory($id)

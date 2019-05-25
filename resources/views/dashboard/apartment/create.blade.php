@@ -61,7 +61,7 @@
                                         <label class="form-check-label">
                                             <input class="form-check-input" name="services[]" type="checkbox" value="{{$service->id}}">
                                             <span class="form-check-sign bg-success"></span>
-                                            {{$service->name}} <i class="{{$service->icon}} bg-primary rounded-circle text-light p-2"></i>
+                                            {{__('form.' . $service->name)}} <i class="{{$service->icon}} bg-primary rounded-circle text-light p-2"></i>
                                         </label>
                                     </div>
                                 @endforeach
@@ -82,7 +82,7 @@
                                 <select class="selectpicker" name="category" data-style="btn btn-info btn-round" data-size="7" required>
                                     <option disabled>{{__('form.categories')}}</option>
                                     @foreach($categories as $category)
-                                        <option value="{{$category->id}}">{{$category->name}}</option>
+                                        <option value="{{$category->id}}">{{__('form.' . $category->name)}}</option>
                                     @endforeach
                                 </select>
                             </div>

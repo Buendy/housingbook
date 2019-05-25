@@ -65,7 +65,7 @@
                                 <label class="form-check-label">
                                     <input class="form-check-input" type="checkbox" name="category[]" value="{{$category->id}}">
                                     <span class="form-check-sign bg-primary text-light"></span>
-                                    {{$category->name}}
+                                    {{__('form.' . $category->name)}}
                                 </label>
                             </div>
                         @endforeach
@@ -92,9 +92,7 @@
                                 <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
                                     <i class="nc-icon nc-simple-remove"></i>
                                 </button>
-                                <span>
-                            {{session('success')}}
-                    </span>
+                                <span>{{session('success')}}</span>
                             </div>
                         </div>
                     @endif
