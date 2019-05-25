@@ -37,7 +37,7 @@ class ApartmentController extends Controller
         }
             $apartments = Apartment::with('city','user','photos','services')->whereIn('city_id',$ids)->get();
 
-        return view('guest.index',compact('apartments','latest_apartment', 'categories', 'min', 'max'))->with('error', __('apartments.rent_error_disponibility'));
+        return view('guest.index',compact('apartments','latest_apartment', 'categories', 'min', 'max'));
     }
 
     public function searchCategory($id)
