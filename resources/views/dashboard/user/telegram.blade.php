@@ -1,7 +1,7 @@
 @extends('layouts.app-dash')
 @section('content')
     <div class="content">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-md-1">
 
             </div>
@@ -9,10 +9,23 @@
                 <div class="card card-user">
                     <div class="card-header">
                         <h5 class="title text-center">{{__('profile.edit_telegram')}}</h5>
-                        <div class="row">
-                            <a href="{{url('dashboard/user/telegram/tutorial')}}" class="text-center justify-content-center mx-auto d-block" target="_blank">{{__('profile.obtain_telegram')}}</a>
-                            <!-- hay que hablar primero al bot y en la DB tener el ID del usuario al que se espera enviar el mensaje por telegram!
-                            El bot se llama housingbook_bot -->
+                        <div class="bg-warning rounded">
+                            <p class="text-center text-white p-2">
+                                <strong>{{__('telegram.note')}}</strong>{{__('telegram.one')}} <strong>{{__('telegram.two')}}<span class="bg-light text-warning p-1 rounded"><a
+                                     href="https://web.telegram.org/#/im?p=@housingbook_bot" target="_blank">@housing_bot </a></span> {{__('telegram.three')}}</strong>."
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-center">
+                                <strong>
+                                    <a href="{{url('dashboard/user/telegram/tutorial')}}" class="mx-auto d-block" target="_blank">{{__('profile.obtain_telegram')}}</a>
+                                </strong>
+                            </p>
+                        </div>
+
+                        <div class="row justify-content-center">
+
+
                         </div>
                         <hr>
                         <div class="card-body ">

@@ -26,20 +26,17 @@
 </head>
 <body>
 
-<h3 class="fotos">¿Cómo obtengo la ID de telegram?</h3>
-<p><b>!Debes hablar al bot con nombre @housingbook_bot para poder recibir mensajes de él!</b></p>
+<h3 class="fotos">{{__('telegram.how')}}</h3>
 <hr>
-<p>El id de telegram es un numero que nos "identifica" a la hora de comunicarnos.</p>
-<p>Nos sera util cuando queramos configurar mensajes automaticos a traves de un bot.</p>
+<p>{{__('telegram.identi')}}</p>
+<p>{{__('telegram.util')}}</p>
 <hr>
-<p>Para obtener el id entramos en ajustes => cuentas => telegram:</p>
+<p>{{__('telegram.obtain')}}</p>
 <br>
-<p class="fotos"><img src="http://jejo.pw/public/.IMG_20180317_182535_203_m.jpg"  width="300" height="300" alt="">
-    <img src="http://jejo.pw/public/.IMG_20180317_182550_131_m.jpg" width="300" height="300" alt=""></p>
-<p>
-    En el apartado de telegram podemos ver nuestra id:
-</p>
-<p class="fotos"><img src="http://jejo.pw/public/.IMG_20180317_182641_984_m.jpg" width="300" height="300" alt=""></p>
+<p class="fotos"><img src="{{asset('img/telegram-1.jpg')}}"  width="300" height="300" alt="">
+    <img src="{{asset('img/telegram-2.jpg')}}" width="300" height="300" alt=""></p>
+<p>{{__('telegram.id')}}</p>
+<p class="fotos"><img src="{{asset('img/telegram-3.jpg')}}" width="300" height="300" alt=""></p>
 
 </body>
 </html>

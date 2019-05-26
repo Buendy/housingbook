@@ -460,7 +460,7 @@
 
         .titulo{
             position: center;
-            margin:30% auto;
+            margin:20% auto;
             font-size: 60px;
             background: linear-gradient(to right, #f48942 0%, #9e582a 100%);
             -webkit-background-clip: text;

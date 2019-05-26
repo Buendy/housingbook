@@ -48,6 +48,6 @@ class DashboardController extends Controller
             }
         }
 
-        return view('dashboard.index', compact('invoices', 'totalEarnings','allDates'));
+        return view('dashboard.index', compact('totalEarnings','allDates'));
     }
 }
