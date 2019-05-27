@@ -87,13 +87,13 @@
                 </div>
             </div>
             <ul class="nav">
-                <li class="active">
+                <li id="activo1">
                     <a href="{{route('dashboard')}}">
                         <i class="nc-icon nc-bank nc-bullet-list-67"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li>
+                <li id="activo2">
                     <a data-toggle="collapse" href="#mapsExamples">
                         <i class="nc-icon nc-pin-3"></i>
                         <p>
@@ -118,7 +118,7 @@
                         </ul>
                     </div>
                 </li>
-                <li>
+                <li id="activo3">
                     <a data-toggle="collapse" href="#History">
                         <i class="fa fa-history"></i>
                         <p>
@@ -283,11 +283,33 @@
 <script src="{{asset('assets/demo/demo.js')}}"></script>
 <script>
     $(document).ready(function() {
+        enlaceActivo();
         // Javascript method's body can be found in assets/js/demos.js
         demo.initDashboardPageCharts();
 
-
         demo.initVectorMap();
+
+        function enlaceActivo() {
+            url = window.location;
+
+            activo1 = $('#activo1');
+            activo2 = $('#activo2');
+            activo3 = $('#activo3');
+            apartment = new RegExp('apartment');
+            invoices = new RegExp('invoices');
+
+            activo1.removeClass('active');
+            activo2.removeClass('active');
+            activo3.removeClass('active');
+
+            if(apartment.test(url)){
+                activo2.addClass('active');
+            }else if(invoices.test(url)){
+                activo3.addClass('active');
+            }else{
+                activo1.addClass('active');
+            }
+        }
 
     });
 </script>
