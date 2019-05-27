@@ -19,11 +19,13 @@ class RentController extends Controller
 
     public function validation(Request $request, Apartment $apartment)
     {
+        $request->entrada = str_replace('/','-',$request->entrada);
+        $request->salida = str_replace('/','-',$request->salida);
+
         $date = new \DateTime($request->entrada);
         $date2 = new \DateTime($request->salida);
 
         $days = $date->diff($date2)->format('%a');
-
 
         $entrada = $date->format('Y-m-d');
         $salida = $date2->format('Y-m-d');
@@ -36,6 +38,8 @@ class RentController extends Controller
         }
 
         $checkDisponibility = $apartment->checkDisponibility($entrada,$salida);
+
+        dd($checkDisponibility->count());
 
         if($checkDisponibility->count()){
             return back()->with('error', __('apartments.rent_error_disponibility'));

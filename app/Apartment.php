@@ -68,7 +68,7 @@ class Apartment extends Model
 
     public function checkDisponibility($entrada,$salida)
     {
-        return $this->belongsToMany(User::class)->withPivot('entry', 'exit')->whereBetween('entry',[$entrada,$salida])->orWhereBetween('exit',[$entrada,$salida]);
+        return $this->belongsToMany(User::class)->withPivot('entry', 'exit')->whereBetween('entry',[$entrada,$salida])->WhereBetween('exit',[$entrada,$salida]);
     }
 
     public function getDatesRented($id)
