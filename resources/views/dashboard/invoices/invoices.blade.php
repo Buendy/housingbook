@@ -30,8 +30,13 @@
                                     <tr>
                                         <td>{{$apartment->name}}</td>
                                         <td>{{$apartment->address}}€</td>
-                                        <td>{{$apartment->pivot->entry}}</td>
-                                        <td>{{$apartment->pivot->exit}}</td>
+                                        @if(Config::get('app.locale') == 'es')
+                                            <td>{{date("d/m/Y", strtotime($apartment->pivot->entry))}}</td>
+                                            <td>{{date("d/m/Y", strtotime($apartment->pivot->exit))}}</td>
+                                        @else
+                                            <td>{{$apartment->pivot->entry}}</td>
+                                            <td>{{$apartment->pivot->exit}}</td>
+                                        @endif
                                         <td class="text-center">{{$apartment->pivot->total}} &euro;</td>
 
 

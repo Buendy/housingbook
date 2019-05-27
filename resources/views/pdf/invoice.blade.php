@@ -57,20 +57,20 @@
 
 
 
-<h4><strong>HousingBook</strong></h4>
+<h4><strong>{{auth()->user()->name}}</strong></h4>
 <h6><strong>{{__('invoice.anywhere')}}</strong></h6>
 <br>
 <table class="tabla">
     <tr>
-        <td>C/ Sin nombre</td>
-        <td><strong>{{__('invoice.date')}}</strong> {{$invoice->pivot->entry}}</td>
+        <td>{{auth()->user()->address}}</td>
+        <td><strong>{{__('invoice.date')}}</strong> {{Config::get('app.locale') == 'es' ? date("d/m/Y", strtotime($invoice->pivot->entry)) : $invoice->pivot->entry}} </td>
     </tr>
     <tr>
-        <td>Murcia, Murcia <strong>España</strong></td>
-        <td><strong>{{__('invoice.invoice')}}</strong> 21384</td>
+        <td>{{auth()->user()->email}}</td>
+        <td><strong>{{__('invoice.invoice')}}</strong> {{rand(10000,1000000)}}</td>
     </tr>
     <tr>
-        <td><strong>+34</strong> 968123123</td>
+        <td><strong></strong> {{auth()->user()->phone}}</td>
     </tr>
 </table>
 <br>
@@ -98,7 +98,11 @@
     </thead>
     <tbody class="tbody">
     <tr>
-        <td>{{$invoice->name}} - {{$invoice->pivot->entry}}/{{$invoice->pivot->exit}}</td>
+        @if(Config::get('app.locale') == 'es')
+            <td>{{$invoice->name}} - {{date("d/m/Y", strtotime($invoice->pivot->entry))}} &nbsp;/&nbsp; {{date("d/m/Y", strtotime($invoice->pivot->exit))}}</td>
+        @else
+            <td>{{$invoice->name}} - {{$invoice->pivot->entry}} &nbsp;/&nbsp; {{$invoice->pivot->exit}}</td>
+        @endif
         <td class="text-right">{{$invoice->price}} &euro;</td>
         <td class="text-right">{{$days}}</td>
         <td class="text-right">{{$invoice->pivot->total}} &euro;</td>

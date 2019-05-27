@@ -212,7 +212,7 @@
                                         </a>
                                         <div class="media-body">
                                             <h5 class="media-heading">{{$comment->user->name}}
-                                                <small class="text-muted">&middot; {{$comment->created_at}}</small>
+                                                <small class="text-muted">&middot; {{Config::get('app.locale') == 'es' ? date("d/m/Y H:i:s", strtotime($comment->created_at)) : $comment->created_at}}</small>
                                             </h5>
                                             <p>{{$comment->text}}</p>
 
@@ -273,8 +273,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.css"/>
     <script type="text/javascript">
 
-        var array = {!! json_encode($allDates) !!};
-        var language = "{!! config('app.locale'); !!}";
+        let array = {!! json_encode($allDates) !!};
+        let language = "{!! config('app.locale'); !!}";
+        let formato;
+
+        formato = language == "es" ? "dd/mm/yyyy" : "yyyy-mm-dd";
 
         ;(function($){
             $.fn.datepicker.dates['es'] = {
@@ -291,7 +294,7 @@
         }(jQuery));
 
         $('#datepicker').datepicker({
-            format: 'dd-mm-yyyy',
+            format: formato,
             language: language,
             todayBtn: "linked",
             clearBtn: true,
@@ -301,7 +304,7 @@
         });
 
         $('#datepicker2').datepicker({
-            format: 'dd-mm-yyyy',
+            format: formato,
             language: language,
             clearBtn: true,
             todayBtn: "linked",

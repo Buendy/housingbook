@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Apartment;
 use App\Category;
 use Illuminate\Http\Request;
+use League\Flysystem\Config;
 
 class PublicController extends Controller
 {
@@ -34,7 +35,7 @@ class PublicController extends Controller
             $date_to = strtotime($date->exit);
 
             for ($i=$date_from; $i<=$date_to; $i+=86400) {
-                $allDates[] = date("d-m-Y", $i);
+                $allDates[] = config('app.locale') == 'es' ? date("d-m-Y", $i) : date("Y-m-d", $i);
             }
         }
 
