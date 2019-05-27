@@ -158,8 +158,8 @@
                                 <div class="card-body text-center">
 
                                     @forelse($apartment->services as $service)
-                                        <div class="d-inline p-5">
-                                            <div class="d-inline-block">
+                                        <div class="d-inline-block p-5">
+                                            <div class="">
                                                 <p>{{__('form.' . $service->name)}}</p>
                                                 <i class="fas {{$service->icon}} border border-info rounded-circle p-4 text-info" style="font-size:30px;"></i>
                                             </div>

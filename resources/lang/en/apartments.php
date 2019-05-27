@@ -17,4 +17,5 @@ return [
     'userrented' => '. The period of the rent is: From ',
     'userto' => ' to ',
     'profile' => 'Watch profile',
+    'rent_success' => 'Apartment rented successfully'
 ];

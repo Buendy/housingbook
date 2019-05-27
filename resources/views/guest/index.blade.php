@@ -6,6 +6,27 @@
 
     <div class="blogs-5" style="background-image: url('{{asset('/img/aparts.jpg')}}');">
         <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7 text-center">
+                    @if(session('success'))
+                        <div class="alert alert-info alert-dismissible fade show">
+                            <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="nc-icon nc-simple-remove"></i>
+                            </button>
+                            <span>{{session('success')}}</span>
+                        </div>
+                    @endif
+                    @if(session('error'))
+
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="nc-icon nc-simple-remove"></i>
+                            </button>
+                            <span><h6>{{session('error')}}</h6></span>
+                        </div>
+                    @endif
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-10 ml-auto mr-auto">
                     <h2 class="title text-light">{{__('apartments.latest')}}</h2>
@@ -86,16 +107,6 @@
 
             <div class="col-md-7">
                 <div class="flash-message">
-                    @if(session('success'))
-                        <div class="col-md-5 ">
-                            <div class="alert alert-info alert-dismissible fade show">
-                                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                                    <i class="nc-icon nc-simple-remove"></i>
-                                </button>
-                                <span>{{session('success')}}</span>
-                            </div>
-                        </div>
-                    @endif
                     @if(count($errors) > 0)
                         <div class="col-md-5">
                             <div class="alert alert-danger alert-dismissible fade show">
