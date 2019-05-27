@@ -39,8 +39,6 @@ class RentController extends Controller
 
         $checkDisponibility = $apartment->checkDisponibility($entrada,$salida);
 
-        dd($checkDisponibility->count());
-
         if($checkDisponibility->count()){
             return back()->with('error', __('apartments.rent_error_disponibility'));
         }else{
