@@ -12,4 +12,5 @@ return [
     'return' => 'Return',
     'invoices' => 'Invoices',
     'history' => 'History',
+    'Logout' => 'Logout',
 ];

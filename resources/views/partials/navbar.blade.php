@@ -55,7 +55,7 @@
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             <i class="now-ui-icons arrows-1_share-66" aria-hidden="true"></i>
-                            <p>{{ __('Logout') }}</p>
+                            <p>{{ __('menu.Logout') }}</p>
 
                         </a>
 

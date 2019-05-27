@@ -38,7 +38,7 @@
                                         <td class="text-center">
                                             <a href="{{route('apartment.showapartment',$apartment->id)}}"
                                                data-toggle="tooltip" title="{{__('profile.show')}}"
-                                               class="btn btn-info btn-icon btn-sm ">
+                                               class="btn btn-info btn-icon btn-sm " target="_blank">
                                                 <i class="fa fa-user"></i>
                                             </a>
 

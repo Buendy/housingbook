@@ -96,7 +96,6 @@
         <ul>
             <li><strong>{{__('mail.ownername')}}:</strong> {{$apartment->user->name}}</li>
             <li><strong>{{__('mail.ownerlast_name')}}:</strong> {{$apartment->user->last_name}}</li>
-            <li><strong>{{__('mail.owneraddress')}}:</strong> {{$apartment->user->address}}</li>
             <li></li>
             <li><strong>{{__('mail.owneremail')}}:</strong> {{$apartment->user->email}}</li>
             <li><strong>{{__('mail.ownerphone')}}:</strong> {{$apartment->user->phone}}</li>

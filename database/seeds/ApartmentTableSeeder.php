@@ -26,7 +26,16 @@ class ApartmentTableSeeder extends Seeder
 
             foreach ($users as $user)
             {
-                $apartment->users()->attach($user->id, ['total' => rand(20, 600), 'entry' => \Carbon\Carbon::now()->subDays(rand(0,20)),'exit' => \Carbon\Carbon::now()->addDays(rand(2,5))]);
+                $entrada = \Carbon\Carbon::now()->subDays(rand(0,20));
+                $salida = \Carbon\Carbon::now()->addDays(rand(2,5));
+
+                $entradaDif = strtotime($entrada);
+                $salidaDif = strtotime($salida);
+                $datediff = $salidaDif - $entradaDif;
+
+                $dif = ($datediff / (60 * 60 * 24));
+
+                $apartment->users()->attach($user->id, ['total' => $dif * $apartment->price, 'entry' => $entrada,'exit' => $salida]);
             }
         });
     }

@@ -8,8 +8,9 @@ return [
     'register' => 'REGISTRATE',
     'apartment' => 'Apartamentos',
     'profile' => 'Perfil',
-    'dashboard' => 'Dashboard',
+    'dashboard' => 'Panel de Control',
     'return' => 'Volver',
     'invoices' => 'Facturas',
     'history' => 'Historial',
+    'Logout' => 'Desconectarse',
 ];
