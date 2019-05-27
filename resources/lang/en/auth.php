@@ -23,4 +23,9 @@ return [
     'conditions2' => 'conditions',
     'account' => 'Create Account',
     'help' => 'Reset your password',
+    'continue' => 'Before proceeding, please check your email for a verification link. If you did not receive the email, ',
+    'continue_2' => 'click here to request another',
+    'verify' => 'Verification of mail',
+    'verify_title' => 'Verify Your Email Address',
+    'mail' => 'A fresh verification link has been sent to your email address'
 ];
