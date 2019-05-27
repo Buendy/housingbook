@@ -73,7 +73,7 @@ class Apartment extends Model
 
     public function getDatesRented($id)
     {
-        return $this->belongsToMany(User::class)->withPivot('entry', 'exit')->wherePivot('user_id',$id)->latest()->get(['entry','exit']);
+        return $this->belongsToMany(User::class)->withPivot('entry', 'exit')->wherePivot('user_id',$id)->latest('apartment_user.created_at')->first();
     }
 
     public function noAvailableDates()

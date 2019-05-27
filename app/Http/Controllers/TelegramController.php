@@ -6,6 +6,7 @@ use App\Apartment;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use Telegram\Bot\Laravel\Facades\Telegram;
 use Telegram\Bot\Methods\Chat;
 
@@ -28,11 +29,13 @@ class TelegramController extends Controller
         try {
 
             $dates = $apartment->getDatesRented($user->id);
+            $entrada = Config::get('app.locale') == 'es' ? date("d/m/Y", strtotime($dates->pivot->entry)) : $dates->pivot->entry;
+            $salida = Config::get('app.locale') == 'es' ? date("d/m/Y", strtotime($dates->pivot->exit)) : $dates->pivot->exit;
 
             if($ownerTelegram != null){
                 Telegram::sendMessage([
                     'chat_id' => $ownerTelegram,
-                    'text' => __('apartments.your') . $apartment->name . __('apartments.rented') . $dates->entry . __('apartments.to') . $dates->pivot->exit
+                    'text' => __('apartments.your') . $apartment->name . __('apartments.rented') . $entrada . __('apartments.to') . $salida
                 ]);
             }
 
@@ -40,7 +43,7 @@ class TelegramController extends Controller
             {
                 Telegram::sendMessage([
                     'chat_id' => $user->telegram,
-                    'text' => __('apartments.useryour') . $apartment->name . __('apartments.userrented') . $dates->entry . __('apartments.userto') . $dates->pivot->exit
+                    'text' => __('apartments.useryour') . $apartment->name . __('apartments.userrented') . $entrada . __('apartments.userto') . $salida
                 ]);
             }
 
