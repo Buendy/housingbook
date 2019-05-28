@@ -58,25 +58,25 @@
                     <div class="collapse" id="collapseExample">
                         <ul class="nav">
                             <li>
-                                <a href="{{url('dashboard/user/show')}}">
+                                <a href="#" id="profile">
                                     <span class="sidebar-mini-icon">MP</span>
                                     <span class="sidebar-normal">{{__('dashboard.profile')}}</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{url('dashboard/user/edit')}}">
+                                <a href="#" id="profileedit">
                                     <span class="sidebar-mini-icon">EP</span>
                                     <span class="sidebar-normal">{{__('dashboard.edit')}}</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{url('dashboard/user/password')}}">
+                                <a href="#" id="profilepassword">
                                     <span class="sidebar-mini-icon">PC</span>
                                     <span class="sidebar-normal">{{__('dashboard.password')}}</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{url('dashboard/user/telegram')}}">
+                                <a href="#" id="profiletelegram">
                                     <span class="sidebar-mini-icon">TI</span>
                                     <span class="sidebar-normal">{{__('dashboard.telegram')}}</span>
                                 </a>
@@ -88,9 +88,9 @@
             </div>
             <ul class="nav">
                 <li id="activo1">
-                    <a href="{{route('dashboard')}}">
+                    <a href="#" id="dashboard">
                         <i class="nc-icon nc-bank nc-bullet-list-67"></i>
-                        <p>Dashboard</p>
+                        <p>{{__('menu.dashboard')}}</p>
                     </a>
                 </li>
                 <li id="activo2">
@@ -104,13 +104,13 @@
                     <div class="collapse " id="mapsExamples">
                         <ul class="nav">
                             <li>
-                                <a href="{{route('apartment.createapartment')}}">
+                                <a href="#" id="createapartment">
                                     <span class="sidebar-mini-icon">AA</span>
                                     <span class="sidebar-normal">{{__('profile.createapartment')}}</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('apartment.index')}}">
+                                <a href="#" id="apartmentmanage">
                                     <span class="sidebar-mini-icon">EA</span>
                                     <span class="sidebar-normal">{{__('profile.manage')}}</span>
                                 </a>
@@ -129,13 +129,13 @@
                     <div class="collapse " id="History">
                         <ul class="nav">
                             <li>
-                                <a href="{{route('invoice.index')}}">
+                                <a href="#" id="history">
                                     <span class="sidebar-mini-icon">H</span>
                                     <span class="sidebar-normal">{{__('menu.history')}}</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('invoice.invoices')}}">
+                                <a href="#" id="invoices">
                                     <span class="sidebar-mini-icon">I</span>
                                     <span class="sidebar-normal">{{__('menu.invoices')}}</span>
                                 </a>
@@ -236,7 +236,10 @@
 
 
   </div> -->
-        @yield('content')
+
+        <br><br><br>
+        <div id="ajaxviews"></div>
+
     </div>
 
 </div>
@@ -283,6 +286,144 @@
 <script src="{{asset('assets/demo/demo.js')}}"></script>
 <script>
     $(document).ready(function() {
+
+        $.ajax(
+            {
+                url: "/dashboard/index",
+                type: 'GET',
+            }).done(
+
+            function(data)
+            {
+                $('#ajaxviews').html(data.html);
+            }
+        );
+
+        $("#dashboard").click(function(event){
+            event.preventDefault();
+            location.reload();
+        });
+
+        $("#history").click(function(event){
+            event.preventDefault();
+            $.ajax(
+                {
+                    url: "/dashboard/invoices/index",
+                    type: 'GET',
+                }).done(
+
+                function(data)
+                {
+                    $('#ajaxviews').html(data.html);
+                }
+            );
+        });
+
+        $("#invoices").click(function(event){
+            event.preventDefault();
+            $.ajax(
+                {
+                    url: "/dashboard/invoices/invoices",
+                    type: 'GET',
+                }).done(
+
+                function(data)
+                {
+                    $('#ajaxviews').html(data.html);
+                }
+            );
+        });
+
+        $("#profile").click(function(event){
+            event.preventDefault();
+            $.ajax(
+                {
+                    url: "/dashboard/user/show",
+                    type: 'GET',
+                }).done(
+
+                function(data)
+                {
+                    $('#ajaxviews').html(data.html);
+                }
+            );
+        });
+
+        $("#profileedit").click(function(event){
+            event.preventDefault();
+            $.ajax(
+                {
+                    url: "/dashboard/user/edit",
+                    type: 'GET',
+                }).done(
+
+                function(data)
+                {
+                    $('#ajaxviews').html(data.html);
+                }
+            );
+        });
+
+        $("#profilepassword").click(function(event){
+            event.preventDefault();
+            $.ajax(
+                {
+                    url: "/dashboard/user/password",
+                    type: 'GET',
+                }).done(
+
+                function(data)
+                {
+                    $('#ajaxviews').html(data.html);
+                }
+            );
+        });
+
+        $("#profiletelegram").click(function(event){
+            event.preventDefault();
+            $.ajax(
+                {
+                    url: "/dashboard/user/telegram",
+                    type: 'GET',
+                }).done(
+
+                function(data)
+                {
+                    $('#ajaxviews').html(data.html);
+                }
+            );
+        });
+
+        $("#createapartment").click(function(event){
+            event.preventDefault();
+            $.ajax(
+                {
+                    url: "/dashboard/apartment/create",
+                    type: 'GET',
+                }).done(
+
+                function(data)
+                {
+                    $('#ajaxviews').html(data.html);
+                }
+            );
+        });
+
+        $("#apartmentmanage").click(function(event){
+            event.preventDefault();
+            $.ajax(
+                {
+                    url: "/dashboard/apartment/index",
+                    type: 'GET',
+                }).done(
+
+                function(data)
+                {
+                    $('#ajaxviews').html(data.html);
+                }
+            );
+        });
+
         enlaceActivo();
         // Javascript method's body can be found in assets/js/demos.js
         demo.initDashboardPageCharts();

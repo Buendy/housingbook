@@ -1,7 +1,5 @@
-@extends('layouts.app-dash')
 
 
-@section('content')
 
     <div class="content">
 
@@ -49,4 +47,3 @@
     </div>
 
 
-@endsection

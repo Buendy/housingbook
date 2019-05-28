@@ -73,7 +73,7 @@
             </div>
         </div>
     </div>
-    <div class="section">
+    <!--<div class="section">
         <div class="container">
             @if($user->id == Auth::user()->id)
                 <div class="button-container">
@@ -83,8 +83,9 @@
                 </div>
             @endif
         </div>
-    </div>
+    </div>-->
 
+    <br><br><br>
     <div class="container">
         <div class="row justify-content-center">
         @foreach($user->apartments as $apartment)

@@ -36,6 +36,7 @@ Route::prefix('profile')->group(function () {
 
 Route::prefix('dashboard')->group(function(){
     Route::get('', 'DashboardController@index')->name('dashboard');
+    Route::get('index', 'DashboardController@indexAjax')->name('dashboard.index');
     Route::get('user/show', 'dashboard\UserController@show')->name('user.show');
     Route::get('user/edit', 'dashboard\UserController@edit')->name('user.edit');
     Route::put('{user}/update', 'dashboard\UserController@update')->name('user.update');

@@ -1,5 +1,3 @@
-@extends('layouts.app-dash')
-@section('content')
     <div class="content">
         <div class="row justify-content-center">
             <div class="col-md-1">
@@ -82,4 +80,3 @@
     </div>
 
 
-@endsection

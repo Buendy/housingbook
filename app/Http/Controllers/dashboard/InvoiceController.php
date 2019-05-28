@@ -21,15 +21,18 @@ class InvoiceController extends Controller
     {
         $apartments = Auth()->user()->invoices;
 
-        return view('dashboard.invoices.index', compact('apartments'));
+        $view =  view('dashboard.invoices.index', compact('apartments'))->render();
+
+        return response()->json(['html'=>$view]);
     }
 
     public function invoices()
     {
         $apartments = Auth()->user()->invoices;
 
+        $view = view('dashboard.invoices.invoices', compact('apartments'))->render();
 
-        return view('dashboard.invoices.invoices', compact('apartments'));
+        return response()->json(['html'=>$view]);
     }
 
     public function download(Request $request)
@@ -44,8 +47,6 @@ class InvoiceController extends Controller
         $pdf = App::make('dompdf.wrapper');
         $pdf = Facade::loadView('pdf.invoice', compact('invoice', 'days'));
         return $pdf->download('invoice-'. $invoice->pivot->entry .''. $invoice->pivot->exit .'.pdf');
-
-
     }
 
 }

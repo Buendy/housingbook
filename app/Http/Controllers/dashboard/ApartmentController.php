@@ -22,7 +22,9 @@ class ApartmentController extends Controller
     {
         $apartments = Apartment::where('user_id',auth()->user()->id)->paginate(6);
 
-        return view('dashboard.apartment.index',compact('apartments'));
+        $view = view('dashboard.apartment.index',compact('apartments'))->render();
+
+        return response()->json(['html'=>$view]);
     }
 
     public function show(Apartment $apartment)
@@ -37,7 +39,9 @@ class ApartmentController extends Controller
         $cities = City::all();
         $services = Service::all();
         $categories = Category::all();
-        return view('dashboard.apartment.create',compact('cities','services','categories'));
+        $view = view('dashboard.apartment.create',compact('cities','services','categories'))->render();
+
+        return response()->json(['html'=>$view]);
     }
 
     public function store(Request $request)

@@ -51,6 +51,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <div id="test">
+
+                    </div>
+
                     <!--
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="card card-stats">
@@ -120,7 +125,7 @@
     </div>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).onload(function() {
 
             let language = "{!! config('app.locale'); !!}";
 
@@ -167,7 +172,6 @@
                     },
                 getEvent.push(insertEvents);
             }
-
 
             $('#fullCalendar').fullCalendar({
                 editable: false,

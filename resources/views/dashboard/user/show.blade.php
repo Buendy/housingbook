@@ -1,6 +1,4 @@
-@extends('layouts.app-dash')
 
-@section('content')
     <div class="content">
         <div class="row">
             <div class="col-md-4">
@@ -92,9 +90,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-7"></div>
-                                <div class="col-md-1">
+                                <!--<div class="col-md-1">
                                     <a class="btn btn-round btn-outline-info" href="{{url('dashboard/user/edit')}}">Editar</a>
-                                </div>
+                                </div>-->
                             </div>
 
                         </form>
@@ -105,4 +103,3 @@
     </div>
 
 
-@endsection

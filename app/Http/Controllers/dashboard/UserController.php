@@ -20,12 +20,16 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        return view('dashboard.user.show', compact('user'));
+        $view = view('dashboard.user.show', compact('user'))->render();
+
+        return response()->json(['html'=>$view]);
     }
 
     public function edit()
     {
-        return view('dashboard.user.edit');
+        $view = view('dashboard.user.edit')->render();
+
+        return response()->json(['html'=>$view]);
     }
 
     public function update(User $user, Request $request)
@@ -55,7 +59,9 @@ class UserController extends Controller
 
     public function telegram()
     {
-        return view('dashboard.user.telegram');
+        $view = view('dashboard.user.telegram')->render();
+
+        return response()->json(['html'=>$view]);
     }
 
     public function telegramUpdate(User $user, Request $request)
@@ -75,7 +81,9 @@ class UserController extends Controller
 
     public function password()
     {
-        return view('dashboard.user.password');
+        $view = view('dashboard.user.password')->render();
+
+        return response()->json(['html'=>$view]);
     }
 
     public function passwordUpdate(User $user, Request $request)
