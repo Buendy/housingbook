@@ -27,7 +27,7 @@
                                 @forelse($apartments as $apartment)
                                     <tr>
                                         <td>{{$apartment->name}}</td>
-                                        <td>{{$apartment->address}}€</td>
+                                        <td>{{$apartment->address}}</td>
                                         @if(Config::get('app.locale') == 'es')
                                             <td>{{date("d/m/Y", strtotime($apartment->pivot->entry))}}</td>
                                             <td>{{date("d/m/Y", strtotime($apartment->pivot->exit))}}</td>

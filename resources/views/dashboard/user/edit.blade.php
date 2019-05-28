@@ -1,5 +1,5 @@
     <div class="content">
-        <div class="row">
+        <div class="row justify-content-center p-5">
             <div class="col-md-1">
 
             </div>

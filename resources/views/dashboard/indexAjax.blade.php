@@ -1,7 +1,7 @@
 
 <div class="content">
     <div class="row">
-        <div class="col-md-12 ml-auto mr-auto shadow p-2">
+        <div class="col-md-12 ml-auto mr-auto shadow p-5">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="card card-stats">

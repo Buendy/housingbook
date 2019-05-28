@@ -1,7 +1,7 @@
 
 
 
-    <div class="content">
+    <div class="content p-5">
         <div class="row justify-content-center">
             <div class="toolbar text-center">
                 <a href="{{route('apartment.createapartment')}}"><i class="fa fa-plus border bg-warning rounded-circle p-4 text-light" style="font-size:30px;"></i></a>

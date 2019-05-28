@@ -1,8 +1,8 @@
 
 
 
-    <div class="content">
-        <h3 class="text-center">{{__('profile.createapartment')}}</h3>
+    <div class="content p-5">
+        <h3 class="">{{__('profile.createapartment')}}</h3>
         <div class="row">
             <div class="col-md-6">
                 {{Form::open(['method' => 'POST', 'action' => 'dashboard\ApartmentController@store', 'files' => true])}}

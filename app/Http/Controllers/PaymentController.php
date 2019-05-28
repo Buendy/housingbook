@@ -35,21 +35,22 @@ class PaymentController extends Controller
     {
         $payer = new Payer();
         $payer->setPaymentMethod("paypal");
+        $apartment = session('apartmentReservado');
 
         $item1 = new Item();
-        $item1->setName($request->name)
-            ->setCurrency('USD')
+        $item1->setName($apartment->name)
+            ->setCurrency('EUR')
             ->setQuantity(1)
             ->setSku("123123") // Similar to `item_number` in Classic API
-            ->setPrice($request->amount * session('days'));
+            ->setPrice($apartment->price * session('days'));
 
 
         $itemList = new ItemList();
         $itemList->setItems(array($item1));
 
         $amount = new Amount();
-        $amount->setCurrency("USD")
-            ->setTotal($request->amount * session('days'));
+        $amount->setCurrency("EUR")
+            ->setTotal($apartment->price * session('days'));
 
         $transaction = new Transaction();
         $transaction->setAmount($amount)
