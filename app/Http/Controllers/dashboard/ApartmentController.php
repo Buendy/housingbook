@@ -18,30 +18,49 @@ class ApartmentController extends Controller
         return $this->middleware(['auth','verified']);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $apartments = Apartment::where('user_id',auth()->user()->id)->paginate(6);
+        if($request->ajax()){
 
-        $view = view('dashboard.apartment.index',compact('apartments'))->render();
+            $apartments = Apartment::where('user_id',auth()->user()->id)->paginate(6);
 
-        return response()->json(['html'=>$view]);
+            $view = view('dashboard.apartment.index',compact('apartments'))->render();
+
+            return response()->json(['html'=>$view]);
+
+        } else {
+            return back();
+        }
     }
 
-    public function show(Apartment $apartment)
+    public function show(Request $request,Apartment $apartment)
     {
+        if($request->ajax()){
 
-        $apartment->load('city','user','photos','services');
-        return view('dashboard.apartment.show',compact('apartment'));
+            $apartment->load('city','user','photos','services');
+            $view = view('dashboard.apartment.show',compact('apartment'))->render();
+
+            return response()->json(['html'=>$view]);
+
+        } else {
+            return back();
+        }
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        $cities = City::all();
-        $services = Service::all();
-        $categories = Category::all();
-        $view = view('dashboard.apartment.create',compact('cities','services','categories'))->render();
+        if($request->ajax()){
 
-        return response()->json(['html'=>$view]);
+            $cities = City::all();
+            $services = Service::all();
+            $categories = Category::all();
+            $view = view('dashboard.apartment.create',compact('cities','services','categories'))->render();
+
+            return response()->json(['html'=>$view]);
+
+        } else {
+            return back();
+        }
     }
 
     public function store(Request $request)
@@ -80,17 +99,25 @@ class ApartmentController extends Controller
 
 
 
-    public function edit(Apartment $apartment)
+    public function edit(Request $request,Apartment $apartment)
     {
-        if($apartment->user->id == auth()->user()->id) {
+        if($request->ajax()){
 
-            $cities = City::all();
-            $services = Service::all();
-            $categories = Category::all();
+            if($apartment->user->id == auth()->user()->id) {
 
-            $apartmentServices = $apartment->services()->get();
+                $cities = City::all();
+                $services = Service::all();
+                $categories = Category::all();
 
-            return view('dashboard.apartment.edit', compact('apartment', 'cities', 'services', 'categories','apartmentServices'));
+                $apartmentServices = $apartment->services()->get();
+
+                $view = view('dashboard.apartment.edit', compact('apartment', 'cities', 'services', 'categories','apartmentServices'))->render();
+
+                return response()->json(['html'=>$view]);
+
+            } else {
+                return back();
+            }
         } else {
             return back();
         }
@@ -143,7 +170,7 @@ class ApartmentController extends Controller
 
             $apartment->delete();
 
-            return redirect(route('invoice.invoices'))->with('success', __('profile.deletesuccess'));
+            return redirect(route('dashboard'))->with('success', __('profile.deletesuccess'));
         } else {
             return back();
         }

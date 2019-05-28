@@ -26,9 +26,9 @@
                                         <td>{{$apartment->address}}€</td>
 
                                         <td class="text-center">
-                                            <a href="{{route('apartment.showapartment',$apartment->id)}}"
+                                            <a href="{{$apartment->id}}"
                                                data-toggle="tooltip" title="{{__('profile.show')}}"
-                                               class="btn btn-info btn-icon btn-sm " target="_blank">
+                                               class="btn btn-info btn-icon btn-sm show" target="_blank">
                                                 <i class="fa fa-user"></i>
                                             </a>
                                         </td>
@@ -47,3 +47,26 @@
     </div>
 
 
+    <script>
+
+        $(".show").each(function() {
+            $(this).click(function (event) {
+                event.preventDefault();
+
+                let indice = event.currentTarget.href.split("/");
+
+                $.ajax(
+                    {
+                        url: "/dashboard/apartment/show/" + indice[3],
+                        type: 'GET',
+                    }).done(
+
+                    function(data)
+                    {
+                        $('#ajaxviews').html(data.html);
+                    }
+                );
+            });
+        });
+
+    </script>

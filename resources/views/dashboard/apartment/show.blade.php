@@ -93,14 +93,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="text-center">
+                        <!--<div class="text-center">
                             @if($apartment->user->id == auth()->user()->id)
                                 <a href="{{route('apartment.editapartment',$apartment->id)}}" class="btn btn-primary mr-3 text-white">{{__('profile.edit')}}&nbsp;<i class="now-ui-icons shopping_cart-simple"></i></a>
                                 {{Form::open(['action' => ['dashboard\ApartmentController@destroy',$apartment->id], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
                                 <button type="submit" class="btn btn-primary mr-3 text-white">{{__('profile.delete')}} <i class="now-ui-icons shopping_cart-simple"></i></button>
                                 {{Form::close()}}
                             @endif
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>

@@ -180,7 +180,7 @@
                             <a class="nav-link btn-magnify" href="{{route('apartments.public')}}">
                                 <i class="nc-icon nc-minimal-left"></i>
                                 <p>
-                                    <span class="d-lg-none d-md-block">Stats</span>
+                                    <span class="d-lg-none d-md-block"></span>
                                 </p>{{__('menu.return')}}
                             </a>
                         </li>
@@ -188,7 +188,7 @@
                             <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{ Auth::user()->name . ' - ' . Auth::user()->email }}
                                 <p>
-                                    <span class="d-lg-none d-md-block">Some Actions</span>
+                                    <span class="d-lg-none d-md-block"></span>
                                 </p>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
@@ -238,6 +238,17 @@
   </div> -->
 
         <br><br><br>
+        @if(session('success'))
+            <div class="alert alert-info">
+                {{session('success')}}
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert alert-info">
+                {{session('error')}}
+            </div>
+        @endif
         <div id="ajaxviews"></div>
 
     </div>

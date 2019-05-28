@@ -1,3 +1,14 @@
+@if(session('success'))
+    <div class="alert alert-info">
+        {{session('success')}}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-info">
+        {{session('error')}}
+    </div>
+@endif
 
 <div class="content">
     <div class="row">

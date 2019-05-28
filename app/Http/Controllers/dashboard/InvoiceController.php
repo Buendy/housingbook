@@ -17,22 +17,33 @@ class InvoiceController extends Controller
         return $this->middleware(['auth','verified']);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $apartments = Auth()->user()->invoices;
+        if($request->ajax()){
 
-        $view =  view('dashboard.invoices.index', compact('apartments'))->render();
+            $apartments = Auth()->user()->invoices;
 
-        return response()->json(['html'=>$view]);
+            $view =  view('dashboard.invoices.index', compact('apartments'))->render();
+
+            return response()->json(['html'=>$view]);
+
+        } else {
+            return back();
+        }
     }
 
-    public function invoices()
+    public function invoices(Request $request)
     {
-        $apartments = Auth()->user()->invoices;
+        if($request->ajax()){
+            $apartments = Auth()->user()->invoices;
 
-        $view = view('dashboard.invoices.invoices', compact('apartments'))->render();
+            $view = view('dashboard.invoices.invoices', compact('apartments'))->render();
 
-        return response()->json(['html'=>$view]);
+            return response()->json(['html'=>$view]);
+
+        } else {
+            return back();
+        }
     }
 
     public function download(Request $request)

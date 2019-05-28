@@ -18,18 +18,28 @@ class UserController extends Controller
         return $this->middleware(['auth','verified']);
     }
 
-    public function show(User $user)
+    public function show(Request $request,User $user)
     {
-        $view = view('dashboard.user.show', compact('user'))->render();
+        if($request->ajax()){
+            $view = view('dashboard.user.show', compact('user'))->render();
 
-        return response()->json(['html'=>$view]);
+            return response()->json(['html'=>$view]);
+
+        } else {
+            return back();
+        }
     }
 
-    public function edit()
+    public function edit(Request $request)
     {
-        $view = view('dashboard.user.edit')->render();
+        if($request->ajax()){
+            $view = view('dashboard.user.edit')->render();
 
-        return response()->json(['html'=>$view]);
+            return response()->json(['html'=>$view]);
+
+        } else {
+            return back();
+        }
     }
 
     public function update(User $user, Request $request)
@@ -57,11 +67,16 @@ class UserController extends Controller
         }
     }
 
-    public function telegram()
+    public function telegram(Request $request)
     {
-        $view = view('dashboard.user.telegram')->render();
+        if($request->ajax()){
+            $view = view('dashboard.user.telegram')->render();
 
-        return response()->json(['html'=>$view]);
+            return response()->json(['html'=>$view]);
+
+        } else {
+            return back();
+        }
     }
 
     public function telegramUpdate(User $user, Request $request)
@@ -79,11 +94,16 @@ class UserController extends Controller
         }
     }
 
-    public function password()
+    public function password(Request $request)
     {
-        $view = view('dashboard.user.password')->render();
+        if($request->ajax()){
+            $view = view('dashboard.user.password')->render();
 
-        return response()->json(['html'=>$view]);
+            return response()->json(['html'=>$view]);
+
+        } else {
+            return back();
+        }
     }
 
     public function passwordUpdate(User $user, Request $request)

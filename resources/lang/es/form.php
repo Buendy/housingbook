@@ -37,4 +37,5 @@ return [
     'Cocina' => 'Cocina',
     'Parking' => 'Parking',
     'Wi-Fi' => 'Wi-Fi',
+    'actions' => 'Acciones',
 ];
