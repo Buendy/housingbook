@@ -238,6 +238,15 @@
   </div> -->
 
         <br><br><br>
+        @if(count($errors) > 0)
+            <div class="col-md-5">
+                @foreach($errors->all() as $error)
+                    <div class="callout alert alert-danger">
+                        {{$error}}
+                    </div>
+                @endforeach
+            </div>
+        @endif
         @if(session('success'))
             <div class="alert alert-info">
                 {{session('success')}}

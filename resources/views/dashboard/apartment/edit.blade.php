@@ -127,7 +127,7 @@
                         <span class="btn btn-rose btn-round btn-file">
                           <span class="fileinput-new">{{__('form.imageapartment')}}</span>
                         <!--{{Form::file('photos[]')}}-->
-                            <input type="file" name="photos[]" required multiple/>
+                            <input type="file" name="photos[]" multiple/>
                         </span>
                                         </div>
                                     </div>

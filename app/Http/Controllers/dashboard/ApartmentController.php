@@ -8,6 +8,7 @@ use App\City;
 use App\Helpers\Helper;
 use App\Photo;
 use App\Service;
+use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -127,38 +128,44 @@ class ApartmentController extends Controller
     {
         if($apartment->user->id == auth()->user()->id){
 
+            $this->validate($request,[
+                'name' => ['required','min:3',\Illuminate\Validation\Rule::unique('apartments','name')->ignore($apartment->id)],
+                'description' => 'required | min:3 | max:300',
+                'address' => 'required | min:10 | max:100',
+                'short_description' => 'required | min:3 | max: 100',
+                'city' => 'required | exists:cities,id',
+                'services' => 'required',
+                'category' => 'required',
+                'price' => 'required']);
 
-            $this->validate($request,Apartment::$rules);
-
-
-            if(count($request->file('photos')) < 4)
+            /*if(count($request->file('photos')) < 4)
             {
                 return back();
-            }
-
+            }*/
 
             $request->merge(['city_id' => $request->city]);
             $apartment->fill($request->all());
             $apartment->user_id = auth()->user()->id;
             $apartment->save();
 
-
-
-            foreach($request->file('photos') as $photo)
+            if($request->file('photos') != null)
             {
-                $picture = Helper::uploadFile($photo);
+                foreach($request->file('photos') as $photo)
+                {
+                    $picture = Helper::uploadFile($photo);
 
-                $photo = new Photo();
-                $photo->url = $picture;
-                $photo->local_url = $picture;
-                $photo->apartment_id = $apartment->id;
-                $photo->save();
+                    $photo = new Photo();
+                    $photo->url = $picture;
+                    $photo->local_url = $picture;
+                    $photo->apartment_id = $apartment->id;
+                    $photo->save();
+                }
             }
 
             Helper::servicesTableFill($apartment, $request->services);
 
             $apartments = Apartment::where('user_id',auth()->user()->id)->paginate(6);
-            return view('dashboard.apartment.index', compact('apartments'))->with('success', __('profile.updatesuccess'));
+            return redirect(route('dashboard'))->with('success',__('profile.updatesuccess'));
         } else {
             return back();
         }
