@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'noapartments'   => 'Lo sentimos, no tenemos apartamentos en la ciudad indicada',
+    'noapartments'   => 'Lo sentimos, no tenemos el apartamento que estás buscando',
     'apartments' => 'Apartamentos',
     'description' => 'Descripción',
     'owner' => 'Dueño',

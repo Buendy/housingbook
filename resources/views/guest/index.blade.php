@@ -90,6 +90,18 @@
                                 </label>
                             </div>
                         @endforeach
+                        <h4 class="text-primary">{{__('form.services')}}</h4>
+                        <hr>
+                        @foreach($services as $service)
+                            <div class="form-check">
+
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="service[]" value="{{$service->id}}">
+                                    <span class="form-check-sign bg-primary text-light"></span>
+                                    {{__('form.' . $service->name)}}
+                                </label>
+                            </div>
+                        @endforeach
                         <h4 class="text-primary">{{__('form.price')}}</h4>
                         <hr>
                         <p>

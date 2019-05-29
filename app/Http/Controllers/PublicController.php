@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Apartment;
 use App\Category;
+use App\Service;
 use Illuminate\Http\Request;
 use League\Flysystem\Config;
 
@@ -16,8 +17,9 @@ class PublicController extends Controller
         $categories = Category::all();
         $max = Apartment::max('price');
         $min = Apartment::min('price');
+        $services = Service::all();
 
-        return view('guest.index',compact('apartments', 'latest_apartment', 'categories', 'min', 'max'));
+        return view('guest.index',compact('apartments', 'latest_apartment', 'categories', 'min', 'max','services'));
     }
 
     public function show(Apartment $apartment)

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'noapartments'   => 'We are sorry, We have not apartments at the city indicated',
+    'noapartments'   => 'We are sorry, we do not have the apartment that you are looking for',
     'apartments' => 'Apartments',
     'description' => 'Description',
     'owner' => 'Owner',
