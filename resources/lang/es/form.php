@@ -38,4 +38,6 @@ return [
     'Parking' => 'Parking',
     'Wi-Fi' => 'Wi-Fi',
     'actions' => 'Acciones',
+    'servicenotvalid' => 'Los servicios indicados no son válidos',
+    'categorynotvalid' => 'Las categorías indicadas no son válidas',
 ];

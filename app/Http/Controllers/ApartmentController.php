@@ -63,6 +63,13 @@ class ApartmentController extends Controller
         $latest_apartment = Apartment::orderBy('id', 'DESC')->take(3)->get();
         $services = Service::all();
 
+        $request->validate([
+            "service"    => "array",
+            "service.*"  => "numeric | exists:services,id",
+            "category"    => "array",
+            "category.*"  => "numeric | exists:categories,id",
+        ],["service.*" => __('form.servicenotvalid'), "category.*" => __('form.categorynotvalid')]);
+
         $ids = [];
         $ids2 = [];
         $apartments = [];
