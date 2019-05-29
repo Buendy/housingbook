@@ -40,4 +40,5 @@ return [
     'actions' => 'Actions',
     'servicenotvalid' => 'The indicated services are not valid',
     'categorynotvalid' => 'The indicated categories are not valid',
+    'range' => 'The price range is required',
 ];

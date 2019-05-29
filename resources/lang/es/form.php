@@ -40,4 +40,5 @@ return [
     'actions' => 'Acciones',
     'servicenotvalid' => 'Los servicios indicados no son válidos',
     'categorynotvalid' => 'Las categorías indicadas no son válidas',
+    'range' => 'El rango de precios es obligatorio',
 ];

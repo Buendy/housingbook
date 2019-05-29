@@ -68,7 +68,8 @@ class ApartmentController extends Controller
             "service.*"  => "numeric | exists:services,id",
             "category"    => "array",
             "category.*"  => "numeric | exists:categories,id",
-        ],["service.*" => __('form.servicenotvalid'), "category.*" => __('form.categorynotvalid')]);
+            'range' => "required"
+        ],["service.*" => __('form.servicenotvalid'), "category.*" => __('form.categorynotvalid'),'range.required' => __('form.range')]);
 
         $ids = [];
         $ids2 = [];
