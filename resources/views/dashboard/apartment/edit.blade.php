@@ -90,19 +90,27 @@
                     <div class="row justify-content-center">
                         <div class="col-md-4">
                             <h4 class="card-title">{{__('form.city')}}</h4>
-                            <select class="selectpicker" data-size="7" name="city" data-style="btn btn-primary btn-round" required>
+                            <select class="form-control" data-size="7" name="city" data-style="btn btn-primary btn-round" required>
                                 <option disabled>{{__('form.city')}}</option>
                                 @foreach($cities as $city)
-                                    <option value="{{$city->id}}">{{$city->name}}</option>
+                                    @if($city->id == $apartment->city_id)
+                                        <option value="{{$city->id}}" selected>{{$city->name}}</option>
+                                    @else
+                                        <option value="{{$city->id}}">{{$city->name}}</option>
+                                    @endif
                                 @endforeach
                             </select>
                         </div>
                         <div class="col-md-4">
                             <h4 class="card-title">{{__('form.categories')}}</h4>
-                            <select class="selectpicker" name="category" data-style="btn btn-info btn-round" data-size="7" required>
+                            <select class="form-control" name="category" data-style="btn btn-info btn-round" data-size="7" required>
                                 <option disabled>{{__('form.categories')}}</option>
                                 @foreach($categories as $category)
-                                    <option value="{{$category->id}}">{{__('form.' . $category->name)}}</option>
+                                    @if($category->id == $apartment->category_id)
+                                        <option value="{{$category->id}}" selected>{{__('form.' . $category->name)}}</option>
+                                    @else
+                                        <option value="{{$category->id}}">{{__('form.' . $category->name)}}</option>
+                                    @endif
                                 @endforeach
                             </select>
                         </div>
