@@ -5,7 +5,8 @@
         <h3 class="">{{__('profile.createapartment')}}</h3>
         <div class="row">
             <div class="col-md-6">
-                {{Form::open(['method' => 'POST', 'action' => 'dashboard\ApartmentController@store', 'files' => true])}}
+                {{Form::open(['method' => 'POST', 'id' => 'upload_form', 'enctype' => 'multipart/form-data', 'files' => true])}}
+                {{ csrf_field() }}
                 <div class="card ">
                     <div class="card-body ">
                         <h4 class="card-title">{{__('form.general')}}</h4>
@@ -96,8 +97,8 @@
                                             <div>
                         <span class="btn btn-rose btn-round btn-file">
                           <span class="fileinput-new">{{__('form.imageapartment')}}</span>
-                        <!--{{Form::file('photos[]')}}-->
-                            <input type="file" name="photos[]" required multiple/>
+                        {{Form::file('photos[]', ['id' => 'photos', 'multiple' => 'multiple'])}}
+{{--                            <input type="file" name="photos[]" required multiple/>--}}
                         </span>
                                             </div>
                                         </div>
@@ -120,12 +121,13 @@
                                 <i class="nc-icon nc-simple-remove"></i>
                             </button>
                             <span>
-                            {{$success}}
+                            {{__($success)}}
                     </span>
                         </div>
 
                 @endif
                 @if(count($errors) > 0)
+
 
                         <div class="alert alert-danger alert-dismissible fade show">
                             <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
@@ -134,9 +136,9 @@
                             <span>
                             {{__('profile.profileupdatedfailed')}}
                     </span>
-                            @foreach($errors->all() as $error)
+                            @foreach($errors as $error)
                                 <div class="callout alert alert-danger">
-                                    {{$error}}
+                                    {{$error[0]}}
                                 </div>
                             @endforeach
                         </div>
@@ -147,3 +149,29 @@
         </div>
 
     </div>
+
+
+    <script>
+        $(document).ready(function(){
+            $('#upload_form').on('submit', function(event){
+                event.preventDefault();
+                $.ajax({
+                    url: "{{ route('apartment.storeapartment') }}",
+                    method: "POST",
+                    data: new FormData(this),
+                    dataType: "JSON",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+
+                }).done(
+
+                    function(data)
+                    {
+                        $('#ajaxviews').html(data.html);
+                    }
+                );
+
+            })
+        });
+    </script>
