@@ -1,28 +1,9 @@
-@if(count($errors) > 0)
-    @foreach($errors->all() as $error)
-        <div class="callout alert">
-            {{$error}}
-        </div>
-    @endforeach
-@endif
-
-@if(session('success'))
-    <div class="alert alert-info">
-        {{session('success')}}
-    </div>
-@endif
-
-@if(session('error'))
-    <div class="alert alert-info">
-        {{session('error')}}
-    </div>
-@endif
-
 <div class="content">
     <h3 class="text-center">{{__('profile.updateapartment')}}</h3>
     <div class="row">
         <div class="col-md-6">
-            {{Form::open(['method' => 'PUT', 'action' => ['dashboard\ApartmentController@update',$apartment->id], 'files' => true])}}
+            {{Form::open(['id' => 'form_update', 'enctype' => 'multipart/form-data', 'files' => true])}}
+
             <div class="card ">
                 <div class="card-body ">
                     <div class="row">
@@ -70,21 +51,17 @@
                     <div class="row">
                         <label class="col-sm-2 col-form-label">{{__('form.services')}}</label>
                         <div class="col-sm-10 checkbox-radios">
+
                             @foreach($services as $service)
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        @foreach($apartmentServices as $apartmentService)
-                                            @if($apartmentService->name == $service->name)
-                                                <input class="form-check-input" name="services[]" type="checkbox" value="{{$service->id}}" checked>
-                                                @break
-                                            @else
-                                                <input class="form-check-input" name="services[]" type="checkbox" value="{{$service->id}}">
-                                            @endif
-                                        @endforeach                                                <span class="form-check-sign bg-success"></span>
+                                        <input class="form-check-input" name="services[]" type="checkbox" value="{{$service->id}}">
+                                        <span class="form-check-sign bg-success"></span>
                                         {{__('form.' . $service->name)}} <i class="{{$service->icon}} bg-primary rounded-circle text-light p-2"></i>
                                     </label>
                                 </div>
                             @endforeach
+
                         </div>
                     </div>
                     <div class="row justify-content-center">
@@ -154,8 +131,12 @@
                 </div>
 
             @endif
+            @if(isset($error))
+                <div class="alert alert-success">
+                    {{__($error)}}
+                </div>
+            @endif
             @if(count($errors) > 0)
-
                 <div class="alert alert-danger rounded"  role="alert">
                     <div class="container">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -164,16 +145,44 @@
                     </span>
                         </button>
                         <p><strong>{{__('profile.ups')}}</strong></p>
-                        @foreach ($errors->all() as $error)
-                            <p>{{ $error }}</p>
+                        @foreach ($errors as $error)
+                            <p>{{ $error[0] }}</p>
                         @endforeach
-
                     </div>
                 </div>
-
-
-
+            @endif
+            @if(isset($success))
+                <div class="alert alert-success">
+                    {{__($success)}}
+                </div>
             @endif
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('#form_update').on('submit', function(event){
+            event.preventDefault();
+            $.ajax({
+                url: "{{ route('apartment.updateapartment', $apartment->id) }}",
+                method: "POST",
+                data: new FormData(this),
+                dataType: "JSON",
+                contentType: false,
+                cache: false,
+                processData: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            }).done(
+
+                function(data)
+                {
+                    $('#ajaxviews').html(data.html);
+                }
+            );
+
+        })
+    });
+</script>

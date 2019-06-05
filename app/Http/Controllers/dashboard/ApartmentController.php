@@ -186,9 +186,15 @@ class ApartmentController extends Controller
 
     public function update(Request $request, Apartment $apartment)
     {
+
+
         if($apartment->user->id == auth()->user()->id){
 
-            $this->validate($request,[
+            $cities = City::all();
+            $services = Service::all();
+            $categories = Category::all();
+
+            $validator = Validator::make($request->all(), [
                 'name' => ['required','min:3',\Illuminate\Validation\Rule::unique('apartments','name')->ignore($apartment->id)],
                 'description' => 'required | min:3 | max:300',
                 'address' => 'required | min:10 | max:100',
@@ -196,12 +202,14 @@ class ApartmentController extends Controller
                 'city' => 'required | exists:cities,id',
                 'services' => 'required',
                 'category' => 'required',
-                'price' => 'required']);
+                'price' => 'required'
+            ]);
 
-            /*if(count($request->file('photos')) < 4)
-            {
-                return back();
-            }*/
+            if($validator->fails()){
+                $errors = $validator->getMessageBag()->getMessages();
+                $view = view('dashboard.apartment.edit',compact('cities','services','categories', 'errors', 'apartment'))->render();
+                return response()->json(['html'=>$view]);
+            }
 
             $request->merge(['city_id' => $request->city]);
             $apartment->fill($request->all());
@@ -223,13 +231,64 @@ class ApartmentController extends Controller
             }
 
             Helper::servicesTableFill($apartment, $request->services);
+            $success = 'apartments.updated';
 
-            $apartments = Apartment::where('user_id',auth()->user()->id)->paginate(6);
-            return redirect(route('dashboard'))->with('success',__('profile.updatesuccess'));
-        } else {
-            return back();
+            $view = view('dashboard.apartment.edit',compact('cities','services','categories', 'success', 'apartment'))->render();
+            return response()->json(['html'=>$view]);
+
+        }else {
+            $error = "apartments.not_updated";
+            $view = view('dashboard.apartment.edit',compact('cities','services','categories', 'error', 'apartment'))->render();
+            return response()->json(['html'=>$view]);
         }
     }
+
+//    public function update(Request $request, Apartment $apartment)
+//    {
+//        if($apartment->user->id == auth()->user()->id){
+//
+//            $this->validate($request,[
+//                'name' => ['required','min:3',\Illuminate\Validation\Rule::unique('apartments','name')->ignore($apartment->id)],
+//                'description' => 'required | min:3 | max:300',
+//                'address' => 'required | min:10 | max:100',
+//                'short_description' => 'required | min:3 | max: 100',
+//                'city' => 'required | exists:cities,id',
+//                'services' => 'required',
+//                'category' => 'required',
+//                'price' => 'required']);
+//
+//            /*if(count($request->file('photos')) < 4)
+//            {
+//                return back();
+//            }*/
+//
+//            $request->merge(['city_id' => $request->city]);
+//            $apartment->fill($request->all());
+//            $apartment->user_id = auth()->user()->id;
+//            $apartment->save();
+//
+//            if($request->file('photos') != null)
+//            {
+//                foreach($request->file('photos') as $photo)
+//                {
+//                    $picture = Helper::uploadFile($photo);
+//
+//                    $photo = new Photo();
+//                    $photo->url = $picture;
+//                    $photo->local_url = $picture;
+//                    $photo->apartment_id = $apartment->id;
+//                    $photo->save();
+//                }
+//            }
+//
+//            Helper::servicesTableFill($apartment, $request->services);
+//
+//            $apartments = Apartment::where('user_id',auth()->user()->id)->paginate(6);
+//            return redirect(route('dashboard'))->with('success',__('profile.updatesuccess'));
+//        } else {
+//            return back();
+//        }
+//    }
 
     public function destroy(Apartment $apartment)
     {

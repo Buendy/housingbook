@@ -17,5 +17,7 @@ return [
     'userrented' => '. El periodo del alquiler es: Desde ',
     'userto' => ' hasta ',
     'profile' => 'Ver perfil',
-    'rent_success' => 'Apartamento alquilado con éxito'
+    'rent_success' => 'Apartamento alquilado con éxito',
+    'updated' => 'Apartamento actualizado con éxito',
+    'not_updated' => 'No se puede actualizar el apartamento'
 ];
