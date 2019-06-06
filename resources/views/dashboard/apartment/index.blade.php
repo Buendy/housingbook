@@ -25,7 +25,7 @@
                                     <td>{{$apartment->name}}</td>
                                     <td>{{$apartment->city->name}}</td>
                                     <td>{{$apartment->price}}€</td>
-                                    <td>{{$apartment->address}}€</td>
+                                    <td>{{$apartment->address}}</td>
                                     <td class="text-center text-light">
                                         <a href="{{$apartment->id}}"
                                            data-toggle="tooltip" title="{{__('profile.show')}}"

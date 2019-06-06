@@ -41,4 +41,6 @@ return [
     'servicenotvalid' => 'Los servicios indicados no son válidos',
     'categorynotvalid' => 'Las categorías indicadas no son válidas',
     'range' => 'El rango de precios es obligatorio',
+    'apartmentcreatefail' => '¡Lo sentimos! Ha ocurrido un error creando el apartamento, intentalo de nuevo.',
+    'apartmentupdate' => 'El apartamento ha sido actualizado correctamente',
 ];

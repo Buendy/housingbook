@@ -2,7 +2,7 @@
     <h3 class="text-center">{{__('profile.updateapartment')}}</h3>
     <div class="row">
         <div class="col-md-6">
-            {{Form::open(['id' => 'form_update', 'enctype' => 'multipart/form-data', 'files' => true])}}
+            {{Form::open(['id' => 'form_update', 'action' => ['dashboard\ApartmentController@update',$apartment->id], 'method' => 'PUT','files' => true])}}
 
             <div class="card ">
                 <div class="card-body ">
@@ -55,8 +55,16 @@
                             @foreach($services as $service)
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" name="services[]" type="checkbox" value="{{$service->id}}">
-                                        <span class="form-check-sign bg-success"></span>
+                                        @foreach($apartmentServices as $apartmentService)
+                                            <input class="form-check-input" name="services[]" type="checkbox" value="{{$service->id}}">
+                                            @if($apartmentService->name == $service->name)
+                                                <span class="form-check-sign bg-success"></span>
+                                                <input class="form-check-input" name="services[]" type="checkbox" value="{{$service->id}}" checked>
+                                                @break
+                                            @else
+                                                <input class="form-check-input" name="services[]" type="checkbox" value="{{$service->id}}">
+                                            @endif
+                                        @endforeach                                                <span class="form-check-sign bg-success"></span>
                                         {{__('form.' . $service->name)}} <i class="{{$service->icon}} bg-primary rounded-circle text-light p-2"></i>
                                     </label>
                                 </div>
@@ -126,7 +134,7 @@
                 </button>
                 <div class="alert alert-info alert-dismissible fade show">
                             <span>
-                            {{__('profile.profileupdatedocorrectly')}}
+                            {{__('form.apartmentupdate')}}
                     </span>
                 </div>
 
@@ -159,30 +167,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    $(document).ready(function(){
-        $('#form_update').on('submit', function(event){
-            event.preventDefault();
-            $.ajax({
-                url: "{{ route('apartment.updateapartment', $apartment->id) }}",
-                method: "POST",
-                data: new FormData(this),
-                dataType: "JSON",
-                contentType: false,
-                cache: false,
-                processData: false,
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            }).done(
-
-                function(data)
-                {
-                    $('#ajaxviews').html(data.html);
-                }
-            );
-
-        })
-    });
-</script>

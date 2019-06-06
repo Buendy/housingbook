@@ -41,4 +41,6 @@ return [
     'servicenotvalid' => 'The indicated services are not valid',
     'categorynotvalid' => 'The indicated categories are not valid',
     'range' => 'The price range is required',
+    'apartmentcreatefail' => 'Sorry! Seems like something happen while creating the apartment, try again',
+    'apartmentupdate' => 'Apartment updated correctly',
 ];

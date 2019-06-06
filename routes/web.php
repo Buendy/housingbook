@@ -53,7 +53,7 @@ Route::prefix('dashboard')->group(function(){
         Route::post('store','dashboard\ApartmentController@store')->name('apartment.storeapartment');
         Route::delete('delete/{apartment}','dashboard\ApartmentController@destroy')->name('apartment.deleteapartment');
         Route::get('{apartment}/edit','dashboard\ApartmentController@edit')->name('apartment.editapartment');
-        Route::post('{apartment}/update','dashboard\ApartmentController@update')->name('apartment.updateapartment');
+        Route::put('{apartment}/update','dashboard\ApartmentController@update')->name('apartment.updateapartment');
     });
 
     Route::prefix('invoices')->group(function(){
