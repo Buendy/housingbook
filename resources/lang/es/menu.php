@@ -13,4 +13,5 @@ return [
     'invoices' => 'Facturas',
     'history' => 'Historial',
     'Logout' => 'Desconectarse',
+    'return_dashboard' => 'Volver a dashboard'
 ];

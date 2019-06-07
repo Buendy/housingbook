@@ -51,18 +51,10 @@ class ApartmentController extends Controller
 
     public function create(Request $request)
     {
-        if($request->ajax()){
-
             $cities = City::all();
             $services = Service::all();
             $categories = Category::all();
-            $view = view('dashboard.apartment.create',compact('cities','services','categories'))->render();
-
-            return response()->json(['html'=>$view]);
-
-        } else {
-            return back();
-        }
+            return view('dashboard.apartment.create',compact('cities','services','categories'));
     }
 
     public function store(Request $request)

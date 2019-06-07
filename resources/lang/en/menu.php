@@ -13,4 +13,5 @@ return [
     'invoices' => 'Invoices',
     'history' => 'History',
     'Logout' => 'Logout',
+    'return_dashboard' => 'Return Dashboard'
 ];

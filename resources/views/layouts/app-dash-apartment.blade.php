@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8" />
@@ -49,103 +49,25 @@
                     <img src="{{Auth::user()->photo}}"  />
                 </div>
                 <div class="info">
-                    <a data-toggle="collapse" href="#collapseExample" class="collapsed">
+                    <a data-toggle="collapse" href="#collapseExample" class="collapsed" disabled="">
               <span>
                 {{Auth::user()->name}}
                   <b class="caret"></b>
               </span>
                     </a>
-                    <div class="clearfix"></div>
-                    <div class="collapse" id="collapseExample">
-                        <ul class="nav">
-                            <li>
-                                <a href="#" id="profile">
-                                    <span class="sidebar-mini-icon">MP</span>
-                                    <span class="sidebar-normal">{{__('dashboard.profile')}}</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" id="profileedit">
-                                    <span class="sidebar-mini-icon">EP</span>
-                                    <span class="sidebar-normal">{{__('dashboard.edit')}}</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" id="profilepassword">
-                                    <span class="sidebar-mini-icon">PC</span>
-                                    <span class="sidebar-normal">{{__('dashboard.password')}}</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" id="profiletelegram">
-                                    <span class="sidebar-mini-icon">TI</span>
-                                    <span class="sidebar-normal">{{__('dashboard.telegram')}}</span>
-                                </a>
-                            </li>
 
-                        </ul>
-                    </div>
                 </div>
             </div>
             <ul class="nav">
-                <li id="activo1">
-                    <a href="#" id="dashboard">
-                        <i class="nc-icon nc-bank nc-bullet-list-67"></i>
-                        <p>{{__('menu.dashboard')}}</p>
+                <li id="activo1" class="active" >
+                    <a href="{{route('dashboard')}}" class="active" id="dashboard">
+                        <i class="nc-icon nc-minimal-left"></i>
+                        <p>{{__('menu.return_dashboard')}}</p>
                     </a>
-                </li>
-                <li id="activo2">
-                    <a data-toggle="collapse" href="#mapsExamples">
-                        <i class="nc-icon nc-pin-3"></i>
-                        <p>
-                            {{__('menu.apartment')}}
-                            <b class="caret"></b>
-                        </p>
-                    </a>
-                    <div class="collapse " id="mapsExamples">
-                        <ul class="nav">
-                            <li>
-                                <a href="{{ url('/dashboard/apartment/create') }}">
-                                    <span class="sidebar-mini-icon">AA</span>
-                                    <span class="sidebar-normal">{{__('profile.createapartment')}}</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" id="apartmentmanage">
-                                    <span class="sidebar-mini-icon">EA</span>
-                                    <span class="sidebar-normal">{{__('profile.manage')}}</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li id="activo3">
-                    <a data-toggle="collapse" href="#History">
-                        <i class="fa fa-history"></i>
-                        <p>
-                            {{__('menu.history')}}
-                            <b class="caret"></b>
-                        </p>
-                    </a>
-                    <div class="collapse " id="History">
-                        <ul class="nav">
-                            <li>
-                                <a href="#" id="history">
-                                    <span class="sidebar-mini-icon">H</span>
-                                    <span class="sidebar-normal">{{__('menu.history')}}</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" id="invoices">
-                                    <span class="sidebar-mini-icon">I</span>
-                                    <span class="sidebar-normal">{{__('menu.invoices')}}</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
 
             </ul>
+
         </div>
     </div>
     <div class="main-panel">
@@ -176,6 +98,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navigation">
 
                     <ul class="navbar-nav">
+
                         <li class="nav-item">
 
                             <a class="nav-link btn-magnify" href="{{route('apartments.public')}}">
@@ -237,29 +160,8 @@
 
 
   </div> -->
+        @yield('content')
 
-        <br><br><br>
-        @if(count($errors) > 0)
-            <div class="col-md-5">
-                @foreach($errors->all() as $error)
-                    <div class="callout alert alert-danger">
-                        {{$error}}
-                    </div>
-                @endforeach
-            </div>
-        @endif
-        @if(session('success'))
-            <div class="alert alert-info">
-                {{session('success')}}
-            </div>
-        @endif
-
-        @if(session('error'))
-            <div class="alert alert-info">
-                {{session('error')}}
-            </div>
-        @endif
-        <div id="ajaxviews"></div>
 
     </div>
 
@@ -305,162 +207,7 @@
 <script src="{{asset('assets/js/paper-dashboard.min.js?v=2.0.1')}}" type="text/javascript"></script>
 <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 <script src="{{asset('assets/demo/demo.js')}}"></script>
-<script>
-    $(document).ready(function() {
 
-        $.ajax(
-            {
-                url: "/dashboard/index",
-                type: 'GET',
-            }).done(
-
-            function(data)
-            {
-                $('#ajaxviews').html(data.html);
-            }
-        );
-
-        $("#dashboard").click(function(event){
-            event.preventDefault();
-            location.reload();
-        });
-
-        $("#history").click(function(event){
-            event.preventDefault();
-            $.ajax(
-                {
-                    url: "/dashboard/invoices/index",
-                    type: 'GET',
-                }).done(
-
-                function(data)
-                {
-                    $('#ajaxviews').html(data.html);
-                }
-            );
-        });
-
-        $("#invoices").click(function(event){
-            event.preventDefault();
-            $.ajax(
-                {
-                    url: "/dashboard/invoices/invoices",
-                    type: 'GET',
-                }).done(
-
-                function(data)
-                {
-                    $('#ajaxviews').html(data.html);
-                }
-            );
-        });
-
-        $("#profile").click(function(event){
-            event.preventDefault();
-            $.ajax(
-                {
-                    url: "/dashboard/user/show",
-                    type: 'GET',
-                }).done(
-
-                function(data)
-                {
-                    $('#ajaxviews').html(data.html);
-                }
-            );
-        });
-
-        $("#profileedit").click(function(event){
-            event.preventDefault();
-            $.ajax(
-                {
-                    url: "/dashboard/user/edit",
-                    type: 'GET',
-                }).done(
-
-                function(data)
-                {
-                    $('#ajaxviews').html(data.html);
-                }
-            );
-        });
-
-        $("#profilepassword").click(function(event){
-            event.preventDefault();
-            $.ajax(
-                {
-                    url: "/dashboard/user/password",
-                    type: 'GET',
-                }).done(
-
-                function(data)
-                {
-                    $('#ajaxviews').html(data.html);
-                }
-            );
-        });
-
-        $("#profiletelegram").click(function(event){
-            event.preventDefault();
-            $.ajax(
-                {
-                    url: "/dashboard/user/telegram",
-                    type: 'GET',
-                }).done(
-
-                function(data)
-                {
-                    $('#ajaxviews').html(data.html);
-                }
-            );
-        });
-
-
-        $("#apartmentmanage").click(function(event){
-            event.preventDefault();
-            $.ajax(
-                {
-                    url: "/dashboard/apartment/index",
-                    type: 'GET',
-                }).done(
-
-                function(data)
-                {
-                    $('#ajaxviews').html(data.html);
-                }
-            );
-        });
-
-        enlaceActivo();
-        // Javascript method's body can be found in assets/js/demos.js
-        demo.initDashboardPageCharts();
-
-        demo.initVectorMap();
-
-        function enlaceActivo() {
-            url = window.location;
-
-            activo1 = $('#activo1');
-            activo2 = $('#activo2');
-            activo3 = $('#activo3');
-            apartment = new RegExp('apartment');
-            invoices = new RegExp('invoices');
-
-            activo1.removeClass('active');
-            activo2.removeClass('active');
-            activo3.removeClass('active');
-
-            if(apartment.test(url)){
-                activo2.addClass('active');
-            }else if(invoices.test(url)){
-                activo3.addClass('active');
-            }else{
-                activo1.addClass('active');
-            }
-        }
-
-    });
-</script>
 </body>
 
 

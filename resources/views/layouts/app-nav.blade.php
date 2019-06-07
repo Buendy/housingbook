@@ -32,8 +32,6 @@
     <link href="{{asset('demo/demo.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('dat/bootstrap-datepicker3.min.css')}}">
 
-    @stack('style')
-
     <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -100,7 +98,7 @@
         }
 
     });
-    @stack('script')
+
 </script>
 </body>
 </html>
