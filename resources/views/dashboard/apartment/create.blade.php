@@ -115,17 +115,30 @@
                 {{Form::close()}}
             </div>
             <div class="col-md-6">
-                @if(isset($success))
-
+                @if(session('success'))
+                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="nc-icon nc-simple-remove"></i>
+                    </button>
                     <div class="alert alert-info alert-dismissible fade show">
-                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                        </button>
-                        <span>
-                            {{__($success)}}
+                            <span>
+                            {{__('form.apartmentupdate')}}
                     </span>
                     </div>
 
+                @endif
+                @if(session('error'))
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="nc-icon nc-simple-remove"></i>
+                        </button>
+                        <span>{{__('form.apartmentcreatefail')}}</span>
+                    </div>
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="nc-icon nc-simple-remove"></i>
+                        </button>
+                        <span> {{__(session('error'))}}</span>
+                    </div>
                 @endif
 
                 @if(count($errors) > 0)

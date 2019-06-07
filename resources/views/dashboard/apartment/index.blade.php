@@ -32,7 +32,7 @@
                                            class="btn btn-info btn-icon btn-sm show">
                                             <i class="fa fa-user"></i>
                                         </a>
-                                        <a href="{{$apartment->id}}"
+                                        <a href="{{url('/dashboard/apartment/' . $apartment->id .'/edit')}}"
                                            class="btn btn-success btn-icon btn-sm edit"
                                            data-toggle="tooltip" title="{{__('profile.edit')}}">
                                             <i class="fa fa-edit"></i>
@@ -70,27 +70,6 @@
             $.ajax(
                 {
                     url: "/dashboard/apartment/show/" + indice[3],
-                    type: 'GET',
-                }).done(
-
-                function(data)
-                {
-                    $('#ajaxviews').html(data.html);
-                }
-            );
-        });
-    });
-
-
-    $(".edit").each(function() {
-        $(this).click(function (event) {
-            event.preventDefault();
-
-            let indice = event.currentTarget.href.split("/");
-
-            $.ajax(
-                {
-                    url: "/dashboard/apartment/" + indice[3] + "/edit",
                     type: 'GET',
                 }).done(
 

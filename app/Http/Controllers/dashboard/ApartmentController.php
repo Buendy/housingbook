@@ -51,21 +51,15 @@ class ApartmentController extends Controller
 
     public function create(Request $request)
     {
-            $cities = City::all();
-            $services = Service::all();
-            $categories = Category::all();
-            return view('dashboard.apartment.create',compact('cities','services','categories'));
+        $cities = City::all();
+        $services = Service::all();
+        $categories = Category::all();
+        return view('dashboard.apartment.create',compact('cities','services','categories'));
     }
 
     public function store(Request $request)
     {
         $this->validate($request,Apartment::$rules);
-
-        if(count($request->file('photos')) < 4)
-        {
-            return back();
-        }
-
         $apartment = new Apartment();
 
         $request->merge(['city_id' => $request->city]);
@@ -74,16 +68,24 @@ class ApartmentController extends Controller
         $apartment->user_id = auth()->user()->id;
         $apartment->save();
 
-
-        foreach($request->file('photos') as $photo)
+        if($request->file('photos') != null)
         {
-            $picture = Helper::uploadFile($photo);
+            if(count($request->file('photos')) != 5){
+                session()->flash('error', 'apartments.photos_bad');
+                return back();
 
-            $photo = new Photo();
-            $photo->url = $picture;
-            $photo->local_url = $picture;
-            $photo->apartment_id = $apartment->id;
-            $photo->save();
+            }else{
+                foreach($request->file('photos') as $photo)
+                {
+                    $picture = Helper::uploadFile($photo);
+
+                    $photo = new Photo();
+                    $photo->url = $picture;
+                    $photo->local_url = $picture;
+                    $photo->apartment_id = $apartment->id;
+                    $photo->save();
+                }
+            }
         }
 
         Helper::servicesTableFill($apartment,$request->services);
@@ -93,26 +95,20 @@ class ApartmentController extends Controller
 
     public function edit(Request $request,Apartment $apartment)
     {
-        if($request->ajax()){
+        if($apartment->user->id == auth()->user()->id) {
 
-            if($apartment->user->id == auth()->user()->id) {
+            $cities = City::all();
+            $services = Service::all();
+            $categories = Category::all();
 
-                $cities = City::all();
-                $services = Service::all();
-                $categories = Category::all();
+            $apartmentServices = $apartment->services()->get();
 
-                $apartmentServices = $apartment->services()->get();
+            return view('dashboard.apartment.edit', compact('apartment', 'cities', 'services', 'categories','apartmentServices'));
 
-                $view = view('dashboard.apartment.edit', compact('apartment', 'cities', 'services', 'categories','apartmentServices'))->render();
-
-                return response()->json(['html'=>$view]);
-
-            } else {
-                return back();
-            }
         } else {
             return back();
         }
+
     }
 
     public function update(Request $request, Apartment $apartment)
@@ -129,10 +125,7 @@ class ApartmentController extends Controller
                 'category' => 'required',
                 'price' => 'required']);
 
-            /*if(count($request->file('photos')) < 4)
-            {
-                return back();
-            }*/
+
 
             $request->merge(['city_id' => $request->city]);
             $apartment->fill($request->all());
@@ -141,15 +134,22 @@ class ApartmentController extends Controller
 
             if($request->file('photos') != null)
             {
-                foreach($request->file('photos') as $photo)
-                {
-                    $picture = Helper::uploadFile($photo);
 
-                    $photo = new Photo();
-                    $photo->url = $picture;
-                    $photo->local_url = $picture;
-                    $photo->apartment_id = $apartment->id;
-                    $photo->save();
+                if(count($request->file('photos')) != 5){
+                    session()->flash('error', 'apartments.photos_bad');
+                    return back();
+
+                }else{
+                    foreach($request->file('photos') as $photo)
+                    {
+                        $picture = Helper::uploadFile($photo);
+
+                        $photo = new Photo();
+                        $photo->url = $picture;
+                        $photo->local_url = $picture;
+                        $photo->apartment_id = $apartment->id;
+                        $photo->save();
+                    }
                 }
             }
 
@@ -158,7 +158,8 @@ class ApartmentController extends Controller
             //$apartmentServices = $apartment->services()->get();
 
             //$apartments = Apartment::where('user_id',auth()->user()->id)->get();
-            return redirect(route('dashboard'))->with('success',__('profile.updatesuccess'));
+            //return redirect(route('dashboard'))->with('success',__('profile.updatesuccess'));
+            return back()->with('success', __('apartments.create'));
         } else {
             return back();
         }
