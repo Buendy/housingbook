@@ -1,8 +1,40 @@
-    <div class="content">
-        <div class="row justify-content-center p-5">
-            <div class="col-md-1">
+@extends('layouts.app-dash-apartment')
 
-            </div>
+@section('content')
+    <div class="content">
+        <div class="row justify-content-center">
+            @if(session('success'))
+                <div class="col-md-6">
+                    <div class="alert alert-info alert-dismissible fade show">
+                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="nc-icon nc-simple-remove"></i>
+                        </button>
+                        <span>
+                            {{__('profile.profileupdatedocorrectly')}}
+                    </span>
+                    </div>
+                </div>
+            @endif
+            @if(count($errors) > 0)
+                <div class="col-md-6">
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="nc-icon nc-simple-remove"></i>
+                        </button>
+                        <span>
+                            {{__('profile.profileupdatedfailed')}}
+                    </span>
+                    </div>
+                    @foreach($errors->all() as $error)
+                        <div class="callout alert alert-danger">
+                            {{$error}}
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+        </div>
+        <div class="row justify-content-center p-5">
+
             <div class="col-md-6">
                 <div class="card card-user">
                     <div class="card-header">
@@ -76,7 +108,7 @@
                             {{Form::file('photo')}}
                         </span>
                                         <br />
-                                        <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                                        <a href="#" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
                                     </div>
                                 </div>
                             </div>
@@ -91,36 +123,10 @@
                     </div>
                 </div>
             </div>
-            @if(session('success'))
-                <div class="col-md-5">
-                    <div class="alert alert-info alert-dismissible fade show">
-                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                        </button>
-                        <span>
-                            {{__('profile.profileupdatedocorrectly')}}
-                    </span>
-                    </div>
-                </div>
-            @endif
-            @if(count($errors) > 0)
-                <div class="col-md-5">
-                    <div class="alert alert-danger alert-dismissible fade show">
-                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                        </button>
-                        <span>
-                            {{__('profile.profileupdatedfailed')}}
-                    </span>
-                    </div>
-                    @foreach($errors->all() as $error)
-                        <div class="callout alert alert-danger">
-                            {{$error}}
-                        </div>
-                    @endforeach
-                </div>
-            @endif
+
         </div>
     </div>
+@endsection
+
 
 

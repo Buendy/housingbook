@@ -32,14 +32,7 @@ class UserController extends Controller
 
     public function edit(Request $request)
     {
-        if($request->ajax()){
-            $view = view('dashboard.user.edit')->render();
-
-            return response()->json(['html'=>$view]);
-
-        } else {
-            return back();
-        }
+        return view('dashboard.user.edit')->render();
     }
 
     public function update(User $user, Request $request)
@@ -69,14 +62,7 @@ class UserController extends Controller
 
     public function telegram(Request $request)
     {
-        if($request->ajax()){
-            $view = view('dashboard.user.telegram')->render();
-
-            return response()->json(['html'=>$view]);
-
-        } else {
-            return back();
-        }
+        return view('dashboard.user.telegram')->render();
     }
 
     public function telegramUpdate(User $user, Request $request)

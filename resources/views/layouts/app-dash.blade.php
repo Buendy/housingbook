@@ -65,7 +65,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" id="profileedit">
+                                <a href="{{route('user.edit')}}" id="profileedit">
                                     <span class="sidebar-mini-icon">EP</span>
                                     <span class="sidebar-normal">{{__('dashboard.edit')}}</span>
                                 </a>
@@ -77,7 +77,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" id="profiletelegram">
+                                <a href="{{route('user.telegram')}}" id="profiletelegram">
                                     <span class="sidebar-mini-icon">TI</span>
                                     <span class="sidebar-normal">{{__('dashboard.telegram')}}</span>
                                 </a>
@@ -370,21 +370,6 @@
             );
         });
 
-        $("#profileedit").click(function(event){
-            event.preventDefault();
-            $.ajax(
-                {
-                    url: "/dashboard/user/edit",
-                    type: 'GET',
-                }).done(
-
-                function(data)
-                {
-                    $('#ajaxviews').html(data.html);
-                }
-            );
-        });
-
         $("#profilepassword").click(function(event){
             event.preventDefault();
             $.ajax(
@@ -399,22 +384,6 @@
                 }
             );
         });
-
-        $("#profiletelegram").click(function(event){
-            event.preventDefault();
-            $.ajax(
-                {
-                    url: "/dashboard/user/telegram",
-                    type: 'GET',
-                }).done(
-
-                function(data)
-                {
-                    $('#ajaxviews').html(data.html);
-                }
-            );
-        });
-
 
         $("#apartmentmanage").click(function(event){
             event.preventDefault();

@@ -89,20 +89,23 @@
 
                         </div>
                         <br>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="row justify-content-center">
-                                    <div class="col-md-4 col-sm-4">
-                                        <div class="fileinput fileinput-new text-center rounded-circle" data-provides="fileinput">
-                                            <div class="fileinput-preview fileinput-exists thumbnail"></div>
-                                            <div>
-                        <span class="btn btn-rose btn-round btn-file">
-                          <span class="fileinput-new">{{__('form.imageapartment')}}</span>
-                            {{Form::file('photos[]', ['id' => 'photos', 'multiple' => 'multiple'])}}
-                            {{--                            <input type="file" name="photos[]" required multiple/>--}}
+                        <div class="row justify-content-center">
+
+                            <div class="col-md-3 col-sm-4">
+
+                                <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                    <div class="fileinput-new thumbnail img-circle">
+                                        <img src="{{asset('assets/img/placeholder.jpg')}}" alt="...">
+                                    </div>
+                                    <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
+                                    <div>
+                        <span class="btn btn-round btn-rose btn-file">
+                          <span class="fileinput-new">Add Photo</span>
+                          <span class="fileinput-exists">Change</span>
+                           {{Form::file('photos[]', ['id' => 'photos', 'multiple' => 'multiple'])}}
                         </span>
-                                            </div>
-                                        </div>
+                                        <br />
+                                        <a href="#" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
                                     </div>
                                 </div>
                             </div>
