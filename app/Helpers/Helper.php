@@ -3,7 +3,8 @@ namespace App\Helpers;
 
 class Helper {
 
-	public static function uploadFile($photo) {
+	public static function uploadFile($photo)
+    {
 
         $filenameWithExt = $photo->getClientOriginalName();
         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
@@ -27,6 +28,21 @@ class Helper {
         foreach($objects as $object)
         {
             $apartment->services()->attach($object);
+        }
+    }
+
+    public static function validateFile($photo)
+    {
+        $extension = $photo->getClientOriginalExtension();
+
+        if($extension == 'png'){
+            return true;
+        }else if($extension == 'jpg'){
+            return true;
+        }else if($extension == 'jpeg'){
+            return true;
+        }else{
+            return false;
         }
     }
 }

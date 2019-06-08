@@ -20,5 +20,6 @@ return [
     'rent_success' => 'Apartamento alquilado con éxito',
     'updated' => 'Apartamento actualizado con éxito',
     'not_updated' => 'No se puede actualizar el apartamento',
-    'photos_bad' => 'No has seleccionado 5 fotos'
+    'photos_bad' => 'No has seleccionado 5 fotos',
+    'photos_extension' => 'Las fotos deben ser ".png", ".jpg" o ".jpeg"'
 ];

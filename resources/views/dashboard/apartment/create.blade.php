@@ -121,7 +121,7 @@
                     </button>
                     <div class="alert alert-info alert-dismissible fade show">
                             <span>
-                            {{__('form.apartmentupdate')}}
+                            {{__(session('success'))}}
                     </span>
                     </div>
 

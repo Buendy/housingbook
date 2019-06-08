@@ -60,6 +60,25 @@ class ApartmentController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,Apartment::$rules);
+
+        if($request->file('photos') != null){
+            if(count($request->file('photos')) != 5){
+                session()->flash('error', 'apartments.photos_bad');
+                return back();
+            }else{
+                foreach($request->file('photos') as $photo){
+                    if(Helper::validateFile($photo) == false){
+                        session()->flash('error', 'apartments.photos_extension');
+                        return back();
+                    }
+                }
+            }
+
+        }else{
+            session()->flash('error', 'apartments.photos_bad');
+            return back();
+        }
+
         $apartment = new Apartment();
 
         $request->merge(['city_id' => $request->city]);
@@ -68,25 +87,18 @@ class ApartmentController extends Controller
         $apartment->user_id = auth()->user()->id;
         $apartment->save();
 
-        if($request->file('photos') != null)
-        {
-            if(count($request->file('photos')) != 5){
-                session()->flash('error', 'apartments.photos_bad');
-                return back();
 
-            }else{
-                foreach($request->file('photos') as $photo)
-                {
-                    $picture = Helper::uploadFile($photo);
+        foreach($request->file('photos') as $photo){
 
-                    $photo = new Photo();
-                    $photo->url = $picture;
-                    $photo->local_url = $picture;
-                    $photo->apartment_id = $apartment->id;
-                    $photo->save();
-                }
-            }
+            $picture = Helper::uploadFile($photo);
+
+            $photo = new Photo();
+            $photo->url = $picture;
+            $photo->local_url = $picture;
+            $photo->apartment_id = $apartment->id;
+            $photo->save();
         }
+
 
         Helper::servicesTableFill($apartment,$request->services);
 
@@ -123,33 +135,37 @@ class ApartmentController extends Controller
                 'city' => 'required | exists:cities,id',
                 'services' => 'required',
                 'category' => 'required',
-                'price' => 'required']);
+                'price' => 'required'
+            ]);
 
-
+            if($request->file('photos') != null){
+                if(count($request->file('photos')) != 5){
+                    session()->flash('error', 'apartments.photos_bad');
+                    return back();
+                }else{
+                    foreach($request->file('photos') as $photo){
+                        if(Helper::validateFile($photo) == false){
+                            session()->flash('error', 'apartments.photos_extension');
+                            return back();
+                        }
+                    }
+                }
+            }
 
             $request->merge(['city_id' => $request->city]);
             $apartment->fill($request->all());
             $apartment->user_id = auth()->user()->id;
             $apartment->save();
 
-            if($request->file('photos') != null)
-            {
+            if($request->file('photos') != null){
+                foreach($request->file('photos') as $photo){
+                    $picture = Helper::uploadFile($photo);
 
-                if(count($request->file('photos')) != 5){
-                    session()->flash('error', 'apartments.photos_bad');
-                    return back();
-
-                }else{
-                    foreach($request->file('photos') as $photo)
-                    {
-                        $picture = Helper::uploadFile($photo);
-
-                        $photo = new Photo();
-                        $photo->url = $picture;
-                        $photo->local_url = $picture;
-                        $photo->apartment_id = $apartment->id;
-                        $photo->save();
-                    }
+                    $photo = new Photo();
+                    $photo->url = $picture;
+                    $photo->local_url = $picture;
+                    $photo->apartment_id = $apartment->id;
+                    $photo->save();
                 }
             }
 

@@ -20,5 +20,6 @@ return [
     'rent_success' => 'Apartment rented successfully',
     'updated' => 'Apartment updated successfully',
     'not_updated' => 'The apartment can not be updated',
-    'photos_bad' => 'You have not selected 5 photos'
+    'photos_bad' => 'You have not selected 5 photos',
+    'photos_extension' => 'Photos must be ".png", ".jpg" or ".jpeg"'
 ];
