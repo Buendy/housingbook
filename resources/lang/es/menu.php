@@ -13,5 +13,6 @@ return [
     'invoices' => 'Facturas',
     'history' => 'Historial',
     'Logout' => 'Desconectarse',
-    'return_dashboard' => 'Volver a dashboard'
+    'return_dashboard' => 'Volver a dashboard',
+    'reservations' => 'Mis reservas'
 ];

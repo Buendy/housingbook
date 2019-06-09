@@ -31,7 +31,9 @@ Route::prefix('public')->group(function(){
 
 Route::prefix('profile')->group(function () {
     //Rutas para botones del perfil de usuario
+    Route::get('reservations/history', 'ProfileController@reservations')->name('profile.reservations');
     Route::get('{name}','ProfileController@index')->name('profile.index');
+
 });
 
 Route::prefix('dashboard')->group(function(){

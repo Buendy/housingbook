@@ -33,4 +33,11 @@ class ProfileController extends Controller
     {
 
     }
+
+    public function reservations()
+    {
+        $reservations = Auth()->user()->invoices;
+
+        return view('profile.reservations', compact('reservations'));
+    }
 }

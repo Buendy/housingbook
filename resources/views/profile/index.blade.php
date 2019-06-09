@@ -139,7 +139,7 @@
                                                 <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[3]->local_url)}}" alt="{{$apartment->name}}">
                                             </div>
                                         </div>
-                                        <a class="carousel-control-prev" href="#productCarousel{{$nums - 1}}" role="button" data-slide="prev">
+                                        <a class="carousel-control-prev" href="#productCarousel{{$nums + 1}}" role="button" data-slide="prev">
                                             <button type="button" class="btn btn-primary btn-icon btn-round btn-sm" name="button">
                                                 <i class="now-ui-icons arrows-1_minimal-left"></i>
                                             </button>

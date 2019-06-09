@@ -12,8 +12,14 @@
         </div>
         <div class="collapse navbar-collapse" data-nav-image="./assets/img//blurred-image-1.jpg" data-color="orange">
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="{{route('profile.reservations')}}" class="nav-link">
+                        <i class="now-ui-icons education_agenda-bookmark" aria-hidden="true"></i>
+                        <p>{{__('menu.reservations')}}</p>
+                    </a>
+                </li>
 
-                <li>
+                <li class="nav-item">
                     <a href="{{route('apartments.public')}}" class="nav-link">
                         <i class="now-ui-icons design_image" aria-hidden="true"></i>
                         <p>{{__('menu.apartment')}}</p>

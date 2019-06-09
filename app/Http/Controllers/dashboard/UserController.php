@@ -47,8 +47,13 @@ class UserController extends Controller
 
             if($request->file('photo'))
             {
-                $photo = Helper::uploadFile($request->file('photo'));
-                $user->photo = $photo;
+                if(Helper::validateFile($request->file('photo')) == false){
+                    session()->flash('error', 'apartments.photos_extension');
+                    return back();
+                }else{
+                    $photo = Helper::uploadFile($request->file('photo'));
+                    $user->photo = $photo;
+                }
             }
 
             $user->fill($request->all());
