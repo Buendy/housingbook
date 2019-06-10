@@ -23,7 +23,7 @@
                                 <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
                                     <i class="nc-icon nc-simple-remove"></i>
                                 </button>
-                                <span>{{__('form.commentposted')}}</span>
+                                <span>{{session('success')}}</span>
                             </div>
                         @endif
                         @if(session('error'))
@@ -204,6 +204,15 @@
                                     <small>{{count($apartment->comments)}} {{__('guest.comments')}}</small>
                                 </h3>
                                 @foreach($apartment->comments as $comment)
+                                    @if($comment->user->id == auth()->user()->id)
+                                        <div class="container mb-5 mt-5 bg-primary text-light rounded pb-2 pt-4">
+                                            <div class="col-md-2">
+                                                {{Form::open(['method' => 'DELETE','action' => ['CommentController@destroy',$comment->id,$apartment->id]])}}
+                                                <button type="submit" class="btn btn-primary mr-3">{{__('guest.removecomment')}}&nbsp;<i class="now-ui-icons ui-1_simple-remove"></i></button>
+                                                {{Form::close()}}
+                                            </div>
+                                        </div>
+                                    @endif
                                     <div class="media">
                                         <a class="pull-left" href="#pablo">
                                             <div class="avatar">
@@ -234,7 +243,7 @@
                                     <div class="card card-product">
                                         <div class="card-image justify-content-center">
                                             <a href="{{route('apartments.show',$random_apartment->id)}}">
-                                                <img class="img rounded" src="{{$random_apartment->photos[0]->url}}" />
+                                                <img class="img rounded" src="{{url('/storage/photos/'.$random_apartment->photos[0]->local_url)}}" />
                                             </a>
                                         </div>
                                         <div class="card-body">

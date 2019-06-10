@@ -46,5 +46,8 @@ return [
     'exit' => 'Salida',
     'down' => 'Descargar factura',
     'history' => 'Tus apartamentos visitados',
-    'actions' => 'Acciones'
+    'actions' => 'Acciones',
+    'pendingreservations' => 'Reservas pendientes',
+    'pastreservatiosn' => 'Reservadas pasadas',
+    'reservations' => 'Mis reservas',
 ];

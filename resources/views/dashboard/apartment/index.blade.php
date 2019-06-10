@@ -63,21 +63,26 @@
 
     $(".show").each(function() {
         $(this).click(function (event) {
-            event.preventDefault();
 
-            let indice = event.currentTarget.href.split("/");
+            if(event.currentTarget.href !== undefined)
+            {
+                event.preventDefault();
 
-            $.ajax(
-                {
-                    url: "/dashboard/apartment/show/" + indice[3],
-                    type: 'GET',
-                }).done(
+                let indice = event.currentTarget.href.split("/");
 
-                function(data)
-                {
-                    $('#ajaxviews').html(data.html);
-                }
-            );
+                $.ajax(
+                    {
+                        url: "/dashboard/apartment/show/" + indice[3],
+                        type: 'GET',
+                    }).done(
+
+                    function(data)
+                    {
+                        $('#ajaxviews').html(data.html);
+                    }
+                );
+            }
+
         });
     });
 

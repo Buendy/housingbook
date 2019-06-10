@@ -23,6 +23,7 @@ Route::get('/apartments/category/{Category}','ApartmentController@searchCategory
 Route::post('/apartments/filter','ApartmentController@filter')->name('filterApartments');
 
 Route::post('/apartments/{apartment}/comment','CommentController@store')->name('postComment');
+Route::delete('/apartments/{comment}/{apartment}','CommentController@destroy')->name('removeComment');
 
 Route::prefix('public')->group(function(){
     Route::get('apartments','PublicController@index')->name('apartments.public');

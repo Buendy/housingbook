@@ -67,7 +67,7 @@ class UserController extends Controller
 
     public function telegram(Request $request)
     {
-        return view('dashboard.user.telegram')->render();
+        return view('dashboard.user.telegram');
     }
 
     public function telegramUpdate(User $user, Request $request)

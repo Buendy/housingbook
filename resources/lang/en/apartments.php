@@ -21,5 +21,8 @@ return [
     'updated' => 'Apartment updated successfully',
     'not_updated' => 'The apartment can not be updated',
     'photos_bad' => 'You have not selected 5 photos',
-    'photos_extension' => 'Photos must be ".png", ".jpg" or ".jpeg"'
+    'photos_extension' => 'Photos must be ".png", ".jpg" or ".jpeg"',
+    'addphoto' => 'Add Photo',
+    'changephoto' => 'Change Photo',
+    '4photos' => 'Add at least 4 photos',
 ];

@@ -62,7 +62,7 @@ class ApartmentController extends Controller
         $this->validate($request,Apartment::$rules);
 
         if($request->file('photos') != null){
-            if(count($request->file('photos')) != 5){
+            if(count($request->file('photos')) != 4){
                 session()->flash('error', 'apartments.photos_bad');
                 return back();
             }else{
@@ -139,7 +139,7 @@ class ApartmentController extends Controller
             ]);
 
             if($request->file('photos') != null){
-                if(count($request->file('photos')) != 5){
+                if(count($request->file('photos')) != 4){
                     session()->flash('error', 'apartments.photos_bad');
                     return back();
                 }else{

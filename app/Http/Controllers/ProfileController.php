@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Apartment;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -23,21 +24,11 @@ class ProfileController extends Controller
         return view('profile.index', compact('user', 'nums', 'nums2'));
     }
 
-    /*public function apartments()
-    {
-        $apartments = Apartment::where('user_id',auth()->user()->id)->paginate(6);
-        return view('profile.apartments.index',compact('apartments'));
-    }*/
-
-    public function editProfile()
-    {
-
-    }
-
     public function reservations()
     {
-        $reservations = Auth()->user()->invoices;
+        $pending = Auth::user()->pendingInvoices();
+        $past = Auth::user()->pastInvoices();
 
-        return view('profile.reservations', compact('reservations'));
+        return view('profile.reservations', compact('past','pending'));
     }
 }

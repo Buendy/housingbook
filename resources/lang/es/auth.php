@@ -20,6 +20,7 @@ return [
     'started2' => 'Enviar',
     'conditions' => 'Acepto los terminos y',
     'conditions2' => 'condiciones',
+    'conditions3' => 'Condiciones',
     'account' => 'Crear cuenta',
     'help' => 'Resetea tu contraseña',
     'continue' => 'Antes de continuar, consulte su correo electrónico para ver un enlace de verificación. Si no recibió el correo electrónico,',

@@ -48,4 +48,7 @@ return [
     'down' => 'Download invoice',
     'history' => 'Your visited apartments',
     'actions' => 'Actions',
+    'pendingreservations' => 'Pending reservations',
+    'pastreservations' => 'Past reservations',
+    'reservations' => 'My reservations',
 ];

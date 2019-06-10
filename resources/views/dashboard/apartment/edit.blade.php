@@ -118,8 +118,8 @@
                                     <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
                                     <div>
                         <span class="btn btn-round btn-rose btn-file">
-                          <span class="fileinput-new">Add Photo</span>
-                          <span class="fileinput-exists">Change</span>
+                          <span class="fileinput-new">{{__('apartments.addphoto')}}</span>
+                          <span class="fileinput-exists">{{__('apartments.changephoto')}}</span>
                            {{Form::file('photos[]', ['id' => 'photos', 'multiple' => 'multiple'])}}
                         </span>
                                         <br />
@@ -127,6 +127,9 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
+                            <i class="mx-auto d-block justify-content-center">{{__('apartments.4photos')}}</i>
                         </div>
                     </div>
                     <div class="card-footer ">

@@ -14,5 +14,7 @@ return [
     'norelated' => 'We have not related apartments',
     'priceper' => 'Price per day',
     'comments' => 'Comments',
-    'apartmentcomments' => 'Opinions about this apartment'
+    'apartmentcomments' => 'Opinions about this apartment',
+    'removecomment' => 'Delete your comment',
+    'commentdeleted' => 'Comment deleted sucessfully. Comment again and help others to decide!',
 ];

@@ -21,6 +21,7 @@ return [
     'started2' => 'Send',
     'conditions' => 'I agree to the terms and',
     'conditions2' => 'conditions',
+    'conditions3' => 'Conditions',
     'account' => 'Create Account',
     'help' => 'Reset your password',
     'continue' => 'Before proceeding, please check your email for a verification link. If you did not receive the email, ',

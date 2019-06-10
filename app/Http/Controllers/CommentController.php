@@ -23,6 +23,17 @@ class CommentController extends Controller
 
         $comment->save();
 
-        return back()->with('success','Comentario creado con exito');
+        return back()->with('success',__('form.commentposted'));
+    }
+
+    public function destroy(Comment $comment)
+    {
+        if($comment->user->id == auth()->user()->id)
+        {
+            $comment->delete();
+            return back()->with('success',__('guest.commentdeleted'));
+        }
+
+        return back();
     }
 }

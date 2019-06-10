@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -47,6 +48,16 @@ class User extends Authenticatable implements MustVerifyEmail
     public function invoices()
     {
         return $this->belongsToMany(Apartment::class)->withPivot('id', 'entry', 'exit', 'total');
+    }
+
+    public function pastInvoices()
+    {
+        return $this->belongsToMany(Apartment::class)->withPivot('id', 'entry', 'exit', 'total')->where('entry','<=', Carbon::now())->get();
+    }
+
+    public function pendingInvoices()
+    {
+        return $this->belongsToMany(Apartment::class)->withPivot('id', 'entry', 'exit', 'total')->where('entry','>',Carbon::now())->get();
     }
 
     public function invoice($id, $user_id)

@@ -14,5 +14,7 @@ return [
     'norelated' => 'No podemos ofrecerte ningun apartamento relacionado',
     'priceper' => 'Precio por día',
     'comments' => 'Comentarios',
-    'apartmentcomments' => 'Opiniones sobre este apartamento'
+    'apartmentcomments' => 'Opiniones sobre este apartamento',
+    'removecomment' => 'Borra tu comentario',
+    'commentdeleted' => 'Comentario borrado con exito. ¡Comenta de nuevo y ayuda a otros a decidir!',
 ];

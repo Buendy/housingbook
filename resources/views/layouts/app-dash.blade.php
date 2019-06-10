@@ -102,7 +102,7 @@
                             <b class="caret"></b>
                         </p>
                     </a>
-                    <div class="collapse " id="mapsExamples">
+                    <div class="collapse" id="mapsExamples">
                         <ul class="nav">
                             <li>
                                 <a href="{{ url('/dashboard/apartment/create') }}">
@@ -206,6 +206,12 @@
                                 </a>
 
                             </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('profile.reservations')}}" class="nav-link">
+                                <i class="now-ui-icons education_agenda-bookmark" aria-hidden="true"></i>
+                                <p>{{__('menu.reservations')}}</p>
+                            </a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
