@@ -48,6 +48,6 @@ return [
     'history' => 'Tus apartamentos visitados',
     'actions' => 'Acciones',
     'pendingreservations' => 'Reservas pendientes',
-    'pastreservatiosn' => 'Reservadas pasadas',
+    'pastreservations' => 'Reservadas pasadas',
     'reservations' => 'Mis reservas',
 ];

@@ -20,7 +20,7 @@ $factory->define(App\User::class, function (Faker $faker) {
         'email' => $faker->unique()->safeEmail,
         'address' => $faker->address,
         'second_address' => $faker->randomElement([$faker->address,null]),
-        'photo' => $faker->imageUrl(),
+        'photo' => \Faker\Provider\Image::image(storage_path() . '/app/public/photos', 600, 350, 'people', false),
         'phone' => $faker->phoneNumber,
         'email_verified_at' => now(),
         'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret

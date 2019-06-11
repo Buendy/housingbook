@@ -21,46 +21,52 @@
                 </li>
 
                 @guest
-                <li class="nav-item">
-                    <a class="nav-link btn btn-primary" href="{{ route('login') }}">{{ __('menu.login') }}</a>
-                </li>
-                @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link btn btn-primary" href="{{ route('register') }}">{{ __('menu.register') }}</a>
-                </li>
-                @endif
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary" href="{{ route('login') }}">{{ __('menu.login') }}</a>
+                    </li>
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary" href="{{ route('register') }}">{{ __('menu.register') }}</a>
+                        </li>
+                    @endif
                 @else
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-
-                        <a href="{{route('dashboard')}}" class="dropdown-item">
-                            <i class="now-ui-icons design_bullet-list-67" aria-hidden="true"></i>
-                            <p>{{__('menu.dashboard')}}</p>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+
+                            <a href="{{route('dashboard')}}" class="dropdown-item">
+                                <i class="now-ui-icons design_bullet-list-67" aria-hidden="true"></i>
+                                <p>{{__('menu.dashboard')}}</p>
+                            </a>
 
 
                             <a href="{{url('profile/'. Auth::user()->name)}}" class="dropdown-item">
                                 <i class="now-ui-icons users_circle-08" aria-hidden="true"></i>
                                 <p>{{__('menu.profile')}}</p>
                             </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                            <i class="now-ui-icons arrows-1_share-66" aria-hidden="true"></i>
-                            <p>{{ __('menu.Logout') }}</p>
+                                <i class="now-ui-icons arrows-1_share-66" aria-hidden="true"></i>
+                                <p>{{ __('menu.Logout') }}</p>
 
+                            </a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('profile.reservations')}}" class="nav-link">
+                            <i class="now-ui-icons education_agenda-bookmark" aria-hidden="true"></i>
+                            <p>{{__('menu.reservations')}}</p>
                         </a>
-
-                    </div>
-                </li>
+                    </li>
 
                 @endguest
                 <li class="nav-item dropdown">

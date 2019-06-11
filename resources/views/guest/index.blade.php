@@ -48,7 +48,7 @@
 
                                         <div class="card-footer">
                                             <div class="author">
-                                                <img src="{{$apartment->user->photo}}" alt="..." class="avatar img-raised">
+                                                <img src="{{url('/storage/photos/'.$apartment->user->photo)}}" alt="..." class="avatar img-raised">
                                                 <span>{{$apartment->user->name}}</span>
                                             </div>
 
@@ -138,7 +138,10 @@
                             <div class="card card-blog ">
                                 <div class="card-image">
                                     <a href="{{route('apartments.show',$apartment->id)}}">
-                                        <img class="img rounded" src="{{url('/storage/photos/'.$apartment->photos[0]->local_url)}}">
+                                        @if(count($apartment->photos))
+                                            <img class="img rounded" src="{{url('/storage/photos/'.$apartment->photos[0]->local_url)}}">
+                                        @else
+                                        @endif
                                     </a>
                                 </div>
                                 <div class="card-body">
@@ -150,7 +153,7 @@
 
                                     <div class="card-footer text-center">
                                         <div class="author">
-                                            <img src="{{$apartment->user->photo}}" alt="..." class="avatar img-raised">
+                                            <img src="{{url('/storage/photos/'.$apartment->user->photo)}}" alt="..." class="avatar img-raised">
                                             <span>{{$apartment->user->name}}</span>
                                         </div>
 

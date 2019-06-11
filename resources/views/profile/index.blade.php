@@ -58,7 +58,7 @@
         </div>
         <div class="container">
             <div class="photo-container">
-                <img src="{{$user->photo}}" alt="{{$user->name}}" style="width: 100px; height: 100px;">
+                <img src="{{url('/storage/photos/'.$user->photo)}}" alt="{{$user->name}}" style="width: 100px; height: 100px;">
             </div>
             <h3 class="title">{{$user->name}}</h3>
             <p class="category">{{$user->last_name}}</p>
@@ -73,11 +73,11 @@
             </div>
         </div>
     </div>
-    <!--<div class="section">
+<!--<div class="section">
         <div class="container">
             @if($user->id == Auth::user()->id)
-                <div class="button-container">
-                    <a href="{{route('apartment.index')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.manage')}}</a>
+    <div class="button-container">
+        <a href="{{route('apartment.index')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.manage')}}</a>
                     <a href="{{route('apartment.createapartment')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.createapartment')}}</a>
                     <a href="{{url('dashboard/user/edit')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.editprofile')}}</a>
                 </div>
@@ -88,7 +88,7 @@
     <br><br><br>
     <div class="container">
         <div class="row justify-content-center">
-        @foreach($user->apartments as $apartment)
+            @foreach($user->apartments as $apartment)
                 <div class="col-md-8 mb-5 shadow rounded p-3">
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
@@ -113,7 +113,7 @@
                                         {{$apartment->name}}
                                     </h6>
 
-                                        {{$apartment->short_description}}
+                                    {{$apartment->short_description}}
 
                                 </div>
                                 <div class="tab-pane ml-5" id="link{{$nums + 1}}">
@@ -125,19 +125,33 @@
                                             <li data-target="#productCarousel" data-slide-to="3"></li>
                                         </ol>
                                         <div class="carousel-inner" role="listbox">
-
-                                            <div class="carousel-item active">
-                                                <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[0]->local_url)}}" alt="{{$apartment->name}}">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[1]->local_url)}}" alt="{{$apartment->name}}">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[2]->local_url)}}" alt="{{$apartment->name}}">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[3]->local_url)}}" alt="{{$apartment->name}}">
-                                            </div>
+                                            @if(count($apartment->photos))
+                                                <div class="carousel-item active">
+                                                    <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[0]->local_url)}}" alt="{{$apartment->name}}">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[1]->local_url)}}" alt="{{$apartment->name}}">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[2]->local_url)}}" alt="{{$apartment->name}}">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[3]->local_url)}}" alt="{{$apartment->name}}">
+                                                </div>
+                                            @else
+                                                <div class="carousel-item active">
+                                                    <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                                </div>
+                                            @endif
                                         </div>
                                         <a class="carousel-control-prev" href="#productCarousel{{$nums + 1}}" role="button" data-slide="prev">
                                             <button type="button" class="btn btn-primary btn-icon btn-round btn-sm" name="button">
@@ -156,36 +170,36 @@
                     </div>
                 </div>
 
-        <?php $nums = $nums + 2;?>
-        @endforeach
+                <?php $nums = $nums + 2;?>
+            @endforeach
+
+        </div>
 
     </div>
-
-</div>
-<!--   Core JS Files   -->
-<script src="{{ asset('js/core/jquery.min.js')}}" type="text/javascript"></script>
-<script src="{{ asset('js/core/popper.min.js')}}" type="text/javascript"></script>
-<script src="{{ asset('js/core/bootstrap.min.js')}}" type="text/javascript"></script>
-<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-<script src="{{ asset('js/plugins/bootstrap-switch.js')}}"></script>
-<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="{{ asset('js/plugins/nouislider.min.js')}}" type="text/javascript"></script>
-<!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
-<script src="{{ asset('js/plugins/moment.min.js')}}"></script>
-<!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-<script src="{{ asset('js/plugins/bootstrap-tagsinput.js')}}"></script>
-<!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-<script src="{{ asset('js/plugins/bootstrap-selectpicker.js')}}" type="text/javascript"></script>
-<!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-<script src="{{ asset('js/plugins/bootstrap-datetimepicker.js')}}" type="text/javascript"></script>
-<!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-<!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
-<script src="{{ asset('js/now-ui-kit.js?v=1.2.2')}}" type="text/javascript"></script>
-<!-- Library for parallax, used just in Presentation Page -->
-<script src="{{ asset('js/plugins/presentation-page/rellax.min.js')}}" type="text/javascript"></script>
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+    <!--   Core JS Files   -->
+    <script src="{{ asset('js/core/jquery.min.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('js/core/popper.min.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('js/core/bootstrap.min.js')}}" type="text/javascript"></script>
+    <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+    <script src="{{ asset('js/plugins/bootstrap-switch.js')}}"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="{{ asset('js/plugins/nouislider.min.js')}}" type="text/javascript"></script>
+    <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
+    <script src="{{ asset('js/plugins/moment.min.js')}}"></script>
+    <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+    <script src="{{ asset('js/plugins/bootstrap-tagsinput.js')}}"></script>
+    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    <script src="{{ asset('js/plugins/bootstrap-selectpicker.js')}}" type="text/javascript"></script>
+    <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+    <script src="{{ asset('js/plugins/bootstrap-datetimepicker.js')}}" type="text/javascript"></script>
+    <!--  Google Maps Plugin    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+    <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
+    <script src="{{ asset('js/now-ui-kit.js?v=1.2.2')}}" type="text/javascript"></script>
+    <!-- Library for parallax, used just in Presentation Page -->
+    <script src="{{ asset('js/plugins/presentation-page/rellax.min.js')}}" type="text/javascript"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
 </body>
 
 </html>

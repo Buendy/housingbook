@@ -46,7 +46,7 @@
         <div class="sidebar-wrapper">
             <div class="user">
                 <div class="photo">
-                    <img src="{{Auth::user()->photo}}"  />
+                    <img src="{{url('/storage/photos/'.auth()->user()->photo)}}"  />
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" class="collapsed">
@@ -206,12 +206,6 @@
                                 </a>
 
                             </div>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('profile.reservations')}}" class="nav-link">
-                                <i class="now-ui-icons education_agenda-bookmark" aria-hidden="true"></i>
-                                <p>{{__('menu.reservations')}}</p>
-                            </a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

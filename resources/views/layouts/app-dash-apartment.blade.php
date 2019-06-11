@@ -46,7 +46,7 @@
         <div class="sidebar-wrapper">
             <div class="user">
                 <div class="photo">
-                    <img src="{{Auth::user()->photo}}"  />
+                    <img src="{{url('/storage/photos/'.auth()->user()->photo)}}"  />
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" class="collapsed" disabled="">

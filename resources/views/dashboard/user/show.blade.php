@@ -8,7 +8,7 @@
                     </div>
                     <div class="card-body">
                         <div class="author">
-                            <img class="avatar border-gray" src="{{Auth()->user()->photo}}" alt="...">
+                            <img class="avatar border-gray" src="{{url('/storage/photos/'.auth()->user()->photo)}}" alt="{{auth()->user()->name}}">
                             <h5 class="title">{{Auth()->user()->name}}</h5>
                             <p class="description">
                                 {{Auth()->user()->last_name}}

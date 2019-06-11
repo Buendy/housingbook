@@ -47,18 +47,33 @@
                                 <li data-target="#productCarousel" data-slide-to="3"></li>
                             </ol>
                             <div class="carousel-inner" role="listbox">
-                                <div class="carousel-item active">
-                                    <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[0]->local_url)}}" alt="{{$apartment->name}}">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[1]->local_url)}}" alt="{{$apartment->name}}">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[2]->local_url)}}" alt="{{$apartment->name}}">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[3]->local_url)}}" alt="{{$apartment->name}}">
-                                </div>
+                                @if(count($apartment->photos))
+                                    <div class="carousel-item active">
+                                        <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[0]->local_url)}}" alt="{{$apartment->name}}">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[1]->local_url)}}" alt="{{$apartment->name}}">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[2]->local_url)}}" alt="{{$apartment->name}}">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block img-raised" src="{{url('/storage/photos/'.$apartment->photos[3]->local_url)}}" alt="{{$apartment->name}}">
+                                    </div>
+                                @else
+                                    <div class="carousel-item active">
+                                        <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                    </div>
+                                @endif
                             </div>
                             <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
                                 <button type="button" class="btn btn-primary btn-icon btn-round btn-sm" name="button">
@@ -204,19 +219,19 @@
                                     <small>{{count($apartment->comments)}} {{__('guest.comments')}}</small>
                                 </h3>
                                 @foreach($apartment->comments as $comment)
-                                    @if($comment->user->id == auth()->user()->id)
-                                        <div class="container mb-5 mt-5 bg-primary text-light rounded pb-2 pt-4">
+                                    @auth
+                                        @if($comment->user->id == auth()->user()->id)
                                             <div class="col-md-2">
                                                 {{Form::open(['method' => 'DELETE','action' => ['CommentController@destroy',$comment->id,$apartment->id]])}}
                                                 <button type="submit" class="btn btn-primary mr-3">{{__('guest.removecomment')}}&nbsp;<i class="now-ui-icons ui-1_simple-remove"></i></button>
                                                 {{Form::close()}}
                                             </div>
-                                        </div>
-                                    @endif
+                                        @endif
+                                    @endauth
                                     <div class="media">
                                         <a class="pull-left" href="#pablo">
                                             <div class="avatar">
-                                                <img class="media-object img-raised" src="{{$comment->user->photo}}" alt="..." />
+                                                <img class="media-object img-raised" src="{{url('/storage/photos/'.$comment->user->photo)}}" alt="..." />
                                             </div>
                                         </a>
                                         <div class="media-body">
@@ -243,7 +258,10 @@
                                     <div class="card card-product">
                                         <div class="card-image justify-content-center">
                                             <a href="{{route('apartments.show',$random_apartment->id)}}">
-                                                <img class="img rounded" src="{{url('/storage/photos/'.$random_apartment->photos[0]->local_url)}}" />
+                                                @if(count($random_apartment->photos))
+                                                    <img class="img rounded" src="{{url('/storage/photos/'.$random_apartment->photos[0]->local_url)}}" />
+                                                @else
+                                                @endif
                                             </a>
                                         </div>
                                         <div class="card-body">
