@@ -259,26 +259,32 @@
   </div> -->
 
         <br><br><br>
-        @if(count($errors) > 0)
-            <div class="col-md-5">
-                @foreach($errors->all() as $error)
-                    <div class="callout alert alert-danger">
-                        {{$error}}
+        <div class="mt-5 row justify-content-center">
+            @if(count($errors) > 0)
+                <div class="col-md-5">
+                    @foreach($errors->all() as $error)
+                        <div class="callout alert alert-danger">
+                            {{$error}}
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+            @if(session('success'))
+                <div class="col-md-5">
+                    <div class="alert alert-info">
+                        {{session('success')}}
                     </div>
-                @endforeach
-            </div>
-        @endif
-        @if(session('success'))
-            <div class="alert alert-info">
-                {{session('success')}}
-            </div>
-        @endif
+                </div>
+            @endif
 
-        @if(session('error'))
-            <div class="alert alert-info">
-                {{session('error')}}
-            </div>
-        @endif
+            @if(session('error'))
+                <div class="col-md-5">
+                    <div class="alert alert-info">
+                        {{session('error')}}
+                    </div>
+                </div>
+            @endif
+        </div>
         <div id="ajaxviews"></div>
 
     </div>

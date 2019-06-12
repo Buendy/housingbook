@@ -44,6 +44,7 @@
                 @endif
             </div>
         @empty
+            <h3 class="text-center text-primary">{{__('profile.noreservations')}}</h3>
         @endforelse
         <h3 class="mt-5 text-center">{{__('profile.pastreservations')}}</h3>
         <hr>
@@ -78,6 +79,7 @@
                 @endif
             </div>
         @empty
+            <h3 class="text-center text-primary">{{__('profile.noreservationspass')}}</h3>
         @endforelse
     </div>
 

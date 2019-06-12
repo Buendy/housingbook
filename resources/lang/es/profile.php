@@ -52,4 +52,6 @@ return [
     'reservations' => 'Mis reservas',
     'photodelete' => 'Borrar fotos del apartamento',
     'deletephotosuccess' => 'Las fotos del apartamentos han sido borradas correctamente',
+    'noreservations' => 'No tienes reservas pendientes',
+    'noreservationspass' => 'No tienes reservas pasadas',
 ];

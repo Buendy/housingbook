@@ -218,9 +218,9 @@ class ApartmentController extends Controller
                 $photo->delete();
             }
 
-            return redirect(route('dashboard'))->with('success', __('profile.deletephotosuccess'));
+            return back()->with('success', __('profile.deletephotosuccess'));
         } else {
-            return back();
+            return back()->with('error', __('profile.deleteapartment'));
         }
     }
 
