@@ -120,12 +120,9 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                <a href="" data-toggle="modal" data-target="#apartment" class="dropdown-item">
                                     <i class="now-ui-icons arrows-1_share-66" aria-hidden="true"></i>
-                                    <p>{{ __('Logout') }}</p>
-
+                                    <p>{{ __('menu.Logout') }}</p>
                                 </a>
 
                             </div>
@@ -153,6 +150,30 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Modal -->
+        <div id="apartment" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content bg-light">
+                    <div class="modal-header" style="height:20px;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="justify-content-center text-center">{{__('auth.session')}}</p>
+                    </div>
+                    <div class="modal-footer" style="margin-right: 10px">
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <input type="submit" class="btn btn-danger" value="{{__('apartments.accept')}}" name="{{__('apartments.accept')}}">
+                        </form>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">{{__('apartments.cancel')}}</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
         <!-- End Navbar -->
         <!-- <div class="panel-header">
 

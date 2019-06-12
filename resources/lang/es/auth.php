@@ -27,5 +27,6 @@ return [
     'continue_2' => 'haga clic aquí para solicitar otro',
     'verify' => 'Verificación de correo',
     'verify_title' => 'Verifique su dirección de correo electrónico',
-    'mail' => 'Se ha enviado un nuevo enlace de verificación a su dirección de correo electrónico.'
+    'mail' => 'Se ha enviado un nuevo enlace de verificación a su dirección de correo electrónico.',
+    'session' => 'Estás a punto de cerrar sesión, ¿Estás seguro/a?',
 ];

@@ -28,5 +28,6 @@ return [
     'continue_2' => 'click here to request another',
     'verify' => 'Verification of mail',
     'verify_title' => 'Verify Your Email Address',
-    'mail' => 'A fresh verification link has been sent to your email address'
+    'mail' => 'A fresh verification link has been sent to your email address',
+    'session' => 'You are about to logout, Are you sure?',
 ];

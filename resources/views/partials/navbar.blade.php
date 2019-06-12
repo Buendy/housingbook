@@ -48,7 +48,7 @@
                                 <i class="now-ui-icons users_circle-08" aria-hidden="true"></i>
                                 <p>{{__('menu.profile')}}</p>
                             </a>
-                            <a data-toggle="modal" data-target="#apartment" class="dropdown-item">
+                            <a href="" data-toggle="modal" data-target="#apartment" class="dropdown-item">
                                 <i class="now-ui-icons arrows-1_share-66" aria-hidden="true"></i>
                                 <p>{{ __('menu.Logout') }}</p>
                             </a>
@@ -90,12 +90,12 @@
     <div class="modal-dialog">
 
         <!-- Modal content-->
-        <div class="modal-content">
+        <div class="modal-content bg-light">
             <div class="modal-header" style="height:20px;">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <p>{{__('apartments.apartmentdelete')}}</p>
+                <p class="justify-content-center text-center">{{__('auth.session')}}</p>
             </div>
             <div class="modal-footer" style="margin-right: 10px">
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
