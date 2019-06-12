@@ -24,7 +24,7 @@ class ApartmentController extends Controller
     {
         if($request->ajax()){
 
-            $apartments = Apartment::where('user_id',auth()->user()->id)->paginate(6);
+            $apartments = Apartment::where('user_id',auth()->user()->id)->get();
 
             $view = view('dashboard.apartment.index',compact('apartments'))->render();
 
@@ -185,9 +185,32 @@ class ApartmentController extends Controller
     {
         if($apartment->user->id == auth()->user()->id) {
 
+            foreach ($apartment->photos as $photo){
+                if (\File::exists(storage_path('app/public/photos/' . $photo->local_url))) {
+                    \File::delete(storage_path('app/public/photos/' . $photo->local_url));
+                }
+            }
+
             $apartment->delete();
 
             return redirect(route('dashboard'))->with('success', __('profile.deletesuccess'));
+        } else {
+            return back();
+        }
+    }
+
+    public function photodestroy(Apartment $apartment)
+    {
+        if($apartment->user->id == auth()->user()->id) {
+
+            foreach ($apartment->photos as $photo){
+                if (\File::exists(storage_path('app/public/photos/' . $photo->local_url))) {
+                    \File::delete(storage_path('app/public/photos/' . $photo->local_url));
+                }
+                $photo->delete();
+            }
+
+            return redirect(route('dashboard'))->with('success', __('profile.deletephotosuccess'));
         } else {
             return back();
         }

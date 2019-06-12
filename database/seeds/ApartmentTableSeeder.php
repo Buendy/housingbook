@@ -13,7 +13,7 @@ class ApartmentTableSeeder extends Seeder
     {
         factory(\App\Apartment::class,50)->create()->each(function (\App\Apartment $apartment){
 
-            factory(\App\Photo::class, 5)->create(['apartment_id' => $apartment->id]);
+            factory(\App\Photo::class, 4)->create(['apartment_id' => $apartment->id]);
 
             $services = \App\Service::all()->random(rand(1,6));
 

@@ -51,4 +51,6 @@ return [
     'pendingreservations' => 'Pending reservations',
     'pastreservations' => 'Past reservations',
     'reservations' => 'My reservations',
+    'photodelete' => 'Delete apartment\'s photos',
+    'deletephotosuccess' => 'Apartment\'s photos deleted successfully',
 ];

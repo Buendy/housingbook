@@ -50,4 +50,6 @@ return [
     'pendingreservations' => 'Reservas pendientes',
     'pastreservations' => 'Reservadas pasadas',
     'reservations' => 'Mis reservas',
+    'photodelete' => 'Borrar fotos del apartamento',
+    'deletephotosuccess' => 'Las fotos del apartamentos han sido borradas correctamente',
 ];

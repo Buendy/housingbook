@@ -19,23 +19,6 @@ class Apartment extends Model
         'price' => 'required',
     ];
 
-    /*public static $messages = [
-        'name.required' => 'El nombre es obligatorio',
-        'name.min' => 'El campo nombre es demasiado corto',
-        'name.unique' => 'El nombre del curso ya está en uso',
-        'description.required' => 'El campo descripción es obligatorio',
-        'description.min' => 'El campo descripción es demasiado corto',
-        'description.max' => 'El campo descripción es demasiado largo',
-        'address.required' => 'El campo descripción es obligatorio',
-        'address.min' => 'El campo descripción es demasiado corto',
-        'address.max' => 'El campo descripción es demasiado largo',
-        'short_description.required' => 'El campo descripción es obligatorio',
-        'short_description.min' => 'El campo descripción es demasiado corto',
-        'short_description.max' => 'El campo descripción es demasiado largo',
-        'city_id.required' => 'El campo descripción es obligatorio',
-        'city_id.exists' => 'El campo descripción es demasiado corto',
-    ];*/
-
     public function city()
     {
         return $this->belongsTo(City::class);

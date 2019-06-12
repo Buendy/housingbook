@@ -62,16 +62,16 @@
                                     </div>
                                 @else
                                     <div class="carousel-item active">
-                                        <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                        <img class="d-block img-raised" src="{{ asset('img/notfound.png')}}" width="600" height="350" alt="{{$apartment->name}}">
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                        <img class="d-block img-raised" src="{{ asset('img/notfound.png')}}" width="600" height="350" alt="{{$apartment->name}}">
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                        <img class="d-block img-raised" src="{{ asset('img/notfound.png')}}" width="600" height="350" alt="{{$apartment->name}}">
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                        <img class="d-block img-raised" src="{{ asset('img/notfound.png')}}" width="600" height="350" alt="{{$apartment->name}}">
                                     </div>
                                 @endif
                             </div>
@@ -259,8 +259,9 @@
                                         <div class="card-image justify-content-center">
                                             <a href="{{route('apartments.show',$random_apartment->id)}}">
                                                 @if(count($random_apartment->photos))
-                                                    <img class="img rounded" src="{{url('/storage/photos/'.$random_apartment->photos[0]->local_url)}}" />
+                                                    <img class="img rounded" src="{{url('/storage/photos/'.$random_apartment->photos[0]->local_url)}}"/>
                                                 @else
+                                                    <img class="img rounded" src="{{ asset('img/notfound.png')}}" height="130" width="350"/>
                                                 @endif
                                             </a>
                                         </div>

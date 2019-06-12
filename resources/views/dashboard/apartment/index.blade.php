@@ -37,6 +37,9 @@
                                            data-toggle="tooltip" title="{{__('profile.edit')}}">
                                             <i class="fa fa-edit"></i>
                                         </a>
+                                        {{Form::open(['action' => ['dashboard\ApartmentController@photodestroy',$apartment->id], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
+                                        <button type="submit" data-toggle="tooltip" title="{{__('profile.photodelete')}}" class="btn btn-warning btn-icon btn-sm"><i class="fa fa-photo"></i></button>
+                                        {{Form::close()}}
                                         {{Form::open(['action' => ['dashboard\ApartmentController@destroy',$apartment->id], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
                                         <button type="submit" data-toggle="tooltip" title="{{__('profile.delete')}}" class="btn btn-danger btn-icon btn-sm"><i class="fa fa-times"></i></button>
                                         {{Form::close()}}
@@ -52,11 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="mx-auto d-block">
-            {{$apartments->links()}}
-        </div>
     </div>
-
 </div>
 
 <script>

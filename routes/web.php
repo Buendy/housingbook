@@ -54,6 +54,7 @@ Route::prefix('dashboard')->group(function(){
         Route::get('index', 'dashboard\ApartmentController@index')->name('apartment.index');
         Route::get('create','dashboard\ApartmentController@create')->name('apartment.createapartment');
         Route::post('store','dashboard\ApartmentController@store')->name('apartment.storeapartment');
+        Route::delete('photodelete/{apartment}','dashboard\ApartmentController@photodestroy')->name('apartment.deletephotos');
         Route::delete('delete/{apartment}','dashboard\ApartmentController@destroy')->name('apartment.deleteapartment');
         Route::get('{apartment}/edit','dashboard\ApartmentController@edit')->name('apartment.editapartment');
         Route::put('{apartment}/update','dashboard\ApartmentController@update')->name('apartment.updateapartment');

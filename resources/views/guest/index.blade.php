@@ -37,7 +37,11 @@
                                 <div class="card card-blog">
                                     <div class="card-image">
                                         <a href="{{route('apartments.show',$apartment->id)}}">
-                                            <img class="img rounded" src="{{url('/storage/photos/'.$apartment->photos[0]->local_url)}}">
+                                            @if(count($apartment->photos))
+                                                <img class="img rounded" src="{{url('/storage/photos/'.$apartment->photos[0]->local_url)}}">
+                                            @else
+                                                <img class="img rounded" src="{{ asset('img/notfound.png')}}" height="170" width="350"/>
+                                            @endif
                                         </a>
                                     </div>
                                     <div class="card-body">
@@ -141,6 +145,7 @@
                                         @if(count($apartment->photos))
                                             <img class="img rounded" src="{{url('/storage/photos/'.$apartment->photos[0]->local_url)}}">
                                         @else
+                                            <img class="img rounded" src="{{ asset('img/notfound.png')}}" height="200" width="350">
                                         @endif
                                     </a>
                                 </div>

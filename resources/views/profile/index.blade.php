@@ -140,16 +140,16 @@
                                                 </div>
                                             @else
                                                 <div class="carousel-item active">
-                                                    <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                                    <img class="d-block img-raised" src="{{ asset('img/notfound.png')}}" width="350" height="200" alt="{{$apartment->name}}">
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                                    <img class="d-block img-raised" src="{{ asset('img/notfound.png')}}" width="350" height="200" alt="{{$apartment->name}}">
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                                    <img class="d-block img-raised" src="{{ asset('img/notfound.png')}}" width="350" height="200" alt="{{$apartment->name}}">
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img class="d-block img-raised" src="" alt="{{$apartment->name}}">
+                                                    <img class="d-block img-raised" src="{{ asset('img/notfound.png')}}" width="350" height="200" alt="{{$apartment->name}}">
                                                 </div>
                                             @endif
                                         </div>
