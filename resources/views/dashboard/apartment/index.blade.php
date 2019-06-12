@@ -37,12 +37,8 @@
                                            data-toggle="tooltip" title="{{__('profile.edit')}}">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        {{Form::open(['action' => ['dashboard\ApartmentController@photodestroy',$apartment->id], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
-                                        <button type="submit" data-toggle="tooltip" title="{{__('profile.photodelete')}}" class="btn btn-warning btn-icon btn-sm"><i class="fa fa-photo"></i></button>
-                                        {{Form::close()}}
-                                        {{Form::open(['action' => ['dashboard\ApartmentController@destroy',$apartment->id], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
-                                        <button type="submit" data-toggle="tooltip" title="{{__('profile.delete')}}" class="btn btn-danger btn-icon btn-sm"><i class="fa fa-times"></i></button>
-                                        {{Form::close()}}
+                                        <button data-toggle="modal" data-target="#photo" data-id="{{$apartment->id}}" class="photoApartment btn btn-warning btn-icon btn-sm"><i class="fa fa-photo"></i></button>
+                                        <button data-toggle="modal" data-target="#apartment" data-id="{{$apartment->id}}" class="Apartment btn btn-danger btn-icon btn-sm"><i class="fa fa-times"></i></button>
                                     </td>
                                 </tr>
                             @empty
@@ -50,6 +46,54 @@
                             @endforelse
                             </tbody>
                         </table>
+                    </div>
+
+                    <!-- Modal -->
+                    <div id="photo" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header" style="height:20px;">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>{{__('apartments.photodelete')}}</p>
+                                </div>
+                                <div class="modal-footer" style="margin-right: 10px">
+                                    {{Form::open(['action' => ['dashboard\ApartmentController@photodestroy'], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
+                                    <input type="hidden" name="idHolder" id="idHolder">
+                                    <input type="submit" class="btn btn-danger" value="{{__('apartments.accept')}}" name="{{__('apartments.accept')}}">
+                                    {{Form::close()}}
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">{{__('apartments.cancel')}}</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div id="apartment" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header" style="height:20px;">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>{{__('apartments.apartmentdelete')}}</p>
+                                </div>
+                                <div class="modal-footer" style="margin-right: 10px">
+                                    {{Form::open(['action' => ['dashboard\ApartmentController@destroy'], 'method' => 'DELETE', 'class' => ['d-inline-block']])}}
+                                    <input type="submit" class="btn btn-danger" value="{{__('apartments.accept')}}" name="{{__('apartments.accept')}}">
+                                    <input type="hidden" name="idHolder" id="idHolder2">
+                                    {{Form::close()}}
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">{{__('apartments.cancel')}}</button>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
 
                 </div>
@@ -83,6 +127,16 @@
             }
 
         });
+    });
+
+    $(document).on("click", ".photoApartment", function () {
+        var eventId = $(this).data('id');
+        $('#idHolder').val( eventId );
+    });
+
+    $(document).on("click", ".Apartment", function () {
+        var eventId = $(this).data('id');
+        $('#idHolder2').val( eventId );
     });
 
 </script>

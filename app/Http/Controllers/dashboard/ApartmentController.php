@@ -181,17 +181,21 @@ class ApartmentController extends Controller
         }
     }
 
-    public function destroy(Apartment $apartment)
+    public function destroy(Request $request)
     {
-        if($apartment->user->id == auth()->user()->id) {
+        $this->validate($request,['idHolder' => 'numeric']);
 
-            foreach ($apartment->photos as $photo){
+        $aparmentId = Apartment::find($request->idHolder);
+
+        if($aparmentId->user->id == auth()->user()->id) {
+
+            foreach ($aparmentId->photos as $photo){
                 if (\File::exists(storage_path('app/public/photos/' . $photo->local_url))) {
                     \File::delete(storage_path('app/public/photos/' . $photo->local_url));
                 }
             }
 
-            $apartment->delete();
+            $aparmentId->delete();
 
             return redirect(route('dashboard'))->with('success', __('profile.deletesuccess'));
         } else {
@@ -199,11 +203,15 @@ class ApartmentController extends Controller
         }
     }
 
-    public function photodestroy(Apartment $apartment)
+    public function photodestroy(Request $request)
     {
-        if($apartment->user->id == auth()->user()->id) {
+        $this->validate($request,['idHolder' => 'numeric']);
 
-            foreach ($apartment->photos as $photo){
+        $aparmentId = Apartment::find($request->idHolder);
+
+        if($aparmentId->user->id == auth()->user()->id) {
+
+            foreach ($aparmentId->photos as $photo){
                 if (\File::exists(storage_path('app/public/photos/' . $photo->local_url))) {
                     \File::delete(storage_path('app/public/photos/' . $photo->local_url));
                 }

@@ -25,4 +25,8 @@ return [
     'addphoto' => 'Add Photo',
     'changephoto' => 'Change Photo',
     '4photos' => 'Add at least 4 photos',
+    'photodelete' => 'You are about to delete all of the apartment\'s photos, Are you sure?',
+    'apartmentdelete' => 'You are about to delete the apartment, Are you sure?',
+    'cancel' => 'Cancel',
+    'accept' => 'Accept',
 ];
