@@ -92,7 +92,6 @@ class ApartmentController extends Controller
             $picture = Helper::uploadFile($photo);
 
             $photo = new Photo();
-            $photo->url = $picture;
             $photo->local_url = $picture;
             $photo->apartment_id = $apartment->id;
             $photo->save();
@@ -126,20 +125,6 @@ class ApartmentController extends Controller
     {
         if($apartment->user->id == auth()->user()->id){
 
-            if($request->file('photos') != null){
-                if(count($request->file('photos')) != 4){
-                    session()->flash('error', 'apartments.photos_bad');
-                    return back();
-                }else{
-                    foreach($request->file('photos') as $photo){
-                        if(Helper::validateFile($photo) == false){
-                            session()->flash('error', 'apartments.photos_extension');
-                            return back();
-                        }
-                    }
-                }
-            }
-
             $request->merge(['city_id' => $request->city]);
             $apartment->fill($request->all());
             $apartment->user_id = auth()->user()->id;
@@ -150,7 +135,6 @@ class ApartmentController extends Controller
                     $picture = Helper::uploadFile($photo);
 
                     $photo = new Photo();
-                    $photo->url = $picture;
                     $photo->local_url = $picture;
                     $photo->apartment_id = $apartment->id;
                     $photo->save();

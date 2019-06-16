@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ApartmentRequest extends FormRequest
 {
@@ -41,9 +42,8 @@ class ApartmentRequest extends FormRequest
                     'price' => 'required',
                 ];
             case 'PUT':
-            case 'PATCH':
                 return [
-                    'name' => ['required','min:3',\Illuminate\Validation\Rule::unique('apartments','name')->ignore($this->id)],
+                    'name' => ['required','min:3',Rule::unique('apartments','name')->ignore($this->apartment->id)],
                     'description' => 'required | min:3 | max:300',
                     'address' => 'required | min:10 | max:100',
                     'short_description' => 'required | min:3 | max: 100',
@@ -52,6 +52,7 @@ class ApartmentRequest extends FormRequest
                     'category' => 'required',
                     'price' => 'required'
                 ];
+            case 'PATCH':
             default:break;
         }
     }
