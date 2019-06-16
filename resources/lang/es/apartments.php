@@ -25,8 +25,9 @@ return [
     'addphoto' => 'Añade foto',
     'changephoto' => 'Cambiar foto',
     '4photos' => 'Añade al menos 4 fotos',
-    'photodelete' => 'Estás a punto de borrar todas las fotos del apartamento, ¿Estás seguro?',
-    'apartmentdelete' => 'Estás a punto de borrar el apartamento, ¿Estás seguro?',
+    'photodelete' => 'Estás a punto de borrar todas las fotos del apartamento, ¿Estás seguro/a?',
+    'apartmentdelete' => 'Estás a punto de borrar el apartamento, ¿Estás seguro/a?',
     'cancel' => 'Cancelar',
     'accept' => 'Aceptar',
+    'problem' => 'Ha ocurrido un error, inténtelo de nuevo',
 ];

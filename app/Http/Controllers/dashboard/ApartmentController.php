@@ -6,6 +6,7 @@ use App\Apartment;
 use App\Category;
 use App\City;
 use App\Helpers\Helper;
+use App\Http\Requests\ApartmentRequest;
 use App\Photo;
 use App\Service;
 use Illuminate\Contracts\Validation\Rule;
@@ -57,10 +58,8 @@ class ApartmentController extends Controller
         return view('dashboard.apartment.create',compact('cities','services','categories'));
     }
 
-    public function store(Request $request)
+    public function store(ApartmentRequest $request)
     {
-        $this->validate($request,Apartment::$rules);
-
         if($request->file('photos') != null){
             if(count($request->file('photos')) != 4){
                 session()->flash('error', 'apartments.photos_bad');
@@ -123,20 +122,9 @@ class ApartmentController extends Controller
 
     }
 
-    public function update(Request $request, Apartment $apartment)
+    public function update(ApartmentRequest $request, Apartment $apartment)
     {
         if($apartment->user->id == auth()->user()->id){
-
-            $this->validate($request,[
-                'name' => ['required','min:3',\Illuminate\Validation\Rule::unique('apartments','name')->ignore($apartment->id)],
-                'description' => 'required | min:3 | max:300',
-                'address' => 'required | min:10 | max:100',
-                'short_description' => 'required | min:3 | max: 100',
-                'city' => 'required | exists:cities,id',
-                'services' => 'required',
-                'category' => 'required',
-                'price' => 'required'
-            ]);
 
             if($request->file('photos') != null){
                 if(count($request->file('photos')) != 4){
@@ -171,20 +159,14 @@ class ApartmentController extends Controller
 
             Helper::servicesTableFill($apartment, $request->services);
 
-            //$apartmentServices = $apartment->services()->get();
-
-            //$apartments = Apartment::where('user_id',auth()->user()->id)->get();
-            //return redirect(route('dashboard'))->with('success',__('profile.updatesuccess'));
             return back()->with('success', __('apartments.create'));
         } else {
             return back();
         }
     }
 
-    public function destroy(Request $request)
+    public function destroy(ApartmentRequest $request)
     {
-        $this->validate($request,['idHolder' => 'numeric']);
-
         $aparmentId = Apartment::find($request->idHolder);
 
         if($aparmentId->user->id == auth()->user()->id) {
@@ -203,10 +185,8 @@ class ApartmentController extends Controller
         }
     }
 
-    public function photodestroy(Request $request)
+    public function photodestroy(ApartmentRequest $request)
     {
-        $this->validate($request,['idHolder' => 'numeric']);
-
         $aparmentId = Apartment::find($request->idHolder);
 
         if($aparmentId->user->id == auth()->user()->id) {

@@ -140,7 +140,6 @@
 
 
                                 <input type="text" name="entrada" id="datepicker" class="form-control bg-light text-black" autocomplete="off" required>
-
                             </div>
                             <div class="col-md-1 mt-3">
                                 <label>{{__('guest.checkout')}}</label>
@@ -148,14 +147,17 @@
                             <div class="col-md-4 mt-2">
 
                                 <input type="text" name="salida" id="datepicker2" class="form-control bg-light text-black" autocomplete="off" required>
-
                             </div>
-                            <div class="col-md-2">
-
-                                <button class="btn btn-primary mr-3">{{__('guest.rent')}}&nbsp;<i class="now-ui-icons shopping_cart-simple"></i></button>
-
-                            </div>
-
+                            @can('rent', $apartment)
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary mr-3">{{__('guest.rent')}}&nbsp;<i class="now-ui-icons shopping_cart-simple"></i></button>
+                                </div>
+                            @endcan
+                            @guest
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary mr-3">{{__('guest.rent')}}&nbsp;<i class="now-ui-icons shopping_cart-simple"></i></button>
+                                </div>
+                            @endguest
                         </div>
                         {{Form::close()}}
                     </div>
@@ -307,7 +309,7 @@
 
         formato = language == "es" ? "dd/mm/yyyy" : "yyyy-mm-dd";
 
-        ;(function($){
+        (function($){
             $.fn.datepicker.dates['es'] = {
                 days: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
                 daysShort: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
@@ -319,27 +321,48 @@
                 clear: "Borrar",
                 weekStart: 1,
             };
+
+            $('#datepicker').datepicker({
+                format: formato,
+                language: language,
+                todayBtn: "linked",
+                clearBtn: true,
+                todayHighlight: true,
+                autoclose: true,
+                datesDisabled: array
+            });
+
+            $('#datepicker2').datepicker({
+                format: formato,
+                language: language,
+                clearBtn: true,
+                todayBtn: "linked",
+                todayHighlight: true,
+                autoclose: true,
+                datesDisabled: array
+            });
+
         }(jQuery));
 
-        $('#datepicker').datepicker({
-            format: formato,
-            language: language,
-            todayBtn: "linked",
-            clearBtn: true,
-            todayHighlight: true,
-            autoclose: true,
-            datesDisabled: array
-        });
-
-        $('#datepicker2').datepicker({
-            format: formato,
-            language: language,
-            clearBtn: true,
-            todayBtn: "linked",
-            todayHighlight: true,
-            autoclose: true,
-            datesDisabled: array
-        });
+        // $('#datepicker').datepicker({
+        //     format: formato,
+        //     language: language,
+        //     todayBtn: "linked",
+        //     clearBtn: true,
+        //     todayHighlight: true,
+        //     autoclose: true,
+        //     datesDisabled: array
+        // });
+        //
+        // $('#datepicker2').datepicker({
+        //     format: formato,
+        //     language: language,
+        //     clearBtn: true,
+        //     todayBtn: "linked",
+        //     todayHighlight: true,
+        //     autoclose: true,
+        //     datesDisabled: array
+        // });
 
     </script>
 

@@ -38,7 +38,7 @@
                                             <i class="fa fa-edit"></i>
                                         </a>
                                         <button data-toggle="modal" data-target="#photo" data-id="{{$apartment->id}}" class="photoApartment btn btn-warning btn-icon btn-sm"><i class="fa fa-photo"></i></button>
-                                        <button data-toggle="modal" data-target="#apartment" data-id="{{$apartment->id}}" class="Apartment btn btn-danger btn-icon btn-sm"><i class="fa fa-times"></i></button>
+                                        <button data-toggle="modal" data-target="#borrar" data-id="{{$apartment->id}}" class="Apartment btn btn-danger btn-icon btn-sm"><i class="fa fa-times"></i></button>
                                     </td>
                                 </tr>
                             @empty
@@ -73,7 +73,7 @@
                     </div>
 
                     <!-- Modal -->
-                    <div id="apartment" class="modal fade" role="dialog">
+                    <div id="borrar" class="modal fade" role="dialog">
                         <div class="modal-dialog">
 
                             <!-- Modal content-->

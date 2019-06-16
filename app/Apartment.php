@@ -8,17 +8,6 @@ class Apartment extends Model
 {
     protected $fillable = ['name','description','address','short_description','city_id','user_id', 'price'];
 
-    public static $rules = [
-        'name' => 'required | min:3 | unique:apartments,name',
-        'description' => 'required | min:3 | max:300',
-        'address' => 'required | min:10 | max:100',
-        'short_description' => 'required | min:3 | max: 100',
-        'city' => 'required | exists:cities,id',
-        'services' => 'required',
-        'category' => 'required',
-        'price' => 'required',
-    ];
-
     public function city()
     {
         return $this->belongsTo(City::class);

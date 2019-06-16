@@ -23,7 +23,7 @@
                                 <tr>
                                     <td>{{$apartment->name}}</td>
                                     <td>{{$apartment->city->name}}</td>
-                                    <td>{{$apartment->address}}€</td>
+                                    <td>{{$apartment->address}}</td>
 
                                     <td class="text-center">
                                         <a href="{{$apartment->id}}"

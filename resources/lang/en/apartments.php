@@ -29,4 +29,5 @@ return [
     'apartmentdelete' => 'You are about to delete the apartment, Are you sure?',
     'cancel' => 'Cancel',
     'accept' => 'Accept',
+    'problem' => 'An error has occurred, try again please',
 ];
