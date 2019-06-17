@@ -325,7 +325,6 @@
             $('#datepicker').datepicker({
                 format: formato,
                 language: language,
-                todayBtn: "linked",
                 clearBtn: true,
                 todayHighlight: true,
                 autoclose: true,
@@ -336,7 +335,6 @@
                 format: formato,
                 language: language,
                 clearBtn: true,
-                todayBtn: "linked",
                 todayHighlight: true,
                 autoclose: true,
                 datesDisabled: array
