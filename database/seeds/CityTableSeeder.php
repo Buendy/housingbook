@@ -13,7 +13,7 @@ class CityTableSeeder extends Seeder
     {
         $cities = ['Amsterdam', 'Athens', 'Oslo', 'Berlin', 'Bilbao', 'Bordeaux', 'Brussels', 'Bucharest', 'Copenhagen', 'Dublin',
             'Glasgow', 'Hamburg', 'Hospitalet de Llobregat', 'Leicester', 'Lisbon', 'London', 'Lyon', 'Madrid', 'Manchester', 'Milan',
-            'Montpellier', 'Munich', 'Naples', 'Nice', 'Palermo', 'Paris', 'Portsmouth', 'Prague', 'Rome', 'Senglea', 'Seville', 'Stockholm',
+            'Montpellier', 'Munich', 'Naples', 'Murcia', 'Palermo', 'Paris', 'Portsmouth', 'Prague', 'Rome', 'Senglea', 'Seville', 'Stockholm',
             'The Hague', 'Toulouse', 'Turin', 'Valencia', 'Vienna', 'A Coruña'];
 
         foreach ($cities as $key => $value){

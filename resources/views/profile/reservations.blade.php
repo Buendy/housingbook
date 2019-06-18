@@ -82,5 +82,6 @@
             <h3 class="text-center text-primary">{{__('profile.noreservationspass')}}</h3>
         @endforelse
     </div>
+    @include('partials.footer')
 
 @endsection

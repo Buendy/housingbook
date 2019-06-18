@@ -103,22 +103,24 @@
                     </div>
                 </div>
                 -->
-                <br>
-                <h3 class="text-center text-primary justify-content-center text-center mx-auto d-block">{{__('dashboard.resume')}}</h3>
+                    <br>
+                    <h3 class="text-center text-primary justify-content-center text-center mx-auto d-block">{{__('dashboard.resume')}}</h3>
 
-                <div class="row">
-                    <div class="col-md-7 ml-auto mr-auto">
-                        <div class="card card-calendar">
-                            <div class="card-body ">
-                                <div id="fullCalendar" class="btns-calendar"></div>
+                    <div class="row">
+                        <div class="col-md-7 ml-auto mr-auto">
+                            <div class="card card-calendar">
+                                <div class="card-body ">
+                                    <div id="fullCalendar" class="btns-calendar"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </div>
+    @include('partials.footer')
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
     <script>
         $(document).onload(function() {
@@ -166,7 +168,7 @@
                         color: color,
                         textColor: 'white',
                     },
-                getEvent.push(insertEvents);
+                    getEvent.push(insertEvents);
             }
 
             $('#fullCalendar').fullCalendar({
@@ -188,11 +190,12 @@
                         trigger: 'hover',
                         html: true,
                         placement: 'top',
-                        });
+                    });
                 },
             });
         });
     </script>
 
+    </div>
 
 @endsection

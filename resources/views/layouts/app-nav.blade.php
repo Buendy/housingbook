@@ -31,7 +31,13 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('demo/demo.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('dat/bootstrap-datepicker3.min.css')}}">
+    <style>
 
+        .borde{
+            border: 4px solid #f96332;
+            border-radius: 4px;
+        }
+    </style>
 
 </head>
 <body class="presentation-page">
@@ -39,6 +45,8 @@
 <main>
     @yield('content')
 </main>
+
+
 
 
 <!--   Core JS Files   -->

@@ -1,7 +1,7 @@
 @extends('layouts.app-nav')
 @include('partials.header')
 @section('content')
-    <div class="section section-components" data-background-color="dark-red">
+    <div class="section section-components mb-0" data-background-color="dark-red">
         <div class="container">
             <div class="row mt-1" >
                 <div class="col-md-8 ml-auto mr-auto">
@@ -88,3 +88,5 @@
 
 
 @endsection
+
+

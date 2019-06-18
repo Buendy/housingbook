@@ -193,4 +193,5 @@
             rango.text(event.currentTarget.value + "€");
         });
     </script>
+    @include('partials.footer')
 @endsection
