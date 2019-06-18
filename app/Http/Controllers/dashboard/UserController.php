@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\dashboard;
 use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PasswordRequest;
+use App\Http\Requests\TelegramRequest;
+use App\Http\Requests\UserRequest;
 use App\User;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
@@ -35,15 +38,9 @@ class UserController extends Controller
         return view('dashboard.user.edit')->render();
     }
 
-    public function update(User $user, Request $request)
+    public function update(User $user, UserRequest $request)
     {
         if($user->id == auth()->user()->id) {
-            $this->validate($request,
-                ['name' => 'required | min:3 | regex:/^[a-zA-Z ]*$/ | unique:apartments,name' ,
-                    'last_name' => 'required | min:3 | max:300 | regex:/^[a-zA-Záéíóú ]*$/',
-                    'email' => ['required', 'min:10', 'max:100', Rule::unique('users','email')->ignore($user->id)],
-                    'address' => 'required',
-                    'phone' => ['required', 'regex:/^[9|6|7|8][0-9]{8}$/']]);
 
             if($request->file('photo'))
             {
@@ -70,12 +67,10 @@ class UserController extends Controller
         return view('dashboard.user.telegram');
     }
 
-    public function telegramUpdate(User $user, Request $request)
+    public function telegramUpdate(User $user, TelegramRequest $request)
     {
         if($user->id == auth()->user()->id)
         {
-            $this->validate($request,User::$rulesTelegram);
-
             $user->fill($request->all());
             $user->save();
 
@@ -97,12 +92,10 @@ class UserController extends Controller
         }
     }
 
-    public function passwordUpdate(User $user, Request $request)
+    public function passwordUpdate(User $user, PasswordRequest $request)
     {
         if($user->id == auth()->user()->id)
         {
-            $this->validate($request,User::$rulesPassword);
-
             $user->password = bcrypt($request->password);
             $user->save();
 

@@ -64,20 +64,4 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->belongsToMany(Apartment::class)->withPivot('id', 'entry', 'exit', 'total', 'created_at')->wherePivot('id', $id)->wherePivot('user_id', $user_id);
     }
-
-    public static $rules = [
-        'name' => 'required | min:3 | unique:apartments,name',
-        'last_name' => 'required | min:3 | max:300',
-        'email' => 'required | min:10 | max:100 | unique:users,email',
-        'address' => 'required',
-        'phone' => 'required',
-    ];
-
-    public static $rulesTelegram = [
-      'telegram' => 'required | numeric'
-    ];
-
-    public static $rulesPassword = [
-        'password' => ['required', 'string', 'min:8', 'confirmed'],
-    ];
 }
