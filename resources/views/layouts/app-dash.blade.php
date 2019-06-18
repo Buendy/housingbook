@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.png')}}">
+    <link rel="icon" type="image/png" href="{{asset('img/Logo web 4.png')}}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
         HousingBook
@@ -166,7 +166,7 @@
                             <span class="navbar-toggler-bar bar3"></span>
                         </button>
                     </div>
-                    <a class="navbar-brand" href="/">HousingBook</a>
+                    <a class="navbar-brand" href="/">HousingBook</a><img src="{{asset('img/icono.png')}}" alt="" width="50" height="50">
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar navbar-kebab"></span>

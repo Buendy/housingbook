@@ -2,8 +2,7 @@
 
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <h5 class="text-center">Housingbook</h5>
-            <hr>
+            <img src="{{asset('img/icono.png')}}" alt="" width="100" height="100">
         </div>
 
     </div>

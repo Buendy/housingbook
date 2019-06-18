@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" color-on-scroll="500">
     <div class="container">
         <div class="navbar-translate">
+            <img src="{{asset('img/icono2.png')}}" alt="" width="50" height="50">
             <a class="navbar-brand" href="{{url('./')}}">
                 HousingBook
             </a>
