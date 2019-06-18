@@ -49,4 +49,9 @@ class PublicController extends Controller
         $categories = Category::all();
         return view('welcome', compact('categories'));
     }
+
+    public function cities()
+    {
+        return view('guest.cities');
+    }
 }

@@ -27,6 +27,7 @@ Route::delete('/apartments/{comment}/{apartment}','CommentController@destroy')->
 
 Route::prefix('public')->group(function(){
     Route::get('apartments','PublicController@index')->name('apartments.public');
+    Route::get('apartments/cities','PublicController@cities')->name('apartments.cities');
     Route::get('apartments/{apartment}','PublicController@show')->name('apartments.show');
 });
 

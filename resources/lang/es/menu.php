@@ -14,5 +14,6 @@ return [
     'history' => 'Historial',
     'Logout' => 'Desconectarse',
     'return_dashboard' => 'Volver a dashboard',
-    'reservations' => 'Mis reservas'
+    'reservations' => 'Mis reservas',
+    'cities' => 'Nuestras ciudades',
 ];

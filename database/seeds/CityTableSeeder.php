@@ -11,6 +11,15 @@ class CityTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\City::class,20)->create();;
+        $cities = ['Amsterdam', 'Athens', 'Oslo', 'Berlin', 'Bilbao', 'Bordeaux', 'Brussels', 'Bucharest', 'Copenhagen', 'Dublin',
+            'Glasgow', 'Hamburg', 'Hospitalet de Llobregat', 'Leicester', 'Lisbon', 'London', 'Lyon', 'Madrid', 'Manchester', 'Milan',
+            'Montpellier', 'Munich', 'Naples', 'Nice', 'Palermo', 'Paris', 'Portsmouth', 'Prague', 'Rome', 'Senglea', 'Seville', 'Stockholm',
+            'The Hague', 'Toulouse', 'Turin', 'Valencia', 'Vienna', 'A Coruña'];
+
+        foreach ($cities as $key => $value){
+            factory(\App\City::class,1)->create([
+                'name' => $value,
+            ]);
+        }
     }
 }

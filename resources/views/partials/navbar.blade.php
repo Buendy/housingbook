@@ -20,6 +20,13 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{route('apartments.cities')}}" class="nav-link">
+                        <i class="now-ui-icons location_map-big" aria-hidden="true"></i>
+                        <p>{{__('menu.cities')}}</p>
+                    </a>
+                </li>
+
                 @guest
                     <li class="nav-item">
                         <a class="nav-link btn btn-primary" href="{{ route('login') }}">{{ __('menu.login') }}</a>

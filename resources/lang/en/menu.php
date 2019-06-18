@@ -14,5 +14,6 @@ return [
     'history' => 'History',
     'Logout' => 'Logout',
     'return_dashboard' => 'Return Dashboard',
-    'reservations' => 'My reservations'
+    'reservations' => 'My reservations',
+    'cities' => 'Our cities',
 ];

@@ -30,4 +30,5 @@ return [
     'cancel' => 'Cancelar',
     'accept' => 'Aceptar',
     'problem' => 'Ha ocurrido un error, inténtelo de nuevo',
+    'cities' => 'Nuestras ciudades',
 ];
