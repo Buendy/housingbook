@@ -28,7 +28,7 @@ class UserRequest extends FormRequest
             case 'GET':
             case 'POST':
             case 'PUT':
-                return ['name' => 'required | min:3 | regex:/^[a-zA-Z ]*$/ | unique:users,name' ,
+                return ['name' => 'required | min:3 | regex:/^[a-zA-Z ]*$/' ,
                     'last_name' => 'required | min:3 | max:300 | regex:/^[a-zA-Záéíóú ]*$/',
                     'email' => ['required', 'min:10', 'max:100', Rule::unique('users','email')->ignore($this->user->id)],
                     'address' => 'required',
