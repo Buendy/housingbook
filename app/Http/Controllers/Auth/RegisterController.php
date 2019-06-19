@@ -74,7 +74,7 @@ class RegisterController extends Controller
             'last_name' => $data['lastname'],
             'address' => $data['address'],
             'phone' => $data['phone'],
-            'photo' => '/img/profile-foto.jpg'
+            'photo' => 'img/profile-foto.jpg'
         ]);
     }
 }

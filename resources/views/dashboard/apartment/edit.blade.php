@@ -58,18 +58,21 @@
                             <div class="col-sm-10 checkbox-radios">
 
                                 @foreach($services as $service)
+                                    <?php $contador=0 ?>
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             @foreach($apartmentServices as $apartmentService)
-                                                <input class="form-check-input" name="services[]" type="checkbox" value="{{$service->id}}">
                                                 @if($apartmentService->name == $service->name)
-                                                    <span class="form-check-sign bg-success"></span>
-                                                    <input class="form-check-input" name="services[]" type="checkbox" value="{{$service->id}}" checked>
-                                                    @break
-                                                @else
-                                                    <input class="form-check-input" name="services[]" type="checkbox" value="{{$service->id}}">
+                                                    <?php $contador++ ?>
                                                 @endif
-                                            @endforeach                                                <span class="form-check-sign bg-success"></span>
+                                            @endforeach
+                                            @if($contador != 0)
+                                                <span class="form-check-sign bg-success"></span>
+                                                <input class="form-check-input" name="services[]" type="checkbox" value="{{$service->id}}" checked>
+                                            @else
+                                                <input class="form-check-input" name="services[]" type="checkbox" value="{{$service->id}}">
+                                            @endif
+                                            <span class="form-check-sign bg-success"></span>
                                             {{__('form.' . $service->name)}} <i class="{{$service->icon}} bg-primary rounded-circle text-light p-2"></i>
                                         </label>
                                     </div>
@@ -120,10 +123,10 @@
                         <span class="btn btn-round btn-rose btn-file">
                           <span class="fileinput-new">{{__('apartments.addphoto')}}</span>
                           <span class="fileinput-exists">{{__('apartments.changephoto')}}</span>
-                           {{Form::file('photos[]', ['id' => 'photos', 'multiple' => 'multiple'])}}
+                            {{Form::file('photos[]', ['id' => 'photos', 'multiple' => 'multiple'])}}
                         </span>
                                         <br />
-                                        <a href="#" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                                        <a href="#" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> {{__('apartments.removephoto')}}</a>
                                     </div>
                                 </div>
                             </div>

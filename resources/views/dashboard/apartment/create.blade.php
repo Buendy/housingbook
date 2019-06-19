@@ -105,7 +105,7 @@
                            {{Form::file('photos[]', ['id' => 'photos', 'multiple' => 'multiple'])}}
                         </span>
                                         <br />
-                                        <a href="#" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                                        <a href="#" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> {{__('apartments.removephoto')}}</a>
                                     </div>
                                 </div>
                             </div>

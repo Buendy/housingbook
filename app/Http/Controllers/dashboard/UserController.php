@@ -52,8 +52,8 @@ class UserController extends Controller
                     $user->photo = $photo;
                 }
             }
-
             $user->fill($request->all());
+            $user->photo = $photo;
             $user->save();
 
             return back()->with('success',__('profile.profileupdatedocorrectly'));

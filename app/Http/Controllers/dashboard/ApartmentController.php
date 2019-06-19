@@ -148,6 +148,14 @@ class ApartmentController extends Controller
             $apartment->save();
 
             if($request->file('photos') != null){
+
+                foreach ($apartment->photos as $photo){
+                    if (\File::exists(storage_path('app/public/photos/' . $photo->local_url))) {
+                        \File::delete(storage_path('app/public/photos/' . $photo->local_url));
+                    }
+                    $photo->delete();
+                }
+
                 foreach($request->file('photos') as $photo){
                     $picture = Helper::uploadFile($photo);
 

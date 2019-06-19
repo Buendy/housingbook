@@ -3,7 +3,7 @@ namespace App\Helpers;
 
 class Helper {
 
-	public static function uploadFile($photo)
+    public static function uploadFile($photo)
     {
 
         $filenameWithExt = $photo->getClientOriginalName();
@@ -15,16 +15,18 @@ class Helper {
         return $filenameToStore;
     }
 
-    public static function categoriesTableFill($apartment, $objects)
-    {
-        foreach($objects as $object)
-        {
-            $apartment->categories()->attach($object);
-        }
-    }
+//    public static function categoriesTableFill($apartment, $objects)
+//    {
+//        foreach($objects as $object)
+//        {
+//            $apartment->categories()->attach($object);
+//        }
+//    }
 
     public static function servicesTableFill($apartment, $objects)
     {
+        $apartment->services()->detach();
+
         foreach($objects as $object)
         {
             $apartment->services()->attach($object);

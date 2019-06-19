@@ -115,12 +115,12 @@
                                     <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
                                     <div>
                         <span class="btn btn-round btn-rose btn-file">
-                          <span class="fileinput-new">Add Photo</span>
-                          <span class="fileinput-exists">Change</span>
+                          <span class="fileinput-new">{{__('apartments.addphoto')}}</span>
+                          <span class="fileinput-exists">{{__('apartments.changephoto')}}</span>
                             {{Form::file('photo')}}
                         </span>
                                         <br />
-                                        <a href="#" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                                        <a href="#" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> {{__('apartments.removephoto')}}</a>
                                     </div>
                                 </div>
                             </div>

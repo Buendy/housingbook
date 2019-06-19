@@ -12,7 +12,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Storage::deleteDirectory('public/photos');
-
         Storage::makeDirectory('public/photos');
 
         $this->call(UserTableSeeder::class);
@@ -20,7 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CityTableSeeder::class);
         $this->call(ServiceTableSeeder::class);
         $this->call(ApartmentTableSeeder::class);
-        //$this->call(PhotoTableSeeder::class);
         $this->call(CommentTableSeeder::class);
 
     }
