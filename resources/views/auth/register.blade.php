@@ -1,7 +1,7 @@
 @extends('layouts.app-verify')
 
 @section('content')
-
+@include('partials.navbar')
 
 <div class="page-header header-filter" filter-color="black">
     <div class="page-header-image" style="background-image:url(./img/bg18.jpg)"></div>
@@ -91,7 +91,7 @@
 
                                         <span class="form-check-sign"></span>
                                         {{__('auth.conditions')}}
-                                        <a type="button" class="" data-toggle="modal" data-target="#exampleModal">{{__('auth.conditions2')}}</a>.
+                                        <a type="" class="" data-toggle="modal" data-target="#exampleModal">{{__('auth.conditions2')}}</a>.
                                     </label>
                                 </div>
                                 <div class="card-footer text-center">

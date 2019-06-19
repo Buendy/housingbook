@@ -1,6 +1,7 @@
 @extends('layouts.app-verify')
 
 @section('content')
+@include('partials.navbar')
 <div class="page-header header-filter" filter-color="orange">
     <div class="page-header-image" style="background-image:url('./img/login.jpg')"></div>
     <div class="content">

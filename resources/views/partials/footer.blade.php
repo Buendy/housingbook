@@ -2,10 +2,8 @@
 
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <img src="{{asset('img/icono.png')}}" alt="" width="100" height="100">
+            <img src="{{asset('img/icono.png')}}" alt="" width="50" height="50"><p class="text-center">Copyright &copy; 2019 HousingBook</p>
         </div>
 
     </div>
-    <p class="text-center">Trabajo fin de curso</p>
-    <p class="text-center">Daniel Buendia - Roberto Gómez</p>
 </footer>
