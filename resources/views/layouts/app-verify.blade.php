@@ -74,8 +74,6 @@
 <script src="{{ asset('js/plugins/bootstrap-selectpicker.js')}}" type="text/javascript"></script>
 <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
 <script src="{{ asset('js/plugins/bootstrap-datetimepicker.js')}}" type="text/javascript"></script>
-<!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
 <script src="{{ asset('js/now-ui-kit.js?v=1.2.2')}}" type="text/javascript"></script>
 <!-- Library for parallax, used just in Presentation Page -->

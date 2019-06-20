@@ -80,7 +80,7 @@
     <div class="card-header">
         <h3>{{__('mail.rentsuccess')}}</h3>
         <div class="line-header"></div>
-        <img src="www.housingbook.es/img/mail-template.jpg"></img>
+        <img src="https://daw.housingbook.es/img/mail-template.jpg"></img>
     </div>
     <div class="card-body">
         <h4>{{__('mail.customerdata')}}</h4>
