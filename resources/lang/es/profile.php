@@ -54,4 +54,6 @@ return [
     'deletephotosuccess' => 'Las fotos del apartamentos han sido borradas correctamente',
     'noreservations' => 'No tienes reservas pendientes',
     'noreservationspass' => 'No tienes reservas pasadas',
+    'deletephotos' => 'Borrar fotos',
+    'deleteapartment' => 'Borrar apartamento',
 ];

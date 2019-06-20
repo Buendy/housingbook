@@ -37,8 +37,8 @@
                                            data-toggle="tooltip" title="{{__('profile.edit')}}">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <button data-toggle="modal" data-target="#photo" data-id="{{$apartment->id}}" class="photoApartment btn btn-warning btn-icon btn-sm"><i class="fa fa-photo"></i></button>
-                                        <button data-toggle="modal" data-target="#borrar" data-id="{{$apartment->id}}" class="Apartment btn btn-danger btn-icon btn-sm"><i class="fa fa-times"></i></button>
+                                        <a data-toggle="tooltip" data-placement="top" title="{{__('profile.deletephotos')}}"><button data-toggle="modal" data-target="#photo" data-id="{{$apartment->id}}" class="photoApartment btn btn-warning btn-icon btn-sm"><i class="fa fa-photo"></i></button></a>
+                                        <a data-toggle="tooltip" data-placement="top" title="{{__('profile.deleteapartment')}}"><button data-toggle="modal" data-target="#borrar" data-id="{{$apartment->id}}" class="Apartment btn btn-danger btn-icon btn-sm"><i class="fa fa-times"></i></button></a>
                                     </td>
                                 </tr>
                             @empty

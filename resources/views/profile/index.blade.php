@@ -73,17 +73,6 @@
             </div>
         </div>
     </div>
-<!--<div class="section">
-        <div class="container">
-            @if($user->id == Auth::user()->id)
-    <div class="button-container">
-        <a href="{{route('apartment.index')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.manage')}}</a>
-                    <a href="{{route('apartment.createapartment')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.createapartment')}}</a>
-                    <a href="{{url('dashboard/user/edit')}}" class="btn btn-primary btn-round btn-lg">{{__('profile.editprofile')}}</a>
-                </div>
-            @endif
-        </div>
-    </div>-->
 
     <br><br><br>
     <div class="container">

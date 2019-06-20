@@ -54,6 +54,7 @@ return [
     'photodelete' => 'Delete apartment\'s photos',
     'deletephotosuccess' => 'Apartment\'s photos deleted successfully',
     'noreservations' => 'You have no pending reservations',
-    'noreservationspass' => 'You have no reservations'
-
+    'noreservationspass' => 'You have no reservations',
+    'deletephotos' => 'Delete photos',
+    'deleteapartment' => 'Delete apartment',
 ];
